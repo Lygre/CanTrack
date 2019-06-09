@@ -15,6 +15,8 @@ private let defaultProducts: [Product] = [
 	Product(strain: Strain(name: "Sour Diesel", race: .sativa, description: nil), productType: .truShatter)
 ]
 
+var inventory = defaultProducts
+
 //final class UserData here
 final class UserData: BindableObject {
 	let didChange = PassthroughSubject<UserData, Never>()
@@ -25,4 +27,6 @@ final class UserData: BindableObject {
 			didChange.send(self)
 		}
 	}
+
+	static let defaultProduct: Product = Product(strain: Strain.default, productType: .truFlower)
 }

@@ -14,8 +14,8 @@ struct NewProductView : View {
 
 	//basically bind this to our product to be created's properties
 	@EnvironmentObject var userData: UserData
-	@State var testProd: Product = UserData.defaultProduct
-
+	@State var testProd: Product = Product.defaultProduct
+	@Binding var type: Product
 
 	var body: some View {
 		NavigationView {
@@ -79,10 +79,10 @@ struct NewProductView : View {
 
 }
 
-#if DEBUG
-struct NewProductView_Previews : PreviewProvider {
-    static var previews: some View {
-		NewProductView().environmentObject(UserData())
-    }
-}
-#endif
+//#if DEBUG
+//struct NewProductView_Previews : PreviewProvider {
+//    static var previews: some View {
+//		NewProductView().environmentObject(UserData())
+//    }
+//}
+//#endif

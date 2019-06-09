@@ -19,7 +19,7 @@ struct ProductImageViewCircular : View {
 			.resizable()
 		.clipShape(Circle())
 		.overlay(Circle().stroke(Color.black, lineWidth: 4))
-			.frame(width: 50, height: 50, alignment: .bottomTrailing)
+			.frame(width: 80, height: 80, alignment: .center)
     }
 }
 

@@ -17,7 +17,7 @@ struct Strain: Hashable, Equatable, Identifiable, Codable {
 	var effects: Effects?
 	var flavors: [String]?
 
-	static let `default` = Strain(name: "Default Strain", race: .hybrid, description: nil)
+	static let `default` = Self(name: "Default Strain", race: .hybrid, description: nil)
 
 	init(name: String, race: StrainVariety, description: String?) {
 		self.id = UUID()

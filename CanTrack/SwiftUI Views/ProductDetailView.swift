@@ -15,23 +15,33 @@ struct ProductDetailView : View {
 
 	var body: some View {
 
-		VStack {
-			HStack {
+		VStack(alignment: .leading) {
+			HStack(alignment: .top) {
 				Text(product.strain.name)
 				Text(product.productType.rawValue)
 			}
-			Text(product.strain.race.rawValue.capitalized)
-			.color(Color.init(strainVariety: product.strain.race))
-			Text(product.mass.description+" g")
-		}
-    }
+			HStack {
+				VStack(alignment: .leading) {
+					Text(product.strain.race.rawValue.capitalized)
+						.color(Color.init(strainVariety: product.strain.race))
+					Text(product.mass.description+" g")
+				}
+				Spacer()
+				ProductImageViewCircular(product: product)
+				.padding()
+			}
+
+			}
+			.background(Color("InventoryBackgroundColor"))
+			.scaledToFill()
+	}
 
 }
 
-//#if DEBUG
-//struct ProductDetailView_Previews : PreviewProvider {
-//    static var previews: some View {
-//        ProductDetailView(product: )
-//    }
-//}
-//#endif
+#if DEBUG
+struct ProductDetailView_Previews : PreviewProvider {
+    static var previews: some View {
+        ProductDetailView(product: UserData().products[0]).environmentObject(UserData())
+    }
+}
+#endif

@@ -17,6 +17,8 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 	var strain: Strain
 	var productType: ProductType
 
+	static let defaultProduct: Product = Product(strain: Strain.default, productType: .truFlower)
+
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(productType)
 		hasher.combine(strain)

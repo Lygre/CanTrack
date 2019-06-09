@@ -19,11 +19,12 @@ struct ProductRow : View {
 
 			ProductImageViewCircular(product: product)
 				.padding(.all)
-			VStack(alignment: .center) {
+			Spacer()
+			VStack(alignment: .leading) {
 				Text(product.strain.name)
 					.lineLimit(nil)
 
-				HStack(alignment: .center) {
+				HStack {
 					VStack(alignment: .leading) {
 						Text(product.productType.rawValue)
 

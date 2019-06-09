@@ -10,20 +10,18 @@ import SwiftUI
 
 struct HomeView : View {
 	@EnvironmentObject var userData: UserData
-	@State var selection: Int = 1
+	@State var selection: Int
 
 
 	var body: some View {
 		NavigationView {
 			TabbedView(selection: $selection) {
-				Text("First View")
-					.font(.title)
-					.tabItemLabel(Image("first"))
-					.tag(0)
+				InventoryListView().environmentObject(self.userData).tabItemLabel(Text("Inventory"))
+					.tag(1)
 				Text("Second View")
 					.font(.title)
 					.tabItemLabel(Image("second"))
-					.tag(1)
+					.tag(2)
 
 				}
 				.navigationBarItems(leading: NavigationButton(destination: NewProductView().environmentObject(self.userData), onTrigger: { () -> Bool in
@@ -42,11 +40,6 @@ struct HomeView : View {
 		}
 	}
 
-	private func createProduct() {
-//		let newProduct = self.newDraftProduct
-//		self.userData.products.insert(newProduct, at: 0)
-
-	}
 
 
 }
@@ -54,7 +47,7 @@ struct HomeView : View {
 #if DEBUG
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View {
-		HomeView().environmentObject(UserData())
+		HomeView(selection: 1).environmentObject(UserData())
     }
 }
 #endif

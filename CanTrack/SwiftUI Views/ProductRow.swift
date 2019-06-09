@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ProductRow : View {
-
+	@EnvironmentObject var userData: UserData
 	var product: Product
 
 	@State private var showDetail = false
@@ -32,7 +32,7 @@ struct ProductRow : View {
 							.lineLimit(nil)
 
 }
-Spacer()
+
 
 					Text(product.mass.description+" g")
 						.padding(.trailing, 3)
@@ -42,8 +42,8 @@ Spacer()
 }
 
 			}
-			.background(Color.init(strainVariety: product.strain.race)).opacity(0.7).scaledToFill()
-			.scaledToFit()
+			.background(Color.init(strainVariety: product.strain.race)).opacity(0.7)
+			.scaledToFill()
 			.cornerRadius(4, antialiased: true)
 
 
@@ -55,7 +55,7 @@ Spacer()
 #if DEBUG
 struct ProductRow_Previews : PreviewProvider {
     static var previews: some View {
-        ProductRow(product: inventory[0])
+        ProductRow(product: inventory[0]).environmentObject(UserData())
 
     }
 }

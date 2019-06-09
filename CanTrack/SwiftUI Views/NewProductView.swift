@@ -19,19 +19,19 @@ struct NewProductView : View {
 
 	var body: some View {
 		NavigationView {
-//			List {
-//				Group {
-//					Section(header: Text("Type, Strain, and Mass")) {
-//
-//						HStack {
-//							Picker(selection: $testProd.productType, label: Text("Product Type")) {
-//								ForEach(Product.ProductType.allCases.identified(by: \.identifiedValue)) { type in
-//									Text(type.rawValue).tag(type)
-//								}
-//							}
-//						}
-//
-//						//Strain Picker cannot be fully implemented right now
+			List {
+				Group {
+					Section(header: Text("Type, Strain, and Mass")) {
+
+						HStack {
+							Picker(selection: $testProd.productType, label: Text("Product Type")) {
+								ForEach(Product.ProductType.allCases.identified(by: \.identifiedValue)) { type in
+									Text(type.rawValue).tag(type)
+								}
+							}
+						}
+
+						//Strain Picker cannot be fully implemented right now
 //						HStack {
 //							Picker(selection: $testProd.strain, label: Text("Product Strain")) {
 //								ForEach($userData.strains) { strain in
@@ -40,24 +40,24 @@ struct NewProductView : View {
 //
 //							}
 //						}
-//
-//						HStack {
-//							Text("Mass")
-//							Spacer()
-//							VStack {
-//								TextField($testProd.mass, placeholder: Text("Mass"), onEditingChanged: { (editingChangedText) in
-//
-//								}, onCommit: {
-//
-//								})
-//								.textFieldStyle(.roundedBorder)
-//							}
-//						}
-//
-//					}
-//
-//				}
-//				}.listStyle(.grouped)
+
+						HStack {
+							Text("Mass")
+							Spacer()
+							VStack {
+								TextField($testProd.mass, placeholder: Text("Mass"), onEditingChanged: { (editingChangedText) in
+
+								}, onCommit: {
+
+								})
+								.textFieldStyle(.roundedBorder)
+							}
+						}
+
+					}
+
+				}
+				}.listStyle(.grouped)
 			Text("Placeholder")
 			.navigationBarItems(leading: Text("Cancel").color(.red), trailing: Text("Save").color(.blue))
 			.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
@@ -66,13 +66,17 @@ struct NewProductView : View {
 //			.navigationBarTitle(Text("Add New Product"))
 	}
 
+	private func createProduct() {
+		self.userData.products.insert($testProd.value, at: 0)
+
+	}
 
 }
 
 #if DEBUG
 struct NewProductView_Previews : PreviewProvider {
     static var previews: some View {
-		NewProductView(testProd: inventory[0]).environmentObject(UserData())
+		NewProductView().environmentObject(UserData())
     }
 }
 #endif

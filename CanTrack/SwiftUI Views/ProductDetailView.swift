@@ -21,7 +21,7 @@ struct ProductDetailView : View {
 				Text(product.productType.rawValue)
 			}
 			Text(product.strain.race.rawValue.capitalized)
-			.color(.yellow)
+			.color(Color.init(strainVariety: product.strain.race))
 			Text(product.mass.description+" g")
 		}
     }

@@ -14,7 +14,7 @@ struct NewProductView : View {
 
 	//basically bind this to our product to be created's properties
 	@EnvironmentObject var userData: UserData
-	@State var testProd: Product = Product(strain: Strain.default, productType: .rosin)
+	@State var testProd: Product = UserData.defaultProduct
 
 
 	var body: some View {
@@ -25,7 +25,7 @@ struct NewProductView : View {
 
 						HStack {
 							Picker(selection: $testProd.productType, label: Text("Product Type")) {
-								ForEach(Product.ProductType.allCases.identified(by: \.identifiedValue)) { type in
+								ForEach(Product.ProductType.allCases.identified(by: \.id)) { type in
 									Text(type.rawValue).tag(type)
 								}
 							}
@@ -59,14 +59,20 @@ struct NewProductView : View {
 				}
 				}.listStyle(.grouped)
 			Text("Placeholder")
-			.navigationBarItems(leading: Text("Cancel").color(.red), trailing: Text("Save").color(.blue))
+				.navigationBarItems(leading: Text("Cancel").color(.red), trailing: Button(action: {
+					self.createProduct()
+				}, label: {
+					Text("Save")
+					.color(.blue)
+				}))
 			.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
 			}.foregroundColor(Color.green)
 
 //			.navigationBarTitle(Text("Add New Product"))
 	}
 
-	private func createProduct() {
+	func createProduct() {
+
 		self.userData.products.insert($testProd.value, at: 0)
 
 	}

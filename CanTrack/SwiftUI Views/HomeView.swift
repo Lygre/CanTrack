@@ -11,9 +11,9 @@ import SwiftUI
 struct HomeView : View {
 	@EnvironmentObject var userData: UserData
 	@State var selection: Int
-	@State var newProduct: Product = Product.defaultProduct
 
 	var body: some View {
+		NavigationView {
 			TabbedView(selection: $selection) {
 				InventoryListView().environmentObject(self.userData).tabItemLabel(Text("Inventory"))
 					.tag(1)
@@ -23,7 +23,7 @@ struct HomeView : View {
 					.tag(2)
 
 				}
-				.navigationBarItems(leading: NavigationButton(destination: NewProductView(type: $newProduct).environmentObject(self.userData), onTrigger: { () -> Bool in
+				.navigationBarItems(leading: NavigationButton(destination: NewProductView(type: self.$userData.defaultProduct).environmentObject(self.userData), onTrigger: { () -> Bool in
 					true
 				}, label: {
 					Text("NewNav")
@@ -32,11 +32,11 @@ struct HomeView : View {
 					, trailing: PresentationButton(Image(systemName: "bag.badge.plus")
 						.imageScale(.large)
 						.padding(),
-												   destination: NewProductView(type: $newProduct).environmentObject(self.userData), onTrigger: {
+												   destination: NewProductView(type: self.$userData.defaultProduct).environmentObject(self.userData), onTrigger: {
 					}))
 				.navigationBarTitle(Text("Inventory"), displayMode: .large)
 
-
+		}
 	}
 
 

@@ -30,5 +30,12 @@ final class UserData: BindableObject {
 		}
 	}
 
+	@UserDefaultValue(key: "DefaultProduct", defaultValue: Product.defaultProduct)
+	var defaultProduct: Product {
+		didSet {
+			didChange.send(self)
+		}
+	}
+
 
 }

@@ -25,7 +25,7 @@ struct NewProductView : View {
 
 						HStack {
 							Picker(selection: $testProd.productType, label: Text("Product Type")) {
-								ForEach(Product.ProductType.allCases.identified(by: \.id)) { type in
+								ForEach(Product.ProductType.allCases.identified(by: \.identifiedValue)) { type in
 									Text(type.rawValue).tag(type)
 								}
 							}

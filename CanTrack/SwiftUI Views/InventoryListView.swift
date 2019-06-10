@@ -23,7 +23,7 @@ struct InventoryListView : View {
 	var body: some View {
 			List {
 				Section {
-					if newProduct == draftNewProduct {
+					if $newProduct.value == $draftNewProduct.value {
 						PresentationButton(
 							Button(action: { }) {
 								VStack(alignment: .leading) {
@@ -36,11 +36,36 @@ struct InventoryListView : View {
 									}
 								}
 							},
-							destination: NewProductView(testProd: $draftNewProduct).environmentObject(UserData()).environmentObject(productStore), onTrigger: {
-								self.addNewProduct()
+							destination: NewProductView(testProd: $draftNewProduct).environmentObject(UserData()).environmentObject(productStore).onDisappear(perform: {
+								self.draftNewProduct = Product.defaultProduct
+							}
+//								addNewProduct
+//								self.draftNewProduct = self.$newProduct.value
+								), onTrigger: {
+//								self.addNewProduct()
 						})
+
 					} else {
-						Text("No new prod")
+						PresentationButton(
+							Button(action: { }) {
+								VStack(alignment: .leading) {
+									HStack {
+										Image(systemName: "bag.badge.plus")
+											.imageScale(.large)
+											.padding()
+
+										Text("Add Product")
+									}
+								}
+							},
+							destination: NewProductView(testProd: $draftNewProduct).environmentObject(UserData()).environmentObject(productStore).onDisappear(perform: {
+								self.draftNewProduct = Product.defaultProduct
+							}
+								//								addNewProduct
+								//								self.draftNewProduct = self.$newProduct.value
+							), onTrigger: {
+								//								self.addNewProduct()
+						})
 					}
 
 				}
@@ -61,7 +86,7 @@ struct InventoryListView : View {
 	}
 
 	func addNewProduct() {
-//		productStore.products.append(newProduct)
+		productStore.products.append(draftNewProduct)
 	}
 }
 

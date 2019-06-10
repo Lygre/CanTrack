@@ -17,7 +17,8 @@ struct NewProductView : View {
 //	@Binding var type: Product
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
-	@State var testProd: Product = Product.defaultProduct
+	@Binding var testProd: Product
+	
 
 	var body: some View {
 		NavigationView {
@@ -59,7 +60,9 @@ struct NewProductView : View {
 					}
 
 				}
-				}.listStyle(.grouped)
+				}.listStyle(.grouped).onDisappear {
+					self.createProduct()
+			}
 			Text("Placeholder")
 				.navigationBarItems(leading: Text("Cancel").color(.red), trailing: Button(action: {
 					self.createProduct()
@@ -70,14 +73,12 @@ struct NewProductView : View {
 				}))
 			.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
 			}.foregroundColor(Color.green)
-		.onDisappear {
-				self.createProduct()
-		}
+
 //			.navigationBarTitle(Text("Add New Product"))
 	}
 
 	func createProduct() {
-		productStore.products.append(testProd)
+		productStore.products.append($testProd.value)
 //		defaultProducts.products.insert(self.$testProd.value, at: 0)
 //		ProductStore().products.insert(self.$testProd.value, at: 0)
 
@@ -85,10 +86,10 @@ struct NewProductView : View {
 
 }
 
-#if DEBUG
-struct NewProductView_Previews : PreviewProvider {
-    static var previews: some View {
-		NewProductView().environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
-    }
-}
-#endif
+//#if DEBUG
+//struct NewProductView_Previews : PreviewProvider {
+//    static var previews: some View {
+//		NewProductView(test).environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
+//    }
+//}
+//#endif

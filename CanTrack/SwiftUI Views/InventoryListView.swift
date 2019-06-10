@@ -17,25 +17,31 @@ struct InventoryListView : View {
 //	@ObjectBinding var productStore = ProductStore(products: testData)
 	@EnvironmentObject var productStore: ProductStore
 
+	@State var newProduct: Product = Product.defaultProduct
+	@State var draftNewProduct: Product = Product.defaultProduct
 
 	var body: some View {
 			List {
 				Section {
-					PresentationButton(
-						Button(action: { }) {
-							VStack(alignment: .leading) {
-								HStack {
-									Image(systemName: "bag.badge.plus")
-										.imageScale(.large)
-										.padding()
+					if newProduct == draftNewProduct {
+						PresentationButton(
+							Button(action: { }) {
+								VStack(alignment: .leading) {
+									HStack {
+										Image(systemName: "bag.badge.plus")
+											.imageScale(.large)
+											.padding()
 
-									Text("Add Product")
+										Text("Add Product")
+									}
 								}
-							}
-						},
-						destination: NewProductView().environmentObject(UserData()).environmentObject(productStore), onTrigger: {
-							self.addNewProduct()
-					})
+							},
+							destination: NewProductView(testProd: $draftNewProduct).environmentObject(UserData()).environmentObject(productStore), onTrigger: {
+								self.addNewProduct()
+						})
+					} else {
+						Text("No new prod")
+					}
 
 				}
 				Section {

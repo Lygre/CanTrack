@@ -19,7 +19,7 @@ struct HomeView : View {
 
 	var body: some View {
 			TabbedView(selection: $selection) {
-				InventoryListView()
+				InventoryListView().environmentObject(ProductStore(products: defaultProducts.products))
 
 					.tabItemLabel(Text("Inventory"))
 					.tag(1)

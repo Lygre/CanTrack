@@ -23,7 +23,7 @@ struct HomeView : View {
 					.navigationBarTitle(Text("Inventory"), displayMode: .inline)
 					.tabItemLabel(Text("Inventory"))
 					.tag(1)
-					StrainsView()
+					StrainsView().environmentObject(UserData())
 					.tabItemLabel(Text("Strains"))
 					.tag(2)
 

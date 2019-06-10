@@ -18,13 +18,7 @@ let defaultProducts = ProductStore(products: [
 
 
 class ProductStore: Equatable, Hashable, Codable, BindableObject {
-	static func == (lhs: ProductStore, rhs: ProductStore) -> Bool {
-		return lhs.products == rhs.products
-	}
-	func hash(into hasher: inout Hasher) {
-		hasher.combine(products)
 
-	}
 	let didChange = PassthroughSubject<ProductStore, Never>()
 
 //	@UserDefaultValue(key: "ProductStore", defaultValue: )
@@ -34,6 +28,13 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 		}
 	}
 
+	enum CodingKeys: String, CodingKey {
+		case products
+	}
+
+	init(products: [Product]) {
+		self.products = products
+	}
 
 
 	func encode(to encoder: Encoder) throws {
@@ -53,13 +54,15 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 		}
 	}
 
-	enum CodingKeys: String, CodingKey {
-		case products
+	static func == (lhs: ProductStore, rhs: ProductStore) -> Bool {
+		return lhs.products == rhs.products
 	}
 
-	init(products: [Product]) {
-		self.products = products
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(products)
+
 	}
+
 
 
 

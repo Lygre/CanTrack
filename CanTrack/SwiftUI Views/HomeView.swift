@@ -20,6 +20,7 @@ struct HomeView : View {
 	var body: some View {
 			TabbedView(selection: $selection) {
 				InventoryListView()
+					.navigationBarTitle(Text("Inventory"), displayMode: .inline)
 					.tabItemLabel(Text("Inventory"))
 					.tag(1)
 					StrainsView()
@@ -27,18 +28,6 @@ struct HomeView : View {
 					.tag(2)
 
 				}
-//				.navigationBarItems(leading: NavigationButton(destination: NewProductView(testProd: newProduct), onTrigger: { () -> Bool in
-//					true
-//				}, label: {
-//					Text("NewNav")
-//						.hidden()
-//				})
-//					, trailing: PresentationButton(Image(systemName: "bag.badge.plus")
-//						.imageScale(.large)
-//						.padding(),
-//												   destination: NewProductView(testProd: newProduct), onTrigger: {
-//					}))
-				.navigationBarTitle(Text("Inventory"), displayMode: .large)
 
 
 	}

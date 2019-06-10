@@ -18,34 +18,44 @@ struct InventoryListView : View {
 	@ObjectBinding var newProduct: Product = Product(strain: Strain.default, productType: .rosin)
 	
 	var body: some View {
-		NavigationView {
 			List {
 				Section {
 					PresentationButton(
-						VStack(alignment: .leading) {
-							HStack {
-								Image(systemName: "bag.badge.plus")
-									.imageScale(.large)
-									.padding()
+						Button(action: { }) {
+							VStack(alignment: .leading) {
+								HStack {
+									Image(systemName: "bag.badge.plus")
+										.imageScale(.large)
+										.padding()
 
-								Text("Add Product")
+									Text("Add Product")
+								}
 							}
 						},
 						destination: NewProductView(testProd: newProduct), onTrigger: {
+							self.addNewProduct()
 					})
+
 				}
 				Section {
 					ForEach(productStore.products) { product in
 						NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
 						}
 					}
+//					.onDelete(perform: deleteProduct())
 				}
 				}.listStyle(.grouped)
 
-		}
-
 	}
 
+	func deleteProduct(at offsets: IndexSet) {
+
+		productStore.products.remove(at: offsets.count)
+	}
+
+	func addNewProduct() {
+		productStore.products.append(newProduct)
+	}
 }
 
 #if DEBUG

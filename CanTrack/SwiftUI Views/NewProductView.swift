@@ -60,14 +60,17 @@ struct NewProductView : View {
 				}.listStyle(.grouped)
 			Text("Placeholder")
 				.navigationBarItems(leading: Text("Cancel").color(.red), trailing: Button(action: {
-					self.createProduct()
+//					self.createProduct()
+
 				}, label: {
 					Text("Save")
 					.color(.blue)
 				}))
 			.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
 			}.foregroundColor(Color.green)
-
+		.onDisappear {
+				self.createProduct()
+		}
 //			.navigationBarTitle(Text("Add New Product"))
 	}
 

@@ -7,23 +7,45 @@
 //
 
 import SwiftUI
-
+import Combine
 let testData = defaultProducts.products
+
 
 struct InventoryListView : View {
 //	@EnvironmentObject var userData: UserData
 //	@EnvironmentObject var productStore: ProductStore
 	@ObjectBinding var productStore = ProductStore(products: testData)
-
+	@ObjectBinding var newProduct: Product = Product(strain: Strain.default, productType: .rosin)
+	
 	var body: some View {
-		return VStack {
-			List(productStore.products) { product in
-				NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
-				}
+		NavigationView {
+			List {
+				Section {
+					PresentationButton(
+						VStack(alignment: .leading) {
+							HStack {
+								Image(systemName: "bag.badge.plus")
+									.imageScale(.large)
+									.padding()
 
-			}
+								Text("Add Product")
+							}
+						},
+						destination: NewProductView(testProd: newProduct), onTrigger: {
+					})
+				}
+				Section {
+					ForEach(productStore.products) { product in
+						NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
+						}
+					}
+				}
+				}.listStyle(.grouped)
+
 		}
+
 	}
+
 }
 
 #if DEBUG

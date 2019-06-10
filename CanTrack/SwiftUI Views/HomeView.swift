@@ -15,7 +15,7 @@ struct HomeView : View {
 //	@EnvironmentObject var productStore: ProductStore
 
 	@State var selection: Int
-	@ObjectBinding var newProduct: Product = Product(strain: Strain.default, productType: .rosin)
+	
 
 	var body: some View {
 			TabbedView(selection: $selection) {
@@ -27,17 +27,17 @@ struct HomeView : View {
 					.tag(2)
 
 				}
-				.navigationBarItems(leading: NavigationButton(destination: NewProductView(testProd: newProduct), onTrigger: { () -> Bool in
-					true
-				}, label: {
-					Text("NewNav")
-						.hidden()
-				})
-					, trailing: PresentationButton(Image(systemName: "bag.badge.plus")
-						.imageScale(.large)
-						.padding(),
-												   destination: NewProductView(testProd: newProduct), onTrigger: {
-					}))
+//				.navigationBarItems(leading: NavigationButton(destination: NewProductView(testProd: newProduct), onTrigger: { () -> Bool in
+//					true
+//				}, label: {
+//					Text("NewNav")
+//						.hidden()
+//				})
+//					, trailing: PresentationButton(Image(systemName: "bag.badge.plus")
+//						.imageScale(.large)
+//						.padding(),
+//												   destination: NewProductView(testProd: newProduct), onTrigger: {
+//					}))
 				.navigationBarTitle(Text("Inventory"), displayMode: .large)
 
 

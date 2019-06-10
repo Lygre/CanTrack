@@ -26,3 +26,7 @@ struct UserDefaultValue<Value: Codable> {
 		}
 	}
 }
+
+
+//@propertyDelegate
+//struct ProductValue<

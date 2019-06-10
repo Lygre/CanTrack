@@ -8,13 +8,17 @@
 
 import SwiftUI
 
+let testData = defaultProducts.products
+
 struct InventoryListView : View {
-	@EnvironmentObject var userData: UserData
+//	@EnvironmentObject var userData: UserData
+//	@EnvironmentObject var productStore: ProductStore
+	@ObjectBinding var productStore = ProductStore(products: testData)
 
 	var body: some View {
 		return VStack {
-			List(self.userData.products) { product in
-				NavigationButton(destination: ProductDetailView(product: product).environmentObject(self.userData)) { ProductRow(product: product)
+			List(productStore.products) { product in
+				NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
 				}
 
 			}
@@ -25,7 +29,7 @@ struct InventoryListView : View {
 #if DEBUG
 struct InventoryListView_Previews : PreviewProvider {
     static var previews: some View {
-        InventoryListView().environmentObject(UserData())
+        InventoryListView(productStore: ProductStore(products: testData))
     }
 }
 #endif

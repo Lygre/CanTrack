@@ -7,15 +7,42 @@
 //
 
 import SwiftUI
+import Combine
 
-struct Product: Equatable, Hashable, Codable, Identifiable {
+class Product: Equatable, Hashable, Codable, Identifiable, BindableObject {
 	let id: UUID
-	var dosesCount: Int = 0
-	var productImage: UIImage = #imageLiteral(resourceName: "cannabisbg")
-	var mass: String = "0.0"
-	var dateOpened: Date?
-	var strain: Strain
-	var productType: ProductType
+	var dosesCount: Int = 0 {
+		didSet {
+			didChange.send(self)
+		}
+	}
+	var productImage: UIImage = #imageLiteral(resourceName: "cannabisbg") {
+		didSet {
+			didChange.send(self)
+		}
+	}
+	var mass: String = "0.0" {
+		didSet {
+			didChange.send(self)
+		}
+	}
+	var dateOpened: Date? {
+		didSet {
+			didChange.send(self)
+		}
+	}
+	var strain: Strain {
+		didSet {
+			didChange.send(self)
+		}
+	}
+	var productType: ProductType {
+		didSet {
+			didChange.send(self)
+		}
+	}
+
+	var didChange = PassthroughSubject<Product, Never>()
 
 	static let defaultProduct: Product = Product(strain: Strain.default, productType: .truFlower)
 
@@ -46,7 +73,7 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		self.productType = productType
 	}
 
-	init(from decoder: Decoder) throws {
+	required init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		id = try values.decode(UUID.self, forKey: .id)
 		productType = try values.decode(ProductType.self, forKey: .productType)

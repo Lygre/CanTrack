@@ -9,9 +9,7 @@
 import SwiftUI
 
 struct ProductDetailView : View {
-	@EnvironmentObject var userData: UserData
 	var product: Product
-
 
 	var body: some View {
 
@@ -41,7 +39,7 @@ struct ProductDetailView : View {
 #if DEBUG
 struct ProductDetailView_Previews : PreviewProvider {
     static var previews: some View {
-        ProductDetailView(product: UserData().products[0]).environmentObject(UserData())
+        ProductDetailView(product: ProductStore(products: defaultProducts.products).products[0])
     }
 }
 #endif

@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct ProductRow : View {
-	@EnvironmentObject var userData: UserData
 	var product: Product
 
 	@State private var showDetail = false
@@ -56,7 +55,7 @@ struct ProductRow : View {
 #if DEBUG
 struct ProductRow_Previews : PreviewProvider {
     static var previews: some View {
-        ProductRow(product: inventory[0]).environmentObject(UserData())
+        ProductRow(product: ProductStore(products: defaultProducts.products).products[0])
 
     }
 }

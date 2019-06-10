@@ -7,23 +7,27 @@
 //
 
 import SwiftUI
+import Combine
+//let productStore = ProductStore()
 
 struct HomeView : View {
-	@EnvironmentObject var userData: UserData
+//	@EnvironmentObject var userData: UserData
+//	@EnvironmentObject var productStore: ProductStore
+
 	@State var selection: Int
+	@ObjectBinding var newProduct: Product = Product(strain: Strain.default, productType: .rosin)
 
 	var body: some View {
-		NavigationView {
 			TabbedView(selection: $selection) {
-				InventoryListView().environmentObject(self.userData).tabItemLabel(Text("Inventory"))
+				InventoryListView()
+					.tabItemLabel(Text("Inventory"))
 					.tag(1)
-				Text("Second View")
-					.font(.title)
-					.tabItemLabel(Image("second"))
+					StrainsView()
+					.tabItemLabel(Text("Strains"))
 					.tag(2)
 
 				}
-				.navigationBarItems(leading: NavigationButton(destination: NewProductView(type: self.$userData.defaultProduct).environmentObject(self.userData), onTrigger: { () -> Bool in
+				.navigationBarItems(leading: NavigationButton(destination: NewProductView(testProd: newProduct), onTrigger: { () -> Bool in
 					true
 				}, label: {
 					Text("NewNav")
@@ -32,11 +36,11 @@ struct HomeView : View {
 					, trailing: PresentationButton(Image(systemName: "bag.badge.plus")
 						.imageScale(.large)
 						.padding(),
-												   destination: NewProductView(type: self.$userData.defaultProduct).environmentObject(self.userData), onTrigger: {
+												   destination: NewProductView(testProd: newProduct), onTrigger: {
 					}))
 				.navigationBarTitle(Text("Inventory"), displayMode: .large)
 
-		}
+
 	}
 
 
@@ -46,7 +50,7 @@ struct HomeView : View {
 #if DEBUG
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View {
-		HomeView(selection: 1).environmentObject(UserData())
+		HomeView(selection: 1)
     }
 }
 #endif

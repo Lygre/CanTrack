@@ -14,9 +14,10 @@ let testData = defaultProducts.products
 struct InventoryListView : View {
 //	@EnvironmentObject var userData: UserData
 //	@EnvironmentObject var productStore: ProductStore
-	@ObjectBinding var productStore = ProductStore(products: testData)
-	@ObjectBinding var newProduct: Product = Product(strain: Strain.default, productType: .rosin)
-	
+//	@ObjectBinding var productStore = ProductStore(products: testData)
+	@EnvironmentObject var productStore: ProductStore
+
+
 	var body: some View {
 			List {
 				Section {
@@ -32,7 +33,7 @@ struct InventoryListView : View {
 								}
 							}
 						},
-						destination: NewProductView(testProd: newProduct), onTrigger: {
+						destination: NewProductView().environmentObject(UserData()).environmentObject(productStore), onTrigger: {
 							self.addNewProduct()
 					})
 
@@ -54,14 +55,14 @@ struct InventoryListView : View {
 	}
 
 	func addNewProduct() {
-		productStore.products.append(newProduct)
+//		productStore.products.append(newProduct)
 	}
 }
 
 #if DEBUG
 struct InventoryListView_Previews : PreviewProvider {
     static var previews: some View {
-        InventoryListView(productStore: ProductStore(products: testData))
+        InventoryListView().environmentObject(ProductStore(products: defaultProducts.products))
     }
 }
 #endif

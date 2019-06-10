@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-class Product: Equatable, Hashable, Codable, Identifiable, BindableObject {
+struct Product: Equatable, Hashable, Codable, Identifiable {
 	let id: UUID
 	var dosesCount: Int = 0 {
 		didSet {
@@ -73,7 +73,7 @@ class Product: Equatable, Hashable, Codable, Identifiable, BindableObject {
 		self.productType = productType
 	}
 
-	required init(from decoder: Decoder) throws {
+	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
 		id = try values.decode(UUID.self, forKey: .id)
 		productType = try values.decode(ProductType.self, forKey: .productType)

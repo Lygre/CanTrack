@@ -15,6 +15,8 @@ struct NewProductView : View {
 	//basically bind this to our product to be created's properties
 //	@State var testProd: Product = Product.defaultProduct
 //	@Binding var type: Product
+	@EnvironmentObject var userData: UserData
+	@EnvironmentObject var productStore: ProductStore
 	@State var testProd: Product = Product.defaultProduct
 
 	var body: some View {
@@ -32,14 +34,14 @@ struct NewProductView : View {
 						}
 
 						//Strain Picker cannot be fully implemented right now
-//						HStack {
-//							Picker(selection: $testProd.strain, label: Text("Product Strain")) {
-//								ForEach($userData.strains.value) { strain in
-//									Text(strain.name).tag(strain)
-//								}
-//
-//							}
-//						}
+						HStack {
+							Picker(selection: $testProd.strain, label: Text("Product Strain")) {
+								ForEach($userData.strains.value) { strain in
+									Text(strain.name).tag(strain)
+								}
+
+							}
+						}
 
 						HStack {
 							Text("Mass")
@@ -60,7 +62,7 @@ struct NewProductView : View {
 				}.listStyle(.grouped)
 			Text("Placeholder")
 				.navigationBarItems(leading: Text("Cancel").color(.red), trailing: Button(action: {
-//					self.createProduct()
+					self.createProduct()
 
 				}, label: {
 					Text("Save")
@@ -75,7 +77,8 @@ struct NewProductView : View {
 	}
 
 	func createProduct() {
-		defaultProducts.products.insert(self.$testProd.value, at: 0)
+		productStore.products.append(testProd)
+//		defaultProducts.products.insert(self.$testProd.value, at: 0)
 //		ProductStore().products.insert(self.$testProd.value, at: 0)
 
 	}
@@ -85,7 +88,7 @@ struct NewProductView : View {
 #if DEBUG
 struct NewProductView_Previews : PreviewProvider {
     static var previews: some View {
-		NewProductView().environmentObject(UserData())
+		NewProductView().environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
     }
 }
 #endif

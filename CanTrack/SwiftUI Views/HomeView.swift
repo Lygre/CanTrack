@@ -20,14 +20,14 @@ struct HomeView : View {
 	var body: some View {
 			TabbedView(selection: $selection) {
 				InventoryListView()
-					.navigationBarTitle(Text("Inventory"), displayMode: .inline)
+
 					.tabItemLabel(Text("Inventory"))
 					.tag(1)
 					StrainsView().environmentObject(UserData())
 					.tabItemLabel(Text("Strains"))
 					.tag(2)
 
-				}
+				}.navigationBarTitle(Text("Inventory"), displayMode: .large)
 
 
 	}

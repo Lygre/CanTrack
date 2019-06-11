@@ -36,7 +36,7 @@ struct InventoryListView : View {
 									}
 								}
 							},
-							destination: NewProductView(testProd: $draftNewProduct).environmentObject(UserData()).environmentObject(productStore).onDisappear(perform: {
+							destination: NewProductView(testProd: $newProduct).environmentObject(UserData()).environmentObject(productStore).onDisappear(perform: {
 								self.draftNewProduct = Product.defaultProduct
 							}
 //								addNewProduct
@@ -64,7 +64,7 @@ struct InventoryListView : View {
 								//								addNewProduct
 								//								self.draftNewProduct = self.$newProduct.value
 							), onTrigger: {
-								//								self.addNewProduct()
+
 						})
 					}
 
@@ -87,6 +87,22 @@ struct InventoryListView : View {
 
 	func addNewProduct() {
 		productStore.products.append(draftNewProduct)
+	}
+
+	func makeNewProductPresentationButton(to newProduct: Product) -> some View {
+		let newProdView = NewProductView(testProd: $draftNewProduct)
+		let button = PresentationButton(Button(action: { }) {
+			VStack(alignment: .leading) {
+				HStack {
+					Image(systemName: "bag.badge.plus")
+						.imageScale(.large)
+						.padding()
+
+					Text("Add Product")
+				}
+			}
+		}, destination: newProdView)
+		return button
 	}
 }
 

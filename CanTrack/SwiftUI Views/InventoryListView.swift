@@ -17,57 +17,13 @@ struct InventoryListView : View {
 //	@ObjectBinding var productStore = ProductStore(products: testData)
 	@EnvironmentObject var productStore: ProductStore
 
-	@State var newProduct: Product = Product.defaultProduct
-	@State var draftNewProduct: Product = Product.defaultProduct
+//	var newProduct: Product = Product.defaultProduct
+//	@State var draftNewProduct: Product = Product.defaultProduct
 
 	var body: some View {
 			List {
 				Section {
-					if $newProduct.value == $draftNewProduct.value {
-						PresentationButton(
-							Button(action: { }) {
-								VStack(alignment: .leading) {
-									HStack {
-										Image(systemName: "bag.badge.plus")
-											.imageScale(.large)
-											.padding()
-
-										Text("Add Product")
-									}
-								}
-							},
-							destination: NewProductView(testProd: $newProduct).environmentObject(UserData()).environmentObject(productStore).onDisappear(perform: {
-								self.draftNewProduct = Product.defaultProduct
-							}
-//								addNewProduct
-//								self.draftNewProduct = self.$newProduct.value
-								), onTrigger: {
-//								self.addNewProduct()
-						})
-
-					} else {
-						PresentationButton(
-							Button(action: { }) {
-								VStack(alignment: .leading) {
-									HStack {
-										Image(systemName: "bag.badge.plus")
-											.imageScale(.large)
-											.padding()
-
-										Text("Add Product")
-									}
-								}
-							},
-							destination: NewProductView(testProd: $draftNewProduct).environmentObject(UserData()).environmentObject(productStore).onDisappear(perform: {
-								self.draftNewProduct = Product.defaultProduct
-							}
-								//								addNewProduct
-								//								self.draftNewProduct = self.$newProduct.value
-							), onTrigger: {
-
-						})
-					}
-
+					self.makeNewProductPresentationButton()
 				}
 				Section {
 					ForEach(productStore.products) { product in
@@ -86,11 +42,13 @@ struct InventoryListView : View {
 	}
 
 	func addNewProduct() {
-		productStore.products.append(draftNewProduct)
+//		productStore.products.append($draftNewProduct.value)
 	}
 
-	func makeNewProductPresentationButton(to newProduct: Product) -> some View {
-		let newProdView = NewProductView(testProd: $draftNewProduct)
+	func makeNewProductPresentationButton() -> some View {
+
+
+		let newProdView = NewProductView().environmentObject(UserData()).environmentObject(productStore)
 		let button = PresentationButton(Button(action: { }) {
 			VStack(alignment: .leading) {
 				HStack {

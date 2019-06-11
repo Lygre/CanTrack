@@ -17,7 +17,7 @@ struct NewProductView : View {
 //	@Binding var type: Product
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
-	@Binding var testProd: Product
+	@State var testProd: Product = Product.defaultProduct
 	
 
 	var body: some View {

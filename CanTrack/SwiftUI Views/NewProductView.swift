@@ -17,7 +17,7 @@ struct NewProductView : View {
 //	@Binding var type: Product
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
-	@State var testProd: Product = Product.defaultProduct
+	@State var testProd: Product = ProductStore.defaultProduct
 	
 
 	var body: some View {
@@ -63,18 +63,19 @@ struct NewProductView : View {
 				}.listStyle(.grouped).onDisappear {
 					self.createProduct()
 			}
-			Text("Placeholder")
+
+
 				.navigationBarItems(leading: Text("Cancel").color(.red), trailing: Button(action: {
 					self.createProduct()
 
 				}, label: {
 					Text("Save")
-					.color(.blue)
+						.color(.blue)
 				}))
-			.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
+				.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
 			}.foregroundColor(Color.green)
 
-//			.navigationBarTitle(Text("Add New Product"))
+		//			.navigationBarTitle(Text("Add New Product"))
 	}
 
 	func createProduct() {
@@ -86,10 +87,10 @@ struct NewProductView : View {
 
 }
 
-//#if DEBUG
-//struct NewProductView_Previews : PreviewProvider {
-//    static var previews: some View {
-//		NewProductView(test).environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
-//    }
-//}
-//#endif
+#if DEBUG
+struct NewProductView_Previews : PreviewProvider {
+    static var previews: some View {
+		NewProductView().environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
+    }
+}
+#endif

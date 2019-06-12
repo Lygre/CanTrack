@@ -8,19 +8,17 @@
 
 import SwiftUI
 import Combine
+
 let testData = defaultProducts.products
 
 
 struct InventoryListView : View {
-//	@EnvironmentObject var userData: UserData
-//	@EnvironmentObject var productStore: ProductStore
-//	@ObjectBinding var productStore = ProductStore(products: testData)
 	@EnvironmentObject var productStore: ProductStore
-
-//	var newProduct: Product = Product.defaultProduct
-//	@State var draftNewProduct: Product = Product.defaultProduct
+	@State var focusedContext: Bool = false
+	@State var focusedProduct: Product = nil
 
 	var body: some View {
+		ZStack(alignment: Alignment.center) {
 			List {
 				Section {
 					self.makeNewProductPresentationButton()
@@ -28,12 +26,30 @@ struct InventoryListView : View {
 				Section {
 					ForEach(productStore.products) { product in
 						NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
-						}
+							
+							}.longPressAction({
+								self.focusedProduct = product
+								self.focusedContext.toggle()
+							})
 					}
-//					.onDelete(perform: deleteProduct())
-				}
-				}.listStyle(.grouped)
 
+					}
+
+				}
+				.listStyle(.grouped)
+				.tapAction {
+					if self.$focusedContext.value == true { self.focusedContext.toggle() }
+				}.blur(radius: Length(integerLiteral: focusedContext ? 4 : 0))
+			focusedContext ?
+				VStack(alignment: .leading) {
+					ProductRow(product: $focusedProduct.value!)
+					.frame(minWidth: 180, idealWidth: 220, maxWidth: 230, minHeight: 100, idealHeight: 200, maxHeight: 300, alignment: Alignment.bottomLeading)
+					ContextMenu()
+					.frame(minWidth: 180, idealWidth: 220, maxWidth: 230, minHeight: 100, idealHeight: 200, maxHeight: 300, alignment: Alignment.bottomLeading)
+				}
+				.padding()
+				: nil
+		}
 	}
 
 	func deleteProduct(at offsets: IndexSet) {
@@ -45,11 +61,18 @@ struct InventoryListView : View {
 //		productStore.products.append($draftNewProduct.value)
 	}
 
+	func presentContextMenu(button: NavigationButton<ProductRow, ProductDetailView>) -> some View {
+
+		let stack = ZStack(alignment: .center, content: {
+			button
+			ContextMenu()
+		})
+		return stack
+	}
+
 	func makeNewProductPresentationButton() -> some View {
-
-
 		let newProdView = NewProductView().environmentObject(UserData()).environmentObject(productStore)
-		let button = PresentationButton(Button(action: { }) {
+		let button = PresentationButton(
 			VStack(alignment: .leading) {
 				HStack {
 					Image(systemName: "bag.badge.plus")
@@ -58,10 +81,21 @@ struct InventoryListView : View {
 
 					Text("Add Product")
 				}
-			}
+
 		}, destination: newProdView)
 		return button
 	}
+
+	func makeContextMenu() -> UIMenu<UIAction> {
+		let dose = UIAction(__title: "Dose with Product", image: UIImage(systemName: "smoke"), options: []) { action in
+			//show system share sheet
+
+		}
+		return UIMenu<UIAction>.create(title: "Dose", children: [dose])
+	}
+
+
+
 }
 
 #if DEBUG

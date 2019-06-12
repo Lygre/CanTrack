@@ -28,6 +28,8 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 		}
 	}
 
+	static let defaultProduct = Product(strain: Strain.default, productType: .rosin)
+
 	enum CodingKeys: String, CodingKey {
 		case products
 	}

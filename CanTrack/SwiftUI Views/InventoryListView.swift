@@ -19,7 +19,7 @@ struct InventoryListView : View {
 	@State var testProd: Product = {
 		return ProductStore.defaultProduct
 	}()
-	@State var draftNewProd: Product = ProductStore.defaultProduct
+	private var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
 		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(UserData()).environmentObject(productStore), onDismiss: {
@@ -32,7 +32,6 @@ struct InventoryListView : View {
 
 
 	var body: some View {
-		NavigationView {
 		ZStack(alignment: Alignment.center) {
 			List {
 				Section {
@@ -50,6 +49,28 @@ struct InventoryListView : View {
 						})
 				}
 				Section {
+					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: true) {
+						HStack(alignment: .center) {
+							/*
+
+							ForEach(productStore.products.identified(by: \.id)) { product in
+								ProductImageViewCircular(product: product)
+									.scaledToFit()
+							}
+							*/
+							ForEach(Product.ProductType.allCases.identified(by: \.hashValue)) { type in
+								HStack {
+									Text(type.rawValue)
+									Image(systemName: "smoke")
+								}
+								.padding()
+
+							}
+						}
+
+						}.lineLimit(nil).frame(width: 360, height: 90, alignment: .center)
+				}
+				Section {
 					ForEach(productStore.products) { product in
 						NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
 							
@@ -61,7 +82,7 @@ struct InventoryListView : View {
 
 		}
 			.presentation(isModal ? modal : nil)
-		}
+
 	}
 
 	func deleteProduct(at offsets: IndexSet) {

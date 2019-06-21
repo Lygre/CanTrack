@@ -23,8 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let window = UIWindow(frame: UIScreen.main.bounds)
 
 		window.rootViewController = UIHostingController(rootView: NavigationView(root: {
-			HomeView(selection: 1)
-		}))
+			HomeView()
+		}).environmentObject(UserData()).environmentObject(ProductStore(products: testData)))
 		self.window = window
 		window.makeKeyAndVisible()
 	}

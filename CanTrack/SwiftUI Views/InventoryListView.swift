@@ -19,6 +19,10 @@ struct InventoryListView : View {
 	@State var testProd: Product = {
 		return ProductStore.defaultProduct
 	}()
+
+	@State var activeFilterType: Product.ProductType = nil
+	@State var isFiltered: Bool = false
+
 	private var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
@@ -51,36 +55,59 @@ struct InventoryListView : View {
 				Section {
 					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: true) {
 						HStack(alignment: .center) {
-							/*
-
-							ForEach(productStore.products.identified(by: \.id)) { product in
-								ProductImageViewCircular(product: product)
-									.scaledToFit()
-							}
-							*/
-							ForEach(Product.ProductType.allCases.identified(by: \.hashValue)) { type in
+							Button(action: {
+								self.activeFilterType = nil
+								self.isFiltered = false
+							}) {
 								HStack {
-									Text(type.rawValue)
+									Text("None")
 									Image(systemName: "smoke")
+									}
+									.padding()
+									.background(Color.green)
+									.clipShape(RoundedRectangle(cornerRadius: 8), style: FillStyle.init(eoFill: true, antialiased: false))
+									.border(Color.black, cornerRadius: 8)
+							}
+							ForEach(Product.ProductType.allCases.identified(by: \.hashValue)) { type in
+								Button(action: {
+									self.activeFilterType = Product.ProductType.init(rawValue: type.rawValue)
+									self.isFiltered = true
+								}) {
+									HStack {
+										Text(type.rawValue)
+										Image(systemName: "smoke")
+										}
+										.padding()
+										.background(Color.green)
+										.clipShape(RoundedRectangle(cornerRadius: 8), style: FillStyle.init(eoFill: true, antialiased: false))
+										.border(Color.black, cornerRadius: 8)
 								}
-								.padding()
-
 							}
 						}
 
-						}.lineLimit(nil).frame(width: 360, height: 90, alignment: .center)
+						}.lineLimit(nil).frame(width: 360, height: 55, alignment: .center)
 				}
 				Section {
-					ForEach(productStore.products) { product in
-						NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
-							
+					if !$isFiltered.value {
+						ForEach(productStore.products) { product in
+							NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
+
+							}
+						}
+					} else {
+						ForEach(productStore.products.compactMap({ (someProduct) -> Product in
+							return someProduct
+						})) { product in
+							NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
+
+							}
 						}
 					}
 				}
 				}
 				.listStyle(.grouped)
 
-		}
+			}
 			.presentation(isModal ? modal : nil)
 
 	}
@@ -119,10 +146,10 @@ struct InventoryListView : View {
 
 #if DEBUG
 struct InventoryListView_Previews : PreviewProvider {
-    static var previews: some View {
+	static var previews: some View {
 		NavigationView {
 			InventoryListView().environmentObject(ProductStore(products: defaultProducts.products)).environmentObject(UserData())
 		}
-    }
+	}
 }
 #endif

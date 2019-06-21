@@ -14,21 +14,82 @@ let testData = defaultProducts.products
 
 struct InventoryListView : View {
 	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var userData: UserData
 	@State var isModal: Bool = false
-
+	@State var testProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
-		Modal(NewProductView().environmentObject(UserData()).environmentObject(productStore)) {
-			self.isModal = false
-		}
+		Modal(NewProductView(isPresented: $isModal).environmentObject(UserData()).environmentObject(productStore), onDismiss: {
+//			self.isModal.toggle()
+		})
+	}
+
+	var modalPresentation: some View {
+		NavigationView {
+			List {
+				Group {
+					Section(header: Text("Type, Strain, and Mass")) {
+
+						HStack {
+							Picker(selection: self.$testProd.productType, label: Text("Product Type")) {
+								ForEach(Product.ProductType.allCases.identified(by: \.identifiedValue)) { type in
+									Text(type.rawValue).tag(type)
+								}
+							}
+						}
+						//Strain Picker cannot be fully implemented right now
+						HStack {
+							Picker(selection: $testProd.strain, label: Text("Product Strain")) {
+								ForEach($userData.strains.value) { strain in
+									Text(strain.name).tag(strain)
+								}
+
+							}
+						}
+
+						HStack {
+							Text("Mass")
+							Spacer()
+							VStack {
+								TextField(self.$testProd.mass, placeholder: Text("Mass"), onEditingChanged: { (editingChangedText) in
+
+								}, onCommit: {
+
+								})
+									.textFieldStyle(.roundedBorder)
+							}
+						}
+
+					}
+
+				}
+				}.listStyle(.grouped).onDisappear {
+					self.createProduct()
+				}
+
+
+				.navigationBarItems(leading: Button(action: {
+					self.isModal = false
+				}, label: {
+					Text("Cancel")
+						.color(.red)
+				}), trailing: Button(action: {
+					self.createProduct()
+				}, label: {
+					Text("Save")
+						.color(.blue)
+				}))
+				.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
+			}.foregroundColor(Color.green)
 	}
 
 	var body: some View {
+		NavigationView {
 		ZStack(alignment: Alignment.center) {
 			List {
 				Section {
 					Button(action: {
-						self.isModal = true
+						self.isModal.toggle()
 					}, label: {
 						VStack(alignment: .leading) {
 							HStack {
@@ -39,7 +100,6 @@ struct InventoryListView : View {
 							}
 						}
 						})
-						.presentation(isModal ? modal : nil)
 				}
 				Section {
 					ForEach(productStore.products) { product in
@@ -52,6 +112,10 @@ struct InventoryListView : View {
 				.listStyle(.grouped)
 
 		}
+			.presentation(isModal ? Modal(modalPresentation, onDismiss: {
+				self.isModal.toggle()
+			}) : nil)
+		}
 	}
 
 	func deleteProduct(at offsets: IndexSet) {
@@ -63,6 +127,10 @@ struct InventoryListView : View {
 //		productStore.products.append($draftNewProduct.value)
 	}
 
+	func createProduct() {
+		productStore.products.append($testProd.value)
+	}
+
 	func presentContextMenu(button: NavigationButton<ProductRow, ProductDetailView>) -> some View {
 
 		let stack = ZStack(alignment: Alignment.center, content: {
@@ -72,21 +140,7 @@ struct InventoryListView : View {
 		return stack
 	}
 
-	func makeNewProductPresentationButton() -> some View {
-		let newProdView = NewProductView().environmentObject(UserData()).environmentObject(productStore)
-		let button = PresentationButton(destination: NewProductView().environmentObject(UserData()).environmentObject(productStore)) {
-			VStack(alignment: .leading) {
-				HStack {
-					Image(systemName: "bag.badge.plus")
-						.imageScale(.large)
-						.padding()
 
-					Text("Add Product")
-				}
-			}
-		}
-		return button
-	}
 
 	func makeContextMenu() -> UIMenu {
 		let dose = UIAction(__title: "Dose with Product", image: UIImage(systemName: "smoke"), options: []) { action in

@@ -18,7 +18,7 @@ struct NewProductView : View {
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
 	@State var testProd: Product = ProductStore.defaultProduct
-	
+	@Binding var isPresented: Bool
 
 	var body: some View {
 		NavigationView {
@@ -65,7 +65,7 @@ struct NewProductView : View {
 			}
 
 
-				.navigationBarItems(leading: Text("Cancel").color(.red), trailing: Button(action: {
+				.navigationBarItems(leading: Button(action: { self.isPresented.toggle() }, label: { Text("Cancel").color(.red)}), trailing: Button(action: {
 					self.createProduct()
 
 				}, label: {
@@ -74,8 +74,6 @@ struct NewProductView : View {
 				}))
 				.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
 			}.foregroundColor(Color.green)
-
-		//			.navigationBarTitle(Text("Add New Product"))
 	}
 
 	func createProduct() {
@@ -87,10 +85,10 @@ struct NewProductView : View {
 
 }
 
-#if DEBUG
-struct NewProductView_Previews : PreviewProvider {
-    static var previews: some View {
-		NewProductView().environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
-    }
-}
-#endif
+//#if DEBUG
+//struct NewProductView_Previews : PreviewProvider {
+//    static var previews: some View {
+//		NewProductView().environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
+//    }
+//}
+//#endif

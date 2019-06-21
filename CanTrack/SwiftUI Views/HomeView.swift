@@ -11,8 +11,8 @@ import Combine
 //let productStore = ProductStore()
 
 struct HomeView : View {
-//	@EnvironmentObject var userData: UserData
-//	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var userData: UserData
+	@EnvironmentObject var productStore: ProductStore
 
 	@State var selection: Int
 	
@@ -41,7 +41,7 @@ struct HomeView_Previews : PreviewProvider {
     static var previews: some View {
 		NavigationView {
 			HomeView(selection: 1)
-		}
+		}.environmentObject(UserData()).environmentObject(ProductStore(products: testData))
     }
 }
 #endif

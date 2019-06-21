@@ -28,6 +28,20 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 		}
 	}
 
+	var productTypes: [Product.ProductType] {
+		get {
+			let inventory = self.products
+			var categories: Set<Product.ProductType> = []
+			for product in inventory {
+				categories.insert(product.productType)
+			}
+			return Array(categories).sorted(by: { $0.rawValue < $1.rawValue })
+		}
+		set {
+			print("product Type array has been set")
+		}
+	}
+
 	static let defaultProduct = Product(strain: Strain.default, productType: .rosin)
 
 	enum CodingKeys: String, CodingKey {

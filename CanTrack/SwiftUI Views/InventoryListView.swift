@@ -56,8 +56,8 @@ struct InventoryListView : View {
 					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: true) {
 						HStack(alignment: .center) {
 							Button(action: {
-								self.activeFilterType = nil
 								self.isFiltered = false
+								self.activeFilterType = nil
 							}) {
 								HStack {
 									Text("None")
@@ -68,9 +68,9 @@ struct InventoryListView : View {
 									.clipShape(RoundedRectangle(cornerRadius: 8), style: FillStyle.init(eoFill: true, antialiased: false))
 									.border(Color.black, cornerRadius: 8)
 							}
-							ForEach(Product.ProductType.allCases.identified(by: \.hashValue)) { type in
+							ForEach(productStore.productTypes.identified(by: \.hashValue)) { type in
 								Button(action: {
-									self.activeFilterType = Product.ProductType.init(rawValue: type.rawValue)
+									self.activeFilterType = type
 									self.isFiltered = true
 								}) {
 									HStack {
@@ -88,7 +88,7 @@ struct InventoryListView : View {
 						}.lineLimit(nil).frame(width: 360, height: 55, alignment: .center)
 				}
 				Section {
-					if !$isFiltered.value {
+					if !isFiltered {
 						ForEach(productStore.products) { product in
 							NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
 
@@ -121,24 +121,7 @@ struct InventoryListView : View {
 		productStore.products.append($testProd.value)
 	}
 
-	func presentContextMenu(button: NavigationButton<ProductRow, ProductDetailView>) -> some View {
 
-		let stack = ZStack(alignment: Alignment.center, content: {
-			button
-
-		})
-		return stack
-	}
-
-
-
-	func makeContextMenu() -> UIMenu {
-		let dose = UIAction(__title: "Dose with Product", image: UIImage(systemName: "smoke"), options: []) { action in
-			//show system share sheet
-
-		}
-		return UIMenu(__title: "Dose Menu", image: UIImage(systemName: "smoke"), identifier: nil, children: [dose])
-	}
 
 
 

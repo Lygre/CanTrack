@@ -18,6 +18,9 @@ struct NewProductView : View {
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
 	@State var testProd: Product = ProductStore.defaultProduct
+
+	@Binding var draftProduct: Product
+
 	@Binding var isPresented: Bool
 
 	var body: some View {
@@ -27,7 +30,7 @@ struct NewProductView : View {
 					Section(header: Text("Type, Strain, and Mass")) {
 
 						HStack {
-							Picker(selection: self.$testProd.productType, label: Text("Product Type")) {
+							Picker(selection: self.$draftProduct.productType, label: Text("Product Type")) {
 								ForEach(Product.ProductType.allCases.identified(by: \.identifiedValue)) { type in
 									Text(type.rawValue).tag(type)
 								}
@@ -36,7 +39,7 @@ struct NewProductView : View {
 
 						//Strain Picker cannot be fully implemented right now
 						HStack {
-							Picker(selection: $testProd.strain, label: Text("Product Strain")) {
+							Picker(selection: $draftProduct.strain, label: Text("Product Strain")) {
 								ForEach($userData.strains.value) { strain in
 									Text(strain.name).tag(strain)
 								}
@@ -48,7 +51,7 @@ struct NewProductView : View {
 							Text("Mass")
 							Spacer()
 							VStack {
-								TextField(self.$testProd.mass, placeholder: Text("Mass"), onEditingChanged: { (editingChangedText) in
+								TextField(self.$draftProduct.mass, placeholder: Text("Mass"), onEditingChanged: { (editingChangedText) in
 
 								}, onCommit: {
 
@@ -60,13 +63,12 @@ struct NewProductView : View {
 					}
 
 				}
-				}.listStyle(.grouped).onDisappear {
-					self.createProduct()
-			}
+				}.listStyle(.grouped)
 
 
 				.navigationBarItems(leading: Button(action: { self.isPresented.toggle() }, label: { Text("Cancel").color(.red)}), trailing: Button(action: {
 					self.createProduct()
+					self.isPresented.toggle()
 
 				}, label: {
 					Text("Save")
@@ -74,10 +76,14 @@ struct NewProductView : View {
 				}))
 				.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
 			}.foregroundColor(Color.green)
+			.onDisappear {
+				self.draftProduct = self.testProd
+		}
 	}
 
 	func createProduct() {
-		productStore.products.append($testProd.value)
+//		draftProduct = $testProd.value
+		productStore.products.append($draftProduct.value)
 //		defaultProducts.products.insert(self.$testProd.value, at: 0)
 //		ProductStore().products.insert(self.$testProd.value, at: 0)
 
@@ -85,10 +91,10 @@ struct NewProductView : View {
 
 }
 
-//#if DEBUG
-//struct NewProductView_Previews : PreviewProvider {
-//    static var previews: some View {
-//		NewProductView().environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
-//    }
-//}
-//#endif
+#if DEBUG
+struct NewProductView_Previews : PreviewProvider {
+    static var previews: some View {
+		NewProductView(draftProduct: .constant(.defaultProduct), isPresented: .constant(true)).environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
+    }
+}
+#endif

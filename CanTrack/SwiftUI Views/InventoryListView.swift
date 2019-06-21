@@ -16,72 +16,20 @@ struct InventoryListView : View {
 	@EnvironmentObject var productStore: ProductStore
 	@EnvironmentObject var userData: UserData
 	@State var isModal: Bool = false
-	@State var testProd: Product = ProductStore.defaultProduct
+	@State var testProd: Product = {
+		return ProductStore.defaultProduct
+	}()
+	@State var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
-		Modal(NewProductView(isPresented: $isModal).environmentObject(UserData()).environmentObject(productStore), onDismiss: {
-//			self.isModal.toggle()
+		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(UserData()).environmentObject(productStore), onDismiss: {
+			self.isModal.toggle()
+			self.createProduct()
+			self.testProd = self.draftNewProd
 		})
+
 	}
 
-	var modalPresentation: some View {
-		NavigationView {
-			List {
-				Group {
-					Section(header: Text("Type, Strain, and Mass")) {
-
-						HStack {
-							Picker(selection: self.$testProd.productType, label: Text("Product Type")) {
-								ForEach(Product.ProductType.allCases.identified(by: \.identifiedValue)) { type in
-									Text(type.rawValue).tag(type)
-								}
-							}
-						}
-						//Strain Picker cannot be fully implemented right now
-						HStack {
-							Picker(selection: $testProd.strain, label: Text("Product Strain")) {
-								ForEach($userData.strains.value) { strain in
-									Text(strain.name).tag(strain)
-								}
-
-							}
-						}
-
-						HStack {
-							Text("Mass")
-							Spacer()
-							VStack {
-								TextField(self.$testProd.mass, placeholder: Text("Mass"), onEditingChanged: { (editingChangedText) in
-
-								}, onCommit: {
-
-								})
-									.textFieldStyle(.roundedBorder)
-							}
-						}
-
-					}
-
-				}
-				}.listStyle(.grouped).onDisappear {
-					self.createProduct()
-				}
-
-
-				.navigationBarItems(leading: Button(action: {
-					self.isModal = false
-				}, label: {
-					Text("Cancel")
-						.color(.red)
-				}), trailing: Button(action: {
-					self.createProduct()
-				}, label: {
-					Text("Save")
-						.color(.blue)
-				}))
-				.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
-			}.foregroundColor(Color.green)
-	}
 
 	var body: some View {
 		NavigationView {
@@ -112,19 +60,13 @@ struct InventoryListView : View {
 				.listStyle(.grouped)
 
 		}
-			.presentation(isModal ? Modal(modalPresentation, onDismiss: {
-				self.isModal.toggle()
-			}) : nil)
+			.presentation(isModal ? modal : nil)
 		}
 	}
 
 	func deleteProduct(at offsets: IndexSet) {
 
 		productStore.products.remove(at: offsets.count)
-	}
-
-	func addNewProduct() {
-//		productStore.products.append($draftNewProduct.value)
 	}
 
 	func createProduct() {

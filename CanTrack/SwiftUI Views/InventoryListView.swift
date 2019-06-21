@@ -53,15 +53,15 @@ struct InventoryListView : View {
 						})
 				}
 				Section {
-					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: true) {
+					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {
 						HStack(alignment: .center) {
 							Button(action: {
 								self.isFiltered = false
 								self.activeFilterType = nil
 							}) {
 								HStack {
-									Text("None")
-									Image(systemName: "smoke")
+									Text("Clear")
+									Image(systemName: "clear")
 									}
 									.padding()
 									.background(Color.green)

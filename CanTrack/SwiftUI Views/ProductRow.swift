@@ -55,7 +55,7 @@ struct ProductRow : View {
 #if DEBUG
 struct ProductRow_Previews : PreviewProvider {
     static var previews: some View {
-        ProductRow(product: ProductStore(products: defaultProducts.products).products[0])
+        ProductRow(product: ProductStore(products: defaultProducts.products).products[1])
 
     }
 }

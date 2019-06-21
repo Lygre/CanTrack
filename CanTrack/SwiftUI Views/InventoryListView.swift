@@ -95,8 +95,8 @@ struct InventoryListView : View {
 							}
 						}
 					} else {
-						ForEach(productStore.products.compactMap({ (someProduct) -> Product in
-							return someProduct
+						ForEach(productStore.products.compactMap({ (someProduct) -> Product? in
+							return (someProduct.productType == activeFilterType!) ? someProduct : nil
 						})) { product in
 							NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
 
@@ -148,7 +148,7 @@ struct InventoryListView : View {
 struct InventoryListView_Previews : PreviewProvider {
 	static var previews: some View {
 		NavigationView {
-			InventoryListView().environmentObject(ProductStore(products: defaultProducts.products)).environmentObject(UserData())
+			InventoryListView().environmentObject(defaultProducts).environmentObject(UserData())
 		}
 	}
 }

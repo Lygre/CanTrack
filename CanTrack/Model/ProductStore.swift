@@ -12,7 +12,7 @@ import SwifterSwift
 
 let defaultProducts = ProductStore(products: [
 	Product(strain: Strain(name: "Strawberry Switchblade", race: .hybrid, description: nil), productType: .truShatter),
-	Product(strain: Strain(name: "Sour Diesel", race: .sativa, description: nil), productType: .truShatter)
+	Product(strain: Strain(name: "Sour Diesel", race: .sativa, description: nil), productType: .truFlower)
 	])
 
 

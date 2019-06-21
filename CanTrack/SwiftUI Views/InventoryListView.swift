@@ -14,40 +14,43 @@ let testData = defaultProducts.products
 
 struct InventoryListView : View {
 	@EnvironmentObject var productStore: ProductStore
-	@State var focusedContext: Bool = false
-	@State var focusedProduct: Product = nil
+	@State var isModal: Bool = false
+
+
+	var modal: Modal {
+		Modal(NewProductView().environmentObject(UserData()).environmentObject(productStore)) {
+			self.isModal = false
+		}
+	}
 
 	var body: some View {
 		ZStack(alignment: Alignment.center) {
 			List {
 				Section {
-					self.makeNewProductPresentationButton()
+					Button(action: {
+						self.isModal = true
+					}, label: {
+						VStack(alignment: .leading) {
+							HStack {
+								Image(systemName: "bag.badge.plus")
+									.imageScale(.large)
+									.padding()
+								Text("Add Product")
+							}
+						}
+						})
+						.presentation(isModal ? modal : nil)
 				}
 				Section {
 					ForEach(productStore.products) { product in
 						NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
 							
-							}.longPressAction({
-								self.focusedProduct = product
-								self.focusedContext.toggle()
-							})
+						}
 					}
-
-					}
-
+				}
 				}
 				.listStyle(.grouped)
-				.tapAction {
-					if self.$focusedContext.value == true { self.focusedContext.toggle() }
-				}
-			focusedContext ?
-				VStack(alignment: HorizontalAlignment.leading) {
-					ProductRow(product: $focusedProduct.value!)
-					.frame(minWidth: 180, idealWidth: 220, maxWidth: 230, minHeight: 100, idealHeight: 200, maxHeight: 300, alignment: Alignment.bottomLeading)
-					Image(systemName: "smoke")
-				}
-				.padding()
-				: nil
+
 		}
 	}
 
@@ -71,7 +74,7 @@ struct InventoryListView : View {
 
 	func makeNewProductPresentationButton() -> some View {
 		let newProdView = NewProductView().environmentObject(UserData()).environmentObject(productStore)
-		let button = PresentationButton(destination: newProdView) {
+		let button = PresentationButton(destination: NewProductView().environmentObject(UserData()).environmentObject(productStore)) {
 			VStack(alignment: .leading) {
 				HStack {
 					Image(systemName: "bag.badge.plus")
@@ -100,7 +103,9 @@ struct InventoryListView : View {
 #if DEBUG
 struct InventoryListView_Previews : PreviewProvider {
     static var previews: some View {
-        InventoryListView().environmentObject(ProductStore(products: defaultProducts.products))
+		NavigationView {
+			InventoryListView().environmentObject(ProductStore(products: defaultProducts.products)).environmentObject(UserData())
+		}
     }
 }
 #endif

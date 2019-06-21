@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F73266222B03F6600583F81 /* ContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F73266122B03F6600583F81 /* ContextMenu.swift */; };
 		9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB622AD967100B82C22 /* AppDelegate.swift */; };
 		9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBA22AD967100B82C22 /* HomeView.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9F73266122B03F6600583F81 /* ContextMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContextMenu.swift; sourceTree = "<group>"; };
 		9FBE5FB322AD967100B82C22 /* CanTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBE5FB622AD967100B82C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				9FD2967A22ADD5C000C73496 /* StrainsView.swift */,
 				9FBE5FBA22AD967100B82C22 /* HomeView.swift */,
 				9FBE5FE522ADA4B700B82C22 /* NewProductView.swift */,
-				9F73266122B03F6600583F81 /* ContextMenu.swift */,
 				9FBE5FE422ADA4B700B82C22 /* ProductDetailView.swift */,
 				9FBE5FE322ADA4B700B82C22 /* ProductImageViewCircular.swift */,
 				9FBE5FE622ADA4B700B82C22 /* ProductRow.swift */,
@@ -289,7 +286,6 @@
 				9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */,
 				9FD2967E22ADD5C000C73496 /* CalendarView.swift in Sources */,
 				9FBE5FE122AD988700B82C22 /* Strain.swift in Sources */,
-				9F73266222B03F6600583F81 /* ContextMenu.swift in Sources */,
 				9FBE5FDC22AD971800B82C22 /* UserDefaultsValue.swift in Sources */,
 				9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */,
 				9FD2967C22ADD5C000C73496 /* ProductTypeOptionsList.swift in Sources */,

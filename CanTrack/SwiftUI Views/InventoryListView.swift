@@ -39,13 +39,12 @@ struct InventoryListView : View {
 				.listStyle(.grouped)
 				.tapAction {
 					if self.$focusedContext.value == true { self.focusedContext.toggle() }
-				}.blur(radius: Length(integerLiteral: focusedContext ? 4 : 0))
+				}
 			focusedContext ?
-				VStack(alignment: .leading) {
+				VStack(alignment: HorizontalAlignment.leading) {
 					ProductRow(product: $focusedProduct.value!)
 					.frame(minWidth: 180, idealWidth: 220, maxWidth: 230, minHeight: 100, idealHeight: 200, maxHeight: 300, alignment: Alignment.bottomLeading)
-					ContextMenu()
-					.frame(minWidth: 180, idealWidth: 220, maxWidth: 230, minHeight: 100, idealHeight: 200, maxHeight: 300, alignment: Alignment.bottomLeading)
+					Image(systemName: "smoke")
 				}
 				.padding()
 				: nil
@@ -63,16 +62,16 @@ struct InventoryListView : View {
 
 	func presentContextMenu(button: NavigationButton<ProductRow, ProductDetailView>) -> some View {
 
-		let stack = ZStack(alignment: .center, content: {
+		let stack = ZStack(alignment: Alignment.center, content: {
 			button
-			ContextMenu()
+
 		})
 		return stack
 	}
 
 	func makeNewProductPresentationButton() -> some View {
 		let newProdView = NewProductView().environmentObject(UserData()).environmentObject(productStore)
-		let button = PresentationButton(
+		let button = PresentationButton(destination: newProdView) {
 			VStack(alignment: .leading) {
 				HStack {
 					Image(systemName: "bag.badge.plus")
@@ -81,17 +80,17 @@ struct InventoryListView : View {
 
 					Text("Add Product")
 				}
-
-		}, destination: newProdView)
+			}
+		}
 		return button
 	}
 
-	func makeContextMenu() -> UIMenu<UIAction> {
+	func makeContextMenu() -> UIMenu {
 		let dose = UIAction(__title: "Dose with Product", image: UIImage(systemName: "smoke"), options: []) { action in
 			//show system share sheet
 
 		}
-		return UIMenu<UIAction>.create(title: "Dose", children: [dose])
+		return UIMenu(__title: "Dose Menu", image: UIImage(systemName: "smoke"), identifier: nil, children: [dose])
 	}
 
 

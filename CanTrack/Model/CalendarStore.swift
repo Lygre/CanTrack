@@ -98,3 +98,28 @@ class CalendarStore: Equatable, Hashable, Codable, BindableObject {
 	}
 
 }
+
+extension CalendarStore {
+
+	func weekDates(from weekNum: Int) -> [Date] {
+		guard let startDate = try Date(components: DateComponents(month: activeMonth.rawValue), region: nil) else {
+			return []
+		}
+		let startDateBase = startDate.dateByAdding(weekNum, .weekOfMonth)
+		let startDateToReturn = startDateBase.dateAtStartOf(.weekOfMonth)
+		let endDateToReturn = startDateBase.dateAtEndOf(.weekOfMonth)
+
+		var cmp = DateComponents()
+		cmp.timeZone = .current
+		cmp.calendar = .current
+		cmp.calendar?.locale = .current
+		cmp.year = CalendarStore.currentDate.year
+		cmp.month = self.activeMonth.rawValue
+		cmp.day = startDateBase.day
+		cmp.hour = 2
+		cmp.minute = 2
+		return Date.enumerateDates(from: startDateToReturn.date, to: endDateToReturn.date, increment: DateComponents(day: 1))
+	}
+
+
+}

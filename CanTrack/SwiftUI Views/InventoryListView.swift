@@ -27,7 +27,7 @@ struct InventoryListView : View {
 	private var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
-		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(userData).environmentObject(productStore), onDismiss: {
+		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(userData).environmentObject(productStore).environmentObject(strainStore), onDismiss: {
 			self.isModal.toggle()
 		})
 	}

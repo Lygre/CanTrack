@@ -13,6 +13,7 @@ import Combine
 struct NewProductView : View {
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var strainStore: StrainStore
 
 	@State var testProd: Product = ProductStore.defaultProduct
 
@@ -37,7 +38,7 @@ struct NewProductView : View {
 						//Strain Picker cannot be fully implemented right now
 						HStack {
 							Picker(selection: $draftProduct.strain, label: Text("Product Strain")) {
-								ForEach($userData.strains.value) { strain in
+								ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
 									Text(strain.name).tag(strain)
 								}
 

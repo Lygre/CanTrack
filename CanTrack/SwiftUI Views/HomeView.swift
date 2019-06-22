@@ -13,6 +13,7 @@ import Combine
 struct HomeView : View {
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
+//	@EnvironmentObject var strainStore: StrainStore
 
 	@State private var selection: Int = 2
 	

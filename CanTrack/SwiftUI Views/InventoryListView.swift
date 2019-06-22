@@ -88,24 +88,22 @@ struct InventoryListView : View {
 						}
 
 						}.lineLimit(nil).frame(height: 55)
-//						.frame(width: 360, height: 55, alignment: .center)
 				}
 				Section {
-					if !isFiltered {
+					!isFiltered ?
 						ForEach(productStore.products.identified(by: \.identifiedValue)) { product in
-							NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
-
+							NavigationButton(destination: ProductDetailView(product: product)) {
+								ProductRow(product: product)
 							}
 						}
-					} else {
+						:
 						ForEach(productStore.products.compactMap({ (someProduct) -> Product? in
 							return (someProduct.productType == activeFilterType!) ? someProduct : nil
 						}).identified(by: \.identifiedValue)) { product in
-							NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
-
+							NavigationButton(destination: ProductDetailView(product: product)) {
+								ProductRow(product: product)
 							}
 						}
-					}
 				}
 				}
 				.listStyle(.grouped)

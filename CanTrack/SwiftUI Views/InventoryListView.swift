@@ -55,9 +55,15 @@ struct InventoryListView : View {
 						self.isFiltered = false
 						self.activeFilterType = nil
 					}) {
-						$activeFilterType.value == nil ?
-						nil :
-						Image(systemName: "xmark.circle.fill").imageScale(.large)
+
+							$activeFilterType.value == nil ?
+								nil :
+								HStack {
+									Spacer()
+								Text("Clear")
+									.font(.headline)
+								Image(systemName: "xmark.circle.fill").imageScale(.large)
+						}
 					}
 				) {
 					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {

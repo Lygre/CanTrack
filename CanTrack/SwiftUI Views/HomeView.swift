@@ -31,8 +31,6 @@ struct HomeView : View {
 			.navigationBarTitle(Text("Inventory"), displayMode: .large)
 	}
 
-
-
 }
 
 #if DEBUG

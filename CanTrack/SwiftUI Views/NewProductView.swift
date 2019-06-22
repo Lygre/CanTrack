@@ -11,12 +11,9 @@ import Combine
 
 
 struct NewProductView : View {
-
-	//basically bind this to our product to be created's properties
-//	@State var testProd: Product = Product.defaultProduct
-//	@Binding var type: Product
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
+
 	@State var testProd: Product = ProductStore.defaultProduct
 
 	@Binding var draftProduct: Product
@@ -66,19 +63,21 @@ struct NewProductView : View {
 				}.listStyle(.grouped)
 
 
-				.navigationBarItems(leading: Button(action: { self.isPresented.toggle() }, label: { Text("Cancel").color(.red)}), trailing: Button(action: {
-					self.createProduct()
-					self.isPresented.toggle()
-
-				}, label: {
+				.navigationBarItems(leading: Button(action: { self.isPresented.toggle() }, label: { Text("Cancel").color(.red)}), trailing: Button(action: addNewProductToStore, label: {
 					Text("Save")
 						.color(.blue)
 				}))
 				.navigationBarTitle(Text("Add New Product"), displayMode: .inline)
 			}.foregroundColor(Color.green)
 			.onDisappear {
-				self.draftProduct = self.testProd
+				self.draftProduct = ProductStore.defaultProduct
 		}
+	}
+
+	func addNewProductToStore() {
+		self.createProduct()
+		self.draftProduct = ProductStore.defaultProduct
+		self.isPresented.toggle()
 	}
 
 	func createProduct() {

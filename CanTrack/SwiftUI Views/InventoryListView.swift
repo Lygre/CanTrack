@@ -27,7 +27,7 @@ struct InventoryListView : View {
 	private var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
-		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(UserData()).environmentObject(productStore), onDismiss: {
+		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(userData).environmentObject(productStore), onDismiss: {
 			self.isModal.toggle()
 			self.createProduct()
 			self.testProd = self.draftNewProd
@@ -131,7 +131,7 @@ let store = ProductStore(products: testData)
 struct InventoryListView_Previews : PreviewProvider {
 	static var previews: some View {
 		NavigationView {
-			InventoryListView().environmentObject(store).environmentObject(UserData())
+			InventoryListView().environmentObject(store).environmentObject(userData)
 		}
 	}
 }

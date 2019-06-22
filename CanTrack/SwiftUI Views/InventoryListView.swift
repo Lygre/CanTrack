@@ -92,7 +92,7 @@ struct InventoryListView : View {
 				}
 				Section {
 					if !isFiltered {
-						ForEach(productStore.products.identified(by: \.id)) { product in
+						ForEach(productStore.products.identified(by: \.identifiedValue)) { product in
 							NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
 
 							}
@@ -100,7 +100,7 @@ struct InventoryListView : View {
 					} else {
 						ForEach(productStore.products.compactMap({ (someProduct) -> Product? in
 							return (someProduct.productType == activeFilterType!) ? someProduct : nil
-						}).identified(by: \.id)) { product in
+						}).identified(by: \.identifiedValue)) { product in
 							NavigationButton(destination: ProductDetailView(product: product)) { ProductRow(product: product)
 
 							}
@@ -132,12 +132,12 @@ struct InventoryListView : View {
 
 #if DEBUG
 
-
+let store = ProductStore(products: testData)
 
 struct InventoryListView_Previews : PreviewProvider {
 	static var previews: some View {
 		NavigationView {
-			InventoryListView().environmentObject(defaultProducts).environmentObject(UserData())
+			InventoryListView().environmentObject(store).environmentObject(UserData())
 		}
 	}
 }

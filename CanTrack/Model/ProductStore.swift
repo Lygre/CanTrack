@@ -50,6 +50,14 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 
 	init(products: [Product]) {
 		self.products = products
+		self.productTypes = {
+			let inventory = products
+			var categories: Set<Product.ProductType> = []
+			for product in inventory {
+				categories.insert(product.productType)
+			}
+			return Array(categories).sorted(by: { $0.rawValue < $1.rawValue })
+		}()
 	}
 
 

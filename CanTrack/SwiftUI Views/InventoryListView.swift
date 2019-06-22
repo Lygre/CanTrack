@@ -15,13 +15,14 @@ let testData = defaultProducts.products
 struct InventoryListView : View {
 	@EnvironmentObject var productStore: ProductStore
 	@EnvironmentObject var userData: UserData
-	@State var isModal: Bool = false
-	@State var testProd: Product = {
+
+	@State private var isModal: Bool = false
+	@State private var testProd: Product = {
 		return ProductStore.defaultProduct
 	}()
 
-	@State var activeFilterType: Product.ProductType = nil
-	@State var isFiltered: Bool = false
+	@State private var activeFilterType: Product.ProductType = nil
+	@State private var isFiltered: Bool = false
 
 	private var draftNewProd: Product = ProductStore.defaultProduct
 

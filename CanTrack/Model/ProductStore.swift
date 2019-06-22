@@ -19,12 +19,12 @@ let defaultProducts = ProductStore(products: [
 
 class ProductStore: Equatable, Hashable, Codable, BindableObject {
 
-	let didChange = PassthroughSubject<ProductStore, Never>()
+	let didChange = PassthroughSubject<Void, Never>()
 
 //	@UserDefaultValue(key: "ProductStore", defaultValue: )
 	var products: [Product] {
 		didSet {
-			didChange.send(self)
+			didChange.send()
 		}
 	}
 

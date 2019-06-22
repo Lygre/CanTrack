@@ -19,6 +19,7 @@
 		9F38134622BE43F7000A6D00 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134522BE43F7000A6D00 /* ParameterEncoding.swift */; };
 		9F38134822BE440B000A6D00 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */; };
 		9F38134A22BE4420000A6D00 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */; };
+		9F38134D22BEB989000A6D00 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 9F38134C22BEB989000A6D00 /* SwiftDate */; };
 		9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB622AD967100B82C22 /* AppDelegate.swift */; };
 		9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBA22AD967100B82C22 /* HomeView.swift */; };
@@ -98,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F38134D22BEB989000A6D00 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +270,7 @@
 			);
 			name = CanTrack;
 			packageProductDependencies = (
+				9F38134C22BEB989000A6D00 /* SwiftDate */,
 			);
 			productName = CanTrack;
 			productReference = 9FBE5FB322AD967100B82C22 /* CanTrack.app */;
@@ -321,6 +324,7 @@
 			mainGroup = 9FBE5FAA22AD967100B82C22;
 			packageReferences = (
 				9FD2968122ADE72700C73496 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+				9F38134B22BEB989000A6D00 /* XCRemoteSwiftPackageReference "SwiftDate" */,
 			);
 			productRefGroup = 9FBE5FB422AD967100B82C22 /* Products */;
 			projectDirPath = "";
@@ -656,6 +660,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		9F38134B22BEB989000A6D00 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:malcommac/SwiftDate.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.3;
+			};
+		};
 		9FD2968122ADE72700C73496 /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:SwifterSwift/SwifterSwift.git";
@@ -665,6 +677,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9F38134C22BEB989000A6D00 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F38134B22BEB989000A6D00 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9FBE5FAB22AD967100B82C22 /* Project object */;
 }

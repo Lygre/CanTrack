@@ -8,7 +8,7 @@
 //
 import SwiftUI
 import SwiftDate
-import SwifterSwift
+//import SwifterSwift
 
 class IdentRef {
 	let value: Int
@@ -27,27 +27,13 @@ extension Date: Identifiable {
 }
 
 
-var weekOneDateRange: [[Date]] = { () -> [Date] in
-	var dates: [Date] = []
-	let startDateOfMonth = Date().dateAtStartOf(.month)
-	let endDateOfMonth = Date().dateAtEndOf(.month)
-	return Date.enumerateDates(from: startDateOfMonth, to: endDateOfMonth, increment: DateComponents(day: 1))
-}().group(by: 7)!
 
 
-var monthToWeekRowDictionary: [Int: [Date]] = {
-	var returnDict: Dictionary<Int, Array<Date>> = [:]
 
-	for weekDateArray in weekOneDateRange {
-		let weekNumInMonth = weekDateArray[1].dateAtStartOf(.weekOfMonth).weekOfMonth
-		returnDict[weekNumInMonth] = weekNumInMonth == 1 ? Array(weekDateArray.dropFirst()) : weekDateArray
-	}
 
-	return returnDict
-}()
 
 struct CalendarView : View {
-
+//	@EnvironmentObject var dateFormatter: DateFormatter
 
 	var dateFormatter: DateFormatter = {
 		let dateFormatter = DateFormatter()
@@ -60,42 +46,11 @@ struct CalendarView : View {
 
 	var body: some View {
 		VStack(alignment: .center, spacing: 0) {
-			HStack(alignment: .firstTextBaseline, spacing: 0) {
-				Text("Mon")
-					.padding()
-				Text("Tue")
-					.padding()
-				Text("Wed")
-					.padding()
-				Text("Thu")
-					.padding()
-				Text("Fri")
-					.padding()
-				Text("Sat")
-					.padding()
-				Text("Sun")
-					.padding()
-				}
-				.font(.subheadline)
-				.background(Color.init("sativaColor"))
-				.layoutPriority(1)
-				.lineLimit(nil)
-				.scaledToFit()
-				.cornerRadius(20)
-
-			VStack(alignment: .center, spacing: 1) {
-				CalendarRowView(weekRowDateRange: monthToWeekRowDictionary[1]!)
-				CalendarRowView(weekRowDateRange: monthToWeekRowDictionary[2]!)
-				CalendarRowView(weekRowDateRange: monthToWeekRowDictionary[3]!)
-				CalendarRowView(weekRowDateRange: monthToWeekRowDictionary[4]!)
-				CalendarRowView(weekRowDateRange: monthToWeekRowDictionary[5]!)
-				}
-			.scaledToFit()
-
-			Spacer()
-			}
-//			.scaledToFit()
+			CalendarRowView(weekRowDateRange: [Date(), Date()])
+			CalendarRowView(weekRowDateRange: [Date(), Date()])
+		}
 	}
+
 }
 
 
@@ -104,18 +59,16 @@ struct CalendarRowView: View {
 	var weekRowDateRange: [Date]
 
 	var body: some View {
-		HStack(alignment: .center, spacing: 0) {
+		HStack(alignment: .firstTextBaseline, spacing: 0) {
 			ForEach(weekRowDateRange.identified(by: \.id)) { dayInWeek in
-				CalendarDateView(date: dayInWeek, dosesForDate: nil)
+				CalendarDateView(date: dayInWeek)
 					.padding(.trailing)
 					.padding(.leading)
-					Spacer()
-				.scaledToFill()
-			}
+			}.background(Color.init("indicaColor"))
 
 			}
-			.scaledToFill()
-			.background(Color.init("indicaColor")).scaledToFill()
+			.scaledToFit()
+
 
 	}
 }
@@ -126,24 +79,23 @@ struct CalendarDateView: View {
 
 	var date: Date
 	//change this to a binding in the model controller
-	var dosesForDate: [Dose]?
+	var dosesForDate: [Dose] = []
 
 	@State private var hasDoses: Bool = false
 
 	var body: some View {
 		VStack {
-			Text(date.string(withFormat: "d"))
+			Text(date.description(with: .current))
 				.padding(.top)
 				.padding(.bottom)
-			if !dosesForDate.isNilOrEmpty {
+			dosesForDate.isEmpty ? nil :
 				Image(systemName: "smoke")
 					.padding(.bottom)
 			}
-		}
-			.background(Color.init("indicaColor").opacity(0.7).scaledToFill())
+			.background(Color.init(strainVariety: .indica).opacity(0.7))
 			.aspectRatio(contentMode: .fill)
+		}
 
-	}
 }
 
 
@@ -157,11 +109,11 @@ struct CalendarView_Previews : PreviewProvider {
     }
 }
 
-//struct CalendarRowView_Previews : PreviewProvider {
-//	static var previews: some View {
-//		CalendarRowView(weekRowInt: 1)
-//	}
-//}
+struct CalendarRowView_Previews : PreviewProvider {
+	static var previews: some View {
+		CalendarRowView(weekRowDateRange: [Date()])
+	}
+}
 
 
 #endif

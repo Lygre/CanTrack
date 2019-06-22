@@ -20,6 +20,9 @@
 		9F38134822BE440B000A6D00 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */; };
 		9F38134A22BE4420000A6D00 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */; };
 		9F38134D22BEB989000A6D00 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 9F38134C22BEB989000A6D00 /* SwiftDate */; };
+		9F38134F22BEBAD1000A6D00 /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134E22BEBAD1000A6D00 /* Dose.swift */; };
+		9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
+		9F38135422BEC748000A6D00 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135322BEC748000A6D00 /* CalendarStore.swift */; };
 		9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB622AD967100B82C22 /* AppDelegate.swift */; };
 		9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBA22AD967100B82C22 /* HomeView.swift */; };
@@ -67,6 +70,9 @@
 		9F38134522BE43F7000A6D00 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
 		9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoding.swift; sourceTree = "<group>"; };
+		9F38134E22BEBAD1000A6D00 /* Dose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dose.swift; sourceTree = "<group>"; };
+		9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtensions.swift; sourceTree = "<group>"; };
+		9F38135322BEC748000A6D00 /* CalendarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarStore.swift; sourceTree = "<group>"; };
 		9FBE5FB322AD967100B82C22 /* CanTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBE5FB622AD967100B82C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +167,14 @@
 			path = Encoding;
 			sourceTree = "<group>";
 		};
+		9F38135022BEBF35000A6D00 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9FBE5FAA22AD967100B82C22 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +196,7 @@
 		9FBE5FB522AD967100B82C22 /* CanTrack */ = {
 			isa = PBXGroup;
 			children = (
+				9F38135022BEBF35000A6D00 /* Extensions */,
 				9F38133522BE431F000A6D00 /* Networking */,
 				9F38132D22BE37E7000A6D00 /* CanTrack.entitlements */,
 				9F38133222BE42F5000A6D00 /* Controllers */,
@@ -233,6 +248,8 @@
 				9FBE5FE022AD988700B82C22 /* Strain.swift */,
 				9FD2967F22ADE3D500C73496 /* ProductStore.swift */,
 				9F38133022BE3ED8000A6D00 /* StrainStore.swift */,
+				9F38134E22BEBAD1000A6D00 /* Dose.swift */,
+				9F38135322BEC748000A6D00 /* CalendarStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -369,10 +386,12 @@
 				9F38134A22BE4420000A6D00 /* JSONParameterEncoding.swift in Sources */,
 				9FD2967E22ADD5C000C73496 /* CalendarView.swift in Sources */,
 				9FBE5FE122AD988700B82C22 /* Strain.swift in Sources */,
+				9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */,
 				9FBE5FDC22AD971800B82C22 /* UserDefaultsValue.swift in Sources */,
 				9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */,
 				9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */,
 				9FD2967C22ADD5C000C73496 /* ProductTypeOptionsList.swift in Sources */,
+				9F38134F22BEBAD1000A6D00 /* Dose.swift in Sources */,
 				9FBE5FDA22AD96C800B82C22 /* UserData.swift in Sources */,
 				9FBE5FEA22ADA4B700B82C22 /* NewProductView.swift in Sources */,
 				9FBE5FE822ADA4B700B82C22 /* ProductImageViewCircular.swift in Sources */,
@@ -380,6 +399,7 @@
 				9FBE5FEB22ADA4B700B82C22 /* ProductRow.swift in Sources */,
 				9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */,
 				9F38134222BE43B6000A6D00 /* HTTPTask.swift in Sources */,
+				9F38135422BEC748000A6D00 /* CalendarStore.swift in Sources */,
 				9F38134622BE43F7000A6D00 /* ParameterEncoding.swift in Sources */,
 				9FBE5FDF22AD981E00B82C22 /* Product.swift in Sources */,
 				9F38134822BE440B000A6D00 /* URLParameterEncoding.swift in Sources */,

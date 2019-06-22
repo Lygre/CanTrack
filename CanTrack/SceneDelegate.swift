@@ -12,7 +12,8 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
-
+	var userData: UserData = UserData()
+	var productStore: ProductStore = ProductStore(products: testData)
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
 		// Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -24,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 		window.rootViewController = UIHostingController(rootView: NavigationView(root: {
 			HomeView()
-		}).environmentObject(UserData()).environmentObject(ProductStore(products: testData)))
+		}).environmentObject(userData).environmentObject(productStore))
 		self.window = window
 		window.makeKeyAndVisible()
 	}

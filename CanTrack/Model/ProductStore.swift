@@ -25,20 +25,20 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 	var products: [Product] {
 		didSet {
 			didChange.send()
+			self.productTypes = {
+				let inventory = self.products
+				var categories: Set<Product.ProductType> = []
+				for product in inventory {
+					categories.insert(product.productType)
+				}
+				return Array(categories).sorted(by: { $0.rawValue < $1.rawValue })
+			}()
 		}
 	}
 
-	var productTypes: [Product.ProductType] {
-		get {
-			let inventory = self.products
-			var categories: Set<Product.ProductType> = []
-			for product in inventory {
-				categories.insert(product.productType)
-			}
-			return Array(categories).sorted(by: { $0.rawValue < $1.rawValue })
-		}
-		set {
-			print("product Type array has been set")
+	var productTypes: [Product.ProductType] = [] {
+		didSet {
+			didChange.send()
 		}
 	}
 

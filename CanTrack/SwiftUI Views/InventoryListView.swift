@@ -52,7 +52,16 @@ struct InventoryListView : View {
 						}
 						})
 				}
-				Section(header: $activeFilterType.value == nil ? nil : Image(systemName: "xmark.circle.fill").imageScale(.large)) {
+				Section(header:
+					Button(action: {
+						self.isFiltered = false
+						self.activeFilterType = nil
+					}) {
+						$activeFilterType.value == nil ?
+						nil :
+						Image(systemName: "xmark.circle.fill").imageScale(.large)
+					}
+				) {
 					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {
 						HStack(alignment: .center) {
 

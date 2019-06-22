@@ -14,17 +14,19 @@ struct HomeView : View {
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
 
-	@State private var selection: Int = 0
+	@State private var selection: Int = 1
 	
 
 	var body: some View {
 		TabbedView(selection: $selection) {
-			InventoryListView().environmentObject(productStore).environmentObject(userData)
-				.tabItemLabel(Text("Inventory"))
-				.tag(0)
-			StrainsView().environmentObject(userData).environmentObject(productStore)
-				.tabItemLabel(Text("Strains"))
+			InventoryListView()
 				.tag(1)
+				.tabItemLabel(Text("Inventory"))
+
+			StrainsView().environmentObject(userData)
+				.tag(2)
+				.tabItemLabel(Text("Strains"))
+
 			}
 			.navigationBarTitle(Text("Inventory"), displayMode: .large)
 	}
@@ -34,11 +36,14 @@ struct HomeView : View {
 }
 
 #if DEBUG
+
+let userData = UserData()
+
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View {
 		NavigationView {
 			HomeView()
-		}.environmentObject(UserData()).environmentObject(ProductStore(products: testData))
+		}.environmentObject(userData).environmentObject(store)
     }
 }
 #endif

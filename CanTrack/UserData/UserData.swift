@@ -21,29 +21,46 @@ private let defaultStrains: [Strain] = [
 ]
 
 //final class UserData here
-final class UserData: BindableObject {
-	let didChange = PassthroughSubject<UserData, Never>()
-
-//	@UserDefaultValue(key: "Inventory", defaultValue: defaultProducts)
-//	var products: ProductStore {
-//		didSet {
-//			didChange.send(self)
-//		}
-//	}
-
-	@UserDefaultValue(key: "DefaultProduct", defaultValue: Product.defaultProduct)
-	var defaultProduct: Product {
-		willSet {
-			didChange.send(self)
-		}
+class UserData: BindableObject, Equatable, Hashable, Codable {
+	static func == (lhs: UserData, rhs: UserData) -> Bool {
+		return lhs.strains == rhs.strains
 	}
 
-	@UserDefaultValue(key: "Strains", defaultValue: defaultStrains)
-	var strains: [Strain] {
+	let didChange = PassthroughSubject<Void, Never>()
+
+	enum CodingKeys: String, CodingKey {
+		case strains
+	}
+
+	var strains: [Strain] = [] {
 		didSet {
-			didChange.send(self)
+			didChange.send()
 		}
 	}
 
+	func encode(to encoder: Encoder) throws {
+		var container = encoder.container(keyedBy: CodingKeys.self)
+		try container.encode(strains, forKey: .strains)
+	}
+
+	required init(from aDecoder: Decoder) {
+		do {
+			let values = try aDecoder.container(keyedBy: CodingKeys.self)
+			strains = try values.decode([Strain].self, forKey: .strains)
+		} catch {
+			strains = [
+
+			]
+			print(error)
+		}
+	}
+
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(strains)
+	}
+
+	init() {
+		self.strains = defaultStrains
+	}
 
 }

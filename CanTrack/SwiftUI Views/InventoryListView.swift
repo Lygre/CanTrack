@@ -79,13 +79,15 @@ struct InventoryListView : View {
 										}
 										.padding()
 										.background(Color.green)
-										.clipShape(RoundedRectangle(cornerRadius: 8), style: FillStyle.init(eoFill: true, antialiased: false))
+										.clipShape(RoundedRectangle(cornerRadius: 8), style: FillStyle.init(eoFill: false, antialiased: false))
 										.border(Color.black, cornerRadius: 8)
 								}
 							}
+							Spacer()
 						}
 
-						}.lineLimit(nil).frame(width: 360, height: 55, alignment: .center)
+						}.lineLimit(nil).frame(height: 55)
+//						.frame(width: 360, height: 55, alignment: .center)
 				}
 				Section {
 					if !isFiltered {

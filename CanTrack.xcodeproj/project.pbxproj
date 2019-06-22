@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */; };
+		9F38133122BE3ED8000A6D00 /* StrainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133022BE3ED8000A6D00 /* StrainStore.swift */; };
+		9F38133422BE4307000A6D00 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133322BE4307000A6D00 /* NetworkController.swift */; };
+		9F38133A22BE4369000A6D00 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133922BE4369000A6D00 /* NetworkRouter.swift */; };
+		9F38133C22BE437D000A6D00 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133B22BE437D000A6D00 /* Router.swift */; };
+		9F38133E22BE4393000A6D00 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133D22BE4393000A6D00 /* EndPointType.swift */; };
+		9F38134022BE43A8000A6D00 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133F22BE43A8000A6D00 /* HTTPMethod.swift */; };
+		9F38134222BE43B6000A6D00 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134122BE43B6000A6D00 /* HTTPTask.swift */; };
+		9F38134422BE43D3000A6D00 /* StrainEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134322BE43D3000A6D00 /* StrainEndPoint.swift */; };
+		9F38134622BE43F7000A6D00 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134522BE43F7000A6D00 /* ParameterEncoding.swift */; };
+		9F38134822BE440B000A6D00 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */; };
+		9F38134A22BE4420000A6D00 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */; };
 		9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB622AD967100B82C22 /* AppDelegate.swift */; };
 		9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBA22AD967100B82C22 /* HomeView.swift */; };
@@ -28,7 +40,6 @@
 		9FD2967D22ADD5C000C73496 /* StrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967A22ADD5C000C73496 /* StrainsView.swift */; };
 		9FD2967E22ADD5C000C73496 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967B22ADD5C000C73496 /* CalendarView.swift */; };
 		9FD2968022ADE3D500C73496 /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967F22ADE3D500C73496 /* ProductStore.swift */; };
-		9FD2968322ADE72700C73496 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9FD2968222ADE72700C73496 /* SwifterSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +53,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F38132D22BE37E7000A6D00 /* CanTrack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CanTrack.entitlements; sourceTree = "<group>"; };
+		9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtensions.swift; sourceTree = "<group>"; };
+		9F38133022BE3ED8000A6D00 /* StrainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainStore.swift; sourceTree = "<group>"; };
+		9F38133322BE4307000A6D00 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		9F38133922BE4369000A6D00 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		9F38133B22BE437D000A6D00 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		9F38133D22BE4393000A6D00 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		9F38133F22BE43A8000A6D00 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		9F38134122BE43B6000A6D00 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		9F38134322BE43D3000A6D00 /* StrainEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainEndPoint.swift; sourceTree = "<group>"; };
+		9F38134522BE43F7000A6D00 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
+		9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoding.swift; sourceTree = "<group>"; };
 		9FBE5FB322AD967100B82C22 /* CanTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBE5FB622AD967100B82C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FD2968322ADE72700C73496 /* SwifterSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +111,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F38133222BE42F5000A6D00 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F38133322BE4307000A6D00 /* NetworkController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9F38133522BE431F000A6D00 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9F38133822BE4343000A6D00 /* Encoding */,
+				9F38133722BE4338000A6D00 /* EndPoint */,
+				9F38133622BE4332000A6D00 /* Service */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9F38133622BE4332000A6D00 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9F38133922BE4369000A6D00 /* NetworkRouter.swift */,
+				9F38133B22BE437D000A6D00 /* Router.swift */,
+				9F38133D22BE4393000A6D00 /* EndPointType.swift */,
+				9F38133F22BE43A8000A6D00 /* HTTPMethod.swift */,
+				9F38134122BE43B6000A6D00 /* HTTPTask.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		9F38133722BE4338000A6D00 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				9F38134322BE43D3000A6D00 /* StrainEndPoint.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		9F38133822BE4343000A6D00 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				9F38134522BE43F7000A6D00 /* ParameterEncoding.swift */,
+				9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */,
+				9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
 		9FBE5FAA22AD967100B82C22 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +180,9 @@
 		9FBE5FB522AD967100B82C22 /* CanTrack */ = {
 			isa = PBXGroup;
 			children = (
+				9F38133522BE431F000A6D00 /* Networking */,
+				9F38132D22BE37E7000A6D00 /* CanTrack.entitlements */,
+				9F38133222BE42F5000A6D00 /* Controllers */,
 				9FBE5FE222AD9FFF00B82C22 /* SwiftUI Views */,
 				9FBE5FDD22AD97F500B82C22 /* Model */,
 				9FBE5FD822AD969600B82C22 /* UserData */,
@@ -145,6 +219,7 @@
 			children = (
 				9FBE5FD922AD96C800B82C22 /* UserData.swift */,
 				9FBE5FDB22AD971800B82C22 /* UserDefaultsValue.swift */,
+				9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */,
 			);
 			path = UserData;
 			sourceTree = "<group>";
@@ -155,6 +230,7 @@
 				9FBE5FDE22AD981E00B82C22 /* Product.swift */,
 				9FBE5FE022AD988700B82C22 /* Strain.swift */,
 				9FD2967F22ADE3D500C73496 /* ProductStore.swift */,
+				9F38133022BE3ED8000A6D00 /* StrainStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -192,7 +268,6 @@
 			);
 			name = CanTrack;
 			packageProductDependencies = (
-				9FD2968222ADE72700C73496 /* SwifterSwift */,
 			);
 			productName = CanTrack;
 			productReference = 9FBE5FB322AD967100B82C22 /* CanTrack.app */;
@@ -282,12 +357,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F38133C22BE437D000A6D00 /* Router.swift in Sources */,
+				9F38133422BE4307000A6D00 /* NetworkController.swift in Sources */,
 				9FD2967D22ADD5C000C73496 /* StrainsView.swift in Sources */,
+				9F38134422BE43D3000A6D00 /* StrainEndPoint.swift in Sources */,
 				9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */,
+				9F38134A22BE4420000A6D00 /* JSONParameterEncoding.swift in Sources */,
 				9FD2967E22ADD5C000C73496 /* CalendarView.swift in Sources */,
 				9FBE5FE122AD988700B82C22 /* Strain.swift in Sources */,
 				9FBE5FDC22AD971800B82C22 /* UserDefaultsValue.swift in Sources */,
 				9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */,
+				9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */,
 				9FD2967C22ADD5C000C73496 /* ProductTypeOptionsList.swift in Sources */,
 				9FBE5FDA22AD96C800B82C22 /* UserData.swift in Sources */,
 				9FBE5FEA22ADA4B700B82C22 /* NewProductView.swift in Sources */,
@@ -295,10 +375,17 @@
 				9FBE5FEE22ADA55E00B82C22 /* Extensions.swift in Sources */,
 				9FBE5FEB22ADA4B700B82C22 /* ProductRow.swift in Sources */,
 				9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */,
+				9F38134222BE43B6000A6D00 /* HTTPTask.swift in Sources */,
+				9F38134622BE43F7000A6D00 /* ParameterEncoding.swift in Sources */,
 				9FBE5FDF22AD981E00B82C22 /* Product.swift in Sources */,
+				9F38134822BE440B000A6D00 /* URLParameterEncoding.swift in Sources */,
+				9F38133122BE3ED8000A6D00 /* StrainStore.swift in Sources */,
 				9FBE5FE922ADA4B700B82C22 /* ProductDetailView.swift in Sources */,
 				9FC7B36722ADAF6F004278F6 /* InventoryListView.swift in Sources */,
+				9F38134022BE43A8000A6D00 /* HTTPMethod.swift in Sources */,
 				9FD2968022ADE3D500C73496 /* ProductStore.swift in Sources */,
+				9F38133E22BE4393000A6D00 /* EndPointType.swift in Sources */,
+				9F38133A22BE4369000A6D00 /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,8 +537,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CanTrack/CanTrack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "CanTrack/Preview\\ Content";
 				DEVELOPMENT_TEAM = F54NBB76Q7;
 				ENABLE_PREVIEWS = YES;
@@ -462,6 +551,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_UIKITFORMAC = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -471,8 +561,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CanTrack/CanTrack.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DERIVE_UIKITFORMAC_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "CanTrack/Preview\\ Content";
 				DEVELOPMENT_TEAM = F54NBB76Q7;
 				ENABLE_PREVIEWS = YES;
@@ -483,6 +575,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_UIKITFORMAC = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -570,14 +663,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		9FD2968222ADE72700C73496 /* SwifterSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 9FD2968122ADE72700C73496 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
-			productName = SwifterSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9FBE5FAB22AD967100B82C22 /* Project object */;
 }

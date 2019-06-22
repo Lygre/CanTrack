@@ -14,7 +14,7 @@ struct HomeView : View {
 	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
 
-	@State private var selection: Int = 1
+	@State private var selection: Int = 2
 	
 
 	var body: some View {
@@ -23,7 +23,7 @@ struct HomeView : View {
 				.tag(1)
 				.tabItemLabel(Text("Inventory"))
 
-			StrainsView().environmentObject(userData)
+			StrainsView().environmentObject(strainStore)
 				.tag(2)
 				.tabItemLabel(Text("Strains"))
 

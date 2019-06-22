@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Combine
-import SwifterSwift
+//import SwifterSwift
 
 let defaultProducts = ProductStore(products: [
 	Product(strain: Strain(name: "Strawberry Switchblade", race: .hybrid, description: nil), productType: .truShatter),

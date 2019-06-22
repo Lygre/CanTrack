@@ -11,12 +11,14 @@ import SwiftUI
 
 
 struct StrainsView : View {
-	@EnvironmentObject var userData: UserData
+//	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var strainStore: StrainStore
+
 
     var body: some View {
 			List {
-				ForEach(self.userData.strains.identified(by: \.identifiedValue)) { strain in
+				ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
 					Text(strain.name)
 						.background(Color.blue)
 
@@ -27,10 +29,11 @@ struct StrainsView : View {
 
 #if DEBUG
 
+let strainStore = StrainStore(strains: testData.compactMap({ $0.strain }))
 
 struct StrainsView_Previews : PreviewProvider {
     static var previews: some View {
-        StrainsView().environmentObject(userData).environmentObject(store)
+        StrainsView().environmentObject(userData).environmentObject(store).environmentObject(strainStore)
     }
 }
 #endif

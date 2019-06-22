@@ -54,3 +54,17 @@ struct Strain: Hashable, Equatable, Identifiable, Codable {
 	}
 }
 
+struct StrainInformation: Codable {
+	var id: Int
+	var race: String
+	var flavors: [String]?
+	var effects: [String: [String]]?
+
+}
+
+struct Effects: Encodable, Decodable, Hashable {
+	var positive: [String]?
+	var negative: [String]?
+	var medical: [String]?
+
+}

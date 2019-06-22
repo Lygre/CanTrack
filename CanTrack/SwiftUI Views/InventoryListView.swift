@@ -17,13 +17,13 @@ struct InventoryListView : View {
 	@EnvironmentObject var userData: UserData
 
 	@State private var isModal: Bool = false
-	@State private var testProd: Product = {
-		return ProductStore.defaultProduct
-	}()
 
 	@State private var activeFilterType: Product.ProductType = nil
 	@State private var isFiltered: Bool = false
 
+	@State private var testProd: Product = {
+		return ProductStore.defaultProduct
+	}()
 	private var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
@@ -32,7 +32,6 @@ struct InventoryListView : View {
 			self.createProduct()
 			self.testProd = self.draftNewProd
 		})
-
 	}
 
 
@@ -45,7 +44,7 @@ struct InventoryListView : View {
 					}, label: {
 						VStack(alignment: .leading) {
 							HStack {
-								Image(systemName: "bag.badge.plus")
+								Image(systemName: "waveform.path.badge.plus")
 									.imageScale(.large)
 									.padding()
 								Text("Add Product")
@@ -53,22 +52,10 @@ struct InventoryListView : View {
 						}
 						})
 				}
-				Section {
+				Section(header: $activeFilterType.value == nil ? nil : Image(systemName: "xmark.circle.fill").imageScale(.large)) {
 					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {
 						HStack(alignment: .center) {
-							Button(action: {
-								self.isFiltered = false
-								self.activeFilterType = nil
-							}) {
-								HStack {
-									Text("Clear")
-									Image(systemName: "clear")
-									}
-									.padding()
-									.background(Color.green)
-									.clipShape(RoundedRectangle(cornerRadius: 8), style: FillStyle.init(eoFill: true, antialiased: false))
-									.border(Color.black, cornerRadius: 8)
-							}
+
 							ForEach(productStore.productTypes.identified(by: \.hashValue)) { type in
 								Button(action: {
 									self.activeFilterType = type

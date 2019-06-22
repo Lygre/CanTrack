@@ -63,7 +63,7 @@ struct NewProductView : View {
 				}.listStyle(.grouped)
 
 
-				.navigationBarItems(leading: Button(action: { self.isPresented.toggle() }, label: { Text("Cancel").color(.red)}), trailing: Button(action: addNewProductToStore, label: {
+				.navigationBarItems(leading: Button(action: cancelAddProduct, label: { Text("Cancel").color(.red)}), trailing: Button(action: addNewProductToStore, label: {
 					Text("Save")
 						.color(.blue)
 				}))
@@ -72,6 +72,11 @@ struct NewProductView : View {
 			.onDisappear {
 				self.draftProduct = ProductStore.defaultProduct
 		}
+	}
+
+	func cancelAddProduct() {
+		draftProduct = ProductStore.defaultProduct
+		self.isPresented.toggle()
 	}
 
 	func addNewProductToStore() {

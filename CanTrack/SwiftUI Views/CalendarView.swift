@@ -33,16 +33,8 @@ extension Date: Identifiable {
 
 
 struct CalendarView : View {
-//	@EnvironmentObject var dateFormatter: DateFormatter
+	@EnvironmentObject var calendarStore: CalendarStore
 
-	var dateFormatter: DateFormatter = {
-		let dateFormatter = DateFormatter()
-		dateFormatter.timeZone = .current
-		dateFormatter.locale = .current
-		dateFormatter.calendar = .current
-		dateFormatter.dateFormat = "mmm DD yyy"
-		return dateFormatter
-	}()
 
 	var body: some View {
 		VStack(alignment: .center, spacing: 0) {
@@ -56,6 +48,7 @@ struct CalendarView : View {
 
 
 struct CalendarRowView: View {
+
 	var weekRowDateRange: [Date]
 
 	var body: some View {
@@ -85,7 +78,7 @@ struct CalendarDateView: View {
 
 	var body: some View {
 		VStack {
-			Text(date.description(with: .current))
+			Text(calendarStore.dateFormatter.string(from: date))
 				.padding(.top)
 				.padding(.bottom)
 			dosesForDate.isEmpty ? nil :
@@ -103,9 +96,12 @@ struct CalendarDateView: View {
 
 
 #if DEBUG
+
+let calendarStore = CalendarStore()
+
 struct CalendarView_Previews : PreviewProvider {
     static var previews: some View {
-		CalendarView()
+		CalendarView().environmentObject(calendarStore)
     }
 }
 

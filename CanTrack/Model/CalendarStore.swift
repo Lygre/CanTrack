@@ -24,7 +24,14 @@ class CalendarStore: Equatable, Hashable, Codable, BindableObject {
 		hasher.combine(datesForMonth)
 	}
 
-
+	var dateFormatter: DateFormatter = {
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = .current
+		dateFormatter.locale = .current
+		dateFormatter.calendar = .current
+		dateFormatter.dateFormat = "d"
+		return dateFormatter
+	}()
 
 	let didChange = PassthroughSubject<Void, Never>()
 

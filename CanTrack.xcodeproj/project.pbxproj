@@ -39,6 +39,7 @@
 		9FBE5FEA22ADA4B700B82C22 /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE522ADA4B700B82C22 /* NewProductView.swift */; };
 		9FBE5FEB22ADA4B700B82C22 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE622ADA4B700B82C22 /* ProductRow.swift */; };
 		9FBE5FEE22ADA55E00B82C22 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FED22ADA55E00B82C22 /* Extensions.swift */; };
+		9FC5398D22C01FC100095D0C /* ProtoCal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5398C22C01FC100095D0C /* ProtoCal.swift */; };
 		9FC7B36722ADAF6F004278F6 /* InventoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7B36622ADAF6F004278F6 /* InventoryListView.swift */; };
 		9FD2967C22ADD5C000C73496 /* ProductTypeOptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967922ADD5C000C73496 /* ProductTypeOptionsList.swift */; };
 		9FD2967D22ADD5C000C73496 /* StrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967A22ADD5C000C73496 /* StrainsView.swift */; };
@@ -93,6 +94,7 @@
 		9FBE5FE522ADA4B700B82C22 /* NewProductView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProductView.swift; sourceTree = "<group>"; };
 		9FBE5FE622ADA4B700B82C22 /* ProductRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		9FBE5FED22ADA55E00B82C22 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9FC5398C22C01FC100095D0C /* ProtoCal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtoCal.swift; sourceTree = "<group>"; };
 		9FC7B36622ADAF6F004278F6 /* InventoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryListView.swift; sourceTree = "<group>"; };
 		9FD2967922ADD5C000C73496 /* ProductTypeOptionsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTypeOptionsList.swift; sourceTree = "<group>"; };
 		9FD2967A22ADD5C000C73496 /* StrainsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrainsView.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				9FD2967B22ADD5C000C73496 /* CalendarView.swift */,
+				9FC5398C22C01FC100095D0C /* ProtoCal.swift */,
 				9FD2967922ADD5C000C73496 /* ProductTypeOptionsList.swift */,
 				9FD2967A22ADD5C000C73496 /* StrainsView.swift */,
 				9FBE5FBA22AD967100B82C22 /* HomeView.swift */,
@@ -389,6 +392,7 @@
 				9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */,
 				9FBE5FDC22AD971800B82C22 /* UserDefaultsValue.swift in Sources */,
 				9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */,
+				9FC5398D22C01FC100095D0C /* ProtoCal.swift in Sources */,
 				9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */,
 				9FD2967C22ADD5C000C73496 /* ProductTypeOptionsList.swift in Sources */,
 				9F38134F22BEBAD1000A6D00 /* Dose.swift in Sources */,

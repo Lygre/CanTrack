@@ -37,10 +37,15 @@ struct CalendarView : View {
 
 
 	var body: some View {
-		VStack(alignment: .center, spacing: 0) {
-			CalendarRowView(weekRowDateRange: [Date(), Date()])
-			CalendarRowView(weekRowDateRange: [Date(), Date()])
+		VStack(alignment: .leading) {
+			CalendarRowView(weekRowDateRange: calendarStore.weekDates(from: 0))
+			CalendarRowView(weekRowDateRange: calendarStore.weekDates(from: 1)).scaledToFill()
+			CalendarRowView(weekRowDateRange: calendarStore.weekDates(from: 2))
+			CalendarRowView(weekRowDateRange: calendarStore.weekDates(from: 3))
+			CalendarRowView(weekRowDateRange: calendarStore.weekDates(from: 4))
 		}
+
+
 	}
 
 }
@@ -52,16 +57,19 @@ struct CalendarRowView: View {
 	var weekRowDateRange: [Date]
 
 	var body: some View {
-		HStack(alignment: .firstTextBaseline, spacing: 0) {
-			ForEach(weekRowDateRange.identified(by: \.id)) { dayInWeek in
-				CalendarDateView(date: dayInWeek)
-					.padding(.trailing)
-					.padding(.leading)
-			}.background(Color.init("indicaColor"))
+		VStack(alignment: .center) {
+         HStack {
+             ForEach(weekRowDateRange.identified(by: \.id)) { dayInWeek in
+                 CalendarDateView(date: dayInWeek)
+                     .padding(.trailing)
+                     .padding(.leading)
+                     }.background(Color.init("indicaColor"))
 
-			}
-			.scaledToFit()
+                 }
 
+         }
+			.background(Color.init(strainVariety: .indica))
+			.scaledToFill()
 
 	}
 }
@@ -77,7 +85,7 @@ struct CalendarDateView: View {
 	@State private var hasDoses: Bool = false
 
 	var body: some View {
-		VStack {
+		VStack(alignment: .center) {
 			Text(calendarStore.dateFormatter.string(from: date))
 				.padding(.top)
 				.padding(.bottom)
@@ -86,7 +94,7 @@ struct CalendarDateView: View {
 					.padding(.bottom)
 			}
 			.background(Color.init(strainVariety: .indica).opacity(0.7))
-			.aspectRatio(contentMode: .fill)
+//			.scaledToFill()
 		}
 
 }
@@ -107,7 +115,7 @@ struct CalendarView_Previews : PreviewProvider {
 
 struct CalendarRowView_Previews : PreviewProvider {
 	static var previews: some View {
-		CalendarRowView(weekRowDateRange: [Date()])
+		CalendarRowView(weekRowDateRange: calendarStore.weekDates(from: 1))
 	}
 }
 

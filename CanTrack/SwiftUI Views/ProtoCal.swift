@@ -129,23 +129,31 @@ struct WeekRowView: View {
 
 	var body: some View {
 		HStack(alignment: .firstTextBaseline) {
+			if isWeekStartWeek() {
+				Spacer()
+			}
 			ForEach(calendarStore.weekDates(from: weekInt).identified(by: \.identifiedValue)) { date in
-//				date.isFirstDayOfMonth ? Image(systemName: "square") :
 					DayCellView(date: date)
 				}
 				.lineLimit(nil)
 				.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
 			}
 			.background(Color.init(strainVariety: .indica))
-			.scaledToFit()
+			.scaledToFill()
 	}
 
+	func isWeekStartWeek() -> Bool {
+		if weekInt == 0 { return true }
+		guard let firstDateInWeek = calendarStore.weekDates(from: weekInt).first else { return false }
+		return firstDateInWeek.day == 1
+
+	}
 	func doesWeekContainMonthStartDate() -> Bool {
-		guard let _ = calendarStore.weekDates(from: weekInt).first(where: { (someDateInWeek) -> Bool in
-			return someDateInWeek == someDateInWeek.dateAtStartOf(.month)
-		}) else { return false }
-//		return weekDateFirst == weekDateFirst.dateAtStartOf(.month)
-		return true
+		let weekDates: [Date] = calendarStore.weekDates(from: self.weekInt)
+		return weekDates.contains { (someDate) -> Bool in
+			someDate.day == 1
+		}
+//		return true
 	}
 }
 
@@ -168,6 +176,9 @@ struct DayCellView: View {
 			.background(Color.init(strainVariety: .indica).opacity(0.7))
 //		.clipShape(Circle())
 	}
+
+
+
 }
 
 
@@ -199,7 +210,7 @@ struct DayCellView: View {
 
 struct MonthCellView_Previews : PreviewProvider {
 	static var previews: some View {
-		MonthCellView(month: Month(rawValue: 1)!).environmentObject(calendarStore)
+		MonthCellView(month: Month(rawValue: 5)!).environmentObject(calendarStore)
 	}
 }
 

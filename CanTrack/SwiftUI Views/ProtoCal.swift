@@ -24,7 +24,7 @@ struct ProtoCal : View {
 				)
 				.navigationBarTitle(Text(calendarStore.activeMonth.description+"  "+CalendarStore.currentDate.year.description),
 					displayMode: .automatic
-			)
+			).background(Color.init(strainVariety: .indica))
 		}
 
 	}
@@ -36,7 +36,15 @@ struct ProtoYearView: View {
 	var body: some View {
 		NavigationView {
 			ScrollView(isScrollEnabled: true, showsVerticalIndicator: true) {
-				Text(CalendarStore.currentDate.year.description)
+				VStack(alignment: .leading) {
+					Text(CalendarStore.currentDate.year.description)
+						.font(.title)
+						.fontWeight(.heavy)
+						.padding(.leading)
+					Divider()
+					Text("The end is nigh and the dark is full of terrors")
+					}
+					.scaledToFill()
 
 				}.navigationBarItems(trailing: HStack(spacing: 9) {
 					Image(systemName: "magnifyingglass")
@@ -44,9 +52,9 @@ struct ProtoYearView: View {
 					Image(systemName: "plus")
 					}
 					.imageScale(.large)
+				)
+				.foregroundColor(.init(strainVariety: .indica))
 
-
-			)
 		}
 	}
 }

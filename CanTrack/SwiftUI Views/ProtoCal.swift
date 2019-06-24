@@ -125,16 +125,27 @@ struct WeekRowView: View {
 
 	var weekInt: Int
 
+
+
 	var body: some View {
 		HStack(alignment: .firstTextBaseline) {
-			ForEach(calendarStore.weekDates(from: weekInt).identified(by: \.id)) { date in
-				DayCellView(date: date)
+			ForEach(calendarStore.weekDates(from: weekInt).identified(by: \.identifiedValue)) { date in
+//				date.isFirstDayOfMonth ? Image(systemName: "square") :
+					DayCellView(date: date)
 				}
 				.lineLimit(nil)
 				.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
 			}
 			.background(Color.init(strainVariety: .indica))
 			.scaledToFit()
+	}
+
+	func doesWeekContainMonthStartDate() -> Bool {
+		guard let _ = calendarStore.weekDates(from: weekInt).first(where: { (someDateInWeek) -> Bool in
+			return someDateInWeek == someDateInWeek.dateAtStartOf(.month)
+		}) else { return false }
+//		return weekDateFirst == weekDateFirst.dateAtStartOf(.month)
+		return true
 	}
 }
 

@@ -157,3 +157,13 @@ extension CalendarStore {
 //	}
 
 }
+
+extension Date {
+
+	var isFirstDayOfMonth: Bool {
+		get {
+			return self == self.dateAtStartOf(.month)
+		}
+	}
+
+}

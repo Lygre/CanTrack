@@ -94,7 +94,6 @@ struct CalendarDateView: View {
 					.padding(.bottom)
 			}
 			.background(Color.init(strainVariety: .indica).opacity(0.7))
-//			.scaledToFill()
 		}
 
 }

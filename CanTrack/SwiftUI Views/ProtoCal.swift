@@ -51,7 +51,7 @@ struct ProtoYearView: View {
 					}
 					.imageScale(.large)
 				)
-				.foregroundColor(.init(strainVariety: .indica))
+//				.foregroundColor(.init(strainVariety: .indica))
 
 		}
 	}
@@ -73,8 +73,10 @@ struct YearCellView : View {
 				.fontWeight(.heavy)
 			Divider()
 //			MonthsRowView(monthRange: (0...2).compactMap({ Month(rawValue: $0)!})).scaledToFit()
-
-			MonthCellView(month: Month.january)
+			ForEach((0...11).identified(by: \.identifiedValue)) { monthInt in
+				MonthCellView(month: Month(rawValue: monthInt)!)
+			}
+//			MonthCellView(month: Month.january)
 			}
 //			.padding(.leading)
 			.scaledToFit()
@@ -200,17 +202,17 @@ struct DayCellView: View {
 //    }
 //}
 
-//struct ProtoYearView_Previews : PreviewProvider {
-//	static var previews: some View {
-//		ProtoYearView().environmentObject(calendarStore)
-//	}
-//}
-//
-struct YearCellView_Previews : PreviewProvider {
+struct ProtoYearView_Previews : PreviewProvider {
 	static var previews: some View {
-		YearCellView(year: CalendarStore.currentDate.year).environmentObject(calendarStore)
+		ProtoYearView().environmentObject(calendarStore)
 	}
 }
+//
+//struct YearCellView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		YearCellView(year: CalendarStore.currentDate.year).environmentObject(calendarStore)
+//	}
+//}
 //-----------------------------------------
 
 //struct MonthsRowView_Previews : PreviewProvider {

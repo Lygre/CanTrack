@@ -57,6 +57,11 @@ class CalendarStore: Equatable, Hashable, Codable, BindableObject {
 		return dateForGeneration.dateAtStartOf(.year)
 	}
 
+//	func getNumberOfWeeks(for monthInt: Int) -> Int {
+//		//wekday ordinals
+//		let daysInMonth: Int = masterDateStoreArray.filter({ $0.dateAt(weekdayOrdinal: 0, weekday: .monday, monthNumber: self.activeMonth.rawValue, yearNumber: 2019).isLeapYear })
+//	}
+
 	var activeMonth: Month {
 		didSet {
 			didChange.send()
@@ -141,8 +146,14 @@ extension CalendarStore {
 		cmp.day = startDateBase.day
 		cmp.hour = 2
 		cmp.minute = 2
-		return Date.enumerateDates(from: startDateToReturn.date, to: endDateToReturn.date, increment: DateComponents(day: 1))
+		return Date.enumerateDates(from: startDateToReturn.date, to: endDateToReturn.date, increment: DateComponents(day: 1)).filter { (someDate) -> Bool in
+			return someDate.isInRange(date: startDateBase.dateAtStartOf(.month).date, and: startDateBase.dateAtEndOf(.month).date)
+		}
 	}
 
+//	func getDatesForWeekRowView(weekInt: Int) -> [Date] {
+//
+//
+//	}
 
 }

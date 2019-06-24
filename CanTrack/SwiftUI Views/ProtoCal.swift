@@ -108,7 +108,7 @@ struct MonthCellView: View {
 			Text(month.description[month.description.startIndex...month.description.index(month.description.startIndex, offsetBy: 2)])
 			.font(.title)
 			Divider()
-			ForEach(0...3) { weekInt in
+			ForEach(0...4) { weekInt in
 				WeekRowView(weekInt: weekInt)
 			}.background(Color(strainVariety: .indica))
 		}
@@ -168,23 +168,23 @@ struct DayCellView: View {
 //    }
 //}
 
-struct ProtoYearView_Previews : PreviewProvider {
-	static var previews: some View {
-		ProtoYearView().environmentObject(calendarStore)
-	}
-}
-
-struct YearCellView_Previews : PreviewProvider {
-	static var previews: some View {
-		YearCellView(year: CalendarStore.currentDate.year).environmentObject(calendarStore)
-	}
-}
-
-struct MonthsRowView_Previews : PreviewProvider {
-	static var previews: some View {
-		MonthsRowView(monthRange: (0...2).compactMap({ Month(rawValue: $0)!})).environmentObject(calendarStore)
-	}
-}
+//struct ProtoYearView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		ProtoYearView().environmentObject(calendarStore)
+//	}
+//}
+//
+//struct YearCellView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		YearCellView(year: CalendarStore.currentDate.year).environmentObject(calendarStore)
+//	}
+//}
+//
+//struct MonthsRowView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		MonthsRowView(monthRange: (0...2).compactMap({ Month(rawValue: $0)!})).environmentObject(calendarStore)
+//	}
+//}
 
 struct MonthCellView_Previews : PreviewProvider {
 	static var previews: some View {
@@ -194,7 +194,7 @@ struct MonthCellView_Previews : PreviewProvider {
 
 struct WeekRowView_Previews : PreviewProvider {
 	static var previews: some View {
-		WeekRowView(weekInt: 1).environmentObject(calendarStore)
+		WeekRowView(weekInt: 0).environmentObject(calendarStore)
 	}
 }
 

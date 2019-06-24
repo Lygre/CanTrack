@@ -35,7 +35,6 @@ struct ProtoCal : View {
 struct ProtoYearView: View {
 
 	var body: some View {
-		NavigationView {
 			ScrollView(isScrollEnabled: true, showsVerticalIndicator: true) {
 				VStack {
 					ForEach(2017...2020) { year in
@@ -53,7 +52,7 @@ struct ProtoYearView: View {
 				)
 //				.foregroundColor(.init(strainVariety: .indica))
 
-		}
+
 	}
 }
 

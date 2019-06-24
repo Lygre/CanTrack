@@ -37,6 +37,26 @@ class CalendarStore: Equatable, Hashable, Codable, BindableObject {
 
 	static let currentDate: Date = Date()
 
+	let masterDateStoreArray: [Date]
+
+	static func generateDatesArray(between year1: Int, year2: Int) -> [Date] {
+		return Date.enumerateDates(from: CalendarStore.firstDayOfYear(year: year1), to: CalendarStore.firstDayOfYear(year: year2), increment: DateComponents(day: 1))
+	}
+	static func firstDayOfYear(year: Int) -> Date {
+		var cmp = DateComponents()
+		cmp.timeZone = .current
+		cmp.calendar = .current
+		cmp.calendar?.locale = .current
+		cmp.year = year
+		cmp.month = 1
+		cmp.day = 1
+		cmp.hour = 2
+		guard let dateForGeneration = try? Date(components: cmp, region: nil) else {
+			return Date()
+		}
+		return dateForGeneration.dateAtStartOf(.year)
+	}
+
 	var activeMonth: Month {
 		didSet {
 			didChange.send()
@@ -64,6 +84,7 @@ class CalendarStore: Equatable, Hashable, Codable, BindableObject {
 		self.datesForMonth = {
 			return Date.enumerateDates(from: CalendarStore.currentDate.dateAtStartOf(.month), to: CalendarStore.currentDate.dateAtEndOf(.month), increment: DateComponents(day: 1))
 		}()
+		self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2012, year2: 2021)
 	}
 
 	func encode(to encoder: Encoder) throws {
@@ -77,11 +98,13 @@ class CalendarStore: Equatable, Hashable, Codable, BindableObject {
 			let values = try aDecoder.container(keyedBy: CodingKeys.self)
 			activeMonth = try values.decode(Month.self, forKey: .activeMonth)
 			datesForMonth = try values.decode([Date].self, forKey: .datesForMonth)
+			self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2012, year2: 2021)
 		} catch {
 			activeMonth = Month(rawValue: 1)!
 			datesForMonth = [
 
 			]
+			self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2012, year2: 2021)
 			print(error)
 		}
 	}

@@ -38,7 +38,7 @@ struct ProtoYearView: View {
 		NavigationView {
 			ScrollView(isScrollEnabled: true, showsVerticalIndicator: true) {
 				VStack {
-					ForEach(2017...2025) { year in
+					ForEach(2017...2020) { year in
 						YearCellView(year: year)
 					}
 
@@ -72,10 +72,12 @@ struct YearCellView : View {
 				.font(.title)
 				.fontWeight(.heavy)
 			Divider()
-			MonthsRowView(monthRange: (0...2).compactMap({ Month(rawValue: $0)!})).scaledToFit()
+//			MonthsRowView(monthRange: (0...2).compactMap({ Month(rawValue: $0)!})).scaledToFit()
+
+			MonthCellView(month: Month.january)
 			}
-			.padding(.leading)
-			.scaledToFill()
+//			.padding(.leading)
+			.scaledToFit()
 	}
 }
 
@@ -107,6 +109,7 @@ struct MonthCellView: View {
 		VStack(alignment: .leading) {
 			Text(month.description[month.description.startIndex...month.description.index(month.description.startIndex, offsetBy: 2)])
 			.font(.title)
+			.padding(.leading)
 			Divider()
 			ForEach(0...4) { weekInt in
 				WeekRowView(weekInt: weekInt)
@@ -136,7 +139,7 @@ struct WeekRowView: View {
 					DayCellView(date: date)
 				}
 				.lineLimit(nil)
-				.padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
+				.padding(EdgeInsets(top: 5, leading: 1, bottom: 5, trailing: 8))
 
 //			Spacer()
 			if isWeekEndWeek() {
@@ -203,35 +206,38 @@ struct DayCellView: View {
 //	}
 //}
 //
-//struct YearCellView_Previews : PreviewProvider {
-//	static var previews: some View {
-//		YearCellView(year: CalendarStore.currentDate.year).environmentObject(calendarStore)
-//	}
-//}
-//
+struct YearCellView_Previews : PreviewProvider {
+	static var previews: some View {
+		YearCellView(year: CalendarStore.currentDate.year).environmentObject(calendarStore)
+	}
+}
+//-----------------------------------------
+
 //struct MonthsRowView_Previews : PreviewProvider {
 //	static var previews: some View {
 //		MonthsRowView(monthRange: (0...2).compactMap({ Month(rawValue: $0)!})).environmentObject(calendarStore)
 //	}
 //}
 
-struct MonthCellView_Previews : PreviewProvider {
-	static var previews: some View {
-		MonthCellView(month: Month(rawValue: 5)!).environmentObject(calendarStore)
-	}
-}
+//-----------------------------------------
 
-struct WeekRowView_Previews : PreviewProvider {
-	static var previews: some View {
-		WeekRowView(weekInt: 0).environmentObject(calendarStore)
-	}
-}
-
-struct DayCellView_Previews : PreviewProvider {
-	static var previews: some View {
-		DayCellView(date: Date()).environmentObject(calendarStore)
-	}
-}
+//struct MonthCellView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		MonthCellView(month: Month(rawValue: 5)!).environmentObject(calendarStore)
+//	}
+//}
+//
+//struct WeekRowView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		WeekRowView(weekInt: 0).environmentObject(calendarStore)
+//	}
+//}
+//
+//struct DayCellView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		DayCellView(date: Date()).environmentObject(calendarStore)
+//	}
+//}
 
 
 #endif

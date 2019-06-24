@@ -72,7 +72,7 @@ struct YearCellView : View {
 				.font(.title)
 				.fontWeight(.heavy)
 			Divider()
-			Text("MonthRowView PlaceholderView")
+			MonthsRowView(monthRange: (0...2).compactMap({ Month(rawValue: $0)!})).scaledToFit()
 			}
 			.padding(.leading)
 			.scaledToFill()
@@ -90,9 +90,11 @@ struct MonthsRowView: View {
 	var body: some View {
 		HStack {
 			ForEach(monthRange.identified(by: \.rawValue)) { monthInt in
-				Text(monthInt.description)
+				MonthCellView(month: monthInt)
 			}
 		}
+			.frame(width: 350, height: 350, alignment: .leading)
+		.scaledToFit()
 	}
 }
 
@@ -106,8 +108,12 @@ struct MonthCellView: View {
 			Text(month.description[month.description.startIndex...month.description.index(month.description.startIndex, offsetBy: 2)])
 			.font(.title)
 			Divider()
-			Text("Placeholder for ForEach of week row views")
+			ForEach(0...3) { weekInt in
+				WeekRowView(weekInt: weekInt)
+			}.background(Color(strainVariety: .indica))
 		}
+
+			.scaledToFill()
 		.padding([.leading, .trailing], 5)
 	}
 }
@@ -119,17 +125,16 @@ struct WeekRowView: View {
 
 	var weekInt: Int
 
-	let datesForWeek: [Date] = {
-		return calendarStore.weekDates(from: 0)
-	}()
-
 	var body: some View {
-		HStack {
-			ForEach(datesForWeek.identified(by: \.id)) { date in
+		HStack(alignment: .firstTextBaseline) {
+			ForEach(calendarStore.weekDates(from: weekInt).identified(by: \.id)) { date in
 				DayCellView(date: date)
+				}
+				.lineLimit(nil)
+				.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
 			}
-			}
-			.padding([.leading, .trailing], 5)
+			.background(Color.init(strainVariety: .indica))
+			.scaledToFit()
 	}
 }
 
@@ -142,14 +147,15 @@ struct DayCellView: View {
 
 	var body: some View {
 		VStack(alignment: .center) {
-			Text(calendarStore.dateFormatter.string(from: date))
+			Image(systemName: "\(calendarStore.dateFormatter.string(from: date))"+".square")
+			.imageScale(.large)
 			dosesForDate.isEmpty ? nil :
 				Image(systemName: "smoke")
 					.padding(.bottom)
 			}
 			.padding([.leading, .trailing, .top, .bottom], 6)
 			.background(Color.init(strainVariety: .indica).opacity(0.7))
-		.clipShape(Circle())
+//		.clipShape(Circle())
 	}
 }
 

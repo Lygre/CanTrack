@@ -136,7 +136,13 @@ struct WeekRowView: View {
 					DayCellView(date: date)
 				}
 				.lineLimit(nil)
-				.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
+				.padding(EdgeInsets(top: 5, leading: 8, bottom: 5, trailing: 8))
+
+//			Spacer()
+			if isWeekEndWeek() {
+				Spacer()
+			}
+
 			}
 			.background(Color.init(strainVariety: .indica))
 			.scaledToFill()
@@ -148,13 +154,14 @@ struct WeekRowView: View {
 		return firstDateInWeek.day == 1
 
 	}
-	func doesWeekContainMonthStartDate() -> Bool {
-		let weekDates: [Date] = calendarStore.weekDates(from: self.weekInt)
-		return weekDates.contains { (someDate) -> Bool in
-			someDate.day == 1
+
+	func isWeekEndWeek() -> Bool {
+		if weekInt >= 4 {
+			return true
 		}
-//		return true
+		return false
 	}
+
 }
 
 struct DayCellView: View {

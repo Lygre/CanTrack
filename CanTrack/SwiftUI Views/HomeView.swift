@@ -40,17 +40,18 @@ struct HomeView : View {
 	}
 
 	var body: some View {
-NavigationView {
-		TabbedView(selection: $selectedTab) {
-
-			InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
-			StrainsView().environmentObject(strainStore).tabItemLabel(Text("Strains")).tag(Tab.strains)
-			ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
-			}
-			.environmentObject(store).environmentObject(strainStore).environmentObject(calendarStore)
-			.navigationBarTitle(Text(TabNames.init(from: $selectedTab.value).rawValue), displayMode: .large)
-//			.edgesIgnoringSafeArea(.top)
-	}
+		NavigationView {
+			TabbedView(selection: $selectedTab) {
+				InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
+				StrainsView().tabItemLabel(Text("Strains")).tag(Tab.strains)
+				ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
+				}
+				.environmentObject(store)
+				.environmentObject(strainStore)
+				.environmentObject(calendarStore)
+				.navigationBarTitle(Text(TabNames.init(from: $selectedTab.value).rawValue), displayMode: .large)
+			//			.edgesIgnoringSafeArea(.top)
+		}
 	}
 }
 

@@ -36,25 +36,33 @@ struct ProtoYearView: View {
 
 	var body: some View {
 		NavigationView {
-			ScrollView(isScrollEnabled: true, showsVerticalIndicator: true) {
-				VStack {
-					ForEach(2018...2019) { year in
-						YearCellView(year: year)
+			VStack(spacing: 0) {
+				ScrollView(isScrollEnabled: true, showsVerticalIndicator: false) {
+					VStack {
+						//					ForEach(2018...2019) { year in
+						//						YearCellView(year: year)
+						//					}
+						YearCellView(year: 2019)
+
+						}.aspectRatio(contentMode: .fit)
+
+					}.navigationBarItems(leading:
+						Image(systemName: "magnifyingglass.circle")
+							.imageScale(.large),
+										 trailing:
+						HStack(spacing: 9) {
+							Image(systemName: "list.bullet.below.rectangle")
+							Spacer()
+							Image(systemName: "plus")
+							}
+							.imageScale(.large))
+					.navigationBarTitle(Text("Dose Calendar"))
+				List {
+					ForEach((1...5).identified(by: \.identifiedValue)) { int in
+						Text("Dose "+int.description)
 					}
-
 				}
-
-				}.navigationBarItems(leading:
-					Image(systemName: "magnifyingglass.circle")
-						.imageScale(.large),
-									 trailing:
-					HStack(spacing: 9) {
-						Image(systemName: "list.bullet.below.rectangle")
-						Spacer()
-						Image(systemName: "plus")
-						}
-						.imageScale(.large))
-			.navigationBarTitle(Text("Dose Calendar"))
+			}
 		}
 	}
 }
@@ -69,7 +77,8 @@ struct YearCellView : View {
 	var year: Int
 
 	var body: some View {
-		VStack(alignment: .leading) {
+		VStack(alignment: .center) {
+			HStack {
 			Text(year.description)
 				.font(.title)
 				.fontWeight(.heavy)
@@ -80,8 +89,10 @@ struct YearCellView : View {
 			}
 //			MonthCellView(month: Month.january)
 			}
+			}
 //			.padding(.leading)
-			.scaledToFit()
+//			.scaledToFill()
+		.aspectRatio(contentMode: .fit)
 	}
 }
 
@@ -94,13 +105,13 @@ struct MonthsRowView: View {
 	var monthRange: [Month]
 
 	var body: some View {
-		HStack {
+		HStack(alignment: .center) {
 			ForEach(monthRange.identified(by: \.rawValue)) { monthInt in
 				MonthCellView(month: monthInt)
 			}
 		}
-			.frame(width: 350, height: 350, alignment: .leading)
-		.scaledToFit()
+//			.frame(width: 350, height: 350, alignment: .leading)
+		.scaledToFill()
 	}
 }
 

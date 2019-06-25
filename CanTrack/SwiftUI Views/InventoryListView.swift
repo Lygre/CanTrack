@@ -33,7 +33,7 @@ struct InventoryListView : View {
 
 
 	var body: some View {
-		ZStack(alignment: Alignment.center) {
+		NavigationView {
 			List {
 				Section {
 					Button(action: {
@@ -106,6 +106,7 @@ struct InventoryListView : View {
 				}
 				}
 				.listStyle(.grouped)
+				.navigationBarTitle(Text("Inventory"))
 
 			}
 			.presentation(isModal ? modal : nil)
@@ -133,9 +134,7 @@ let store = ProductStore(products: testData)
 
 struct InventoryListView_Previews : PreviewProvider {
 	static var previews: some View {
-		NavigationView {
-			InventoryListView().environmentObject(store)
-		}
+		InventoryListView().environmentObject(store)
 	}
 }
 #endif

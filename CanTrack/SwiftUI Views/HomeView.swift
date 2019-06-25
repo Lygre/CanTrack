@@ -39,26 +39,18 @@ struct HomeView : View {
 	}
 
 	var body: some View {
-		NavigationView {
-			TabbedView(selection: $selectedTab) {
-				InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
-					.environmentObject(store)
-					.environmentObject(strainStore)
-					.environmentObject(calendarStore)
-				StrainsView().tabItemLabel(Text("Strains")).tag(Tab.strains)
-					.environmentObject(store)
-					.environmentObject(strainStore)
-					.environmentObject(calendarStore)
-				ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
-					.environmentObject(store)
-					.environmentObject(strainStore)
-					.environmentObject(calendarStore)
-				}
+		TabbedView(selection: $selectedTab) {
+			InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
+			StrainsView().tabItemLabel(Text("Strains")).tag(Tab.strains)
+			ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
+			}
+			.environmentObject(store)
+			.environmentObject(strainStore)
+			.environmentObject(calendarStore)
 
-				.navigationBarTitle(Text(TabNames.init(from: $selectedTab.value).rawValue), displayMode: .large)
-			//			.edgesIgnoringSafeArea(.top)
-		}
+		//			.edgesIgnoringSafeArea(.top)
 	}
+
 }
 
 #if DEBUG

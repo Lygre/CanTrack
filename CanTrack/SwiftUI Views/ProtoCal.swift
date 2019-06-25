@@ -12,7 +12,7 @@ import SwiftDate
 struct ProtoCal : View {
 	var body: some View {
 		NavigationView {
-			CalendarView()
+			ProtoYearView()
 				.navigationBarItems(trailing:
 					HStack(spacing: 9) {
 						Image(systemName: "list.bullet.below.rectangle")
@@ -35,24 +35,25 @@ struct ProtoCal : View {
 struct ProtoYearView: View {
 
 	var body: some View {
+		NavigationView {
 			ScrollView(isScrollEnabled: true, showsVerticalIndicator: true) {
 				VStack {
-					ForEach(2017...2020) { year in
+					ForEach(2018...2019) { year in
 						YearCellView(year: year)
 					}
 
 				}
-
-				}.navigationBarItems(trailing: HStack(spacing: 9) {
-					Image(systemName: "magnifyingglass")
-					Spacer()
-					Image(systemName: "plus")
-					}
-					.imageScale(.large)
-				)
-//				.foregroundColor(.init(strainVariety: .indica))
-
-
+				
+				}.navigationBarItems(trailing:
+					HStack(spacing: 9) {
+						Image(systemName: "list.bullet.below.rectangle")
+						Spacer()
+						Image(systemName: "magnifyingglass.circle")
+						Spacer()
+						Image(systemName: "plus")
+						}
+						.imageScale(.large))
+		}
 	}
 }
 

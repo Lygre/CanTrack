@@ -17,6 +17,7 @@ struct StrainsView : View {
 
 
     var body: some View {
+		NavigationView {
 			List {
 				ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
 					Text(strain.name)
@@ -24,6 +25,8 @@ struct StrainsView : View {
 
 				}
 			}
+			.navigationBarTitle(Text("Strains"))
+		}
     }
 }
 

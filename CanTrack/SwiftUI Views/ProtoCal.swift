@@ -43,16 +43,18 @@ struct ProtoYearView: View {
 					}
 
 				}
-				
-				}.navigationBarItems(trailing:
+
+				}.navigationBarItems(leading:
+					Image(systemName: "magnifyingglass.circle")
+						.imageScale(.large),
+									 trailing:
 					HStack(spacing: 9) {
 						Image(systemName: "list.bullet.below.rectangle")
-						Spacer()
-						Image(systemName: "magnifyingglass.circle")
 						Spacer()
 						Image(systemName: "plus")
 						}
 						.imageScale(.large))
+			.navigationBarTitle(Text("Dose Calendar"))
 		}
 	}
 }

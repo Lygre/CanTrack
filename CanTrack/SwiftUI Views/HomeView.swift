@@ -15,7 +15,7 @@ struct HomeView : View {
 	@EnvironmentObject var strainStore: StrainStore
 	@EnvironmentObject var calendarStore: CalendarStore
 
-	@State var selectedTab = Tab.inventory
+	@State private var selectedTab = Tab.inventory
 
 	enum Tab: Int {
 		case inventory, strains, calendar

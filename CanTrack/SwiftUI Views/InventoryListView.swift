@@ -14,7 +14,6 @@ let testData = defaultProducts.products
 
 struct InventoryListView : View {
 	@EnvironmentObject var productStore: ProductStore
-	@EnvironmentObject var userData: UserData
 
 	@State private var isModal: Bool = false
 
@@ -27,7 +26,7 @@ struct InventoryListView : View {
 	private var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
-		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(userData).environmentObject(productStore).environmentObject(strainStore), onDismiss: {
+		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(productStore).environmentObject(strainStore), onDismiss: {
 			self.isModal.toggle()
 		})
 	}
@@ -135,7 +134,7 @@ let store = ProductStore(products: testData)
 struct InventoryListView_Previews : PreviewProvider {
 	static var previews: some View {
 		NavigationView {
-			InventoryListView().environmentObject(store).environmentObject(userData)
+			InventoryListView().environmentObject(store)
 		}
 	}
 }

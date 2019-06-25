@@ -11,7 +11,6 @@ import Combine
 //let productStore = ProductStore()
 
 struct HomeView : View {
-	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
 	@EnvironmentObject var strainStore: StrainStore
 	@EnvironmentObject var calendarStore: CalendarStore
@@ -43,12 +42,19 @@ struct HomeView : View {
 		NavigationView {
 			TabbedView(selection: $selectedTab) {
 				InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
+					.environmentObject(store)
+					.environmentObject(strainStore)
+					.environmentObject(calendarStore)
 				StrainsView().tabItemLabel(Text("Strains")).tag(Tab.strains)
+					.environmentObject(store)
+					.environmentObject(strainStore)
+					.environmentObject(calendarStore)
 				ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
+					.environmentObject(store)
+					.environmentObject(strainStore)
+					.environmentObject(calendarStore)
 				}
-				.environmentObject(store)
-				.environmentObject(strainStore)
-				.environmentObject(calendarStore)
+
 				.navigationBarTitle(Text(TabNames.init(from: $selectedTab.value).rawValue), displayMode: .large)
 			//			.edgesIgnoringSafeArea(.top)
 		}
@@ -61,7 +67,7 @@ let userData = UserData()
 
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View {
-			HomeView().environmentObject(userData).environmentObject(store).environmentObject(strainStore).environmentObject(calendarStore)
+			HomeView().environmentObject(store).environmentObject(strainStore).environmentObject(calendarStore)
     }
 }
 #endif

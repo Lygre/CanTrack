@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		#endif
 
-		window.rootViewController = UIHostingController(rootView: HomeView().environmentObject(userData).environmentObject(productStore).environmentObject(strainStore).environmentObject(calendarStore))
+		window.rootViewController = UIHostingController(rootView: HomeView().environmentObject(productStore).environmentObject(strainStore).environmentObject(calendarStore))
 		self.window = window
 		window.makeKeyAndVisible()
 	}

@@ -11,7 +11,6 @@ import Combine
 
 
 struct NewProductView : View {
-	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var productStore: ProductStore
 	@EnvironmentObject var strainStore: StrainStore
 
@@ -99,7 +98,7 @@ struct NewProductView : View {
 #if DEBUG
 struct NewProductView_Previews : PreviewProvider {
     static var previews: some View {
-		NewProductView(draftProduct: .constant(.defaultProduct), isPresented: .constant(true)).environmentObject(UserData()).environmentObject(ProductStore(products: defaultProducts.products))
+		NewProductView(draftProduct: .constant(.defaultProduct), isPresented: .constant(true)).environmentObject(ProductStore(products: defaultProducts.products))
     }
 }
 #endif

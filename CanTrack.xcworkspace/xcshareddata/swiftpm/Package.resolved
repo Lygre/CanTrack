@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftDate",
+        "repositoryURL": "git@github.com:malcommac/SwiftDate.git",
+        "state": {
+          "branch": null,
+          "revision": "89774a1e28826af1498693bcbdf9ff6037ec646f",
+          "version": "6.0.3"
+        }
+      },
+      {
+        "package": "SwifterSwift",
+        "repositoryURL": "git@github.com:SwifterSwift/SwifterSwift.git",
+        "state": {
+          "branch": null,
+          "revision": "644ebf4ba6e282712406c448bed90010fd4d7360",
+          "version": "5.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

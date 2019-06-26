@@ -12,7 +12,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
-	var userData: UserData = UserData()
+//	var userData: UserData = UserData()
 	var productStore: ProductStore = ProductStore(products: testData)
 	var strainStore: StrainStore = StrainStore(strains: testData.compactMap({ return $0.strain }))
 	var calendarStore: CalendarStore = CalendarStore()

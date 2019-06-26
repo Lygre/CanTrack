@@ -9,8 +9,45 @@
 import SwiftUI
 import SwiftDate
 
+//#if os(tvOS)
+//NSLog("Code compuled only when building for tvOS");
+//#endif
+
+#if os(tvOS)
+
 struct ProtoCal : View {
+
+
 	var body: some View {
+
+		NavigationView {
+			ProtoYearView()
+				.navigationBarItems(trailing:
+					HStack(spacing: 9) {
+						Image(systemName: "list.bullet.below.rectangle")
+						Spacer()
+						Image(systemName: "magnifyingglass.circle")
+						Spacer()
+						Image(systemName: "plus")
+						}
+						.imageScale(.large)
+				)
+				.navigationBarTitle(Text(calendarStore.activeMonth.description+"  "+CalendarStore.currentDate.year.description))
+
+			}
+			.background(Color.init(strainVariety: .indica))
+	}
+
+}
+
+
+#elseif !os(tvOS)
+
+struct ProtoCal : View {
+	@EnvironmentObject var calendarStore: CalendarStore
+
+	var body: some View {
+
 		NavigationView {
 			ProtoYearView()
 				.navigationBarItems(trailing:
@@ -24,13 +61,17 @@ struct ProtoCal : View {
 						.imageScale(.large)
 				)
 				.navigationBarTitle(Text(calendarStore.activeMonth.description+"  "+CalendarStore.currentDate.year.description),
-					displayMode: .automatic
-			).background(Color.init(strainVariety: .indica))
-		}
+									displayMode: .automatic)
 
+			}
+			.background(Color.init(strainVariety: .indica))
 	}
 
 }
+
+
+#endif
+
 
 struct ProtoYearView: View {
 
@@ -111,7 +152,7 @@ struct MonthsRowView: View {
 			}
 		}
 //			.frame(width: 350, height: 350, alignment: .leading)
-		.scaledToFill()
+//		.scaledToFill()
 	}
 }
 
@@ -121,7 +162,7 @@ struct MonthCellView: View {
 	var month: Month
 
 	var body: some View {
-		VStack(alignment: .leading) {
+		VStack(alignment: .leading, spacing: 0) {
 			Text(month.description[month.description.startIndex...month.description.index(month.description.startIndex, offsetBy: 2)])
 			.font(.title)
 			.padding(.leading)
@@ -141,6 +182,8 @@ struct MonthCellView: View {
 
 struct WeekRowView: View {
 
+	@EnvironmentObject var calendarStore: CalendarStore
+
 	var weekInt: Int
 
 
@@ -156,7 +199,6 @@ struct WeekRowView: View {
 				.lineLimit(nil)
 				.padding(EdgeInsets(top: 5, leading: 1, bottom: 5, trailing: 8))
 
-//			Spacer()
 			if isWeekEndWeek() {
 				Spacer()
 			}
@@ -183,6 +225,7 @@ struct WeekRowView: View {
 }
 
 struct DayCellView: View {
+	@EnvironmentObject var calendarStore: CalendarStore
 
 	var date: Date
 	var dosesForDate: [Dose] = []
@@ -209,11 +252,15 @@ struct DayCellView: View {
 
 
 #if DEBUG
+
+let calendarStore = CalendarStore()
+
 //struct ProtoCal_Previews : PreviewProvider {
 //    static var previews: some View {
 //        ProtoCal().environmentObject(calendarStore)
 //    }
 //}
+
 
 struct ProtoYearView_Previews : PreviewProvider {
 	static var previews: some View {

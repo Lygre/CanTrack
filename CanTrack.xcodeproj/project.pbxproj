@@ -23,6 +23,39 @@
 		9F38134F22BEBAD1000A6D00 /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134E22BEBAD1000A6D00 /* Dose.swift */; };
 		9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
 		9F38135422BEC748000A6D00 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135322BEC748000A6D00 /* CalendarStore.swift */; };
+		9F8D4EDF22C3D96A0031CEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */; };
+		9F8D4EE122C3D96A0031CEB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EE022C3D96A0031CEB7 /* ContentView.swift */; };
+		9F8D4EE322C3D96E0031CEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4EE222C3D96E0031CEB7 /* Assets.xcassets */; };
+		9F8D4EE622C3D96E0031CEB7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4EE522C3D96E0031CEB7 /* Preview Assets.xcassets */; };
+		9F8D4EF122C3D96E0031CEB7 /* CanTrackTVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EF022C3D96E0031CEB7 /* CanTrackTVUITests.swift */; };
+		9F8D4EF922C3DA5C0031CEB7 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FDE22AD981E00B82C22 /* Product.swift */; };
+		9F8D4EFA22C3DA5E0031CEB7 /* Strain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE022AD988700B82C22 /* Strain.swift */; };
+		9F8D4EFB22C3DA610031CEB7 /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967F22ADE3D500C73496 /* ProductStore.swift */; };
+		9F8D4EFC22C3DA640031CEB7 /* StrainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133022BE3ED8000A6D00 /* StrainStore.swift */; };
+		9F8D4EFD22C3DA6A0031CEB7 /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134E22BEBAD1000A6D00 /* Dose.swift */; };
+		9F8D4EFE22C3DA6D0031CEB7 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135322BEC748000A6D00 /* CalendarStore.swift */; };
+		9F8D4EFF22C3DA750031CEB7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FED22ADA55E00B82C22 /* Extensions.swift */; };
+		9F8D4F0022C3DA890031CEB7 /* InventoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7B36622ADAF6F004278F6 /* InventoryListView.swift */; };
+		9F8D4F0122C3DA8D0031CEB7 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE622ADA4B700B82C22 /* ProductRow.swift */; };
+		9F8D4F0222C3DA900031CEB7 /* ProductImageViewCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE322ADA4B700B82C22 /* ProductImageViewCircular.swift */; };
+		9F8D4F0322C3DA930031CEB7 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE422ADA4B700B82C22 /* ProductDetailView.swift */; };
+		9F8D4F0422C3DA950031CEB7 /* NewProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE522ADA4B700B82C22 /* NewProductView.swift */; };
+		9F8D4F0522C3DA980031CEB7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBA22AD967100B82C22 /* HomeView.swift */; };
+		9F8D4F0622C3DA9A0031CEB7 /* StrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967A22ADD5C000C73496 /* StrainsView.swift */; };
+		9F8D4F0722C3DAB20031CEB7 /* ProtoCal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5398C22C01FC100095D0C /* ProtoCal.swift */; };
+		9F8D4F0822C3DABC0031CEB7 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133322BE4307000A6D00 /* NetworkController.swift */; };
+		9F8D4F0922C3DAC80031CEB7 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
+		9F8D4F0A22C3DACB0031CEB7 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134522BE43F7000A6D00 /* ParameterEncoding.swift */; };
+		9F8D4F0B22C3DAF00031CEB7 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */; };
+		9F8D4F0C22C3DAF30031CEB7 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */; };
+		9F8D4F0D22C3DAF60031CEB7 /* StrainEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134322BE43D3000A6D00 /* StrainEndPoint.swift */; };
+		9F8D4F0E22C3DAFD0031CEB7 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133922BE4369000A6D00 /* NetworkRouter.swift */; };
+		9F8D4F0F22C3DAFD0031CEB7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133B22BE437D000A6D00 /* Router.swift */; };
+		9F8D4F1022C3DAFD0031CEB7 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133D22BE4393000A6D00 /* EndPointType.swift */; };
+		9F8D4F1122C3DAFD0031CEB7 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133F22BE43A8000A6D00 /* HTTPMethod.swift */; };
+		9F8D4F1222C3DAFD0031CEB7 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134122BE43B6000A6D00 /* HTTPTask.swift */; };
+		9F8D4F1522C3DBB10031CEB7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8D4F1422C3DBB10031CEB7 /* SwiftDate */; };
+		9F8D4F1622C3DD3F0031CEB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB622AD967100B82C22 /* AppDelegate.swift */; };
 		9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBA22AD967100B82C22 /* HomeView.swift */; };
@@ -48,6 +81,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9F8D4EED22C3D96E0031CEB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FBE5FAB22AD967100B82C22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F8D4EDB22C3D96A0031CEB7;
+			remoteInfo = CanTrackTV;
+		};
 		9FBE5FCA22AD967300B82C22 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FBE5FAB22AD967100B82C22 /* Project object */;
@@ -74,6 +114,15 @@
 		9F38134E22BEBAD1000A6D00 /* Dose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dose.swift; sourceTree = "<group>"; };
 		9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtensions.swift; sourceTree = "<group>"; };
 		9F38135322BEC748000A6D00 /* CalendarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarStore.swift; sourceTree = "<group>"; };
+		9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9F8D4EE022C3D96A0031CEB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F8D4EE222C3D96E0031CEB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F8D4EE522C3D96E0031CEB7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9F8D4EE722C3D96E0031CEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F8D4EEC22C3D96E0031CEB7 /* CanTrackTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanTrackTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8D4EF022C3D96E0031CEB7 /* CanTrackTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanTrackTVUITests.swift; sourceTree = "<group>"; };
+		9F8D4EF222C3D96E0031CEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9FBE5FB322AD967100B82C22 /* CanTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBE5FB622AD967100B82C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +152,21 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F8D4ED922C3D96A0031CEB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F8D4F1522C3DBB10031CEB7 /* SwiftDate in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8D4EE922C3D96E0031CEB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FBE5FB022AD967100B82C22 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,12 +241,51 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9F8D4EDD22C3D96A0031CEB7 /* CanTrackTV */ = {
+			isa = PBXGroup;
+			children = (
+				9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */,
+				9F8D4EE022C3D96A0031CEB7 /* ContentView.swift */,
+				9F8D4EE222C3D96E0031CEB7 /* Assets.xcassets */,
+				9F8D4EE722C3D96E0031CEB7 /* Info.plist */,
+				9F8D4EE422C3D96E0031CEB7 /* Preview Content */,
+			);
+			path = CanTrackTV;
+			sourceTree = "<group>";
+		};
+		9F8D4EE422C3D96E0031CEB7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9F8D4EE522C3D96E0031CEB7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9F8D4EEF22C3D96E0031CEB7 /* CanTrackTVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9F8D4EF022C3D96E0031CEB7 /* CanTrackTVUITests.swift */,
+				9F8D4EF222C3D96E0031CEB7 /* Info.plist */,
+			);
+			path = CanTrackTVUITests;
+			sourceTree = "<group>";
+		};
+		9F8D4F1322C3DBB10031CEB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9FBE5FAA22AD967100B82C22 = {
 			isa = PBXGroup;
 			children = (
 				9FBE5FB522AD967100B82C22 /* CanTrack */,
 				9FBE5FCC22AD967300B82C22 /* CanTrackUITests */,
+				9F8D4EDD22C3D96A0031CEB7 /* CanTrackTV */,
+				9F8D4EEF22C3D96E0031CEB7 /* CanTrackTVUITests */,
 				9FBE5FB422AD967100B82C22 /* Products */,
+				9F8D4F1322C3DBB10031CEB7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,6 +294,8 @@
 			children = (
 				9FBE5FB322AD967100B82C22 /* CanTrack.app */,
 				9FBE5FC922AD967300B82C22 /* CanTrackUITests.xctest */,
+				9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */,
+				9F8D4EEC22C3D96E0031CEB7 /* CanTrackTVUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,6 +381,44 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F8D4EF722C3D96E0031CEB7 /* Build configuration list for PBXNativeTarget "CanTrackTV" */;
+			buildPhases = (
+				9F8D4ED822C3D96A0031CEB7 /* Sources */,
+				9F8D4ED922C3D96A0031CEB7 /* Frameworks */,
+				9F8D4EDA22C3D96A0031CEB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CanTrackTV;
+			packageProductDependencies = (
+				9F8D4F1422C3DBB10031CEB7 /* SwiftDate */,
+			);
+			productName = CanTrackTV;
+			productReference = 9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F8D4EEB22C3D96E0031CEB7 /* CanTrackTVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F8D4EF822C3D96E0031CEB7 /* Build configuration list for PBXNativeTarget "CanTrackTVUITests" */;
+			buildPhases = (
+				9F8D4EE822C3D96E0031CEB7 /* Sources */,
+				9F8D4EE922C3D96E0031CEB7 /* Frameworks */,
+				9F8D4EEA22C3D96E0031CEB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F8D4EEE22C3D96E0031CEB7 /* PBXTargetDependency */,
+			);
+			name = CanTrackTVUITests;
+			productName = CanTrackTVUITests;
+			productReference = 9F8D4EEC22C3D96E0031CEB7 /* CanTrackTVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		9FBE5FB222AD967100B82C22 /* CanTrack */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FBE5FD222AD967300B82C22 /* Build configuration list for PBXNativeTarget "CanTrack" */;
@@ -324,6 +467,13 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Lygre;
 				TargetAttributes = {
+					9F8D4EDB22C3D96A0031CEB7 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					9F8D4EEB22C3D96E0031CEB7 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 9F8D4EDB22C3D96A0031CEB7;
+					};
 					9FBE5FB222AD967100B82C22 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -352,11 +502,29 @@
 			targets = (
 				9FBE5FB222AD967100B82C22 /* CanTrack */,
 				9FBE5FC822AD967300B82C22 /* CanTrackUITests */,
+				9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */,
+				9F8D4EEB22C3D96E0031CEB7 /* CanTrackTVUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F8D4EDA22C3D96A0031CEB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F8D4EE622C3D96E0031CEB7 /* Preview Assets.xcassets in Resources */,
+				9F8D4EE322C3D96E0031CEB7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8D4EEA22C3D96E0031CEB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FBE5FB122AD967100B82C22 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,6 +545,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F8D4ED822C3D96A0031CEB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F8D4F1222C3DAFD0031CEB7 /* HTTPTask.swift in Sources */,
+				9F8D4EFD22C3DA6A0031CEB7 /* Dose.swift in Sources */,
+				9F8D4F0022C3DA890031CEB7 /* InventoryListView.swift in Sources */,
+				9F8D4F1022C3DAFD0031CEB7 /* EndPointType.swift in Sources */,
+				9F8D4F0F22C3DAFD0031CEB7 /* Router.swift in Sources */,
+				9F8D4F0A22C3DACB0031CEB7 /* ParameterEncoding.swift in Sources */,
+				9F8D4EFF22C3DA750031CEB7 /* Extensions.swift in Sources */,
+				9F8D4F0522C3DA980031CEB7 /* HomeView.swift in Sources */,
+				9F8D4EFB22C3DA610031CEB7 /* ProductStore.swift in Sources */,
+				9F8D4F0C22C3DAF30031CEB7 /* JSONParameterEncoding.swift in Sources */,
+				9F8D4EFA22C3DA5E0031CEB7 /* Strain.swift in Sources */,
+				9F8D4EE122C3D96A0031CEB7 /* ContentView.swift in Sources */,
+				9F8D4F1622C3DD3F0031CEB7 /* SceneDelegate.swift in Sources */,
+				9F8D4EDF22C3D96A0031CEB7 /* AppDelegate.swift in Sources */,
+				9F8D4F0822C3DABC0031CEB7 /* NetworkController.swift in Sources */,
+				9F8D4F0422C3DA950031CEB7 /* NewProductView.swift in Sources */,
+				9F8D4F0122C3DA8D0031CEB7 /* ProductRow.swift in Sources */,
+				9F8D4F0D22C3DAF60031CEB7 /* StrainEndPoint.swift in Sources */,
+				9F8D4EFE22C3DA6D0031CEB7 /* CalendarStore.swift in Sources */,
+				9F8D4F0B22C3DAF00031CEB7 /* URLParameterEncoding.swift in Sources */,
+				9F8D4F0622C3DA9A0031CEB7 /* StrainsView.swift in Sources */,
+				9F8D4F0E22C3DAFD0031CEB7 /* NetworkRouter.swift in Sources */,
+				9F8D4F0222C3DA900031CEB7 /* ProductImageViewCircular.swift in Sources */,
+				9F8D4F0322C3DA930031CEB7 /* ProductDetailView.swift in Sources */,
+				9F8D4F0722C3DAB20031CEB7 /* ProtoCal.swift in Sources */,
+				9F8D4F1122C3DAFD0031CEB7 /* HTTPMethod.swift in Sources */,
+				9F8D4F0922C3DAC80031CEB7 /* SwiftUIColorExtensions.swift in Sources */,
+				9F8D4EFC22C3DA640031CEB7 /* StrainStore.swift in Sources */,
+				9F8D4EF922C3DA5C0031CEB7 /* Product.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8D4EE822C3D96E0031CEB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F8D4EF122C3D96E0031CEB7 /* CanTrackTVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9FBE5FAF22AD967100B82C22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +640,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9F8D4EEE22C3D96E0031CEB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */;
+			targetProxy = 9F8D4EED22C3D96E0031CEB7 /* PBXContainerItemProxy */;
+		};
 		9FBE5FCB22AD967300B82C22 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9FBE5FB222AD967100B82C22 /* CanTrack */;
@@ -447,6 +664,96 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9F8D4EF322C3D96E0031CEB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "CanTrackTV/Preview\\ Content";
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CanTrackTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Debug;
+		};
+		9F8D4EF422C3D96E0031CEB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "CanTrackTV/Preview\\ Content";
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = CanTrackTV/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackTV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Release;
+		};
+		9F8D4EF522C3D96E0031CEB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				INFOPLIST_FILE = CanTrackTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = CanTrackTV;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Debug;
+		};
+		9F8D4EF622C3D96E0031CEB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				INFOPLIST_FILE = CanTrackTVUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackTVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TEST_TARGET_NAME = CanTrackTV;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Release;
+		};
 		9FBE5FD022AD967300B82C22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -654,6 +961,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F8D4EF722C3D96E0031CEB7 /* Build configuration list for PBXNativeTarget "CanTrackTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8D4EF322C3D96E0031CEB7 /* Debug */,
+				9F8D4EF422C3D96E0031CEB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F8D4EF822C3D96E0031CEB7 /* Build configuration list for PBXNativeTarget "CanTrackTVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8D4EF522C3D96E0031CEB7 /* Debug */,
+				9F8D4EF622C3D96E0031CEB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9FBE5FAE22AD967100B82C22 /* Build configuration list for PBXProject "CanTrack" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -704,6 +1029,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		9F38134C22BEB989000A6D00 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9F38134B22BEB989000A6D00 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		9F8D4F1422C3DBB10031CEB7 /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9F38134B22BEB989000A6D00 /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;

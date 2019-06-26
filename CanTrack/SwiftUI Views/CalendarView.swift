@@ -104,8 +104,6 @@ struct CalendarDateView: View {
 
 #if DEBUG
 
-let calendarStore = CalendarStore()
-
 struct CalendarView_Previews : PreviewProvider {
     static var previews: some View {
 		CalendarView().environmentObject(calendarStore)

@@ -32,11 +32,10 @@ struct StrainsView : View {
 
 #if DEBUG
 
-let strainStore = StrainStore(strains: testData.compactMap({ $0.strain }))
 
 struct StrainsView_Previews : PreviewProvider {
     static var previews: some View {
-        StrainsView().environmentObject(userData).environmentObject(store).environmentObject(strainStore)
+        StrainsView().environmentObject(store).environmentObject(strainStore)
     }
 }
 #endif

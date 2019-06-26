@@ -55,7 +55,7 @@ struct HomeView : View {
 
 #if DEBUG
 
-let userData = UserData()
+let strainStore = StrainStore(strains: UserData().strains)
 
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View {

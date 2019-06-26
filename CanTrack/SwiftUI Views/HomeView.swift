@@ -37,7 +37,7 @@ struct HomeView : View {
 			}
 		}
 	}
-
+	#if !os(tvOS)
 	var body: some View {
 		TabbedView(selection: $selectedTab) {
 			InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
@@ -50,6 +50,22 @@ struct HomeView : View {
 
 		//			.edgesIgnoringSafeArea(.top)
 	}
+	#endif
+	#if os(tvOS)
+	var body: some View {
+		NavigationView {
+			TabbedView(selection: $selectedTab) {
+				InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
+				StrainsView().tabItemLabel(Text("Strains")).tag(Tab.strains)
+				ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
+			}
+			}
+//			.environmentObject(store)
+//			.environmentObject(strainStore)
+//			.environmentObject(calendarStore)
+	}
+	#endif
+
 
 }
 

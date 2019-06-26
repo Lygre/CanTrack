@@ -15,7 +15,7 @@ struct StrainsView : View {
 	@EnvironmentObject var productStore: ProductStore
 	@EnvironmentObject var strainStore: StrainStore
 
-
+	#if !os(tvOS)
     var body: some View {
 		NavigationView {
 			List {
@@ -25,10 +25,78 @@ struct StrainsView : View {
 
 				}
 			}
-			.navigationBarTitle(Text("Strains"))
+				.scaledToFit()
+				.listStyle(.grouped)
+				.navigationBarTitle(Text("Strains"))
 		}
     }
+	#elseif os(tvOS)
+
+
+	var body: some View {
+		NavigationView {
+			ScrollView {
+				HStack {
+					ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
+						StrainCardView(strain: strain)
+					}
+				}
+
+				}
+				.navigationBarTitle(Text("Strains"))
+				.focusable(true)
+		}
+	}
+
+	#endif
 }
+
+
+
+struct StrainCardView : View {
+
+	var strain: Strain
+	#if os(tvOS)
+	var body: some View {
+		return VStack {
+			Image(uiImage: #imageLiteral(resourceName: "cannaleaf"))
+				.resizable()
+				.clipShape(Circle())
+				.aspectRatio(contentMode: .fill)
+				.overlay(Circle().stroke(Color.black, lineWidth: 4))
+
+			Text(strain.name)
+				.lineLimit(nil)
+			}
+			.padding()
+			.background(Color(strainVariety: strain.race))
+			.clipShape(RoundedRectangle(cornerRadius: 8))
+	}
+	#endif
+
+	#if !os(tvOS)
+	var body: some View {
+		return HStack {
+			Image(uiImage: #imageLiteral(resourceName: "cannaleaf"))
+				.resizable()
+				.clipShape(Circle())
+				.aspectRatio(contentMode: .fill)
+				.overlay(Circle().stroke(Color.black, lineWidth: 4))
+
+			Text(strain.name)
+				.lineLimit(nil)
+			}
+			.padding()
+			.background(Color(strainVariety: strain.race))
+			.clipShape(RoundedRectangle(cornerRadius: 8))
+	}
+	#endif
+}
+
+
+
+
+
 
 #if DEBUG
 
@@ -39,3 +107,4 @@ struct StrainsView_Previews : PreviewProvider {
     }
 }
 #endif
+

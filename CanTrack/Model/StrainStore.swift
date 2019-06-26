@@ -57,8 +57,8 @@ class StrainStore: Equatable, Hashable, Codable, BindableObject {
 	let networkManager = NetworkController()
 
 	var rawStrainInformation: [String: StrainInformation] = [:] {
-		willSet {
-			for (strainName, strainInformation) in newValue {
+		didSet {
+			for (strainName, strainInformation) in self.rawStrainInformation {
 				var strainToAppend = Strain(name: strainName, race: Strain.StrainVariety.init(rawValue: strainInformation.race)!, description: nil)
 				strainToAppend.flavors = strainInformation.flavors
 				strains.append(strainToAppend)

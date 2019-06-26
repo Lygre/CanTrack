@@ -31,7 +31,7 @@ struct InventoryListView : View {
 		})
 	}
 
-
+	#if !os(tvOS)
 	var body: some View {
 		NavigationView {
 			List {
@@ -112,6 +112,87 @@ struct InventoryListView : View {
 			.presentation(isModal ? modal : nil)
 
 	}
+	#elseif os(tvOS)
+	var body: some View {
+			List {
+				Section {
+					Button(action: {
+						self.isModal.toggle()
+					}, label: {
+						VStack(alignment: .leading) {
+							HStack {
+								Image(systemName: "waveform.path.badge.plus")
+									.imageScale(.large)
+									.padding()
+								Text("Add Product")
+							}
+						}
+					})
+				}
+				Section(header:
+					Button(action: {
+						self.isFiltered = false
+						self.activeFilterType = nil
+					}) {
+
+						$activeFilterType.value == nil ?
+							nil :
+							HStack {
+								Spacer()
+								Text("Clear")
+									.font(.headline)
+								Image(systemName: "xmark.circle.fill").imageScale(.large)
+						}
+					}
+				) {
+					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {
+						HStack(alignment: .center) {
+
+							ForEach(productStore.productTypes.identified(by: \.hashValue)) { type in
+								Button(action: {
+									self.activeFilterType = type
+									self.isFiltered = true
+								}) {
+									HStack {
+										Text(type.rawValue)
+										Image(systemName: "smoke")
+										}
+										.padding()
+										.background(Color.green)
+										.clipShape(RoundedRectangle(cornerRadius: 8), style: FillStyle.init(eoFill: false, antialiased: false))
+										.border(Color.black, cornerRadius: 8)
+								}
+							}
+							Spacer()
+						}
+
+						}.lineLimit(nil).frame(height: 55)
+				}
+				Section {
+					!isFiltered ?
+						ForEach(productStore.products.identified(by: \.identifiedValue)) { product in
+							NavigationButton(destination: ProductDetailView(product: product)) {
+								ProductRow(product: product)
+							}
+						}
+						:
+						ForEach(productStore.products.compactMap({ (someProduct) -> Product? in
+							return (someProduct.productType == activeFilterType!) ? someProduct : nil
+						}).identified(by: \.identifiedValue)) { product in
+							NavigationButton(destination: ProductDetailView(product: product)) {
+								ProductRow(product: product)
+							}
+					}
+				}
+				}
+				.listStyle(.grouped)
+				.navigationBarTitle(Text("Inventory"))
+
+
+			.presentation(isModal ? modal : nil)
+
+	}
+	#endif
 
 	func deleteProduct(at offsets: IndexSet) {
 

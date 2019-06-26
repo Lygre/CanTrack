@@ -54,8 +54,12 @@ struct HomeView : View {
 }
 
 #if DEBUG
+let defaultStrains: [Strain] = [
+	Strain(name: "Strawberry Switchblade", race: .hybrid, description: "Very awesome energizing hybrid"),
+	Strain(name: "Sour Diesel", race: .sativa, description: "Nice tasting Sativa")
+]
 
-let strainStore = StrainStore(strains: UserData().strains)
+let strainStore = StrainStore(strains: defaultStrains)
 
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View {

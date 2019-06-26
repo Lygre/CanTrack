@@ -13,7 +13,10 @@ import SwiftUI
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-	var productStore: ProductStore = ProductStore(products: testData)
+	var productStore: ProductStore = ProductStore(products: [
+		Product(strain: Strain(name: "Strawberry Switchblade", race: .hybrid, description: nil), productType: .truShatter),
+		Product(strain: Strain(name: "Sour Diesel", race: .sativa, description: nil), productType: .truFlower)
+		])
 	var strainStore: StrainStore = StrainStore(strains: testData.compactMap({ return $0.strain }))
 	var calendarStore: CalendarStore = CalendarStore()
 

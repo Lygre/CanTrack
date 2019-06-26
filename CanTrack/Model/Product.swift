@@ -16,7 +16,7 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 			didChange.send(self)
 		}
 	}
-	var productImage: UIImage = #imageLiteral(resourceName: "cannabisbg") {
+	var productImage: UIImage = UIImage(imageLiteralResourceName: "cannabisbg.png") {
 		didSet {
 			didChange.send(self)
 		}

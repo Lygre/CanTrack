@@ -56,6 +56,8 @@
 		9F8D4F1222C3DAFD0031CEB7 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134122BE43B6000A6D00 /* HTTPTask.swift */; };
 		9F8D4F1522C3DBB10031CEB7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 9F8D4F1422C3DBB10031CEB7 /* SwiftDate */; };
 		9F8D4F1622C3DD3F0031CEB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
+		9F8D4F1722C3EA930031CEB7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967B22ADD5C000C73496 /* CalendarView.swift */; };
+		9F8D4F1822C3EC330031CEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBC22AD967300B82C22 /* Assets.xcassets */; };
 		9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB622AD967100B82C22 /* AppDelegate.swift */; };
 		9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBA22AD967100B82C22 /* HomeView.swift */; };
@@ -281,8 +283,8 @@
 			isa = PBXGroup;
 			children = (
 				9FBE5FB522AD967100B82C22 /* CanTrack */,
-				9FBE5FCC22AD967300B82C22 /* CanTrackUITests */,
 				9F8D4EDD22C3D96A0031CEB7 /* CanTrackTV */,
+				9FBE5FCC22AD967300B82C22 /* CanTrackUITests */,
 				9F8D4EEF22C3D96E0031CEB7 /* CanTrackTVUITests */,
 				9FBE5FB422AD967100B82C22 /* Products */,
 				9F8D4F1322C3DBB10031CEB7 /* Frameworks */,
@@ -514,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F8D4EE622C3D96E0031CEB7 /* Preview Assets.xcassets in Resources */,
+				9F8D4F1822C3EC330031CEB7 /* Assets.xcassets in Resources */,
 				9F8D4EE322C3D96E0031CEB7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,6 +572,7 @@
 				9F8D4F0D22C3DAF60031CEB7 /* StrainEndPoint.swift in Sources */,
 				9F8D4EFE22C3DA6D0031CEB7 /* CalendarStore.swift in Sources */,
 				9F8D4F0B22C3DAF00031CEB7 /* URLParameterEncoding.swift in Sources */,
+				9F8D4F1722C3EA930031CEB7 /* CalendarView.swift in Sources */,
 				9F8D4F0622C3DA9A0031CEB7 /* StrainsView.swift in Sources */,
 				9F8D4F0E22C3DAFD0031CEB7 /* NetworkRouter.swift in Sources */,
 				9F8D4F0222C3DA900031CEB7 /* ProductImageViewCircular.swift in Sources */,

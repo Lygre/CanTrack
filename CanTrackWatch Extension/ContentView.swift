@@ -8,20 +8,32 @@
 
 import SwiftUI
 
-private var pStore: ProductStore = ProductStore(products: defaultProducts.products)
-private var sStore: StrainStore = StrainStore(strains: defaultProducts.products.compactMap({ return $0.strain }))
-
-
 struct ContentView : View {
+
+	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var strainStore: StrainStore
+
     var body: some View {
-        Text("Hello World")
+		HStack {
+			Text(productStore.products[0].productType.rawValue)
+			ProductImageViewCircular(product: productStore.products[0])
+		}
     }
+
+
 }
 
 #if DEBUG
+
+private var productStore: ProductStore = ProductStore(products: defaultProducts.products)
+private var strainStore: StrainStore = StrainStore(strains: defaultProducts.products.compactMap({ return $0.strain }))
+
+
+
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(productStore).environmentObject(strainStore)
+
     }
 }
 #endif

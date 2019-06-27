@@ -12,9 +12,6 @@ import SwiftUI
 
 class HostingController : WKHostingController<ContentView> {
 
-	var productStore: ProductStore = ProductStore(products: testData)
-	var strainStore: StrainStore = StrainStore(strains: testData.compactMap({ return $0.strain }))
-
     override var body: ContentView {
         return ContentView()
     }

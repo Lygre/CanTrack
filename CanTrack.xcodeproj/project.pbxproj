@@ -39,7 +39,6 @@
 		9F23FA7322C4606200821014 /* ProductTypeOptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967922ADD5C000C73496 /* ProductTypeOptionsList.swift */; };
 		9F23FA7422C4606800821014 /* StrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967A22ADD5C000C73496 /* StrainsView.swift */; };
 		9F23FA7722C4608600821014 /* ProductImageViewCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE322ADA4B700B82C22 /* ProductImageViewCircular.swift */; };
-		9F23FA7822C4621800821014 /* InventoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7B36622ADAF6F004278F6 /* InventoryListView.swift */; };
 		9F23FA7B22C4651E00821014 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE622ADA4B700B82C22 /* ProductRow.swift */; };
 		9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */; };
 		9F38133122BE3ED8000A6D00 /* StrainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133022BE3ED8000A6D00 /* StrainStore.swift */; };
@@ -746,7 +745,6 @@
 				9F23FA6B22C4604D00821014 /* StrainEndPoint.swift in Sources */,
 				9F23FA7222C4606000821014 /* ProductTypeOptionsList.swift in Sources */,
 				9F23FA6222C45F6500821014 /* Strain.swift in Sources */,
-				9F23FA7822C4621800821014 /* InventoryListView.swift in Sources */,
 				9F23FA6E22C4605200821014 /* EndPointType.swift in Sources */,
 				9F23FA6A22C4604800821014 /* JSONParameterEncoding.swift in Sources */,
 				9F23FA6D22C4605200821014 /* Router.swift in Sources */,

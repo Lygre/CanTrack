@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+private var pStore: ProductStore = ProductStore(products: defaultProducts.products)
+private var sStore: StrainStore = StrainStore(strains: defaultProducts.products.compactMap({ return $0.strain }))
+
+
 struct ContentView : View {
     var body: some View {
         Text("Hello World")

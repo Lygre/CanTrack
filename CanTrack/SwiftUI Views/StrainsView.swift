@@ -114,7 +114,7 @@ let debugStrainData = StrainStore(strains: [StrainStore.defaultStrain])
 
 struct StrainsView_Previews : PreviewProvider {
     static var previews: some View {
-        StrainsView().environmentObject(store).environmentObject(debugStrainData)
+        StrainsView().environmentObject(debugStrainData).environmentObject(defaultProducts)
     }
 }
 #endif

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F1CC2F022C5457E00CC0B88 /* CanTrackWatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9F1CC2EF22C5457E00CC0B88 /* CanTrackWatch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9F1CC2F622C5457E00CC0B88 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1CC2F422C5457E00CC0B88 /* Interface.storyboard */; };
+		9F1CC2F822C5458000CC0B88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1CC2F722C5458000CC0B88 /* Assets.xcassets */; };
+		9F1CC2FF22C5458000CC0B88 /* CanTrackWatch WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9F1CC2FE22C5458000CC0B88 /* CanTrackWatch WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9F1CC30422C5458000CC0B88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CC30322C5458000CC0B88 /* ContentView.swift */; };
+		9F1CC30622C5458000CC0B88 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CC30522C5458000CC0B88 /* HostingController.swift */; };
+		9F1CC30822C5458000CC0B88 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CC30722C5458000CC0B88 /* ExtensionDelegate.swift */; };
+		9F1CC30A22C5458000CC0B88 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CC30922C5458000CC0B88 /* NotificationController.swift */; };
+		9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CC30B22C5458000CC0B88 /* NotificationView.swift */; };
+		9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1CC30D22C5458000CC0B88 /* ComplicationController.swift */; };
+		9F1CC31022C5458100CC0B88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1CC30F22C5458100CC0B88 /* Assets.xcassets */; };
+		9F1CC31322C5458100CC0B88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1CC31222C5458100CC0B88 /* Preview Assets.xcassets */; };
 		9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */; };
 		9F38133122BE3ED8000A6D00 /* StrainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133022BE3ED8000A6D00 /* StrainStore.swift */; };
 		9F38133422BE4307000A6D00 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133322BE4307000A6D00 /* NetworkController.swift */; };
@@ -83,6 +95,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9F1CC2F122C5457E00CC0B88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FBE5FAB22AD967100B82C22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F1CC2EE22C5457E00CC0B88;
+			remoteInfo = "CanTrackWatch WatchKit App";
+		};
+		9F1CC30022C5458000CC0B88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FBE5FAB22AD967100B82C22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F1CC2FD22C5458000CC0B88;
+			remoteInfo = "CanTrackWatch WatchKit Extension";
+		};
 		9F8D4EED22C3D96E0031CEB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FBE5FAB22AD967100B82C22 /* Project object */;
@@ -99,7 +125,48 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9F1CC31822C5458100CC0B88 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9F1CC2F022C5457E00CC0B88 /* CanTrackWatch WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F1CC31B22C5458100CC0B88 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9F1CC2FF22C5458000CC0B88 /* CanTrackWatch WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9F1CC2EC22C5457E00CC0B88 /* CanTrackWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1CC2EF22C5457E00CC0B88 /* CanTrackWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CanTrackWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1CC2F522C5457E00CC0B88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		9F1CC2F722C5458000CC0B88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F1CC2F922C5458000CC0B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F1CC2FE22C5458000CC0B88 /* CanTrackWatch WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CanTrackWatch WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1CC30322C5458000CC0B88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F1CC30522C5458000CC0B88 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		9F1CC30722C5458000CC0B88 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		9F1CC30922C5458000CC0B88 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		9F1CC30B22C5458000CC0B88 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		9F1CC30D22C5458000CC0B88 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		9F1CC30F22C5458100CC0B88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F1CC31222C5458100CC0B88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9F1CC31422C5458100CC0B88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F1CC31522C5458100CC0B88 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		9F38132D22BE37E7000A6D00 /* CanTrack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CanTrack.entitlements; sourceTree = "<group>"; };
 		9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtensions.swift; sourceTree = "<group>"; };
 		9F38133022BE3ED8000A6D00 /* StrainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainStore.swift; sourceTree = "<group>"; };
@@ -154,6 +221,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F1CC2FB22C5458000CC0B88 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F8D4ED922C3D96A0031CEB7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +261,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F1CC2F322C5457E00CC0B88 /* CanTrackWatch WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CC2F422C5457E00CC0B88 /* Interface.storyboard */,
+				9F1CC2F722C5458000CC0B88 /* Assets.xcassets */,
+				9F1CC2F922C5458000CC0B88 /* Info.plist */,
+			);
+			path = "CanTrackWatch WatchKit App";
+			sourceTree = "<group>";
+		};
+		9F1CC30222C5458000CC0B88 /* CanTrackWatch WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CC30322C5458000CC0B88 /* ContentView.swift */,
+				9F1CC30522C5458000CC0B88 /* HostingController.swift */,
+				9F1CC30722C5458000CC0B88 /* ExtensionDelegate.swift */,
+				9F1CC30922C5458000CC0B88 /* NotificationController.swift */,
+				9F1CC30B22C5458000CC0B88 /* NotificationView.swift */,
+				9F1CC30D22C5458000CC0B88 /* ComplicationController.swift */,
+				9F1CC30F22C5458100CC0B88 /* Assets.xcassets */,
+				9F1CC31422C5458100CC0B88 /* Info.plist */,
+				9F1CC31522C5458100CC0B88 /* PushNotificationPayload.apns */,
+				9F1CC31122C5458100CC0B88 /* Preview Content */,
+			);
+			path = "CanTrackWatch WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		9F1CC31122C5458100CC0B88 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CC31222C5458100CC0B88 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		9F38133222BE42F5000A6D00 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +395,8 @@
 				9F8D4EDD22C3D96A0031CEB7 /* CanTrackTV */,
 				9FBE5FCC22AD967300B82C22 /* CanTrackUITests */,
 				9F8D4EEF22C3D96E0031CEB7 /* CanTrackTVUITests */,
+				9F1CC2F322C5457E00CC0B88 /* CanTrackWatch WatchKit App */,
+				9F1CC30222C5458000CC0B88 /* CanTrackWatch WatchKit Extension */,
 				9FBE5FB422AD967100B82C22 /* Products */,
 				9F8D4F1322C3DBB10031CEB7 /* Frameworks */,
 			);
@@ -298,6 +409,9 @@
 				9FBE5FC922AD967300B82C22 /* CanTrackUITests.xctest */,
 				9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */,
 				9F8D4EEC22C3D96E0031CEB7 /* CanTrackTVUITests.xctest */,
+				9F1CC2EC22C5457E00CC0B88 /* CanTrackWatch.app */,
+				9F1CC2EF22C5457E00CC0B88 /* CanTrackWatch WatchKit App.app */,
+				9F1CC2FE22C5458000CC0B88 /* CanTrackWatch WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -383,6 +497,57 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9F1CC2EB22C5457E00CC0B88 /* CanTrackWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F1CC32022C5458100CC0B88 /* Build configuration list for PBXNativeTarget "CanTrackWatch" */;
+			buildPhases = (
+				9F1CC2EA22C5457E00CC0B88 /* Resources */,
+				9F1CC31822C5458100CC0B88 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F1CC2F222C5457E00CC0B88 /* PBXTargetDependency */,
+			);
+			name = CanTrackWatch;
+			productName = CanTrackWatch;
+			productReference = 9F1CC2EC22C5457E00CC0B88 /* CanTrackWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		9F1CC2EE22C5457E00CC0B88 /* CanTrackWatch WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F1CC31F22C5458100CC0B88 /* Build configuration list for PBXNativeTarget "CanTrackWatch WatchKit App" */;
+			buildPhases = (
+				9F1CC2ED22C5457E00CC0B88 /* Resources */,
+				9F1CC31B22C5458100CC0B88 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F1CC30122C5458000CC0B88 /* PBXTargetDependency */,
+			);
+			name = "CanTrackWatch WatchKit App";
+			productName = "CanTrackWatch WatchKit App";
+			productReference = 9F1CC2EF22C5457E00CC0B88 /* CanTrackWatch WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		9F1CC2FD22C5458000CC0B88 /* CanTrackWatch WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F1CC31E22C5458100CC0B88 /* Build configuration list for PBXNativeTarget "CanTrackWatch WatchKit Extension" */;
+			buildPhases = (
+				9F1CC2FA22C5458000CC0B88 /* Sources */,
+				9F1CC2FB22C5458000CC0B88 /* Frameworks */,
+				9F1CC2FC22C5458000CC0B88 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CanTrackWatch WatchKit Extension";
+			productName = "CanTrackWatch WatchKit Extension";
+			productReference = 9F1CC2FE22C5458000CC0B88 /* CanTrackWatch WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F8D4EF722C3D96E0031CEB7 /* Build configuration list for PBXNativeTarget "CanTrackTV" */;
@@ -469,6 +634,15 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Lygre;
 				TargetAttributes = {
+					9F1CC2EB22C5457E00CC0B88 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					9F1CC2EE22C5457E00CC0B88 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					9F1CC2FD22C5458000CC0B88 = {
+						CreatedOnToolsVersion = 11.0;
+					};
 					9F8D4EDB22C3D96A0031CEB7 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -506,11 +680,39 @@
 				9FBE5FC822AD967300B82C22 /* CanTrackUITests */,
 				9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */,
 				9F8D4EEB22C3D96E0031CEB7 /* CanTrackTVUITests */,
+				9F1CC2EB22C5457E00CC0B88 /* CanTrackWatch */,
+				9F1CC2EE22C5457E00CC0B88 /* CanTrackWatch WatchKit App */,
+				9F1CC2FD22C5458000CC0B88 /* CanTrackWatch WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F1CC2EA22C5457E00CC0B88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F1CC2ED22C5457E00CC0B88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F1CC2F822C5458000CC0B88 /* Assets.xcassets in Resources */,
+				9F1CC2F622C5457E00CC0B88 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F1CC2FC22C5458000CC0B88 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F1CC31322C5458100CC0B88 /* Preview Assets.xcassets in Resources */,
+				9F1CC31022C5458100CC0B88 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F8D4EDA22C3D96A0031CEB7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,6 +750,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F1CC2FA22C5458000CC0B88 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F1CC30622C5458000CC0B88 /* HostingController.swift in Sources */,
+				9F1CC30422C5458000CC0B88 /* ContentView.swift in Sources */,
+				9F1CC30A22C5458000CC0B88 /* NotificationController.swift in Sources */,
+				9F1CC30822C5458000CC0B88 /* ExtensionDelegate.swift in Sources */,
+				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
+				9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F8D4ED822C3D96A0031CEB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -644,6 +859,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9F1CC2F222C5457E00CC0B88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F1CC2EE22C5457E00CC0B88 /* CanTrackWatch WatchKit App */;
+			targetProxy = 9F1CC2F122C5457E00CC0B88 /* PBXContainerItemProxy */;
+		};
+		9F1CC30122C5458000CC0B88 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F1CC2FD22C5458000CC0B88 /* CanTrackWatch WatchKit Extension */;
+			targetProxy = 9F1CC30022C5458000CC0B88 /* PBXContainerItemProxy */;
+		};
 		9F8D4EEE22C3D96E0031CEB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */;
@@ -657,6 +882,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9F1CC2F422C5457E00CC0B88 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F1CC2F522C5457E00CC0B88 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		9FBE5FC122AD967300B82C22 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -668,6 +901,118 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9F1CC31622C5458100CC0B88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		9F1CC31722C5458100CC0B88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackWatch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		9F1CC31922C5458100CC0B88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				IBSC_MODULE = CanTrackWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "CanTrackWatch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		9F1CC31A22C5458100CC0B88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				IBSC_MODULE = CanTrackWatch_WatchKit_Extension;
+				INFOPLIST_FILE = "CanTrackWatch WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackWatch.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		9F1CC31C22C5458100CC0B88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CanTrackWatch WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "CanTrackWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		9F1CC31D22C5458100CC0B88 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CanTrackWatch WatchKit Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "CanTrackWatch WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrackWatch.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
 		9F8D4EF322C3D96E0031CEB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -965,6 +1310,33 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F1CC31E22C5458100CC0B88 /* Build configuration list for PBXNativeTarget "CanTrackWatch WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1CC31C22C5458100CC0B88 /* Debug */,
+				9F1CC31D22C5458100CC0B88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F1CC31F22C5458100CC0B88 /* Build configuration list for PBXNativeTarget "CanTrackWatch WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1CC31922C5458100CC0B88 /* Debug */,
+				9F1CC31A22C5458100CC0B88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F1CC32022C5458100CC0B88 /* Build configuration list for PBXNativeTarget "CanTrackWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1CC31622C5458100CC0B88 /* Debug */,
+				9F1CC31722C5458100CC0B88 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9F8D4EF722C3D96E0031CEB7 /* Build configuration list for PBXNativeTarget "CanTrackTV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

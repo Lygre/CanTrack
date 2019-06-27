@@ -15,7 +15,34 @@ struct StrainsView : View {
 	@EnvironmentObject var productStore: ProductStore
 	@EnvironmentObject var strainStore: StrainStore
 
-	#if !os(tvOS)
+	#if os(tvOS)
+	var body: some View {
+		NavigationView {
+			ScrollView {
+				HStack {
+					ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
+						StrainCardView(strain: strain)
+							.focusable(true)
+					}
+				}
+				}
+				.background(Color.green)
+				.navigationBarTitle(Text("Strains"))
+
+		}
+	}
+
+	#elseif os(watchOS)
+	var body: some View {
+		List {
+			ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
+				Text(strain.name)
+					.background(Color(strainVariety: strain.race))
+			}
+		}
+	}
+
+	#elseif !os(tvOS)
     var body: some View {
 		NavigationView {
 			List {
@@ -30,26 +57,6 @@ struct StrainsView : View {
 				.navigationBarTitle(Text("Strains"))
 		}
     }
-	#elseif os(tvOS)
-
-
-	var body: some View {
-		NavigationView {
-			ScrollView {
-				HStack {
-					ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
-						StrainCardView(strain: strain)
-						.focusable(true)
-					}
-					}
-
-
-				}
-				.background(Color.green)
-				.navigationBarTitle(Text("Strains"))
-
-		}
-	}
 
 	#endif
 }
@@ -103,10 +110,11 @@ struct StrainCardView : View {
 
 #if DEBUG
 
+let debugStrainData = StrainStore(strains: [StrainStore.defaultStrain])
 
 struct StrainsView_Previews : PreviewProvider {
     static var previews: some View {
-        StrainsView().environmentObject(store).environmentObject(strainStore)
+        StrainsView().environmentObject(store).environmentObject(debugStrainData)
     }
 }
 #endif

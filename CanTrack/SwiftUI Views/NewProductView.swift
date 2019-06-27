@@ -101,6 +101,9 @@ struct NewProductView : View {
 
 }
 
+#elseif os(watchOS)
+
+
 #elseif !os(tvOS)
 struct NewProductView : View {
 	@EnvironmentObject var productStore: ProductStore
@@ -196,9 +199,15 @@ struct NewProductView : View {
 #endif
 
 #if DEBUG
+#if !os(watchOS)
 struct NewProductView_Previews : PreviewProvider {
-    static var previews: some View {
+
+	static var previews: some View {
+
 		NewProductView(draftProduct: .constant(.defaultProduct), isPresented: .constant(true)).environmentObject(ProductStore(products: defaultProducts.products))
-    }
+
+	}
+
 }
+#endif
 #endif

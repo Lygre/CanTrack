@@ -7,6 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F23FA3622C45AC800821014 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F23FA3422C45AC800821014 /* Interface.storyboard */; };
+		9F23FA3822C45AC800821014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F23FA3722C45AC800821014 /* Assets.xcassets */; };
+		9F23FA3F22C45AC900821014 /* CanTrackWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9F23FA3E22C45AC900821014 /* CanTrackWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9F23FA4422C45AC900821014 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23FA4322C45AC900821014 /* ContentView.swift */; };
+		9F23FA4622C45AC900821014 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23FA4522C45AC900821014 /* HostingController.swift */; };
+		9F23FA4822C45AC900821014 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23FA4722C45AC900821014 /* ExtensionDelegate.swift */; };
+		9F23FA4A22C45AC900821014 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23FA4922C45AC900821014 /* NotificationController.swift */; };
+		9F23FA4C22C45AC900821014 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23FA4B22C45AC900821014 /* NotificationView.swift */; };
+		9F23FA4E22C45AC900821014 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F23FA4D22C45AC900821014 /* ComplicationController.swift */; };
+		9F23FA5022C45AC900821014 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F23FA4F22C45AC900821014 /* Assets.xcassets */; };
+		9F23FA5322C45AC900821014 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F23FA5222C45AC900821014 /* Preview Assets.xcassets */; };
+		9F23FA5822C45AC900821014 /* CanTrackWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9F23FA3222C45AC800821014 /* CanTrackWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9F23FA6122C45BE000821014 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FDE22AD981E00B82C22 /* Product.swift */; };
+		9F23FA6222C45F6500821014 /* Strain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE022AD988700B82C22 /* Strain.swift */; };
+		9F23FA6322C45F6C00821014 /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967F22ADE3D500C73496 /* ProductStore.swift */; };
+		9F23FA6422C45F7100821014 /* StrainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133022BE3ED8000A6D00 /* StrainStore.swift */; };
+		9F23FA6522C45F7400821014 /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134E22BEBAD1000A6D00 /* Dose.swift */; };
+		9F23FA6722C4604100821014 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FED22ADA55E00B82C22 /* Extensions.swift */; };
+		9F23FA6822C4604800821014 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134522BE43F7000A6D00 /* ParameterEncoding.swift */; };
+		9F23FA6922C4604800821014 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */; };
+		9F23FA6A22C4604800821014 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */; };
+		9F23FA6B22C4604D00821014 /* StrainEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134322BE43D3000A6D00 /* StrainEndPoint.swift */; };
+		9F23FA6C22C4605200821014 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133922BE4369000A6D00 /* NetworkRouter.swift */; };
+		9F23FA6D22C4605200821014 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133B22BE437D000A6D00 /* Router.swift */; };
+		9F23FA6E22C4605200821014 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133D22BE4393000A6D00 /* EndPointType.swift */; };
+		9F23FA6F22C4605200821014 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133F22BE43A8000A6D00 /* HTTPMethod.swift */; };
+		9F23FA7022C4605200821014 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134122BE43B6000A6D00 /* HTTPTask.swift */; };
+		9F23FA7122C4605700821014 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133322BE4307000A6D00 /* NetworkController.swift */; };
+		9F23FA7222C4606000821014 /* ProductTypeOptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967922ADD5C000C73496 /* ProductTypeOptionsList.swift */; };
+		9F23FA7322C4606200821014 /* ProductTypeOptionsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967922ADD5C000C73496 /* ProductTypeOptionsList.swift */; };
+		9F23FA7422C4606800821014 /* StrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967A22ADD5C000C73496 /* StrainsView.swift */; };
+		9F23FA7722C4608600821014 /* ProductImageViewCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE322ADA4B700B82C22 /* ProductImageViewCircular.swift */; };
+		9F23FA7822C4621800821014 /* InventoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7B36622ADAF6F004278F6 /* InventoryListView.swift */; };
+		9F23FA7B22C4651E00821014 /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE622ADA4B700B82C22 /* ProductRow.swift */; };
 		9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */; };
 		9F38133122BE3ED8000A6D00 /* StrainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133022BE3ED8000A6D00 /* StrainStore.swift */; };
 		9F38133422BE4307000A6D00 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133322BE4307000A6D00 /* NetworkController.swift */; };
@@ -21,7 +55,6 @@
 		9F38134A22BE4420000A6D00 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */; };
 		9F38134D22BEB989000A6D00 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 9F38134C22BEB989000A6D00 /* SwiftDate */; };
 		9F38134F22BEBAD1000A6D00 /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134E22BEBAD1000A6D00 /* Dose.swift */; };
-		9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
 		9F38135422BEC748000A6D00 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135322BEC748000A6D00 /* CalendarStore.swift */; };
 		9F8D4EDF22C3D96A0031CEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */; };
 		9F8D4EE122C3D96A0031CEB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EE022C3D96A0031CEB7 /* ContentView.swift */; };
@@ -44,7 +77,6 @@
 		9F8D4F0622C3DA9A0031CEB7 /* StrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967A22ADD5C000C73496 /* StrainsView.swift */; };
 		9F8D4F0722C3DAB20031CEB7 /* ProtoCal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC5398C22C01FC100095D0C /* ProtoCal.swift */; };
 		9F8D4F0822C3DABC0031CEB7 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133322BE4307000A6D00 /* NetworkController.swift */; };
-		9F8D4F0922C3DAC80031CEB7 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
 		9F8D4F0A22C3DACB0031CEB7 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134522BE43F7000A6D00 /* ParameterEncoding.swift */; };
 		9F8D4F0B22C3DAF00031CEB7 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */; };
 		9F8D4F0C22C3DAF30031CEB7 /* JSONParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */; };
@@ -65,8 +97,6 @@
 		9FBE5FC022AD967300B82C22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBF22AD967300B82C22 /* Preview Assets.xcassets */; };
 		9FBE5FC322AD967300B82C22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE5FC122AD967300B82C22 /* LaunchScreen.storyboard */; };
 		9FBE5FCE22AD967300B82C22 /* CanTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FCD22AD967300B82C22 /* CanTrackUITests.swift */; };
-		9FBE5FDA22AD96C800B82C22 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FD922AD96C800B82C22 /* UserData.swift */; };
-		9FBE5FDC22AD971800B82C22 /* UserDefaultsValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FDB22AD971800B82C22 /* UserDefaultsValue.swift */; };
 		9FBE5FDF22AD981E00B82C22 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FDE22AD981E00B82C22 /* Product.swift */; };
 		9FBE5FE122AD988700B82C22 /* Strain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE022AD988700B82C22 /* Strain.swift */; };
 		9FBE5FE822ADA4B700B82C22 /* ProductImageViewCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE322ADA4B700B82C22 /* ProductImageViewCircular.swift */; };
@@ -83,6 +113,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9F23FA4022C45AC900821014 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FBE5FAB22AD967100B82C22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F23FA3D22C45AC900821014;
+			remoteInfo = "CanTrackWatch Extension";
+		};
+		9F23FA5622C45AC900821014 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FBE5FAB22AD967100B82C22 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F23FA3122C45AC800821014;
+			remoteInfo = CanTrackWatch;
+		};
 		9F8D4EED22C3D96E0031CEB7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9FBE5FAB22AD967100B82C22 /* Project object */;
@@ -99,7 +143,47 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9F23FA5922C45AC900821014 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				9F23FA5822C45AC900821014 /* CanTrackWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F23FA5C22C45AC900821014 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9F23FA3F22C45AC900821014 /* CanTrackWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		9F23FA3222C45AC800821014 /* CanTrackWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F23FA3522C45AC800821014 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		9F23FA3722C45AC800821014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F23FA3922C45AC800821014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F23FA3E22C45AC900821014 /* CanTrackWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CanTrackWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F23FA4322C45AC900821014 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9F23FA4522C45AC900821014 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		9F23FA4722C45AC900821014 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		9F23FA4922C45AC900821014 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		9F23FA4B22C45AC900821014 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		9F23FA4D22C45AC900821014 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		9F23FA4F22C45AC900821014 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9F23FA5222C45AC900821014 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9F23FA5422C45AC900821014 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F23FA5522C45AC900821014 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		9F38132D22BE37E7000A6D00 /* CanTrack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CanTrack.entitlements; sourceTree = "<group>"; };
 		9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultExtensions.swift; sourceTree = "<group>"; };
 		9F38133022BE3ED8000A6D00 /* StrainStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrainStore.swift; sourceTree = "<group>"; };
@@ -114,7 +198,6 @@
 		9F38134722BE440B000A6D00 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
 		9F38134922BE4420000A6D00 /* JSONParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoding.swift; sourceTree = "<group>"; };
 		9F38134E22BEBAD1000A6D00 /* Dose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dose.swift; sourceTree = "<group>"; };
-		9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtensions.swift; sourceTree = "<group>"; };
 		9F38135322BEC748000A6D00 /* CalendarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarStore.swift; sourceTree = "<group>"; };
 		9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,8 +219,6 @@
 		9FBE5FC922AD967300B82C22 /* CanTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBE5FCD22AD967300B82C22 /* CanTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanTrackUITests.swift; sourceTree = "<group>"; };
 		9FBE5FCF22AD967300B82C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FBE5FD922AD96C800B82C22 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		9FBE5FDB22AD971800B82C22 /* UserDefaultsValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsValue.swift; sourceTree = "<group>"; };
 		9FBE5FDE22AD981E00B82C22 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		9FBE5FE022AD988700B82C22 /* Strain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strain.swift; sourceTree = "<group>"; };
 		9FBE5FE322ADA4B700B82C22 /* ProductImageViewCircular.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductImageViewCircular.swift; sourceTree = "<group>"; };
@@ -154,6 +235,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F23FA3B22C45AC900821014 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F8D4ED922C3D96A0031CEB7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,6 +275,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F23FA3322C45AC800821014 /* CanTrackWatch */ = {
+			isa = PBXGroup;
+			children = (
+				9F23FA3422C45AC800821014 /* Interface.storyboard */,
+				9F23FA3722C45AC800821014 /* Assets.xcassets */,
+				9F23FA3922C45AC800821014 /* Info.plist */,
+			);
+			path = CanTrackWatch;
+			sourceTree = "<group>";
+		};
+		9F23FA4222C45AC900821014 /* CanTrackWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9F23FA4322C45AC900821014 /* ContentView.swift */,
+				9F23FA4522C45AC900821014 /* HostingController.swift */,
+				9F23FA4722C45AC900821014 /* ExtensionDelegate.swift */,
+				9F23FA4922C45AC900821014 /* NotificationController.swift */,
+				9F23FA4B22C45AC900821014 /* NotificationView.swift */,
+				9F23FA4D22C45AC900821014 /* ComplicationController.swift */,
+				9F23FA4F22C45AC900821014 /* Assets.xcassets */,
+				9F23FA5422C45AC900821014 /* Info.plist */,
+				9F23FA5522C45AC900821014 /* PushNotificationPayload.apns */,
+				9F23FA5122C45AC900821014 /* Preview Content */,
+			);
+			path = "CanTrackWatch Extension";
+			sourceTree = "<group>";
+		};
+		9F23FA5122C45AC900821014 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				9F23FA5222C45AC900821014 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		9F38133222BE42F5000A6D00 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +361,7 @@
 		9F38135022BEBF35000A6D00 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */,
+				9FBE5FED22ADA55E00B82C22 /* Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -286,6 +409,8 @@
 				9F8D4EDD22C3D96A0031CEB7 /* CanTrackTV */,
 				9FBE5FCC22AD967300B82C22 /* CanTrackUITests */,
 				9F8D4EEF22C3D96E0031CEB7 /* CanTrackTVUITests */,
+				9F23FA3322C45AC800821014 /* CanTrackWatch */,
+				9F23FA4222C45AC900821014 /* CanTrackWatch Extension */,
 				9FBE5FB422AD967100B82C22 /* Products */,
 				9F8D4F1322C3DBB10031CEB7 /* Frameworks */,
 			);
@@ -298,6 +423,8 @@
 				9FBE5FC922AD967300B82C22 /* CanTrackUITests.xctest */,
 				9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */,
 				9F8D4EEC22C3D96E0031CEB7 /* CanTrackTVUITests.xctest */,
+				9F23FA3222C45AC800821014 /* CanTrackWatch.app */,
+				9F23FA3E22C45AC900821014 /* CanTrackWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -314,7 +441,6 @@
 				9FBE5FD822AD969600B82C22 /* UserData */,
 				9FBE5FB622AD967100B82C22 /* AppDelegate.swift */,
 				9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */,
-				9FBE5FED22ADA55E00B82C22 /* Extensions.swift */,
 				9FBE5FBC22AD967300B82C22 /* Assets.xcassets */,
 				9FBE5FC122AD967300B82C22 /* LaunchScreen.storyboard */,
 				9FBE5FC422AD967300B82C22 /* Info.plist */,
@@ -343,8 +469,6 @@
 		9FBE5FD822AD969600B82C22 /* UserData */ = {
 			isa = PBXGroup;
 			children = (
-				9FBE5FD922AD96C800B82C22 /* UserData.swift */,
-				9FBE5FDB22AD971800B82C22 /* UserDefaultsValue.swift */,
 				9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */,
 			);
 			path = UserData;
@@ -383,6 +507,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9F23FA3122C45AC800821014 /* CanTrackWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F23FA6022C45AC900821014 /* Build configuration list for PBXNativeTarget "CanTrackWatch" */;
+			buildPhases = (
+				9F23FA3022C45AC800821014 /* Resources */,
+				9F23FA5C22C45AC900821014 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F23FA4122C45AC900821014 /* PBXTargetDependency */,
+			);
+			name = CanTrackWatch;
+			productName = CanTrackWatch;
+			productReference = 9F23FA3222C45AC800821014 /* CanTrackWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		9F23FA3D22C45AC900821014 /* CanTrackWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F23FA5F22C45AC900821014 /* Build configuration list for PBXNativeTarget "CanTrackWatch Extension" */;
+			buildPhases = (
+				9F23FA3A22C45AC900821014 /* Sources */,
+				9F23FA3B22C45AC900821014 /* Frameworks */,
+				9F23FA3C22C45AC900821014 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CanTrackWatch Extension";
+			productName = "CanTrackWatch Extension";
+			productReference = 9F23FA3E22C45AC900821014 /* CanTrackWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F8D4EF722C3D96E0031CEB7 /* Build configuration list for PBXNativeTarget "CanTrackTV" */;
@@ -428,10 +586,12 @@
 				9FBE5FAF22AD967100B82C22 /* Sources */,
 				9FBE5FB022AD967100B82C22 /* Frameworks */,
 				9FBE5FB122AD967100B82C22 /* Resources */,
+				9F23FA5922C45AC900821014 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9F23FA5722C45AC900821014 /* PBXTargetDependency */,
 			);
 			name = CanTrack;
 			packageProductDependencies = (
@@ -469,6 +629,12 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = Lygre;
 				TargetAttributes = {
+					9F23FA3122C45AC800821014 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					9F23FA3D22C45AC900821014 = {
+						CreatedOnToolsVersion = 11.0;
+					};
 					9F8D4EDB22C3D96A0031CEB7 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -506,11 +672,31 @@
 				9FBE5FC822AD967300B82C22 /* CanTrackUITests */,
 				9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */,
 				9F8D4EEB22C3D96E0031CEB7 /* CanTrackTVUITests */,
+				9F23FA3122C45AC800821014 /* CanTrackWatch */,
+				9F23FA3D22C45AC900821014 /* CanTrackWatch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9F23FA3022C45AC800821014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F23FA3822C45AC800821014 /* Assets.xcassets in Resources */,
+				9F23FA3622C45AC800821014 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F23FA3C22C45AC900821014 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F23FA5322C45AC900821014 /* Preview Assets.xcassets in Resources */,
+				9F23FA5022C45AC900821014 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F8D4EDA22C3D96A0031CEB7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -548,6 +734,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9F23FA3A22C45AC900821014 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F23FA7122C4605700821014 /* NetworkController.swift in Sources */,
+				9F23FA7022C4605200821014 /* HTTPTask.swift in Sources */,
+				9F23FA6322C45F6C00821014 /* ProductStore.swift in Sources */,
+				9F23FA7422C4606800821014 /* StrainsView.swift in Sources */,
+				9F23FA7B22C4651E00821014 /* ProductRow.swift in Sources */,
+				9F23FA6B22C4604D00821014 /* StrainEndPoint.swift in Sources */,
+				9F23FA7222C4606000821014 /* ProductTypeOptionsList.swift in Sources */,
+				9F23FA6222C45F6500821014 /* Strain.swift in Sources */,
+				9F23FA7822C4621800821014 /* InventoryListView.swift in Sources */,
+				9F23FA6E22C4605200821014 /* EndPointType.swift in Sources */,
+				9F23FA6A22C4604800821014 /* JSONParameterEncoding.swift in Sources */,
+				9F23FA6D22C4605200821014 /* Router.swift in Sources */,
+				9F23FA6422C45F7100821014 /* StrainStore.swift in Sources */,
+				9F23FA4622C45AC900821014 /* HostingController.swift in Sources */,
+				9F23FA6F22C4605200821014 /* HTTPMethod.swift in Sources */,
+				9F23FA4422C45AC900821014 /* ContentView.swift in Sources */,
+				9F23FA4A22C45AC900821014 /* NotificationController.swift in Sources */,
+				9F23FA6922C4604800821014 /* URLParameterEncoding.swift in Sources */,
+				9F23FA7722C4608600821014 /* ProductImageViewCircular.swift in Sources */,
+				9F23FA4822C45AC900821014 /* ExtensionDelegate.swift in Sources */,
+				9F23FA6822C4604800821014 /* ParameterEncoding.swift in Sources */,
+				9F23FA6722C4604100821014 /* Extensions.swift in Sources */,
+				9F23FA6522C45F7400821014 /* Dose.swift in Sources */,
+				9F23FA4C22C45AC900821014 /* NotificationView.swift in Sources */,
+				9F23FA6C22C4605200821014 /* NetworkRouter.swift in Sources */,
+				9F23FA4E22C45AC900821014 /* ComplicationController.swift in Sources */,
+				9F23FA6122C45BE000821014 /* Product.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9F8D4ED822C3D96A0031CEB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -560,6 +780,7 @@
 				9F8D4F0A22C3DACB0031CEB7 /* ParameterEncoding.swift in Sources */,
 				9F8D4EFF22C3DA750031CEB7 /* Extensions.swift in Sources */,
 				9F8D4F0522C3DA980031CEB7 /* HomeView.swift in Sources */,
+				9F23FA7322C4606200821014 /* ProductTypeOptionsList.swift in Sources */,
 				9F8D4EFB22C3DA610031CEB7 /* ProductStore.swift in Sources */,
 				9F8D4F0C22C3DAF30031CEB7 /* JSONParameterEncoding.swift in Sources */,
 				9F8D4EFA22C3DA5E0031CEB7 /* Strain.swift in Sources */,
@@ -579,7 +800,6 @@
 				9F8D4F0322C3DA930031CEB7 /* ProductDetailView.swift in Sources */,
 				9F8D4F0722C3DAB20031CEB7 /* ProtoCal.swift in Sources */,
 				9F8D4F1122C3DAFD0031CEB7 /* HTTPMethod.swift in Sources */,
-				9F8D4F0922C3DAC80031CEB7 /* SwiftUIColorExtensions.swift in Sources */,
 				9F8D4EFC22C3DA640031CEB7 /* StrainStore.swift in Sources */,
 				9F8D4EF922C3DA5C0031CEB7 /* Product.swift in Sources */,
 			);
@@ -605,14 +825,11 @@
 				9F38134A22BE4420000A6D00 /* JSONParameterEncoding.swift in Sources */,
 				9FD2967E22ADD5C000C73496 /* CalendarView.swift in Sources */,
 				9FBE5FE122AD988700B82C22 /* Strain.swift in Sources */,
-				9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */,
-				9FBE5FDC22AD971800B82C22 /* UserDefaultsValue.swift in Sources */,
 				9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */,
 				9FC5398D22C01FC100095D0C /* ProtoCal.swift in Sources */,
 				9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */,
 				9FD2967C22ADD5C000C73496 /* ProductTypeOptionsList.swift in Sources */,
 				9F38134F22BEBAD1000A6D00 /* Dose.swift in Sources */,
-				9FBE5FDA22AD96C800B82C22 /* UserData.swift in Sources */,
 				9FBE5FEA22ADA4B700B82C22 /* NewProductView.swift in Sources */,
 				9FBE5FE822ADA4B700B82C22 /* ProductImageViewCircular.swift in Sources */,
 				9FBE5FEE22ADA55E00B82C22 /* Extensions.swift in Sources */,
@@ -644,6 +861,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9F23FA4122C45AC900821014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F23FA3D22C45AC900821014 /* CanTrackWatch Extension */;
+			targetProxy = 9F23FA4022C45AC900821014 /* PBXContainerItemProxy */;
+		};
+		9F23FA5722C45AC900821014 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F23FA3122C45AC800821014 /* CanTrackWatch */;
+			targetProxy = 9F23FA5622C45AC900821014 /* PBXContainerItemProxy */;
+		};
 		9F8D4EEE22C3D96E0031CEB7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9F8D4EDB22C3D96A0031CEB7 /* CanTrackTV */;
@@ -657,6 +884,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9F23FA3422C45AC800821014 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F23FA3522C45AC800821014 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		9FBE5FC122AD967300B82C22 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -668,6 +903,92 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9F23FA5A22C45AC900821014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				IBSC_MODULE = CanTrackWatch_Extension;
+				INFOPLIST_FILE = CanTrackWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrack.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		9F23FA5B22C45AC900821014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				IBSC_MODULE = CanTrackWatch_Extension;
+				INFOPLIST_FILE = CanTrackWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrack.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
+		9F23FA5D22C45AC900821014 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CanTrackWatch Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "CanTrackWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrack.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Debug;
+		};
+		9F23FA5E22C45AC900821014 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"CanTrackWatch Extension\"/Preview\\ Content";
+				DEVELOPMENT_TEAM = F54NBB76Q7;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "CanTrackWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Lygre.CanTrack.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.0;
+			};
+			name = Release;
+		};
 		9F8D4EF322C3D96E0031CEB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -965,6 +1286,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9F23FA5F22C45AC900821014 /* Build configuration list for PBXNativeTarget "CanTrackWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F23FA5D22C45AC900821014 /* Debug */,
+				9F23FA5E22C45AC900821014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F23FA6022C45AC900821014 /* Build configuration list for PBXNativeTarget "CanTrackWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F23FA5A22C45AC900821014 /* Debug */,
+				9F23FA5B22C45AC900821014 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9F8D4EF722C3D96E0031CEB7 /* Build configuration list for PBXNativeTarget "CanTrackTV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

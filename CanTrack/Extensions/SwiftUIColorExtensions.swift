@@ -11,15 +11,15 @@ import SwiftUI
 
 extension Color {
 
-//	init(strainVariety: Strain.StrainVariety) {
-//		switch strainVariety {
-//		case .indica:
-//			self.init("indicaColor")
-//		case .sativa:
-//			self.init("sativaColor")
-//		case .hybrid:
-//			self.init("hybridColor")
-//		}
-//	}
+	init(strainVariety: Strain.StrainVariety) {
+		switch strainVariety {
+		case .indica:
+			self.init("indicaColor")
+		case .sativa:
+			self.init("sativaColor")
+		case .hybrid:
+			self.init("hybridColor")
+		}
+	}
 
 }

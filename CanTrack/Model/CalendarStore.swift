@@ -43,18 +43,7 @@ class CalendarStore: Codable, BindableObject {
 		didSet {
 			didChange.send()
 			self.datesForMonth = {
-				var cmp = DateComponents()
-				cmp.timeZone = .current
-				cmp.calendar = .current
-				cmp.calendar?.locale = .current
-				cmp.year = CalendarStore.currentDate.year
-				cmp.month = self.activeMonth.rawValue
-				cmp.day = 1
-				cmp.hour = 2
-				cmp.minute = 2
-				guard let dateForGeneration = try? Date(components: cmp, region: nil) else {
-					return []
-				}
+				let dateForGeneration = firstDay(ofMonth: self.activeMonth.rawValue)
 				return Date.enumerateDates(from: dateForGeneration.dateAtStartOf(.month), to: dateForGeneration.dateAtEndOf(.month), increment: DateComponents(day: 1))
 			}()
 		}
@@ -160,7 +149,21 @@ extension CalendarStore {
 		}
 	}
 
-
+	func firstDay(ofMonth month: Int) -> Date {
+		var cmp = DateComponents()
+		cmp.timeZone = .current
+		cmp.calendar = .current
+		cmp.calendar?.locale = .current
+		cmp.year = CalendarStore.currentDate.year
+		cmp.month = month
+		cmp.day = 1
+		cmp.hour = 2
+		cmp.minute = 2
+		guard let dateForGeneration = try? Date(components: cmp, region: nil) else {
+			return Date()
+		}
+		return dateForGeneration
+	}
 
 }
 

@@ -11,56 +11,33 @@ import Combine
 import SwiftUI
 import SwiftDate
 
-extension Month: Codable {
+extension Month: Codable { }
 
-}
 
-class CalendarStore: Equatable, Hashable, Codable, BindableObject {
-	static func == (lhs: CalendarStore, rhs: CalendarStore) -> Bool {
-		return lhs.datesForMonth == rhs.datesForMonth
+/// CalendarStore
+/// Serves as the Bindable object to publish changes to the dose log
+class CalendarStore: Codable, BindableObject {
+
+	/// Coding Keys
+	enum CodingKeys: String, CodingKey {
+		case datesForMonth
+		case activeMonth
 	}
-
-	func hash(into hasher: inout Hasher) {
-		hasher.combine(datesForMonth)
-	}
-
-	var dateFormatter: DateFormatter = {
-		let dateFormatter = DateFormatter()
-		dateFormatter.timeZone = .current
-		dateFormatter.locale = .current
-		dateFormatter.calendar = .current
-		dateFormatter.dateFormat = "d"
-		return dateFormatter
-	}()
-
-	let didChange = PassthroughSubject<Void, Never>()
 
 	static let currentDate: Date = Date()
 
+	//MARK: Bindable Object Conformance
+	let didChange = PassthroughSubject<Void, Never>()
+
+	//MARK: CONSTANTS
 	let masterDateStoreArray: [Date]
 
-	static func generateDatesArray(between year1: Int, year2: Int) -> [Date] {
-		return Date.enumerateDates(from: CalendarStore.firstDayOfYear(year: year1), to: CalendarStore.firstDayOfYear(year: year2), increment: DateComponents(day: 1))
-	}
-	static func firstDayOfYear(year: Int) -> Date {
-		var cmp = DateComponents()
-		cmp.timeZone = .current
-		cmp.calendar = .current
-		cmp.calendar?.locale = .current
-		cmp.year = year
-		cmp.month = 1
-		cmp.day = 1
-		cmp.hour = 2
-		guard let dateForGeneration = try? Date(components: cmp, region: nil) else {
-			return Date()
+	//MARK: PROPERTIES
+	var datesForMonth: [Date] = [] {
+		didSet {
+			didChange.send()
 		}
-		return dateForGeneration.dateAtStartOf(.year)
 	}
-
-//	func getNumberOfWeeks(for monthInt: Int) -> Int {
-//		//wekday ordinals
-//		let daysInMonth: Int = masterDateStoreArray.filter({ $0.dateAt(weekdayOrdinal: 0, weekday: .monday, monthNumber: self.activeMonth.rawValue, yearNumber: 2019).isLeapYear })
-//	}
 
 	var activeMonth: Month {
 		didSet {
@@ -83,13 +60,24 @@ class CalendarStore: Equatable, Hashable, Codable, BindableObject {
 		}
 	}
 
+	//MARK: COMPUTED PROPERTIES
+	lazy var dateFormatter: DateFormatter = {
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = .current
+		dateFormatter.locale = .current
+		dateFormatter.calendar = .current
+		dateFormatter.dateFormat = "d"
+		return dateFormatter
+	}()
 
+
+	//MARK: Initialization & Codable Conformance
 	init() {
 		self.activeMonth = Month(rawValue: CalendarStore.currentDate.month)!
 		self.datesForMonth = {
 			return Date.enumerateDates(from: CalendarStore.currentDate.dateAtStartOf(.month), to: CalendarStore.currentDate.dateAtEndOf(.month), increment: DateComponents(day: 1))
 		}()
-		self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2012, year2: 2021)
+		self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2018, year2: 2020)
 	}
 
 	func encode(to encoder: Encoder) throws {
@@ -103,30 +91,51 @@ class CalendarStore: Equatable, Hashable, Codable, BindableObject {
 			let values = try aDecoder.container(keyedBy: CodingKeys.self)
 			activeMonth = try values.decode(Month.self, forKey: .activeMonth)
 			datesForMonth = try values.decode([Date].self, forKey: .datesForMonth)
-			self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2012, year2: 2021)
+			self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2018, year2: 2020)
 		} catch {
 			activeMonth = Month(rawValue: 1)!
 			datesForMonth = [
 
 			]
-			self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2012, year2: 2021)
+			self.masterDateStoreArray = CalendarStore.generateDatesArray(between: 2018, year2: 2020)
 			print(error)
 		}
 	}
 
-	enum CodingKeys: String, CodingKey {
-		case datesForMonth
-		case activeMonth
+	//MARK: Type Methods
+	static func generateDatesArray(between year1: Int, year2: Int) -> [Date] {
+		return Date.enumerateDates(from: CalendarStore.firstDayOfYear(year: year1), to: CalendarStore.firstDayOfYear(year: year2), increment: DateComponents(day: 1))
 	}
 
-	var datesForMonth: [Date] = [] {
-		didSet {
-			didChange.send()
+	static func firstDayOfYear(year: Int) -> Date {
+		var cmp = DateComponents()
+		cmp.timeZone = .current
+		cmp.calendar = .current
+		cmp.calendar?.locale = .current
+		cmp.year = year
+		cmp.month = 1
+		cmp.day = 1
+		cmp.hour = 2
+		guard let dateForGeneration = try? Date(components: cmp, region: nil) else {
+			return Date()
 		}
+		return dateForGeneration.dateAtStartOf(.year)
 	}
 
 }
 
+//MARK: Hashable and Equatable Conformance
+extension CalendarStore: Hashable, Equatable {
+	static func == (lhs: CalendarStore, rhs: CalendarStore) -> Bool {
+		return lhs.datesForMonth == rhs.datesForMonth
+	}
+
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(datesForMonth)
+	}
+}
+
+//MARK: HELPER METHODS
 extension CalendarStore {
 
 	func weekDates(from weekNum: Int) -> [Date] {
@@ -151,10 +160,7 @@ extension CalendarStore {
 		}
 	}
 
-//	func getDatesForWeekRowView(weekInt: Int) -> [Date] {
-//
-//
-//	}
+
 
 }
 

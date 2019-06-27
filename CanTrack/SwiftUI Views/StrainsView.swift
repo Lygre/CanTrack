@@ -39,12 +39,15 @@ struct StrainsView : View {
 				HStack {
 					ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
 						StrainCardView(strain: strain)
+						.focusable(true)
 					}
-				}
+					}
+
 
 				}
+				.background(Color.green)
 				.navigationBarTitle(Text("Strains"))
-				.focusable(true)
+
 		}
 	}
 

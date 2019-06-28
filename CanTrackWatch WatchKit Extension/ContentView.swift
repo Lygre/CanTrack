@@ -13,6 +13,8 @@ let testData2: [String: AnyObject] =
 	 "products": defaultProducts
 ]
 
+
+
 struct ContentView : View {
 
 	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
@@ -23,11 +25,15 @@ struct ContentView : View {
 			ProductImageViewCircular(product: productStore.products[0])
 			Text("Welcome to Can Track")
 				.font(.headline)
-			Button(action: {
-				//code for button action
-			}) {
-				Image(systemName: "plus.circle")
-					.imageScale(.large)
+			HStack {
+				Text("Dose →")
+				.padding(.leading)
+				Button(action: {
+					//code for button action
+				}) {
+					Image(systemName: "plus.circle")
+						.imageScale(.large)
+				}
 			}
 			}
 			.lineLimit(nil)

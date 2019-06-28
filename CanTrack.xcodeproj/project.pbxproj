@@ -105,6 +105,9 @@
 		9FD2967D22ADD5C000C73496 /* StrainsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967A22ADD5C000C73496 /* StrainsView.swift */; };
 		9FD2967E22ADD5C000C73496 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967B22ADD5C000C73496 /* CalendarView.swift */; };
 		9FD2968022ADE3D500C73496 /* ProductStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967F22ADE3D500C73496 /* ProductStore.swift */; };
+		9FE4CD0422C65BDE006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
+		9FE4CD0522C65BE5006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
+		9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,6 +231,7 @@
 		9FD2967A22ADD5C000C73496 /* StrainsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrainsView.swift; sourceTree = "<group>"; };
 		9FD2967B22ADD5C000C73496 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9FD2967F22ADE3D500C73496 /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
+		9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */,
+				9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -780,6 +785,7 @@
 				9F1CC30A22C5458000CC0B88 /* NotificationController.swift in Sources */,
 				9F1CC30822C5458000CC0B88 /* ExtensionDelegate.swift in Sources */,
 				9F1CC32C22C5471D00CC0B88 /* EndPointType.swift in Sources */,
+				9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */,
 				9F1CC32D22C5471D00CC0B88 /* HTTPMethod.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
 				9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */,
@@ -800,6 +806,7 @@
 				9F8D4F0522C3DA980031CEB7 /* HomeView.swift in Sources */,
 				9F8D4EFB22C3DA610031CEB7 /* ProductStore.swift in Sources */,
 				9F8D4F0C22C3DAF30031CEB7 /* JSONParameterEncoding.swift in Sources */,
+				9FE4CD0522C65BE5006B91F2 /* AlignmentExtensions.swift in Sources */,
 				9F8D4EFA22C3DA5E0031CEB7 /* Strain.swift in Sources */,
 				9F8D4EE122C3D96A0031CEB7 /* ContentView.swift in Sources */,
 				9F8D4F1622C3DD3F0031CEB7 /* SceneDelegate.swift in Sources */,
@@ -864,6 +871,7 @@
 				9F38134022BE43A8000A6D00 /* HTTPMethod.swift in Sources */,
 				9FD2968022ADE3D500C73496 /* ProductStore.swift in Sources */,
 				9F38133E22BE4393000A6D00 /* EndPointType.swift in Sources */,
+				9FE4CD0422C65BDE006B91F2 /* AlignmentExtensions.swift in Sources */,
 				9F38133A22BE4369000A6D00 /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,16 +23,21 @@ struct ContentView : View {
 	var body: some View {
 		VStack {
 			ProductImageViewCircular(product: productStore.products[0])
+				.alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
+					dimension[.bottom] / 2
+			}
 			Text("Welcome to Can Track")
 				.font(.headline)
-			HStack {
+			HStack(alignment: .firstTextBaseline) {
 				Text("Dose →")
-				.padding(.leading)
 				Button(action: {
 					//code for button action
 				}) {
 					Image(systemName: "plus.circle")
 						.imageScale(.large)
+				}
+					.alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
+						dimension[.bottom] / 2
 				}
 			}
 			}

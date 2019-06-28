@@ -19,3 +19,14 @@ extension VerticalAlignment {
 	static let buttonAndLaunchImage = VerticalAlignment(ButtonAndLaunchImage.self)
 
 }
+
+
+extension HorizontalAlignment {
+	private enum ButtonAndLaunchImage: AlignmentID {
+		static func defaultValue(in context: ViewDimensions) -> Length {
+			return context[.center]
+		}
+	}
+
+	static let buttonAndLaunchImage = HorizontalAlignment(ButtonAndLaunchImage.self)
+}

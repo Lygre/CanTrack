@@ -10,7 +10,7 @@ import SwiftUI
 import Foundation
 
 
-struct WatchProductView : View {
+struct WatchProductDetailView : View {
 
 	var product: Product
 
@@ -50,7 +50,7 @@ var testProd: Product = {
 
 struct WatchProductView_Previews : PreviewProvider {
     static var previews: some View {
-        WatchProductView(product: testProd)
+        WatchProductDetailView(product: testProd)
     }
 }
 #endif

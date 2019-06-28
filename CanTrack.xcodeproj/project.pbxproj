@@ -108,7 +108,7 @@
 		9FE4CD0422C65BDE006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 		9FE4CD0522C65BE5006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 		9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
-		9FE4CD0922C66FE7006B91F2 /* WatchProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0822C66FE7006B91F2 /* WatchProductView.swift */; };
+		9FE4CD0922C66FE7006B91F2 /* WatchProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0822C66FE7006B91F2 /* WatchProductDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,7 +233,7 @@
 		9FD2967B22ADD5C000C73496 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9FD2967F22ADE3D500C73496 /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
 		9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentExtensions.swift; sourceTree = "<group>"; };
-		9FE4CD0822C66FE7006B91F2 /* WatchProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductView.swift; sourceTree = "<group>"; };
+		9FE4CD0822C66FE7006B91F2 /* WatchProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,7 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				9F1CC30322C5458000CC0B88 /* ContentView.swift */,
-				9FE4CD0822C66FE7006B91F2 /* WatchProductView.swift */,
+				9FE4CD0822C66FE7006B91F2 /* WatchProductDetailView.swift */,
 			);
 			path = "Watch Views";
 			sourceTree = "<group>";
@@ -797,7 +797,7 @@
 				9F1CC30822C5458000CC0B88 /* ExtensionDelegate.swift in Sources */,
 				9F1CC32C22C5471D00CC0B88 /* EndPointType.swift in Sources */,
 				9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */,
-				9FE4CD0922C66FE7006B91F2 /* WatchProductView.swift in Sources */,
+				9FE4CD0922C66FE7006B91F2 /* WatchProductDetailView.swift in Sources */,
 				9F1CC32D22C5471D00CC0B88 /* HTTPMethod.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
 				9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */,

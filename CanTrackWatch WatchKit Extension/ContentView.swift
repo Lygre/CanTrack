@@ -15,8 +15,8 @@ let testData2: [String: AnyObject] =
 
 struct ContentView : View {
 
-	var productStore: ProductStore
-	var strainStore: StrainStore
+	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
+	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
 
     var body: some View {
         HStack {
@@ -32,7 +32,7 @@ struct ContentView : View {
 
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-		ContentView(productStore: testData2["products"] as! ProductStore, strainStore: testData2["strains"] as! StrainStore)
+		ContentView()
     }
 }
 #endif

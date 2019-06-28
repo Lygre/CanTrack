@@ -15,12 +15,14 @@ let testData: [String: AnyObject] =
 	 "products": defaultProducts
 ]
 
+var strainStore: StrainStore = testData["strains"] as! StrainStore
+var productStore: ProductStore = testData["products"] as! ProductStore
+
 class HostingController : WKHostingController<ContentView> {
 
-	var strainStore: StrainStore = testData["strains"] as! StrainStore
-	var productStore: ProductStore = testData["products"] as! ProductStore
+
 	
     override var body: ContentView {
-		return ContentView(productStore: productStore, strainStore: strainStore)
+		return ContentView()
     }
 }

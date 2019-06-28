@@ -18,12 +18,21 @@ struct ContentView : View {
 	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
 
-    var body: some View {
-        HStack {
-            Text("Hello World")
+	var body: some View {
+		VStack {
 			ProductImageViewCircular(product: productStore.products[0])
-        }
-    }
+			Text("Welcome to Can Track")
+				.font(.headline)
+			Button(action: {
+				//code for button action
+			}) {
+				Image(systemName: "plus.circle")
+					.imageScale(.large)
+			}
+			}
+			.lineLimit(nil)
+			.background(Color.green)
+	}
 }
 
 #if DEBUG

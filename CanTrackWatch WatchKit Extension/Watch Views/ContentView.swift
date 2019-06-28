@@ -19,6 +19,7 @@ struct ContentView : View {
 
 	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
+	@State private var isInDoseModalView: Bool = false
 
 	var body: some View {
 		VStack {
@@ -37,6 +38,7 @@ struct ContentView : View {
 
 				Button(action: {
 					//code for button action
+					self.isInDoseModalView = true
 				}) {
 					Image(systemName: "plus.circle")
 						.imageScale(.large)
@@ -45,6 +47,7 @@ struct ContentView : View {
 				Spacer()
 				}
 			}
+			.overlay(isInDoseModalView ? ProductImageViewCircular(product: productStore.products[0]) : nil, alignment: Alignment.center)
 			.lineLimit(nil)
 			.background(Color.green)
 	}

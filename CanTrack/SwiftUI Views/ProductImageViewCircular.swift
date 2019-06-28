@@ -8,20 +8,36 @@
 
 import SwiftUI
 
+
 struct ProductImageViewCircular : View {
 
 	var product: Product
 
+	#if os(watchOS)
+	var body: some View {
+		Image(uiImage: product.productImage)
+			.resizable()
+			.clipShape(Circle())
+			.overlay(Circle().stroke(Color.black, lineWidth: 4))
+			.frame(width: 80, height: 80, alignment: .center)
+    }
+
+
+	#elseif !os(watchOS)
 	var body: some View {
 
 		Image(uiImage: product.productImage)
-
 			.resizable()
-		.clipShape(Circle())
-		.overlay(Circle().stroke(Color.black, lineWidth: 4))
-			.frame(width: 80, height: 80, alignment: .center)
-    }
+			.clipShape(Circle())
+			.overlay(Circle().stroke(Color.black, lineWidth: 2))
+			.frame(width: 40, height: 40, alignment: .center)
+	}
+
+
+	#endif
 }
+
+
 
 //#if DEBUG
 //struct ProductImageViewCircular_Previews : PreviewProvider {

@@ -8,7 +8,6 @@
 
 import SwiftUI
 import Combine
-//import SwifterSwift
 
 let defaultProducts = ProductStore(products: [
 	Product(strain: Strain(name: "Strawberry Switchblade", race: .hybrid, description: nil), productType: .truShatter),
@@ -21,7 +20,6 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 
 	let didChange = PassthroughSubject<Void, Never>()
 
-//	@UserDefaultValue(key: "ProductStore", defaultValue: )
 	var products: [Product] {
 		didSet {
 			didChange.send()
@@ -71,9 +69,7 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 		let values = try aDecoder.container(keyedBy: CodingKeys.self)
 		products = try values.decode([Product].self, forKey: .products)
 		} catch {
-			products = [
-
-			]
+			products = []
 			print(error)
 		}
 	}

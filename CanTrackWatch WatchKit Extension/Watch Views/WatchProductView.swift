@@ -14,14 +14,15 @@ struct WatchProductView : View {
 
 	var product: Product
 
-	@State private var isOpened: Bool = false
+	@State private var isOpened: Bool = true
+
 
 	let dateFormatter: DateFormatter = {
 		let dateFormatter = DateFormatter()
 		dateFormatter.timeZone = .current
 		dateFormatter.locale = .current
 		dateFormatter.calendar = .current
-		dateFormatter.dateFormat = "d"
+		dateFormatter.dateFormat = "MMM d yyy"
 		return dateFormatter
 	}()
 
@@ -31,7 +32,7 @@ struct WatchProductView : View {
 				.lineLimit(nil)
 			Text(product.strain.name)
 				.lineLimit(nil)
-			Text(product.mass+" g")
+			Text(product.mass+"g")
 			isOpened ? Text(dateFormatter.string(from: product.dateOpened!)) : Text("Unopened")
         }
 		.background(Color.green)

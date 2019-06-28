@@ -52,6 +52,7 @@
 		9F38134F22BEBAD1000A6D00 /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134E22BEBAD1000A6D00 /* Dose.swift */; };
 		9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
 		9F38135422BEC748000A6D00 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135322BEC748000A6D00 /* CalendarStore.swift */; };
+		9F6B97A322C6B94000F360DA /* WatchProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */; };
 		9F8D4EDF22C3D96A0031CEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */; };
 		9F8D4EE122C3D96A0031CEB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EE022C3D96A0031CEB7 /* ContentView.swift */; };
 		9F8D4EE322C3D96E0031CEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4EE222C3D96E0031CEB7 /* Assets.xcassets */; };
@@ -200,6 +201,7 @@
 		9F38134E22BEBAD1000A6D00 /* Dose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dose.swift; sourceTree = "<group>"; };
 		9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtensions.swift; sourceTree = "<group>"; };
 		9F38135322BEC748000A6D00 /* CalendarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarStore.swift; sourceTree = "<group>"; };
+		9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductsListView.swift; sourceTree = "<group>"; };
 		9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8D4EE022C3D96A0031CEB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -513,6 +515,7 @@
 			children = (
 				9F1CC30322C5458000CC0B88 /* ContentView.swift */,
 				9FE4CD0822C66FE7006B91F2 /* WatchProductDetailView.swift */,
+				9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */,
 			);
 			path = "Watch Views";
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F6B97A322C6B94000F360DA /* WatchProductsListView.swift in Sources */,
 				9F1CC32F22C5472200CC0B88 /* NetworkController.swift in Sources */,
 				9F1CC32322C546EB00CC0B88 /* ProductStore.swift in Sources */,
 				9F1CC32222C546EB00CC0B88 /* Strain.swift in Sources */,

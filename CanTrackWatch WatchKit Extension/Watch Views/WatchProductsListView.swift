@@ -1,0 +1,35 @@
+//
+//  WatchProductsListView.swift
+//  CanTrackWatch WatchKit Extension
+//
+//  Created by Hugh Broome on 6/28/19.
+//  Copyright © 2019 Lygre. All rights reserved.
+//
+
+import SwiftUI
+
+struct WatchProductsListView : View {
+	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var strainStore: StrainStore
+
+
+
+
+	var body: some View {
+		ScrollView {
+			VStack {
+				ForEach(productStore.products.identified(by: \.id)) { product in
+					WatchProductDetailView(product: product)
+				}
+			}
+		}
+	}
+}
+
+#if DEBUG
+struct WatchProductsListView_Previews : PreviewProvider {
+    static var previews: some View {
+        WatchProductsListView().environmentObject(defaultProducts).environmentObject(strainStore)
+    }
+}
+#endif

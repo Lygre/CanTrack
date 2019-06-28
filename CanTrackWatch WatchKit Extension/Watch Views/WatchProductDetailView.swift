@@ -33,7 +33,7 @@ struct WatchProductDetailView : View {
 			Text(product.strain.name)
 				.lineLimit(nil)
 			Text(product.mass+"g")
-			isOpened ? Text(dateFormatter.string(from: product.dateOpened!)) : Text("Unopened")
+			isOpened ? Text(dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
         }
 		.background(Color.green)
     }

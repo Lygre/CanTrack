@@ -21,22 +21,27 @@ struct ContentView : View {
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
 
 	var body: some View {
-		VStack {
+		VStack(alignment: .buttonAndLaunchImage) {
 			HStack(alignment: .buttonAndLaunchImageVertical) {
 				ProductImageViewCircular(product: productStore.products[0])
 				Text("CanTrack")
 					.lineLimit(nil)
 					.font(.subheadline)
 
+				}.alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
+					dimension[.bottom]
 			}
 			
-			HStack(alignment: .firstTextBaseline) {
+			HStack {
 				Text("Dose →")
 				Button(action: {
 					//code for button action
 				}) {
 					Image(systemName: "plus.circle")
 						.imageScale(.large)
+				}
+					.alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
+						dimension[.buttonAndLaunchImage]
 				}
 
 			}

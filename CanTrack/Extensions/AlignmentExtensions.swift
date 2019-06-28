@@ -10,13 +10,13 @@ import SwiftUI
 
 
 extension VerticalAlignment {
-	private enum ButtonAndLaunchImageVertical: AlignmentID {
+	private enum ButtonAndLaunchImageVerticalTopAligned: AlignmentID {
 		static func defaultValue(in context: ViewDimensions) -> Length {
 			return context[.top]
 		}
 	}
 
-	static let buttonAndLaunchImageVertical = VerticalAlignment(ButtonAndLaunchImageVertical.self)
+	static let buttonAndLaunchImageVertical = VerticalAlignment(ButtonAndLaunchImageVerticalTopAligned.self)
 
 }
 
@@ -24,7 +24,7 @@ extension VerticalAlignment {
 extension HorizontalAlignment {
 	private enum ButtonAndLaunchImage: AlignmentID {
 		static func defaultValue(in context: ViewDimensions) -> Length {
-			return context[.top]
+			return context[HorizontalAlignment.center]
 		}
 	}
 

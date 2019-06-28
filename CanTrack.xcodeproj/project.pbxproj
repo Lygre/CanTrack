@@ -108,6 +108,7 @@
 		9FE4CD0422C65BDE006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 		9FE4CD0522C65BE5006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 		9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
+		9FE4CD0922C66FE7006B91F2 /* WatchProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0822C66FE7006B91F2 /* WatchProductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -232,6 +233,7 @@
 		9FD2967B22ADD5C000C73496 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9FD2967F22ADE3D500C73496 /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
 		9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentExtensions.swift; sourceTree = "<group>"; };
+		9FE4CD0822C66FE7006B91F2 /* WatchProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,7 +290,7 @@
 		9F1CC30222C5458000CC0B88 /* CanTrackWatch WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				9F1CC30322C5458000CC0B88 /* ContentView.swift */,
+				9FE4CD0722C66F94006B91F2 /* Watch Views */,
 				9F1CC30522C5458000CC0B88 /* HostingController.swift */,
 				9F1CC30722C5458000CC0B88 /* ExtensionDelegate.swift */,
 				9F1CC30922C5458000CC0B88 /* NotificationController.swift */,
@@ -434,9 +436,9 @@
 		9FBE5FB522AD967100B82C22 /* CanTrack */ = {
 			isa = PBXGroup;
 			children = (
+				9F38132D22BE37E7000A6D00 /* CanTrack.entitlements */,
 				9F38135022BEBF35000A6D00 /* Extensions */,
 				9F38133522BE431F000A6D00 /* Networking */,
-				9F38132D22BE37E7000A6D00 /* CanTrack.entitlements */,
 				9F38133222BE42F5000A6D00 /* Controllers */,
 				9FBE5FE222AD9FFF00B82C22 /* SwiftUI Views */,
 				9FBE5FDD22AD97F500B82C22 /* Model */,
@@ -504,6 +506,15 @@
 				9FC7B36622ADAF6F004278F6 /* InventoryListView.swift */,
 			);
 			path = "SwiftUI Views";
+			sourceTree = "<group>";
+		};
+		9FE4CD0722C66F94006B91F2 /* Watch Views */ = {
+			isa = PBXGroup;
+			children = (
+				9F1CC30322C5458000CC0B88 /* ContentView.swift */,
+				9FE4CD0822C66FE7006B91F2 /* WatchProductView.swift */,
+			);
+			path = "Watch Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -786,6 +797,7 @@
 				9F1CC30822C5458000CC0B88 /* ExtensionDelegate.swift in Sources */,
 				9F1CC32C22C5471D00CC0B88 /* EndPointType.swift in Sources */,
 				9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */,
+				9FE4CD0922C66FE7006B91F2 /* WatchProductView.swift in Sources */,
 				9F1CC32D22C5471D00CC0B88 /* HTTPMethod.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
 				9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */,

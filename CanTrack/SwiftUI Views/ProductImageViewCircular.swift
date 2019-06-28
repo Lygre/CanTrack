@@ -18,8 +18,8 @@ struct ProductImageViewCircular : View {
 		Image(uiImage: product.productImage)
 			.resizable()
 			.clipShape(Circle())
-			.overlay(Circle().stroke(Color.black, lineWidth: 4))
-			.frame(width: 80, height: 80, alignment: .center)
+			.overlay(Circle().stroke(Color.black, lineWidth: 2))
+			.frame(width: 30, height: 30, alignment: .center)
     }
 
 
@@ -30,7 +30,7 @@ struct ProductImageViewCircular : View {
 			.resizable()
 			.clipShape(Circle())
 			.overlay(Circle().stroke(Color.black, lineWidth: 2))
-			.frame(width: 40, height: 40, alignment: .center)
+			.frame(width: 80, height: 80, alignment: .center)
 	}
 
 

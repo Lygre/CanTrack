@@ -22,16 +22,17 @@ struct ContentView : View {
 
 	var body: some View {
 		VStack {
-			HStack(alignment: .buttonAndLaunchImageVertical) {
-				ProductImageViewCircular(product: productStore.products[0]).alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
-					dimension[.buttonAndLaunchImage]
+			HStack(alignment: .center) {
+				ProductImageViewCircular(product: productStore.products[0])
+					.alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
+						dimension[.buttonAndLaunchImage]
 				}
 				Text("CanTrack")
 					.lineLimit(nil)
 					.font(.subheadline)
 				}
 			
-			HStack(alignment: .firstTextBaseline) {
+			HStack(alignment: .center) {
 				Text("Dose →")
 
 				Button(action: {
@@ -40,9 +41,7 @@ struct ContentView : View {
 					Image(systemName: "plus.circle")
 						.imageScale(.large)
 				}
-				}.alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
-					dimension[.buttonAndLaunchImageVertical]
-			}
+				}
 			}
 			.lineLimit(nil)
 			.background(Color.green)

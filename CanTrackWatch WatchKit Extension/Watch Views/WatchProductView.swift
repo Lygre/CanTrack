@@ -18,12 +18,12 @@ struct WatchProductView : View {
 
 
 	let dateFormatter: DateFormatter = {
-		let dateFormatter = DateFormatter()
-		dateFormatter.timeZone = .current
-		dateFormatter.locale = .current
-		dateFormatter.calendar = .current
-		dateFormatter.dateFormat = "MMM d yyy"
-		return dateFormatter
+		let dateFormatter2 = DateFormatter()
+		dateFormatter2.timeZone = .current
+		dateFormatter2.locale = .current
+		dateFormatter2.calendar = .current
+		dateFormatter2.dateFormat = "MMM d, yyy"
+		return dateFormatter2
 	}()
 
     var body: some View {

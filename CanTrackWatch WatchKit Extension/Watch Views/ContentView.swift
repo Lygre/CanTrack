@@ -32,7 +32,7 @@ struct ContentView : View {
 					.font(.subheadline)
 				}
 			
-			HStack(alignment: .center) {
+			HStack(alignment: .center, spacing: 0) {
 				Text("Dose →")
 
 				Button(action: {
@@ -40,7 +40,9 @@ struct ContentView : View {
 				}) {
 					Image(systemName: "plus.circle")
 						.imageScale(.large)
+						.foregroundColor(Color.blue)
 				}
+				Spacer()
 				}
 			}
 			.lineLimit(nil)

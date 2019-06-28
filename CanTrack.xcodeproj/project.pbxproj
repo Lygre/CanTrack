@@ -33,6 +33,7 @@
 		9F1CC32D22C5471D00CC0B88 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133F22BE43A8000A6D00 /* HTTPMethod.swift */; };
 		9F1CC32E22C5471D00CC0B88 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134122BE43B6000A6D00 /* HTTPTask.swift */; };
 		9F1CC32F22C5472200CC0B88 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133322BE4307000A6D00 /* NetworkController.swift */; };
+		9F1CC33022C5636700CC0B88 /* ProductImageViewCircular.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FE322ADA4B700B82C22 /* ProductImageViewCircular.swift */; };
 		9F38132F22BE3B01000A6D00 /* UserDefaultExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38132E22BE3B01000A6D00 /* UserDefaultExtensions.swift */; };
 		9F38133122BE3ED8000A6D00 /* StrainStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133022BE3ED8000A6D00 /* StrainStore.swift */; };
 		9F38133422BE4307000A6D00 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38133322BE4307000A6D00 /* NetworkController.swift */; };
@@ -400,10 +401,10 @@
 			children = (
 				9FBE5FB522AD967100B82C22 /* CanTrack */,
 				9F8D4EDD22C3D96A0031CEB7 /* CanTrackTV */,
+				9F1CC30222C5458000CC0B88 /* CanTrackWatch WatchKit Extension */,
 				9FBE5FCC22AD967300B82C22 /* CanTrackUITests */,
 				9F8D4EEF22C3D96E0031CEB7 /* CanTrackTVUITests */,
 				9F1CC2F322C5457E00CC0B88 /* CanTrackWatch WatchKit App */,
-				9F1CC30222C5458000CC0B88 /* CanTrackWatch WatchKit Extension */,
 				9FBE5FB422AD967100B82C22 /* Products */,
 				9F8D4F1322C3DBB10031CEB7 /* Frameworks */,
 			);
@@ -767,6 +768,7 @@
 				9F1CC30622C5458000CC0B88 /* HostingController.swift in Sources */,
 				9F1CC32E22C5471D00CC0B88 /* HTTPTask.swift in Sources */,
 				9F1CC32922C5471700CC0B88 /* StrainEndPoint.swift in Sources */,
+				9F1CC33022C5636700CC0B88 /* ProductImageViewCircular.swift in Sources */,
 				9F1CC32722C5471300CC0B88 /* URLParameterEncoding.swift in Sources */,
 				9F1CC32B22C5471D00CC0B88 /* Router.swift in Sources */,
 				9F1CC30422C5458000CC0B88 /* ContentView.swift in Sources */,

@@ -50,7 +50,8 @@ struct ContentView : View {
 
 
 			HStack {
-				Text("Dose →")
+				Text("Dose")
+				Text("→")
 				NavigationButton(destination:
 					WatchProductsListView()
 						.environmentObject(self.productStore)
@@ -63,6 +64,12 @@ struct ContentView : View {
 				}
 
 			}
+
+			HStack {
+				Text("Logs")
+				Text("→")
+			}
+
 			Spacer()
 				.lineLimit(nil)
 				.background(Color.green)

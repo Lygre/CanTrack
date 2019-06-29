@@ -30,6 +30,14 @@ struct Dose: Equatable, Hashable, Codable, Identifiable {
 		self.administrationRoute = administrationRoute
 	}
 
+	init(product: Product, mass: Double, administrationRoute: AdministrationRoute?, doseTimestamp: Date?) {
+		self.id = UUID()
+		self.timestamp = doseTimestamp ?? Date()
+		self.product = product
+		self.mass = mass
+		self.administrationRoute = administrationRoute ?? .inhalation
+	}
+
 	func encode(to encoder: Encoder) throws {
 		var container = encoder.container(keyedBy: CodingKeys.self)
 		try container.encode(id, forKey: .id)

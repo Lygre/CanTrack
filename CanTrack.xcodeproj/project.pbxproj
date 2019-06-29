@@ -527,12 +527,12 @@
 			isa = PBXGroup;
 			children = (
 				9F8689A522C72B5F0017454C /* Data.swift */,
-				9FBE5FDE22AD981E00B82C22 /* Product.swift */,
-				9FBE5FE022AD988700B82C22 /* Strain.swift */,
-				9F38134E22BEBAD1000A6D00 /* Dose.swift */,
-				9F38133022BE3ED8000A6D00 /* StrainStore.swift */,
-				9FD2967F22ADE3D500C73496 /* ProductStore.swift */,
 				9F38135322BEC748000A6D00 /* CalendarStore.swift */,
+				9FBE5FE022AD988700B82C22 /* Strain.swift */,
+				9F38133022BE3ED8000A6D00 /* StrainStore.swift */,
+				9FBE5FDE22AD981E00B82C22 /* Product.swift */,
+				9FD2967F22ADE3D500C73496 /* ProductStore.swift */,
+				9F38134E22BEBAD1000A6D00 /* Dose.swift */,
 				9F093DD422C7A0E200F26083 /* DoseStore.swift */,
 			);
 			path = Model;

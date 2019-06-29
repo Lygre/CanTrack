@@ -26,17 +26,20 @@ struct WatchProductDetailView : View {
 		return dateFormatter2
 	}()
 
-    var body: some View {
-		VStack(alignment: .leading) {
-            Text(product.productType.rawValue)
-				.lineLimit(nil)
-			Text(product.strain.name)
-				.lineLimit(nil)
-			Text(product.mass+"g")
-			isOpened ? Text(dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
-        }
-    }
+	var body: some View {
+		HStack {
+			VStack {
+				Text(product.productType.rawValue)
+					.lineLimit(nil)
+				Text(product.strain.name)
+					.lineLimit(nil)
+				Text(product.mass+"g")
+				isOpened ? Text(dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
+			}
+		}
+	}
 }
+
 
 #if DEBUG
 

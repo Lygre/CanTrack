@@ -9,13 +9,47 @@
 import SwiftUI
 import Combine
 
+/// Product Model object Struct
 struct Product: Equatable, Hashable, Codable, Identifiable {
-	let id: UUID
-	var dosesCount: Int = 0 {
-		didSet {
-			didChange.send(self)
+
+	/// ProductType. Raw type string
+	enum ProductType: String, Equatable, Hashable, Identifiable, Codable, CaseIterable {
+		var id: ObjectIdentifier {
+			return ObjectIdentifier(ProductType.self)
 		}
+		case truFlower = "truFlower"
+		case truCrmbl = "truCRMBL"
+		case truClear = "truClear"
+		case truPod = "truPod"
+		case rosin = "Rosin"
+		case truShatter = "truShatter"
+		case vapePenCartridge = "Vape Pen Cartridge"
+		case co2VapePenCartridge = "CO2 Vape Pen Cartridge"
+		case oralSyringe = "Oral Syringe"
+		case tinctureDropletBottle = "Tincture Droplet Bottle"
+		case capsuleBottle = "Capsule Bottle"
+		case topicalSunscreen = "Topical Sunscreen"
+		case topicalLotion = "Topical Lotion"
+		case rsoSyringe = "RSO Syringe"
+		case topicalCream = "Topical Cream"
+		case nasalSpray = "Nasal Spray"
 	}
+
+	/// CodingKeys for class: to conform to Codable
+	enum CodingKeys: String, CodingKey {
+		case id
+		case productType
+		case strain
+		case productLabelImage
+		case currentProductImage
+		case mass
+		case dateOpened
+		case dosesCount
+		case isFavorite
+	}
+	//MARK: -- Properties/Constants
+	let id: UUID
+
 	var productImage: UIImage = UIImage(imageLiteralResourceName: "cannabisbg") {
 		didSet {
 			didChange.send(self)
@@ -27,17 +61,25 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 			didChange.send(self)
 		}
 	}
-	var dateOpened: Date? {
-		didSet {
-			didChange.send(self)
-		}
-	}
+
 	var strain: Strain {
 		didSet {
 			didChange.send(self)
 		}
 	}
 	var productType: ProductType {
+		didSet {
+			didChange.send(self)
+		}
+	}
+
+	var dateOpened: Date? {
+		didSet {
+			didChange.send(self)
+		}
+	}
+
+	var dosesCount: Int = 0 {
 		didSet {
 			didChange.send(self)
 		}
@@ -57,10 +99,16 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		return lhs.dateOpened == rhs.dateOpened && lhs.strain == rhs.strain && lhs.productType == rhs.productType
 	}
 
+	/// Returns an image from the ImageStore class
+	/// which returns it from the main bundle in turn, using the specified size
+	/// - Parameter size: Integer specifying the size desired for the image to be returned
 	func image(forSize size: Int) -> Image {
 		ImageStore.shared.image(name: imageIdentifier, size: size)
 	}
 
+
+	/// Encodes for Codable conformance
+	/// - Parameter encoder: Encoder keyed by our CodingKeys
 	func encode(to encoder: Encoder) throws {
 		var container = encoder.container(keyedBy: CodingKeys.self)
 		try container.encode(productType, forKey: .productType)
@@ -87,38 +135,7 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		dosesCount = try values.decode(Int.self, forKey: .dosesCount)
 	}
 
-	enum CodingKeys: String, CodingKey {
-		case id
-		case productType
-		case strain
-		case productLabelImage
-		case currentProductImage
-		case mass
-		case dateOpened
-		case dosesCount
-	}
-
-	enum ProductType: String, Equatable, Hashable, Identifiable, Codable, CaseIterable {
-		var id: ObjectIdentifier {
-			return ObjectIdentifier(ProductType.self)
-		}
 
 
-		case truFlower = "truFlower"
-		case truCrmbl = "truCRMBL"
-		case truClear = "truClear"
-		case truPod = "truPod"
-		case rosin = "Rosin"
-		case truShatter = "truShatter"
-		case vapePenCartridge = "Vape Pen Cartridge"
-		case co2VapePenCartridge = "CO2 Vape Pen Cartridge"
-		case oralSyringe = "Oral Syringe"
-		case tinctureDropletBottle = "Tincture Droplet Bottle"
-		case capsuleBottle = "Capsule Bottle"
-		case topicalSunscreen = "Topical Sunscreen"
-		case topicalLotion = "Topical Lotion"
-		case rsoSyringe = "RSO Syringe"
-		case topicalCream = "Topical Cream"
-		case nasalSpray = "Nasal Spray"
-	}
+
 }

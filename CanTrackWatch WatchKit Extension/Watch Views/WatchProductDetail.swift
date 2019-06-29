@@ -10,7 +10,7 @@ import SwiftUI
 
 struct WatchProductDetail : View {
 
-	@State private var isOpened: Bool = false
+	@State private var isOpened: Bool = true
 
 	var product: Product
 
@@ -25,15 +25,18 @@ struct WatchProductDetail : View {
 
 
 
-    var body: some View {
-		VStack {
-			Text(product.mass+"g")
-			isOpened ? Text(dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
+	var body: some View {
+		HStack {
+			VStack(alignment: .leading) {
+				Text("Mass:"+" \(product.mass)g")
+				isOpened ? Text("Opened: "+dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
+				Spacer()
+			}
 			Spacer()
+				.navigationBarTitle(Text(product.strain.name))
 		}
-		.navigationBarTitle(Text(product.strain.name)
-		)
-    }
+
+	}
 }
 
 #if DEBUG

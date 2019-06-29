@@ -49,7 +49,6 @@ struct ContentView : View {
 			}
 				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.lastTextBaseline] / 2 }
 
-
 			HStack {
 				Text("Dose")
 					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.leading] / 2 }
@@ -63,9 +62,9 @@ struct ContentView : View {
 				) {
 					Image(systemName: "plus.circle")
 						.imageScale(.large)
-						.foregroundColor(Color.blue)
+						.foregroundColor(Color.green)
 				}
-
+				Spacer()
 			}
 
 			HStack {
@@ -74,16 +73,18 @@ struct ContentView : View {
 				Text("→")
 					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 				NavigationButton(destination:
-					// TODO: Replace this with the Actual Dose Log View once I make it
+					// TODO: Replace this with the Actual Dose Log View once I make it -
 					WatchProductsListView()
 						.environmentObject(self.productStore)
 						.environmentObject(self.strainStore)
 						.environmentObject(self.doseStore)
 				) {
-					Image(systemName: "plus.circle")
+					Image(systemName: "calendar")
 						.imageScale(.large)
 						.foregroundColor(Color.blue)
+					
 				}
+				Spacer()
 			}
 
 			Spacer()

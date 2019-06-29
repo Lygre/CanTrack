@@ -11,6 +11,8 @@ import Combine
 import SwiftUI
 
 
+/// Dose Model Object
+///
 struct Dose: Equatable, Hashable, Codable, Identifiable {
 	let id: UUID
 	let timestamp: Date

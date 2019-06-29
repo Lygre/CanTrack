@@ -15,7 +15,7 @@ struct WatchProductsListView : View {
 
 
 	var body: some View {
-			List {
+		List {
 			ForEach(productStore.products.identified(by: \.id)) { product in
 				NavigationButton(destination: WatchProductDetail(product: product)) {
 					VStack(alignment: .leading) {
@@ -23,7 +23,10 @@ struct WatchProductsListView : View {
 					}
 				}
 			}
-		}.listStyle(.carousel)
+			}
+			.navigationBarTitle(Text("Inventory"))
+			.listStyle(.carousel)
+
 	}
 }
 

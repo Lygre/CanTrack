@@ -31,6 +31,8 @@ struct WatchProductDetail : View {
 			isOpened ? Text(dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
 			Spacer()
 		}
+		.navigationBarTitle(Text(product.strain.name)
+		)
     }
 }
 

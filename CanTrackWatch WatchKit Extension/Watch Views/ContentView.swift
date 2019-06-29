@@ -40,18 +40,21 @@ struct ContentView : View {
 	@State private var doseStore: DoseStore = testData2["doses"] as! DoseStore
 
 	var body: some View {
-		VStack(alignment: .leading) {
+		VStack(alignment: .launchScreenArrowAlignment) {
 			HStack(alignment: .center) {
 				ProductImageViewCircular(product: productStore.products[1])
 				Text("CanTrack")
 					.lineLimit(nil)
 					.font(.headline)
 			}
+				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.lastTextBaseline] / 2 }
 
 
 			HStack {
 				Text("Dose")
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.leading] / 2 }
 				Text("→")
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 				NavigationButton(destination:
 					WatchProductsListView()
 						.environmentObject(self.productStore)
@@ -67,7 +70,20 @@ struct ContentView : View {
 
 			HStack {
 				Text("Logs")
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.leading] / 2 }
 				Text("→")
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
+				NavigationButton(destination:
+					// TODO: Replace this with the Actual Dose Log View once I make it
+					WatchProductsListView()
+						.environmentObject(self.productStore)
+						.environmentObject(self.strainStore)
+						.environmentObject(self.doseStore)
+				) {
+					Image(systemName: "plus.circle")
+						.imageScale(.large)
+						.foregroundColor(Color.blue)
+				}
 			}
 
 			Spacer()

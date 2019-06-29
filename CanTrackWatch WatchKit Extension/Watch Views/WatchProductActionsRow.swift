@@ -13,17 +13,20 @@ struct WatchProductActionsRow : View {
 	var product: Product
 
 
-//	var buttons = [
-//		("Dose", \)
-//	]
+	var buttons = ProductActions.allCases.compactMap { ($0.name, $0) }
 
 
-    var body: some View {
+	var body: some View {
 		HStack(spacing: 8) {
-//			ForEach(
-			Text("Hi")
+			ForEach(buttons.identified(by: \.0)) { value in
+				Button(action: {
+
+				}) {
+					Text(value.0)
+				}
+			}
 		}
-    }
+	}
 
 }
 

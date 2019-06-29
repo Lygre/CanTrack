@@ -197,4 +197,15 @@ extension ProductActions {
 		}
 	}
 
+	var sfSymbol: Image {
+		switch(self) {
+		case .dose:
+			return ImageStore.shared.image(name: "icon_effect_creative", size: 25)
+		case .edit:
+			return Image(systemName: "pencil")
+		case .delete:
+			return Image(systemName: "trash")
+		}
+	}
+
 }

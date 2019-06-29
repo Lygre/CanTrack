@@ -69,15 +69,7 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		case isFavorite
 	}
 
-	enum Actions: String, Hashable, Identifiable, CaseIterable {
-		var id: ObjectIdentifier {
-			ObjectIdentifier(Actions.self)
-		}
 
-		case dose = "Dose"
-		case edit = "Edit"
-		case delete = "Delete"
-	}
 
 	//MARK: -- Properties/Constants
 	let id: UUID
@@ -178,5 +170,31 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		ImageStore.shared.image(name: imageIdentifier, size: size)
 	}
 
+
+}
+
+
+enum ProductActions: Int, Identifiable, CaseIterable {
+	case dose
+	case edit
+	case delete
+}
+
+extension ProductActions {
+
+	var id: UUID {
+		return UUID()
+	}
+
+	var name: String {
+		switch(self) {
+		case .dose:
+			return "Dose"
+		case .edit:
+			return "Edit"
+		case .delete:
+			return "Delete"
+		}
+	}
 
 }

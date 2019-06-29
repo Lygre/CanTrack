@@ -21,7 +21,11 @@ struct WatchProductsListView : View {
 			}
 			ForEach(productStore.products.identified(by: \.id)) { product in
 				if !self.productStore.showFavoriteProductsOnly || product.isFavorite {
-					NavigationButton(destination: WatchProductDetail(product: product)) {
+					NavigationButton(destination:
+						WatchProductDetail(product: product)
+							.environmentObject(self.productStore)
+							.environmentObject(self.strainStore)
+					) {
 						VStack(alignment: .leading) {
 							WatchProductRow(product: product)
 						}

@@ -10,6 +10,7 @@ import SwiftUI
 
 struct WatchProductDetail : View {
 	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var strainStore: StrainStore
 
 	@State private var isOpened: Bool = true
 
@@ -31,7 +32,7 @@ struct WatchProductDetail : View {
 
 
 	var body: some View {
-		HStack {
+		HStack(alignment: .top) {
 			VStack(alignment: .leading, spacing: 5) {
 				HStack {
 					Text(product.productType.rawValue)
@@ -49,8 +50,10 @@ struct WatchProductDetail : View {
 					}
 				}
 				Text("Mass:"+" \(product.mass)g")
-				isOpened ? Text("Opened: "+dateFormatter.string(from: product.dateOpened ?? Date()))
-					.lineLimit(nil): Text("Unopened")
+				isOpened ?
+					Text("Opened: "+dateFormatter.string(from: product.dateOpened ?? Date()))
+						.lineLimit(nil) :
+					Text("Unopened")
 						.lineLimit(nil)
 				Spacer()
 				}
@@ -62,7 +65,7 @@ struct WatchProductDetail : View {
 #if DEBUG
 struct WatchProductDetail_Previews : PreviewProvider {
     static var previews: some View {
-		WatchProductDetail(product: defaultProducts.products[0]).environmentObject(productStore)
+		WatchProductDetail(product: defaultProducts.products[0]).environmentObject(productStore).environmentObject(strainStore)
     }
 }
 #endif

@@ -14,16 +14,12 @@ struct WatchProductsListView : View {
 
 
 
-
 	var body: some View {
 		ScrollView {
 			ForEach(productStore.products.identified(by: \.id)) { product in
-
-					WatchProductDetailView(product: product).scaledToFill()
-
+				WatchProductDetailView(product: product).scaledToFill()
 			}
 		}
-
 	}
 }
 

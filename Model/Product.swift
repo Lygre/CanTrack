@@ -50,13 +50,7 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 	//MARK: -- Properties/Constants
 	let id: UUID
 
-	var productImage: UIImage = UIImage(imageLiteralResourceName: "cannabisbg") {
-		didSet {
-			didChange.send(self)
-		}
-	}
-	var imageIdentifier: String = "cannabisbg"
-	var mass: String = "0.0" {
+	var productType: ProductType {
 		didSet {
 			didChange.send(self)
 		}
@@ -67,7 +61,16 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 			didChange.send(self)
 		}
 	}
-	var productType: ProductType {
+
+	var productImage: UIImage = UIImage(imageLiteralResourceName: "cannabisbg") {
+		didSet {
+			didChange.send(self)
+		}
+	}
+
+	var imageIdentifier: String = "cannabisbg"
+
+	var mass: String = "0.0" {
 		didSet {
 			didChange.send(self)
 		}
@@ -80,6 +83,12 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 	}
 
 	var dosesCount: Int = 0 {
+		didSet {
+			didChange.send(self)
+		}
+	}
+
+	var isFavorite: Bool = false {
 		didSet {
 			didChange.send(self)
 		}
@@ -99,12 +108,7 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		return lhs.dateOpened == rhs.dateOpened && lhs.strain == rhs.strain && lhs.productType == rhs.productType
 	}
 
-	/// Returns an image from the ImageStore class
-	/// which returns it from the main bundle in turn, using the specified size
-	/// - Parameter size: Integer specifying the size desired for the image to be returned
-	func image(forSize size: Int) -> Image {
-		ImageStore.shared.image(name: imageIdentifier, size: size)
-	}
+
 
 
 	/// Encodes for Codable conformance
@@ -135,7 +139,12 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		dosesCount = try values.decode(Int.self, forKey: .dosesCount)
 	}
 
-
+	/// Returns an image from the ImageStore class
+	/// which returns it from the main bundle in turn, using the specified size
+	/// - Parameter size: Integer specifying the size desired for the image to be returned
+	func image(forSize size: Int) -> Image {
+		ImageStore.shared.image(name: imageIdentifier, size: size)
+	}
 
 
 }

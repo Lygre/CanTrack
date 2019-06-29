@@ -26,8 +26,14 @@ struct WatchProductDetail : View {
 
 
 	var body: some View {
-		HStack {
-			VStack(alignment: .leading) {
+		HStack(alignment: .bottom) {
+			VStack(alignment: .leading, spacing: 5) {
+				HStack {
+					Text(product.productType.rawValue)
+					.lineLimit(nil)
+					
+					Image(systemName: "star.fill")
+				}
 				Text("Mass:"+" \(product.mass)g")
 				isOpened ? Text("Opened: "+dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
 				Spacer()

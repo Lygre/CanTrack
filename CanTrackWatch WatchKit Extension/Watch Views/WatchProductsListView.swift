@@ -20,16 +20,18 @@ struct WatchProductsListView : View {
 				Text("Favorites Only")
 			}
 			ForEach(productStore.products.identified(by: \.id)) { product in
-				NavigationButton(destination: WatchProductDetail(product: product)) {
-					VStack(alignment: .leading) {
-						WatchProductRow(product: product)
+				if !self.productStore.showFavoriteProductsOnly || product.isFavorite {
+					NavigationButton(destination: WatchProductDetail(product: product)) {
+						VStack(alignment: .leading) {
+							WatchProductRow(product: product)
+						}
 					}
 				}
-			}
-			}
-			.navigationBarTitle(Text("Inventory"))
-			.listStyle(.carousel)
+				}
+				.navigationBarTitle(Text("Inventory"))
+				.listStyle(.carousel)
 
+		}
 	}
 }
 

@@ -34,9 +34,10 @@ struct WatchProductDetail : View {
 	var body: some View {
 		HStack(alignment: .top) {
 			VStack(alignment: .leading, spacing: 5) {
-				HStack {
+				HStack(alignment: .top) {
 					Text(product.productType.rawValue)
 						.lineLimit(nil)
+					Spacer()
 					Button(action: {
 						self.productStore.products[self.productIndex].isFavorite.toggle()
 					}) {

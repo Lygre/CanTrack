@@ -16,17 +16,14 @@ struct WatchProductRow : View {
 
 	@State private var isOpened: Bool = true
 
-
-	
-
 	var body: some View {
 		HStack {
-			product.image(forSize: 20)
+			product.image(forSize: 36)
+				.clipShape(Circle())
 
 			VStack(alignment: .leading) {
 				Text(product.productType.rawValue)
 					.lineLimit(nil)
-					.multilineTextAlignment(.leading)
 				Text(product.strain.name)
 					.lineLimit(nil)
 					.alignmentGuide(.trailing) { (dimension) -> Length in
@@ -34,15 +31,17 @@ struct WatchProductRow : View {
 				}
 			}
 
-			Spacer()
+
 
 			if product.isFavorite {
 				Image(systemName: "star.fill")
 					.imageScale(.medium)
 				.foregroundColor(Color.yellow)
 			}
+			Spacer()
 
-		}
+			}
+			.padding([.top, .bottom], Length(exactly: 2))
 	}
 }
 

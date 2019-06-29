@@ -12,12 +12,23 @@ import Combine
 /// Product Model object Struct
 struct Product: Equatable, Hashable, Codable, Identifiable {
 
-	struct ProductActions: Codable, Hashable {
-		var elevation: Range<Double>
-		var pace: Range<Double>
-		var heartRate: Range<Double>
+	struct DetailedInformation: Codable, Hashable {
+		var thc: Double
+		var thcV: Double
+		var cbd: Double
+		var cbg: Double
+		var cbn: Double
+		var totalTHC: Double {
+			get {
+				thc+thcV
+			}
+		}
+		var totalCBD: Double {
+			get {
+				cbd+cbg+cbn
+			}
+		}
 
-		
 	}
 
 	/// ProductType. Raw type string

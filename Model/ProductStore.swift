@@ -34,6 +34,12 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 		}
 	}
 
+	var showFavoriteProductsOnly = false {
+		didSet {
+			didChange.send()
+		}
+	}
+
 	var productTypes: [Product.ProductType] = [] {
 		didSet {
 			didChange.send()

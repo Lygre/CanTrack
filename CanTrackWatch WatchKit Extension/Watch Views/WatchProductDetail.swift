@@ -35,7 +35,6 @@ struct WatchProductDetail : View {
 			Spacer()
 				.navigationBarTitle(Text(product.strain.name))
 		}
-
 	}
 }
 

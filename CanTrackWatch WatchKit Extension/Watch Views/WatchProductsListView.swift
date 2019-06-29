@@ -16,6 +16,9 @@ struct WatchProductsListView : View {
 
 	var body: some View {
 		List {
+			Toggle(isOn: $productStore.showFavoriteProductsOnly) {
+				Text("Favorites Only")
+			}
 			ForEach(productStore.products.identified(by: \.id)) { product in
 				NavigationButton(destination: WatchProductDetail(product: product)) {
 					VStack(alignment: .leading) {

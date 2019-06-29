@@ -35,7 +35,6 @@ struct WatchProductDetailView : View {
 			Text(product.mass+"g")
 			isOpened ? Text(dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
         }
-		.background(Color.green)
     }
 }
 

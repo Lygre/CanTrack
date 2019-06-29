@@ -10,6 +10,8 @@ import SwiftUI
 
 struct WatchProductDetail : View {
 
+	@State private var isOpened: Bool = false
+
 	var product: Product
 
 	private let dateFormatter: DateFormatter = {
@@ -21,12 +23,13 @@ struct WatchProductDetail : View {
 		return dateFormatter2
 	}()
 
-	@State private var isOpened: Bool = false
+
 
     var body: some View {
 		VStack {
 			Text(product.mass+"g")
 			isOpened ? Text(dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
+			Spacer()
 		}
     }
 }

@@ -10,32 +10,25 @@ import SwiftUI
 import Foundation
 
 
-struct WatchProductDetailView : View {
+struct WatchProductRow : View {
 
 	var product: Product
 
 	@State private var isOpened: Bool = true
 
 
-	let dateFormatter: DateFormatter = {
-		let dateFormatter2 = DateFormatter()
-		dateFormatter2.timeZone = .current
-		dateFormatter2.locale = .current
-		dateFormatter2.calendar = .current
-		dateFormatter2.dateFormat = "MMM d, yyy"
-		return dateFormatter2
-	}()
+	
 
 	var body: some View {
 		HStack {
-			VStack {
+			Image(systemName: "smoke.fill")
+			VStack(alignment: .leading) {
 				Text(product.productType.rawValue)
 					.lineLimit(nil)
 				Text(product.strain.name)
 					.lineLimit(nil)
-				Text(product.mass+"g")
-				isOpened ? Text(dateFormatter.string(from: product.dateOpened ?? Date())) : Text("Unopened")
 			}
+			Spacer()
 		}
 	}
 }
@@ -52,7 +45,7 @@ var testProd: Product = {
 
 struct WatchProductView_Previews : PreviewProvider {
     static var previews: some View {
-        WatchProductDetailView(product: testProd)
+        WatchProductRow(product: testProd)
     }
 }
 #endif

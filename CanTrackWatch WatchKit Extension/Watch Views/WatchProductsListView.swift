@@ -18,7 +18,9 @@ struct WatchProductsListView : View {
 		ScrollView {
 			ForEach(productStore.products.identified(by: \.id)) { product in
 				NavigationButton(destination: EmptyView()) {
-					WatchProductDetailView(product: product)
+					VStack(alignment: .leading) {
+						WatchProductRow(product: product)
+					}
 				}
 			}
 		}

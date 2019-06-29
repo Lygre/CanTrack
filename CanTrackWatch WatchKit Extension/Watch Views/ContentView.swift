@@ -32,25 +32,22 @@ struct ContentView : View {
 				Text("CanTrack")
 					.lineLimit(nil)
 					.font(.subheadline)
-				}
+			}
 			
-			HStack(alignment: .center, spacing: 0) {
+			HStack {
 				Text("Dose →")
 
-				Button(action: {
-					//code for button action
-					self.isInDoseModalView = true
-				}) {
+				NavigationButton(destination: WatchProductsListView().environmentObject(self.productStore).environmentObject(self.strainStore)) {
 					Image(systemName: "plus.circle")
 						.imageScale(.large)
 						.foregroundColor(Color.blue)
 				}
 				Spacer()
+
 				}
-			}
-			.overlay(isInDoseModalView ? WatchProductsListView().environmentObject(self.productStore).environmentObject(self.strainStore) : nil, alignment: Alignment.center)
-			.lineLimit(nil)
-			.background(Color.green)
+				.lineLimit(nil)
+				.background(Color.green)
+		}
 	}
 }
 

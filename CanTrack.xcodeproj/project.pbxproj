@@ -87,6 +87,7 @@
 		9F8D4F1622C3DD3F0031CEB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9F8D4F1722C3EA930031CEB7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967B22ADD5C000C73496 /* CalendarView.swift */; };
 		9F8D4F1822C3EC330031CEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBC22AD967300B82C22 /* Assets.xcassets */; };
+		9FBAD47E22C71848008C8FEF /* WatchProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */; };
 		9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB622AD967100B82C22 /* AppDelegate.swift */; };
 		9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9FBE5FBB22AD967100B82C22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBA22AD967100B82C22 /* HomeView.swift */; };
@@ -109,7 +110,7 @@
 		9FE4CD0422C65BDE006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 		9FE4CD0522C65BE5006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 		9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
-		9FE4CD0922C66FE7006B91F2 /* WatchProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0822C66FE7006B91F2 /* WatchProductDetailView.swift */; };
+		9FE4CD0922C66FE7006B91F2 /* WatchProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 		9F8D4EEC22C3D96E0031CEB7 /* CanTrackTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanTrackTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4EF022C3D96E0031CEB7 /* CanTrackTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanTrackTVUITests.swift; sourceTree = "<group>"; };
 		9F8D4EF222C3D96E0031CEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductDetail.swift; sourceTree = "<group>"; };
 		9FBE5FB322AD967100B82C22 /* CanTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBE5FB622AD967100B82C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,7 +237,7 @@
 		9FD2967B22ADD5C000C73496 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		9FD2967F22ADE3D500C73496 /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
 		9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentExtensions.swift; sourceTree = "<group>"; };
-		9FE4CD0822C66FE7006B91F2 /* WatchProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductDetailView.swift; sourceTree = "<group>"; };
+		9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -514,8 +516,9 @@
 			isa = PBXGroup;
 			children = (
 				9F1CC30322C5458000CC0B88 /* ContentView.swift */,
-				9FE4CD0822C66FE7006B91F2 /* WatchProductDetailView.swift */,
+				9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */,
 				9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */,
+				9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */,
 			);
 			path = "Watch Views";
 			sourceTree = "<group>";
@@ -801,9 +804,10 @@
 				9F1CC30822C5458000CC0B88 /* ExtensionDelegate.swift in Sources */,
 				9F1CC32C22C5471D00CC0B88 /* EndPointType.swift in Sources */,
 				9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */,
-				9FE4CD0922C66FE7006B91F2 /* WatchProductDetailView.swift in Sources */,
+				9FE4CD0922C66FE7006B91F2 /* WatchProductRow.swift in Sources */,
 				9F1CC32D22C5471D00CC0B88 /* HTTPMethod.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
+				9FBAD47E22C71848008C8FEF /* WatchProductDetail.swift in Sources */,
 				9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */,
 				9F1CC32122C546EB00CC0B88 /* Product.swift in Sources */,
 			);

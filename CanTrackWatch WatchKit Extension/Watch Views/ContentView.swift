@@ -44,12 +44,14 @@ struct ContentView : View {
 			HStack(alignment: .center) {
 				ProductImageViewCircular(product: productStore.products[1])
 				Text("CanTrack")
+					.font(.custom("Awesome", size: 25))
+					.color(Color("KindCrapGreen"))
 					.lineLimit(nil)
-					.font(.headline)
-			}
+				}
+				.padding(.all)
 				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.lastTextBaseline] / 2 }
 
-			HStack {
+			HStack(alignment: .center) {
 				Text("Dose")
 				Spacer()
 				Text("→")
@@ -66,17 +68,18 @@ struct ContentView : View {
 						.foregroundColor(Color.green)
 				}
 
-			}
+				}
+				.padding()
 				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 
-			HStack {
+			HStack(alignment: .center) {
 				Text("Logs")
 				Spacer()
 				Text("→")
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.top] / 2 }
 				Spacer()
+				// TODO: Replace this with the Actual Dose Log View once I make it -
 				NavigationButton(destination:
-					// TODO: Replace this with the Actual Dose Log View once I make it -
 					WatchProductsListView()
 						.environmentObject(self.productStore)
 						.environmentObject(self.strainStore)
@@ -84,17 +87,17 @@ struct ContentView : View {
 				) {
 					Image(systemName: "calendar")
 						.imageScale(.large)
-						.foregroundColor(Color.blue)
-					
+						.foregroundColor(Color("PerfectPurpleHaze"))
 				}
-			}
-			.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
+				}
+				.padding()
+				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 
 			Spacer()
 
-		}
+			}
 			.lineLimit(nil)
-			.background(Color.green.opacity(0.2))
+			.background(Color("InventoryBackgroundColor"))
 	}
 }
 

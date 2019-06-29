@@ -51,9 +51,10 @@ struct ContentView : View {
 
 			HStack {
 				Text("Dose")
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.leading] / 2 }
+				Spacer()
 				Text("→")
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.top] / 2 }
+				Spacer()
 				NavigationButton(destination:
 					WatchProductsListView()
 						.environmentObject(self.productStore)
@@ -64,14 +65,16 @@ struct ContentView : View {
 						.imageScale(.large)
 						.foregroundColor(Color.green)
 				}
-				Spacer()
+
 			}
+				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 
 			HStack {
 				Text("Logs")
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.leading] / 2 }
+				Spacer()
 				Text("→")
 					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
+				Spacer()
 				NavigationButton(destination:
 					// TODO: Replace this with the Actual Dose Log View once I make it -
 					WatchProductsListView()
@@ -84,13 +87,14 @@ struct ContentView : View {
 						.foregroundColor(Color.blue)
 					
 				}
-				Spacer()
 			}
+			.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 
 			Spacer()
-				.lineLimit(nil)
-				.background(Color.green)
+
 		}
+			.lineLimit(nil)
+			.background(Color.green.opacity(0.2))
 	}
 }
 

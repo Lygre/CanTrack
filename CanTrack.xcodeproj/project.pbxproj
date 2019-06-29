@@ -53,6 +53,9 @@
 		9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
 		9F38135422BEC748000A6D00 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135322BEC748000A6D00 /* CalendarStore.swift */; };
 		9F6B97A322C6B94000F360DA /* WatchProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */; };
+		9F8689A622C72B5F0017454C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8689A522C72B5F0017454C /* Data.swift */; };
+		9F8689A722C72B5F0017454C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8689A522C72B5F0017454C /* Data.swift */; };
+		9F8689A822C72B5F0017454C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8689A522C72B5F0017454C /* Data.swift */; };
 		9F8D4EDF22C3D96A0031CEB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */; };
 		9F8D4EE122C3D96A0031CEB7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8D4EE022C3D96A0031CEB7 /* ContentView.swift */; };
 		9F8D4EE322C3D96E0031CEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F8D4EE222C3D96E0031CEB7 /* Assets.xcassets */; };
@@ -203,6 +206,7 @@
 		9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtensions.swift; sourceTree = "<group>"; };
 		9F38135322BEC748000A6D00 /* CalendarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarStore.swift; sourceTree = "<group>"; };
 		9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductsListView.swift; sourceTree = "<group>"; };
+		9F8689A522C72B5F0017454C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F8D4EE022C3D96A0031CEB7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -412,6 +416,7 @@
 		9FBE5FAA22AD967100B82C22 = {
 			isa = PBXGroup;
 			children = (
+				9FBE5FDD22AD97F500B82C22 /* Model */,
 				9FBE5FB522AD967100B82C22 /* CanTrack */,
 				9F8D4EDD22C3D96A0031CEB7 /* CanTrackTV */,
 				9F1CC30222C5458000CC0B88 /* CanTrackWatch WatchKit Extension */,
@@ -445,7 +450,6 @@
 				9F38133522BE431F000A6D00 /* Networking */,
 				9F38133222BE42F5000A6D00 /* Controllers */,
 				9FBE5FE222AD9FFF00B82C22 /* SwiftUI Views */,
-				9FBE5FDD22AD97F500B82C22 /* Model */,
 				9FBE5FD822AD969600B82C22 /* UserData */,
 				9FBE5FB622AD967100B82C22 /* AppDelegate.swift */,
 				9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */,
@@ -485,6 +489,7 @@
 		9FBE5FDD22AD97F500B82C22 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9F8689A522C72B5F0017454C /* Data.swift */,
 				9FBE5FDE22AD981E00B82C22 /* Product.swift */,
 				9FBE5FE022AD988700B82C22 /* Strain.swift */,
 				9FD2967F22ADE3D500C73496 /* ProductStore.swift */,
@@ -806,6 +811,7 @@
 				9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */,
 				9FE4CD0922C66FE7006B91F2 /* WatchProductRow.swift in Sources */,
 				9F1CC32D22C5471D00CC0B88 /* HTTPMethod.swift in Sources */,
+				9F8689A822C72B5F0017454C /* Data.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
 				9FBAD47E22C71848008C8FEF /* WatchProductDetail.swift in Sources */,
 				9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */,
@@ -830,6 +836,7 @@
 				9F8D4EFA22C3DA5E0031CEB7 /* Strain.swift in Sources */,
 				9F8D4EE122C3D96A0031CEB7 /* ContentView.swift in Sources */,
 				9F8D4F1622C3DD3F0031CEB7 /* SceneDelegate.swift in Sources */,
+				9F8689A722C72B5F0017454C /* Data.swift in Sources */,
 				9F8D4EDF22C3D96A0031CEB7 /* AppDelegate.swift in Sources */,
 				9F8D4F0822C3DABC0031CEB7 /* NetworkController.swift in Sources */,
 				9F8D4F0422C3DA950031CEB7 /* NewProductView.swift in Sources */,
@@ -893,6 +900,7 @@
 				9F38133E22BE4393000A6D00 /* EndPointType.swift in Sources */,
 				9FE4CD0422C65BDE006B91F2 /* AlignmentExtensions.swift in Sources */,
 				9F38133A22BE4369000A6D00 /* NetworkRouter.swift in Sources */,
+				9F8689A622C72B5F0017454C /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

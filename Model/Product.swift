@@ -56,6 +56,9 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		return lhs.dateOpened == rhs.dateOpened && lhs.strain == rhs.strain && lhs.productType == rhs.productType
 	}
 
+	func image(forSize size: Int) -> Image {
+		ImageStore.shared.image(name: productImage, size: size)
+	}
 
 	func encode(to encoder: Encoder) throws {
 		var container = encoder.container(keyedBy: CodingKeys.self)

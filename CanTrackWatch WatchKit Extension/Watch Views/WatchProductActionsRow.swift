@@ -17,7 +17,7 @@ struct WatchProductActionsRow : View {
 
 
 	var body: some View {
-		HStack(spacing: 3) {
+		HStack(spacing: 2) {
 			ForEach(buttons.identified(by: \.0)) { value in
 				Button(action: {
 
@@ -41,7 +41,7 @@ struct ProductActionButton: View {
 			action.sfSymbol
 				.imageScale(.large)
 			Text(action.name)
-				.font(.footnote)
+				.font(.system(.footnote, design: .rounded))
 		}
 
 	}

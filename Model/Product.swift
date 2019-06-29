@@ -12,6 +12,14 @@ import Combine
 /// Product Model object Struct
 struct Product: Equatable, Hashable, Codable, Identifiable {
 
+	struct ProductActions: Codable, Hashable {
+		var elevation: Range<Double>
+		var pace: Range<Double>
+		var heartRate: Range<Double>
+
+		
+	}
+
 	/// ProductType. Raw type string
 	enum ProductType: String, Equatable, Hashable, Identifiable, Codable, CaseIterable {
 		var id: ObjectIdentifier {

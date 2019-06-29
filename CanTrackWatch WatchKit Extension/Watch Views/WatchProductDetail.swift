@@ -56,6 +56,11 @@ struct WatchProductDetail : View {
 						.lineLimit(nil) :
 					Text("Unopened")
 						.lineLimit(nil)
+
+//				WatchProductActionsRow()
+
+
+				//This Spacer is to Push everything to the top; don't fuck with it
 				Spacer()
 				}
 				.navigationBarTitle(Text(product.strain.name))

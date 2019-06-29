@@ -136,6 +136,7 @@
 		9FEDE85F22C73E0E00792F74 /* icon_product_capsules.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84D22C73DD100792F74 /* icon_product_capsules.jpg */; };
 		9FEDE86022C73E0E00792F74 /* icon_product_concentrate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84E22C73DD100792F74 /* icon_product_concentrate.jpg */; };
 		9FEDE86122C73E0E00792F74 /* icon_product_edible.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84F22C73DD100792F74 /* icon_product_edible.jpg */; };
+		9FEDE86422C7673400792F74 /* WatchProductActionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDE86322C7673400792F74 /* WatchProductActionsRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -271,6 +272,7 @@
 		9FEDE84D22C73DD100792F74 /* icon_product_capsules.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_product_capsules.jpg; sourceTree = "<group>"; };
 		9FEDE84E22C73DD100792F74 /* icon_product_concentrate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_product_concentrate.jpg; sourceTree = "<group>"; };
 		9FEDE84F22C73DD100792F74 /* icon_product_edible.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_product_edible.jpg; sourceTree = "<group>"; };
+		9FEDE86322C7673400792F74 /* WatchProductActionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductActionsRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -555,6 +557,7 @@
 				9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */,
 				9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */,
 				9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */,
+				9FEDE86322C7673400792F74 /* WatchProductActionsRow.swift */,
 			);
 			path = "Watch Views";
 			sourceTree = "<group>";
@@ -875,6 +878,7 @@
 				9FEDE84922C73B0600792F74 /* SwiftUIColorExtensions.swift in Sources */,
 				9F1CC32922C5471700CC0B88 /* StrainEndPoint.swift in Sources */,
 				9F1CC33022C5636700CC0B88 /* ProductImageViewCircular.swift in Sources */,
+				9FEDE86422C7673400792F74 /* WatchProductActionsRow.swift in Sources */,
 				9F1CC32722C5471300CC0B88 /* URLParameterEncoding.swift in Sources */,
 				9F1CC32B22C5471D00CC0B88 /* Router.swift in Sources */,
 				9F1CC30422C5458000CC0B88 /* ContentView.swift in Sources */,

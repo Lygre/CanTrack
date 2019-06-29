@@ -80,7 +80,7 @@ struct ContentView : View {
 				Spacer()
 				// TODO: Replace this with the Actual Dose Log View once I make it -
 				NavigationButton(destination:
-					WatchProductsListView()
+					WatchDailyDoseLog()
 						.environmentObject(self.productStore)
 						.environmentObject(self.strainStore)
 						.environmentObject(self.doseStore)

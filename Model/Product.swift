@@ -174,13 +174,13 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 }
 
 
-enum ProductActions: Int, Identifiable, CaseIterable {
+enum ProductAction: Int, Identifiable, CaseIterable {
 	case dose
 	case edit
 	case delete
 }
 
-extension ProductActions {
+extension ProductAction {
 
 	var id: UUID {
 		return UUID()
@@ -200,11 +200,22 @@ extension ProductActions {
 	var sfSymbol: Image {
 		switch(self) {
 		case .dose:
-			return ImageStore.shared.image(name: "icon_effect_creative", size: 25)
+			return Image(systemName: "smoke.fill")
 		case .edit:
 			return Image(systemName: "pencil")
 		case .delete:
 			return Image(systemName: "trash")
+		}
+	}
+
+	var associatedColor: Color {
+		switch(self) {
+		case .dose:
+			return Color.green
+		case .edit:
+			return Color.orange
+		case .delete:
+			return Color.red
 		}
 	}
 

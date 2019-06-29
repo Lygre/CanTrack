@@ -13,19 +13,37 @@ struct WatchProductActionsRow : View {
 	var product: Product
 
 
-	var buttons = ProductActions.allCases.compactMap { ($0.name, $0) }
+	var buttons = ProductAction.allCases.compactMap { ($0.name, $0, $0.sfSymbol, $0.associatedColor) }
 
 
 	var body: some View {
-		HStack(spacing: 8) {
+		HStack(spacing: 3) {
 			ForEach(buttons.identified(by: \.0)) { value in
 				Button(action: {
 
 				}) {
-					Text(value.0)
+					ProductActionButton(action: value.1)
+						.foregroundColor(value.3)
 				}
 			}
 		}
+	}
+
+}
+
+
+struct ProductActionButton: View {
+
+	var action: ProductAction
+
+	var body: some View {
+		VStack(alignment: .center) {
+			action.sfSymbol
+				.imageScale(.large)
+			Text(action.name)
+				.font(.footnote)
+		}
+
 	}
 
 }

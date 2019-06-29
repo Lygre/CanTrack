@@ -39,7 +39,9 @@ struct WatchProductDetail : View {
 						.lineLimit(nil)
 					Spacer()
 					Button(action: {
-						self.productStore.products[self.productIndex].isFavorite.toggle()
+						withAnimation {
+							self.productStore.products[self.productIndex].isFavorite.toggle()
+						}
 					}) {
 						if self.productStore.products[self.productIndex].isFavorite {
 							Image(systemName: "star.fill")
@@ -58,6 +60,7 @@ struct WatchProductDetail : View {
 						.lineLimit(nil)
 
 				WatchProductActionsRow(product: product)
+					.padding(.top)
 
 
 				//This Spacer is to Push everything to the top; don't fuck with it

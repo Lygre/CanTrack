@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "1100"
+   version = "1.7">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9F1CC2FD22C5458000CC0B88"
+               BuildableName = "CanTrackWatch WatchKit Extension.appex"
+               BlueprintName = "CanTrackWatch WatchKit Extension"
+               ReferencedContainer = "container:CanTrack.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9F1CC2EB22C5457E00CC0B88"
+               BuildableName = "CanTrackWatch.app"
+               BlueprintName = "CanTrackWatch"
+               ReferencedContainer = "container:CanTrack.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9F1CC2EE22C5457E00CC0B88"
+               BuildableName = "CanTrackWatch WatchKit App.app"
+               BlueprintName = "CanTrackWatch WatchKit App"
+               ReferencedContainer = "container:CanTrack.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+      </TestPlans>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/CanTrackWatch WatchKit Extension">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9F1CC2FD22C5458000CC0B88"
+            BuildableName = "CanTrackWatch WatchKit Extension.appex"
+            BlueprintName = "CanTrackWatch WatchKit Extension"
+            ReferencedContainer = "container:CanTrack.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/CanTrackWatch WatchKit Extension">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9F1CC2FD22C5458000CC0B88"
+            BuildableName = "CanTrackWatch WatchKit Extension.appex"
+            BlueprintName = "CanTrackWatch WatchKit Extension"
+            ReferencedContainer = "container:CanTrack.xcodeproj">
+         </BuildableReference>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "9F1CC2FD22C5458000CC0B88"
+            BuildableName = "CanTrackWatch WatchKit Extension.appex"
+            BlueprintName = "CanTrackWatch WatchKit Extension"
+            ReferencedContainer = "container:CanTrack.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>

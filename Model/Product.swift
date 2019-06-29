@@ -12,6 +12,7 @@ import Combine
 /// Product Model object Struct
 struct Product: Equatable, Hashable, Codable, Identifiable {
 
+	/// Detailed Product Information; THC % etc
 	struct DetailedInformation: Codable, Hashable {
 		var thc: Double
 		var thcV: Double
@@ -36,13 +37,14 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		var id: ObjectIdentifier {
 			return ObjectIdentifier(ProductType.self)
 		}
-		case truFlower = "truFlower"
-		case truCrmbl = "truCRMBL"
-		case truClear = "truClear"
-		case truPod = "truPod"
+
+		case truFlower = "Flower"
+		case truCrmbl = "Crumble"
+		case truClear = "Distillate"
+		case truPod = "Flower Pod"
 		case rosin = "Rosin"
-		case truShatter = "truShatter"
-		case vapePenCartridge = "Vape Pen Cartridge"
+		case truShatter = "Shatter"
+		case vapePenCartridge = "Vape Cartridge"
 		case co2VapePenCartridge = "CO2 Vape Pen Cartridge"
 		case oralSyringe = "Oral Syringe"
 		case tinctureDropletBottle = "Tincture Droplet Bottle"
@@ -66,6 +68,17 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 		case dosesCount
 		case isFavorite
 	}
+
+	enum Actions: String, Hashable, Identifiable, CaseIterable {
+		var id: ObjectIdentifier {
+			ObjectIdentifier(Actions.self)
+		}
+
+		case dose = "Dose"
+		case edit = "Edit"
+		case delete = "Delete"
+	}
+
 	//MARK: -- Properties/Constants
 	let id: UUID
 

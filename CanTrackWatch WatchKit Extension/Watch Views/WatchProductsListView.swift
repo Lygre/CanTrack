@@ -23,7 +23,7 @@ struct WatchProductsListView : View {
 					}
 				}
 			}
-		}
+		}.listStyle(.carousel)
 	}
 }
 

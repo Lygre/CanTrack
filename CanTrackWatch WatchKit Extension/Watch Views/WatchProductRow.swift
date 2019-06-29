@@ -25,8 +25,12 @@ struct WatchProductRow : View {
 			VStack(alignment: .leading) {
 				Text(product.productType.rawValue)
 					.lineLimit(nil)
+					.multilineTextAlignment(.leading)
 				Text(product.strain.name)
 					.lineLimit(nil)
+					.alignmentGuide(.trailing) { (dimension) -> Length in
+						dimension[.trailing]
+				}
 			}
 			Spacer()
 		}

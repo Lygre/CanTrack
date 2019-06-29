@@ -25,7 +25,7 @@ struct ContentView : View {
 	var body: some View {
 		VStack {
 			HStack(alignment: .center) {
-				ProductImageViewCircular(product: productStore.products[0])
+				ProductImageViewCircular(product: productStore.products[1])
 					.alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
 						dimension[.buttonAndLaunchImage]
 				}
@@ -42,9 +42,9 @@ struct ContentView : View {
 						.imageScale(.large)
 						.foregroundColor(Color.blue)
 				}
-				Spacer()
 
 				}
+				Spacer()
 				.lineLimit(nil)
 				.background(Color.green)
 		}

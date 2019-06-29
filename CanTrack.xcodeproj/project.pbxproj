@@ -118,6 +118,24 @@
 		9FEDE84622C73A6500792F74 /* cannabisbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84322C73A1B00792F74 /* cannabisbg.jpg */; };
 		9FEDE84822C73A6900792F74 /* cannabisbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84322C73A1B00792F74 /* cannabisbg.jpg */; };
 		9FEDE84922C73B0600792F74 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
+		9FEDE85022C73E0B00792F74 /* icon_category_filter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84B22C73DD000792F74 /* icon_category_filter.jpg */; };
+		9FEDE85122C73E0B00792F74 /* icon_effect_creative.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84A22C73DD000792F74 /* icon_effect_creative.jpg */; };
+		9FEDE85222C73E0B00792F74 /* icon_effect_medical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84C22C73DD000792F74 /* icon_effect_medical.jpg */; };
+		9FEDE85322C73E0B00792F74 /* icon_product_capsules.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84D22C73DD100792F74 /* icon_product_capsules.jpg */; };
+		9FEDE85422C73E0B00792F74 /* icon_product_concentrate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84E22C73DD100792F74 /* icon_product_concentrate.jpg */; };
+		9FEDE85522C73E0B00792F74 /* icon_product_edible.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84F22C73DD100792F74 /* icon_product_edible.jpg */; };
+		9FEDE85622C73E0C00792F74 /* icon_category_filter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84B22C73DD000792F74 /* icon_category_filter.jpg */; };
+		9FEDE85722C73E0C00792F74 /* icon_effect_creative.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84A22C73DD000792F74 /* icon_effect_creative.jpg */; };
+		9FEDE85822C73E0C00792F74 /* icon_effect_medical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84C22C73DD000792F74 /* icon_effect_medical.jpg */; };
+		9FEDE85922C73E0C00792F74 /* icon_product_capsules.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84D22C73DD100792F74 /* icon_product_capsules.jpg */; };
+		9FEDE85A22C73E0C00792F74 /* icon_product_concentrate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84E22C73DD100792F74 /* icon_product_concentrate.jpg */; };
+		9FEDE85B22C73E0C00792F74 /* icon_product_edible.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84F22C73DD100792F74 /* icon_product_edible.jpg */; };
+		9FEDE85C22C73E0E00792F74 /* icon_category_filter.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84B22C73DD000792F74 /* icon_category_filter.jpg */; };
+		9FEDE85D22C73E0E00792F74 /* icon_effect_creative.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84A22C73DD000792F74 /* icon_effect_creative.jpg */; };
+		9FEDE85E22C73E0E00792F74 /* icon_effect_medical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84C22C73DD000792F74 /* icon_effect_medical.jpg */; };
+		9FEDE85F22C73E0E00792F74 /* icon_product_capsules.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84D22C73DD100792F74 /* icon_product_capsules.jpg */; };
+		9FEDE86022C73E0E00792F74 /* icon_product_concentrate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84E22C73DD100792F74 /* icon_product_concentrate.jpg */; };
+		9FEDE86122C73E0E00792F74 /* icon_product_edible.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84F22C73DD100792F74 /* icon_product_edible.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -427,6 +445,7 @@
 		9FBE5FAA22AD967100B82C22 = {
 			isa = PBXGroup;
 			children = (
+				9F38135022BEBF35000A6D00 /* Extensions */,
 				9FEDE84422C73A4D00792F74 /* Shared Resources */,
 				9FBE5FDD22AD97F500B82C22 /* Model */,
 				9FBE5FB522AD967100B82C22 /* CanTrack */,
@@ -458,7 +477,6 @@
 			isa = PBXGroup;
 			children = (
 				9F38132D22BE37E7000A6D00 /* CanTrack.entitlements */,
-				9F38135022BEBF35000A6D00 /* Extensions */,
 				9F38133522BE431F000A6D00 /* Networking */,
 				9F38133222BE42F5000A6D00 /* Controllers */,
 				9FBE5FE222AD9FFF00B82C22 /* SwiftUI Views */,
@@ -769,10 +787,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEDE85F22C73E0E00792F74 /* icon_product_capsules.jpg in Resources */,
+				9FEDE86022C73E0E00792F74 /* icon_product_concentrate.jpg in Resources */,
+				9FEDE85D22C73E0E00792F74 /* icon_effect_creative.jpg in Resources */,
 				9F1CC31322C5458100CC0B88 /* Preview Assets.xcassets in Resources */,
 				9FEDE84822C73A6900792F74 /* cannabisbg.jpg in Resources */,
+				9FEDE86122C73E0E00792F74 /* icon_product_edible.jpg in Resources */,
+				9FEDE85C22C73E0E00792F74 /* icon_category_filter.jpg in Resources */,
 				9F1CC33322C5BBAD00CC0B88 /* Assets.xcassets in Resources */,
 				9F1CC31022C5458100CC0B88 /* Assets.xcassets in Resources */,
+				9FEDE85E22C73E0E00792F74 /* icon_effect_medical.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,10 +804,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEDE85922C73E0C00792F74 /* icon_product_capsules.jpg in Resources */,
+				9FEDE85A22C73E0C00792F74 /* icon_product_concentrate.jpg in Resources */,
+				9FEDE85722C73E0C00792F74 /* icon_effect_creative.jpg in Resources */,
 				9F8D4EE622C3D96E0031CEB7 /* Preview Assets.xcassets in Resources */,
 				9FEDE84622C73A6500792F74 /* cannabisbg.jpg in Resources */,
+				9FEDE85B22C73E0C00792F74 /* icon_product_edible.jpg in Resources */,
+				9FEDE85622C73E0C00792F74 /* icon_category_filter.jpg in Resources */,
 				9F8D4F1822C3EC330031CEB7 /* Assets.xcassets in Resources */,
 				9F8D4EE322C3D96E0031CEB7 /* Assets.xcassets in Resources */,
+				9FEDE85822C73E0C00792F74 /* icon_effect_medical.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,10 +828,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEDE85322C73E0B00792F74 /* icon_product_capsules.jpg in Resources */,
+				9FEDE85422C73E0B00792F74 /* icon_product_concentrate.jpg in Resources */,
+				9FEDE85122C73E0B00792F74 /* icon_effect_creative.jpg in Resources */,
 				9FBE5FC322AD967300B82C22 /* LaunchScreen.storyboard in Resources */,
 				9FEDE84522C73A6300792F74 /* cannabisbg.jpg in Resources */,
+				9FEDE85522C73E0B00792F74 /* icon_product_edible.jpg in Resources */,
+				9FEDE85022C73E0B00792F74 /* icon_category_filter.jpg in Resources */,
 				9FBE5FC022AD967300B82C22 /* Preview Assets.xcassets in Resources */,
 				9FBE5FBD22AD967300B82C22 /* Assets.xcassets in Resources */,
+				9FEDE85222C73E0B00792F74 /* icon_effect_medical.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

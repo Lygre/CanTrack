@@ -11,6 +11,7 @@
 		9F093DD622C7A0E200F26083 /* DoseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F093DD422C7A0E200F26083 /* DoseStore.swift */; };
 		9F093DD722C7A0E200F26083 /* DoseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F093DD422C7A0E200F26083 /* DoseStore.swift */; };
 		9F093DD822C7AED400F26083 /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134E22BEBAD1000A6D00 /* Dose.swift */; };
+		9F093DDA22C7F07800F26083 /* WatchDailyDoseLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F093DD922C7F07800F26083 /* WatchDailyDoseLog.swift */; };
 		9F1CC2F022C5457E00CC0B88 /* CanTrackWatch WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 9F1CC2EF22C5457E00CC0B88 /* CanTrackWatch WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9F1CC2F622C5457E00CC0B88 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1CC2F422C5457E00CC0B88 /* Interface.storyboard */; };
 		9F1CC2F822C5458000CC0B88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1CC2F722C5458000CC0B88 /* Assets.xcassets */; };
@@ -201,6 +202,7 @@
 
 /* Begin PBXFileReference section */
 		9F093DD422C7A0E200F26083 /* DoseStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseStore.swift; sourceTree = "<group>"; };
+		9F093DD922C7F07800F26083 /* WatchDailyDoseLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchDailyDoseLog.swift; sourceTree = "<group>"; };
 		9F1CC2EC22C5457E00CC0B88 /* CanTrackWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1CC2EF22C5457E00CC0B88 /* CanTrackWatch WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CanTrackWatch WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F1CC2F522C5457E00CC0B88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */,
 				9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */,
 				9FEDE86322C7673400792F74 /* WatchProductActionsRow.swift */,
+				9F093DD922C7F07800F26083 /* WatchDailyDoseLog.swift */,
 			);
 			path = "Watch Views";
 			sourceTree = "<group>";
@@ -899,6 +902,7 @@
 				9F093DD722C7A0E200F26083 /* DoseStore.swift in Sources */,
 				9F8689A822C72B5F0017454C /* Data.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
+				9F093DDA22C7F07800F26083 /* WatchDailyDoseLog.swift in Sources */,
 				9FBAD47E22C71848008C8FEF /* WatchProductDetail.swift in Sources */,
 				9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */,
 				9F1CC32122C546EB00CC0B88 /* Product.swift in Sources */,

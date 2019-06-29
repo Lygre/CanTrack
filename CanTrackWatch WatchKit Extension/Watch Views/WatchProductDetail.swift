@@ -57,7 +57,7 @@ struct WatchProductDetail : View {
 					Text("Unopened")
 						.lineLimit(nil)
 
-//				WatchProductActionsRow()
+				WatchProductActionsRow(product: product)
 
 
 				//This Spacer is to Push everything to the top; don't fuck with it

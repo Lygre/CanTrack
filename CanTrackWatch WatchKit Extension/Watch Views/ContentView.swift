@@ -20,18 +20,13 @@ struct ContentView : View {
 	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
 
-	@State private var isInDoseModalView: Bool = false
-
 	var body: some View {
-		VStack {
+		VStack(alignment: .leading) {
 			HStack(alignment: .center) {
 				ProductImageViewCircular(product: productStore.products[1])
-					.alignmentGuide(.buttonAndLaunchImage) { (dimension) -> Length in
-						dimension[.buttonAndLaunchImage]
-				}
 				Text("CanTrack")
 					.lineLimit(nil)
-					.font(.subheadline)
+					.font(.headline)
 			}
 			
 			HStack {

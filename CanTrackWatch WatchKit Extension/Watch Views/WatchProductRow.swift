@@ -21,7 +21,8 @@ struct WatchProductRow : View {
 
 	var body: some View {
 		HStack {
-			Image(systemName: "smoke.fill")
+//			Image(systemName: "smoke.fill")
+			product.image(forSize: 20)
 			VStack(alignment: .leading) {
 				Text(product.productType.rawValue)
 					.lineLimit(nil)

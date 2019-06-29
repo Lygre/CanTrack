@@ -21,6 +21,7 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 			didChange.send(self)
 		}
 	}
+	var imageIdentifier: String = "cannabisbg"
 	var mass: String = "0.0" {
 		didSet {
 			didChange.send(self)
@@ -57,7 +58,7 @@ struct Product: Equatable, Hashable, Codable, Identifiable {
 	}
 
 	func image(forSize size: Int) -> Image {
-		ImageStore.shared.image(name: productImage, size: size)
+		ImageStore.shared.image(name: imageIdentifier, size: size)
 	}
 
 	func encode(to encoder: Encoder) throws {

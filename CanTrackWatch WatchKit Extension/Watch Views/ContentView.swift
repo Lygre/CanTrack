@@ -41,8 +41,8 @@ struct ContentView : View {
 
 	var body: some View {
 		ScrollView {
-			VStack(alignment: .launchScreenArrowAlignment) {
-				HStack(alignment: .center) {
+			VStack {
+				HStack {
 					ProductImageViewCircular(product: productStore.products[1])
 					Text("CanTrack")
 						.font(.custom("Awesome", size: 25))
@@ -53,10 +53,11 @@ struct ContentView : View {
 					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.lastTextBaseline] / 2 }
 
 				HStack(alignment: .center) {
+					Spacer()
 					Text("Dose")
 					Spacer()
 					Text("→")
-						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.top] / 2 }
+						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.bottom] }
 					Spacer()
 					NavigationButton(destination:
 						WatchProductsListView()
@@ -67,17 +68,18 @@ struct ContentView : View {
 						Image(systemName: "plus.circle")
 							.imageScale(.large)
 							.foregroundColor(Color.green)
+						
 					}
 
 					}
-					.padding()
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 
-				HStack(alignment: .center) {
+
+				HStack {
+					Spacer()
 					Text("Logs")
 					Spacer()
 					Text("→")
-						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.top] / 2 }
+						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.bottom] / 2 }
 					Spacer()
 					NavigationButton(destination:
 						WatchDailyDoseLog()
@@ -90,14 +92,14 @@ struct ContentView : View {
 							.foregroundColor(Color("PerfectPurpleHaze"))
 					}
 					}
-					.padding()
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.bottom] / 2 }
 
 				Spacer()
 
 			}
 			}
 			.background(Color("InventoryBackgroundColor"))
+		.navigationBarTitle(Text("CanTrack"))
 
 	}
 }

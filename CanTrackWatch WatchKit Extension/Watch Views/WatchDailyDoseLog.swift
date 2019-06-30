@@ -12,6 +12,12 @@ import Datez
 
 
 struct WatchDailyDoseLog : View {
+
+	enum DateChangeVector {
+		case forward
+		case backward
+	}
+
 	@EnvironmentObject var doseStore: DoseStore
 
 	@State private var doseLogsRetrievedDate: Date = Date()
@@ -49,7 +55,7 @@ struct WatchDailyDoseLog : View {
 			Group {
 				HStack {
 					Button(action: {
-						self.changeDate(forLogs: -1)
+						self.changeDate(in: .backward)
 					}) {
 						Image(systemName: "chevron.left.circle")
 					}
@@ -58,7 +64,7 @@ struct WatchDailyDoseLog : View {
 						.font(.headline)
 					Spacer()
 					Button(action: {
-						self.changeDate(forLogs: 1)
+						self.changeDate(in: .forward)
 					}) {
 						Image(systemName: "chevron.right.circle")
 					}
@@ -66,11 +72,14 @@ struct WatchDailyDoseLog : View {
 					.imageScale(.large)
 				}.padding(.top)
 
-			Spacer()
 			List {
 				Section {
-					ForEach(doseStore.doses.filter({ $0.timestamp == doseLogsRetrievedDate }).identified(by: \.hashValue)) { dose in
-						Text(dose.timestamp.description)
+					ForEach(doseStore.doses.filter({
+						(($0.timestamp.currentCalendar.components.year == doseLogsRetrievedDate.currentCalendar.components.year) &&
+							($0.timestamp.currentCalendar.components.month == doseLogsRetrievedDate.currentCalendar.components.month) &&
+							($0.timestamp.currentCalendar.components.day == doseLogsRetrievedDate.currentCalendar.components.day))
+					}).identified(by: \.id)) { dose in
+						Text(self.daysDosesDateFormatter.string(from: dose.timestamp))
 					}
 				}
 			}
@@ -79,12 +88,14 @@ struct WatchDailyDoseLog : View {
 
 
 
-	func changeDate(forLogs by: Int) {
-		switch by > 0 {
-		case true:
-			self.doseLogsRetrievedDate.addTimeInterval(TimeInterval(86400))
-		case false:
-			self.doseLogsRetrievedDate.addTimeInterval(TimeInterval(-86400))
+	func changeDate(in direction: DateChangeVector) {
+		switch direction {
+		case .forward:
+			let tomorrow = (doseLogsRetrievedDate.gregorian + 1.day).date
+			self.doseLogsRetrievedDate = tomorrow
+		case .backward:
+			let yesterday = (doseLogsRetrievedDate.gregorian - 1.day).date
+			self.doseLogsRetrievedDate = yesterday
 		}
 
 	}

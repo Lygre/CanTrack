@@ -94,11 +94,9 @@ struct ContentView : View {
 					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 
 				Spacer()
-
 			}
 			}
 			.background(Color("InventoryBackgroundColor"))
-
 	}
 }
 

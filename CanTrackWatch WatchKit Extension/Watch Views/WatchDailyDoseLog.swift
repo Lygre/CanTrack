@@ -13,12 +13,22 @@ struct WatchDailyDoseLog : View {
 
 	@State private var doseLogsRetrievedDate: Date = Date()
 
-	let dailyDoseLogDateFormatter: DateFormatter = {
+	let daysDosesHeadingDateFormatter: DateFormatter = {
 		var formatter = DateFormatter()
 		formatter.timeZone = .current
 		formatter.locale = .current
 		formatter.calendar = .current
 		formatter.dateFormat = "MMM d"
+		return formatter
+	}()
+
+	let daysDosesDateFormatter: DateFormatter = {
+		var formatter = DateFormatter()
+		formatter.timeZone = .current
+		formatter.locale = .current
+		formatter.calendar = .current
+		formatter.timeStyle = .medium
+		formatter.dateStyle = .none
 		return formatter
 	}()
 
@@ -41,7 +51,7 @@ struct WatchDailyDoseLog : View {
 						Image(systemName: "chevron.left.circle")
 					}
 					Spacer()
-					Text(dailyDoseLogDateFormatter.string(from: doseLogsRetrievedDate))
+					Text(daysDosesHeadingDateFormatter.string(from: doseLogsRetrievedDate))
 						.font(.headline)
 					Spacer()
 					Button(action: {
@@ -53,14 +63,16 @@ struct WatchDailyDoseLog : View {
 					.imageScale(.large)
 				}.padding(.top)
 
-			Spacer()
 			List {
 				Section {
-					ForEach(doseStore.doses.filter({ $0.timestamp == doseLogsRetrievedDate }).identified(by: \.hashValue)) { dose in
-						Text(dose.timestamp.description)
+					ForEach(doseStore.doses.filter({
+						$0.timestamp.currentCalendar.components.year == doseLogsRetrievedDate.currentCalendar.components.year
+					}).identified(by: \.hashValue)) { dose in
+						Text(self.daysDosesDateFormatter.string(from: dose.timestamp))
 					}
 				}
 			}
+
 		}.navigationBarTitle(Text("Dose Log \(navigationBarYearDateFormatter.string(from: doseLogsRetrievedDate))"))
 	}
 

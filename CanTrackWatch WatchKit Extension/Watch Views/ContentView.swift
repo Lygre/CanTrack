@@ -40,64 +40,65 @@ struct ContentView : View {
 	@State private var doseStore: DoseStore = testData2["doses"] as! DoseStore
 
 	var body: some View {
-		VStack(alignment: .launchScreenArrowAlignment) {
-			HStack(alignment: .center) {
-				ProductImageViewCircular(product: productStore.products[1])
-				Text("CanTrack")
-					.font(.custom("Awesome", size: 25))
-					.color(Color("KindCrapGreen"))
-					.lineLimit(nil)
-				}
-				.padding(.all)
-				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.lastTextBaseline] / 2 }
+		ScrollView {
+			VStack(alignment: .launchScreenArrowAlignment) {
+				HStack(alignment: .center) {
+					ProductImageViewCircular(product: productStore.products[1])
+					Text("CanTrack")
+						.font(.custom("Awesome", size: 25))
+						.color(Color("KindCrapGreen"))
+						.lineLimit(nil)
+					}
+					.padding(.all)
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.lastTextBaseline] / 2 }
 
-			HStack(alignment: .center) {
-				Text("Dose")
-				Spacer()
-				Text("→")
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.top] / 2 }
-				Spacer()
-				NavigationButton(destination:
-					WatchProductsListView()
-						.environmentObject(self.productStore)
-						.environmentObject(self.strainStore)
-						.environmentObject(self.doseStore)
-				) {
-					Image(systemName: "plus.circle")
-						.imageScale(.large)
-						.foregroundColor(Color.green)
-				}
+				HStack(alignment: .center) {
+					Text("Dose")
+					Spacer()
+					Text("→")
+						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.top] / 2 }
+					Spacer()
+					NavigationButton(destination:
+						WatchProductsListView()
+							.environmentObject(self.productStore)
+							.environmentObject(self.strainStore)
+							.environmentObject(self.doseStore)
+					) {
+						Image(systemName: "plus.circle")
+							.imageScale(.large)
+							.foregroundColor(Color.green)
+					}
 
-				}
-				.padding()
-				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
+					}
+					.padding()
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 
-			HStack(alignment: .center) {
-				Text("Logs")
-				Spacer()
-				Text("→")
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.top] / 2 }
-				Spacer()
-				// TODO: Replace this with the Actual Dose Log View once I make it -
-				NavigationButton(destination:
-					WatchDailyDoseLog()
-						.environmentObject(self.productStore)
-						.environmentObject(self.strainStore)
-						.environmentObject(self.doseStore)
-				) {
-					Image(systemName: "calendar")
-						.imageScale(.large)
-						.foregroundColor(Color("PerfectPurpleHaze"))
-				}
-				}
-				.padding()
-				.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
+				HStack(alignment: .center) {
+					Text("Logs")
+					Spacer()
+					Text("→")
+						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.top] / 2 }
+					Spacer()
+					NavigationButton(destination:
+						WatchDailyDoseLog()
+							.environmentObject(self.productStore)
+							.environmentObject(self.strainStore)
+							.environmentObject(self.doseStore)
+					) {
+						Image(systemName: "calendar")
+							.imageScale(.large)
+							.foregroundColor(Color("PerfectPurpleHaze"))
+					}
+					}
+					.padding()
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.firstTextBaseline] / 2 }
 
-			Spacer()
+				Spacer()
 
 			}
-			.lineLimit(nil)
+			}
 			.background(Color("InventoryBackgroundColor"))
+
 	}
 }
 

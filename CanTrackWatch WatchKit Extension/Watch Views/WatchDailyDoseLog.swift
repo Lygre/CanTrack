@@ -7,6 +7,9 @@
 //
 
 import SwiftUI
+import Datez
+
+
 
 struct WatchDailyDoseLog : View {
 	@EnvironmentObject var doseStore: DoseStore
@@ -19,6 +22,16 @@ struct WatchDailyDoseLog : View {
 		formatter.locale = .current
 		formatter.calendar = .current
 		formatter.dateFormat = "MMM d"
+		return formatter
+	}()
+
+	let daysDosesDateFormatter: DateFormatter = {
+		var formatter = DateFormatter()
+		formatter.timeZone = .current
+		formatter.locale = .current
+		formatter.calendar = .current
+		formatter.timeStyle = .medium
+		formatter.dateStyle = .none
 		return formatter
 	}()
 

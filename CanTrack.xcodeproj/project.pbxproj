@@ -119,6 +119,8 @@
 		9FE4CD0522C65BE5006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 		9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */; };
 		9FE4CD0922C66FE7006B91F2 /* WatchProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */; };
+		9FEA45F822C972380031DCCF /* Datez.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEA45ED22C9721E0031DCCF /* Datez.framework */; };
+		9FEA45F922C972380031DCCF /* Datez.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEA45ED22C9721E0031DCCF /* Datez.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9FEDE84522C73A6300792F74 /* cannabisbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84322C73A1B00792F74 /* cannabisbg.jpg */; };
 		9FEDE84622C73A6500792F74 /* cannabisbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84322C73A1B00792F74 /* cannabisbg.jpg */; };
 		9FEDE84822C73A6900792F74 /* cannabisbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84322C73A1B00792F74 /* cannabisbg.jpg */; };
@@ -173,6 +175,55 @@
 			remoteGlobalIDString = 9FBE5FB222AD967100B82C22;
 			remoteInfo = CanTrack;
 		};
+		9FEA45EA22C9721E0031DCCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 82D57CE21BEE740B0071C345;
+			remoteInfo = "Datez-ios";
+		};
+		9FEA45EC22C9721E0031DCCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 82D57D671BEF01DF0071C345;
+			remoteInfo = "Datez-watchos";
+		};
+		9FEA45EE22C9721E0031DCCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 82D57D7E1BEF04250071C345;
+			remoteInfo = "Datez-osx";
+		};
+		9FEA45F022C9721E0031DCCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 82D57D951BEF05BC0071C345;
+			remoteInfo = "Datez-tvos";
+		};
+		9FEA45F222C9721E0031DCCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 82D57CEC1BEE740B0071C345;
+			remoteInfo = "DatezTests-ios";
+		};
+		9FEA45F422C9721E0031DCCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 823F18641BF43A9D008DF5F8;
+			remoteInfo = "DatezTests-tvos";
+		};
+		9FEA45F622C9721E0031DCCF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 823F18731BF43AB6008DF5F8;
+			remoteInfo = "DatezTests-osx";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -196,6 +247,17 @@
 				9F1CC2FF22C5458000CC0B88 /* CanTrackWatch WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FEA45FA22C972380031DCCF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9FEA45F922C972380031DCCF /* Datez.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -272,6 +334,7 @@
 		9FD2967F22ADE3D500C73496 /* ProductStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductStore.swift; sourceTree = "<group>"; };
 		9FE4CD0322C65BDE006B91F2 /* AlignmentExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentExtensions.swift; sourceTree = "<group>"; };
 		9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductRow.swift; sourceTree = "<group>"; };
+		9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Datez.xcodeproj; path = ../Datez/Datez/Datez.xcodeproj; sourceTree = "<group>"; };
 		9FEDE84322C73A1B00792F74 /* cannabisbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cannabisbg.jpg; sourceTree = "<group>"; };
 		9FEDE84A22C73DD000792F74 /* icon_effect_creative.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_effect_creative.jpg; sourceTree = "<group>"; };
 		9FEDE84B22C73DD000792F74 /* icon_category_filter.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_category_filter.jpg; sourceTree = "<group>"; };
@@ -287,6 +350,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FEA45F822C972380031DCCF /* Datez.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +518,7 @@
 		9FBE5FAA22AD967100B82C22 = {
 			isa = PBXGroup;
 			children = (
+				9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */,
 				9F38135022BEBF35000A6D00 /* Extensions */,
 				9FEDE84422C73A4D00792F74 /* Shared Resources */,
 				9FBE5FDD22AD97F500B82C22 /* Model */,
@@ -571,6 +636,20 @@
 			path = "Watch Views";
 			sourceTree = "<group>";
 		};
+		9FEA45E122C9721D0031DCCF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9FEA45EB22C9721E0031DCCF /* Datez.framework */,
+				9FEA45ED22C9721E0031DCCF /* Datez.framework */,
+				9FEA45EF22C9721E0031DCCF /* Datez.framework */,
+				9FEA45F122C9721E0031DCCF /* Datez.framework */,
+				9FEA45F322C9721E0031DCCF /* DatezTests-ios.xctest */,
+				9FEA45F522C9721E0031DCCF /* DatezTests-tvos.xctest */,
+				9FEA45F722C9721E0031DCCF /* DatezTests-osx.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9FEDE84422C73A4D00792F74 /* Shared Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +715,7 @@
 				9F1CC2FA22C5458000CC0B88 /* Sources */,
 				9F1CC2FB22C5458000CC0B88 /* Frameworks */,
 				9F1CC2FC22C5458000CC0B88 /* Resources */,
+				9FEA45FA22C972380031DCCF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -772,6 +852,12 @@
 			);
 			productRefGroup = 9FBE5FB422AD967100B82C22 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9FEA45E122C9721D0031DCCF /* Products */;
+					ProjectRef = 9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9FBE5FB222AD967100B82C22 /* CanTrack */,
@@ -784,6 +870,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9FEA45EB22C9721E0031DCCF /* Datez.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Datez.framework;
+			remoteRef = 9FEA45EA22C9721E0031DCCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FEA45ED22C9721E0031DCCF /* Datez.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Datez.framework;
+			remoteRef = 9FEA45EC22C9721E0031DCCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FEA45EF22C9721E0031DCCF /* Datez.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Datez.framework;
+			remoteRef = 9FEA45EE22C9721E0031DCCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FEA45F122C9721E0031DCCF /* Datez.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Datez.framework;
+			remoteRef = 9FEA45F022C9721E0031DCCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FEA45F322C9721E0031DCCF /* DatezTests-ios.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "DatezTests-ios.xctest";
+			remoteRef = 9FEA45F222C9721E0031DCCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FEA45F522C9721E0031DCCF /* DatezTests-tvos.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "DatezTests-tvos.xctest";
+			remoteRef = 9FEA45F422C9721E0031DCCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9FEA45F722C9721E0031DCCF /* DatezTests-osx.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "DatezTests-osx.xctest";
+			remoteRef = 9FEA45F622C9721E0031DCCF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9F1CC2EA22C5457E00CC0B88 /* Resources */ = {

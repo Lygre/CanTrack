@@ -79,7 +79,9 @@ struct WatchDailyDoseLog : View {
 							($0.timestamp.currentCalendar.components.month == doseLogsRetrievedDate.currentCalendar.components.month) &&
 							($0.timestamp.currentCalendar.components.day == doseLogsRetrievedDate.currentCalendar.components.day))
 					}).identified(by: \.id)) { dose in
-						Text(self.daysDosesDateFormatter.string(from: dose.timestamp))
+						NavigationButton(destination: DoseDetail(dose: dose)) {
+							Text(self.daysDosesDateFormatter.string(from: dose.timestamp))
+						}
 					}
 				}
 			}

@@ -63,7 +63,7 @@ struct DoseDetail : View {
 						HStack(alignment: .top) {
 							Text("Prior Dose: ")
 							Spacer()
-							Text(priorDoseTimeFormatter.string(from: dose.timestamp))
+							Text(priorDoseTimeFormatter.string(from: (doseStore.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp))
 								.truncationMode(.head)
 						}
 					}

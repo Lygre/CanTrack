@@ -300,6 +300,7 @@
 		9F38134E22BEBAD1000A6D00 /* Dose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dose.swift; sourceTree = "<group>"; };
 		9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtensions.swift; sourceTree = "<group>"; };
 		9F38135322BEC748000A6D00 /* CalendarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarStore.swift; sourceTree = "<group>"; };
+		9F3A63F722C9B9A80095C47E /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductsListView.swift; sourceTree = "<group>"; };
 		9F8689A522C72B5F0017454C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -522,6 +523,7 @@
 		9FBE5FAA22AD967100B82C22 = {
 			isa = PBXGroup;
 			children = (
+				9F3A63F722C9B9A80095C47E /* Testing.playground */,
 				9FEA45E022C9721D0031DCCF /* Datez.xcodeproj */,
 				9F38135022BEBF35000A6D00 /* Extensions */,
 				9FEDE84422C73A4D00792F74 /* Shared Resources */,

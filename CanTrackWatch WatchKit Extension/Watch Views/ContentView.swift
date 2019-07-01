@@ -43,6 +43,9 @@ struct ContentView : View {
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
 	@State private var doseStore: DoseStore = testData2["doses"] as! DoseStore
 
+	@State private var modalPresented: Bool = false
+
+
 	var body: some View {
 		ScrollView {
 			VStack {
@@ -98,7 +101,11 @@ struct ContentView : View {
 			}
 			.background(Color("InventoryBackgroundColor"))
 		.navigationBarTitle(Text("CanTrack"))
+			.longPressAction(minimumDuration: 1.5, maximumDistance: 8, { () in
 
+			}) { (isPressing) in
+
+			}
 	}
 }
 

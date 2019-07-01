@@ -14,6 +14,8 @@ struct DoseDetail : View {
 
 	@State var dose: Dose
 
+	@State private var priorDoseIsToday: Bool = false
+
 	let navigationBarFormatter: DateFormatter = {
 		var formatter = DateFormatter()
 		formatter.timeZone = .current
@@ -21,7 +23,7 @@ struct DoseDetail : View {
 		formatter.calendar = .current
 		formatter.timeStyle = .short
 		formatter.dateStyle = .none
-		formatter.dateFormat = "MMM d yy"
+		formatter.dateFormat = "MMM d"
 		return formatter
 	}()
 
@@ -60,8 +62,11 @@ struct DoseDetail : View {
 						HStack(alignment: .top) {
 							Text("Prior Dose: ")
 							Spacer()
-							Text(priorDoseTimeFormatter.string(from: (doseStore.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp))
-								.truncationMode(.head)
+
+							priorDoseIsToday ?
+								Text(priorDoseTimeFormatter.string(from: (doseStore.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp)) :
+							nil
+//								.truncationMode(.head)
 						}
 					}
 				}
@@ -78,9 +83,9 @@ struct DoseDetail : View {
 
 #if DEBUG
 
-struct DoseDetail_Previews : PreviewProvider {
-    static var previews: some View {
-		DoseDetail(dose: DoseStore.defaultDose).environmentObject(testData2["doses"] as! DoseStore)
-    }
-}
+//struct DoseDetail_Previews : PreviewProvider {
+//    static var previews: some View {
+//		DoseDetail(dose: DoseStore.defaultDose).environmentObject(testData2["doses"] as! DoseStore)
+//    }
+//}
 #endif

@@ -46,15 +46,9 @@ struct ContentView : View {
 	var body: some View {
 		ScrollView {
 			VStack {
-				HStack {
-					ProductImageViewCircular(product: productStore.products[1])
-					Text("CanTrack")
-						.font(.custom("Awesome", size: 25))
-						.color(Color("KindCrapGreen"))
-						.lineLimit(nil)
-					}
-					.padding(.all)
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.lastTextBaseline] / 2 }
+
+				ProductImageViewCircular(product: productStore.products[1])
+
 
 				HStack(alignment: .center) {
 					Spacer()

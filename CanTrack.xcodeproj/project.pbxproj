@@ -122,8 +122,6 @@
 		9FE4CD0922C66FE7006B91F2 /* WatchProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */; };
 		9FEA45F822C972380031DCCF /* Datez.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEA45ED22C9721E0031DCCF /* Datez.framework */; };
 		9FEA45F922C972380031DCCF /* Datez.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEA45ED22C9721E0031DCCF /* Datez.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9FEA45FC22C9AB290031DCCF /* DoseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA45FB22C9AB290031DCCF /* DoseDetail.swift */; };
-		9FEA45FD22C9AB290031DCCF /* DoseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA45FB22C9AB290031DCCF /* DoseDetail.swift */; };
 		9FEA45FE22C9AB290031DCCF /* DoseDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEA45FB22C9AB290031DCCF /* DoseDetail.swift */; };
 		9FEDE84522C73A6300792F74 /* cannabisbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84322C73A1B00792F74 /* cannabisbg.jpg */; };
 		9FEDE84622C73A6500792F74 /* cannabisbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84322C73A1B00792F74 /* cannabisbg.jpg */; };
@@ -1082,7 +1080,6 @@
 				9F8D4F0822C3DABC0031CEB7 /* NetworkController.swift in Sources */,
 				9F8D4F0422C3DA950031CEB7 /* NewProductView.swift in Sources */,
 				9F8D4F0122C3DA8D0031CEB7 /* ProductRow.swift in Sources */,
-				9FEA45FD22C9AB290031DCCF /* DoseDetail.swift in Sources */,
 				9F8D4F0D22C3DAF60031CEB7 /* StrainEndPoint.swift in Sources */,
 				9F8D4EFE22C3DA6D0031CEB7 /* CalendarStore.swift in Sources */,
 				9F8D4F0B22C3DAF00031CEB7 /* URLParameterEncoding.swift in Sources */,
@@ -1140,7 +1137,6 @@
 				9FC7B36722ADAF6F004278F6 /* InventoryListView.swift in Sources */,
 				9F38134022BE43A8000A6D00 /* HTTPMethod.swift in Sources */,
 				9FD2968022ADE3D500C73496 /* ProductStore.swift in Sources */,
-				9FEA45FC22C9AB290031DCCF /* DoseDetail.swift in Sources */,
 				9F38133E22BE4393000A6D00 /* EndPointType.swift in Sources */,
 				9FE4CD0422C65BDE006B91F2 /* AlignmentExtensions.swift in Sources */,
 				9F38133A22BE4369000A6D00 /* NetworkRouter.swift in Sources */,

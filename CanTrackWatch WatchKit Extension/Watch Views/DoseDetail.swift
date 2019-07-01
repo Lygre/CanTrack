@@ -20,8 +20,21 @@ struct DoseDetail : View {
 		formatter.locale = .current
 		formatter.calendar = .current
 		formatter.timeStyle = .short
-		formatter.dateStyle = .short
+		formatter.dateStyle = .none
 		formatter.dateFormat = "MMM d yy"
+
+		return formatter
+	}()
+
+	let priorDoseTimeFormatter: DateFormatter = {
+		var formatter = DateFormatter()
+		formatter.timeZone = .current
+		formatter.locale = .current
+		formatter.calendar = .current
+		formatter.timeStyle = .short
+		formatter.dateStyle = .none
+//		formatter.dateFormat = "MMM d yy"
+
 		return formatter
 	}()
 
@@ -30,16 +43,19 @@ struct DoseDetail : View {
 			Group {
 				VStack(alignment: .leading) {
 					VStack {
-						HStack(alignment: .top) {
+						HStack(alignment: .firstTextBaseline) {
 							Text(dose.product.strain.name)
 							Spacer()
 							Text(dose.product.productType.rawValue)
-						}
-						HStack {
-							Text(dose.administrationRoute.rawValue)
+							}
+							.foregroundColor(Color(strainVariety: dose.product.strain.race))
+						HStack(alignment: .firstTextBaseline) {
+							Text("Route: ")
 							Spacer()
+							Text(dose.administrationRoute.rawValue)
 							dose.viewBuilderImage
 								.imageScale(.large)
+							.foregroundColor(Color(strainVariety: dose.product.strain.race))
 						}
 					}
 
@@ -47,12 +63,12 @@ struct DoseDetail : View {
 						HStack(alignment: .top) {
 							Text("Prior Dose: ")
 							Spacer()
-							Text(navigationBarFormatter.string(from: dose.timestamp))
+							Text(priorDoseTimeFormatter.string(from: dose.timestamp))
 								.truncationMode(.head)
 						}
 					}
 				}
-				}.foregroundColor(Color.white)
+				}
 			Spacer()
 			}
 			.navigationBarTitle(Text(navigationBarFormatter.string(from: dose.timestamp)))

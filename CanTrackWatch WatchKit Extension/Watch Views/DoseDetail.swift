@@ -55,7 +55,7 @@ struct DoseDetail : View {
 							Text(dose.administrationRoute.rawValue)
 							dose.viewBuilderImage
 								.imageScale(.large)
-							.foregroundColor(Color(strainVariety: dose.product.strain.race))
+								.foregroundColor(Color(strainVariety: dose.product.strain.race))
 						}
 					}
 
@@ -68,7 +68,15 @@ struct DoseDetail : View {
 						}
 					}
 				}
+			}
+			Spacer()
+			Group {
+				VStack(alignment: .leading) {
+					HStack(alignment: .bottom) {
+						Text("Buttons placeholder")
+					}
 				}
+			}
 			Spacer()
 			}
 			.navigationBarTitle(Text(navigationBarFormatter.string(from: dose.timestamp)))

@@ -57,6 +57,7 @@
 		9F38134F22BEBAD1000A6D00 /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38134E22BEBAD1000A6D00 /* Dose.swift */; };
 		9F38135222BEBF43000A6D00 /* SwiftUIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */; };
 		9F38135422BEC748000A6D00 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135322BEC748000A6D00 /* CalendarStore.swift */; };
+		9F3A640022C9BDEC0095C47E /* DoseActionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A63FF22C9BDEC0095C47E /* DoseActionsRow.swift */; };
 		9F6B97A322C6B94000F360DA /* WatchProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */; };
 		9F8689A622C72B5F0017454C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8689A522C72B5F0017454C /* Data.swift */; };
 		9F8689A722C72B5F0017454C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8689A522C72B5F0017454C /* Data.swift */; };
@@ -301,6 +302,7 @@
 		9F38135122BEBF43000A6D00 /* SwiftUIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIColorExtensions.swift; sourceTree = "<group>"; };
 		9F38135322BEC748000A6D00 /* CalendarStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarStore.swift; sourceTree = "<group>"; };
 		9F3A63F722C9B9A80095C47E /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9F3A63FF22C9BDEC0095C47E /* DoseActionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseActionsRow.swift; sourceTree = "<group>"; };
 		9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductsListView.swift; sourceTree = "<group>"; };
 		9F8689A522C72B5F0017454C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -635,6 +637,7 @@
 				9F1CC30322C5458000CC0B88 /* ContentView.swift */,
 				9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */,
 				9FEA45FB22C9AB290031DCCF /* DoseDetail.swift */,
+				9F3A63FF22C9BDEC0095C47E /* DoseActionsRow.swift */,
 				9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */,
 				9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */,
 				9FEDE86322C7673400792F74 /* WatchProductActionsRow.swift */,
@@ -1033,6 +1036,7 @@
 				9FEDE84922C73B0600792F74 /* SwiftUIColorExtensions.swift in Sources */,
 				9F1CC32922C5471700CC0B88 /* StrainEndPoint.swift in Sources */,
 				9F1CC33022C5636700CC0B88 /* ProductImageViewCircular.swift in Sources */,
+				9F3A640022C9BDEC0095C47E /* DoseActionsRow.swift in Sources */,
 				9F093DD822C7AED400F26083 /* Dose.swift in Sources */,
 				9FEDE86422C7673400792F74 /* WatchProductActionsRow.swift in Sources */,
 				9F1CC32722C5471300CC0B88 /* URLParameterEncoding.swift in Sources */,

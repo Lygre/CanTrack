@@ -23,7 +23,6 @@ struct WatchProductActionsRow : View {
 
 				}) {
 					ProductActionButton(action: value.1)
-						.foregroundColor(value.3)
 				}
 			}
 		}
@@ -42,8 +41,8 @@ struct ProductActionButton: View {
 				.imageScale(.large)
 			Text(action.name)
 				.font(.system(.footnote, design: .rounded))
-		}
-
+			}
+			.foregroundColor(action.associatedColor)
 	}
 
 }

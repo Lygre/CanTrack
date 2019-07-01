@@ -22,7 +22,6 @@ struct DoseDetail : View {
 		formatter.timeStyle = .short
 		formatter.dateStyle = .none
 		formatter.dateFormat = "MMM d yy"
-
 		return formatter
 	}()
 
@@ -33,8 +32,6 @@ struct DoseDetail : View {
 		formatter.calendar = .current
 		formatter.timeStyle = .short
 		formatter.dateStyle = .none
-//		formatter.dateFormat = "MMM d yy"
-
 		return formatter
 	}()
 
@@ -71,11 +68,7 @@ struct DoseDetail : View {
 			}
 			Spacer()
 			Group {
-				VStack(alignment: .leading) {
-					HStack(alignment: .bottom) {
-						Text("Buttons placeholder")
-					}
-				}
+				DoseActionsRow(dose: dose)
 			}
 			Spacer()
 			}

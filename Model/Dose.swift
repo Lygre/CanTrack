@@ -94,3 +94,52 @@ struct Dose: Equatable, Hashable, Codable, Identifiable {
 		hasher.combine(product)
 	}
 }
+
+
+
+enum DoseAction: Int, Identifiable, CaseIterable {
+	case redose
+	case edit
+	case delete
+}
+
+extension DoseAction {
+
+	var id: UUID {
+		return UUID()
+	}
+
+	var name: String {
+		switch(self) {
+		case .redose:
+			return "Dose"
+		case .edit:
+			return "Edit"
+		case .delete:
+			return "Delete"
+		}
+	}
+
+	var sfSymbol: Image {
+		switch(self) {
+		case .redose:
+			return Image(systemName: "smoke.fill")
+		case .edit:
+			return Image(systemName: "pencil")
+		case .delete:
+			return Image(systemName: "trash")
+		}
+	}
+
+	var associatedColor: Color {
+		switch(self) {
+		case .redose:
+			return Color.green
+		case .edit:
+			return Color.orange
+		case .delete:
+			return Color.red
+		}
+	}
+
+}

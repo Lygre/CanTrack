@@ -46,8 +46,23 @@ struct ContentView : View {
 	@State private var modalPresented: Bool = false
 
 
+
+	var modal: Modal {
+		Modal(ModalQuickDose(), onDismiss: {
+			self.modalPresented.toggle()
+		})
+
+	}
+
 	var body: some View {
-		ScrollView {
+
+		let longPress = LongPressGesture(minimumDuration: 1.5, maximumDistance: 8)
+			.onEnded { _ in
+
+		}
+
+
+		return ScrollView {
 			VStack {
 
 				ProductImageViewCircular(product: productStore.products[1])
@@ -99,13 +114,12 @@ struct ContentView : View {
 
 			}
 			}
+			.gesture(longPress)
 			.background(Color("InventoryBackgroundColor"))
-		.navigationBarTitle(Text("CanTrack"))
-			.longPressAction(minimumDuration: 1.5, maximumDistance: 8, { () in
+			.navigationBarTitle(Text("CanTrack"))
 
-			}) { (isPressing) in
+			.presentation(modalPresented ? modal : nil)
 
-			}
 	}
 }
 
@@ -119,3 +133,13 @@ struct ContentView_Previews : PreviewProvider {
     }
 }
 #endif
+
+struct ModalQuickDose : View {
+    var body: some View {
+        return VStack(alignment: .leading) {
+            HStack(alignment: .top) {
+                Text("Placeholder")
+            }
+        }
+    }
+}

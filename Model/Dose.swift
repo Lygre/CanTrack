@@ -19,8 +19,8 @@ struct Dose: Equatable, Hashable, Codable, Identifiable {
 	let product: Product
 	var mass: Double = 0.0
 	var administrationRoute: AdministrationRoute = .inhalation
-	var doseImage: UIImage? = UIImage(systemName: "smoke.fill")
-
+	var doseImage: UIImage? = UIImage(named: "cannabisbg")
+	var viewBuilderImage: Image = Image(systemName: "smoke.fill")
 
 	init(product: Product, mass: Double, administrationRoute: AdministrationRoute) {
 		self.id = UUID()

@@ -26,10 +26,22 @@ struct DoseDetail : View {
 		VStack {
 			Group {
 				Section {
-					Text("Helo")
+					VStack(alignment: .leading) {
+						HStack(alignment: .top) {
+							Text(dose.product.strain.name)
+							Text(dose.product.productType.rawValue)
+						}
+						HStack {
+							Text("Hi")
+							dose.viewBuilderImage
+						}
+
+					}
+
 				}
+				}.foregroundColor(Color.white)
+			Spacer()
 			}
-		}
 		.navigationBarTitle(Text(navigationBarFormatter.string(from: dose.timestamp)))
     }
 }

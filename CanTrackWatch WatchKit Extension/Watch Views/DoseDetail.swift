@@ -7,8 +7,10 @@
 //
 
 import SwiftUI
+import Datez
 
 struct DoseDetail : View {
+	@EnvironmentObject var doseStore: DoseStore
 
 	@State var dose: Dose
 
@@ -19,37 +21,49 @@ struct DoseDetail : View {
 		formatter.calendar = .current
 		formatter.timeStyle = .short
 		formatter.dateStyle = .short
+		formatter.dateFormat = "MMM d yy"
 		return formatter
 	}()
 
-    var body: some View {
+	var body: some View {
 		VStack {
 			Group {
-				Section {
-					VStack(alignment: .leading) {
+				VStack(alignment: .leading) {
+					VStack {
 						HStack(alignment: .top) {
 							Text(dose.product.strain.name)
+							Spacer()
 							Text(dose.product.productType.rawValue)
 						}
 						HStack {
-							Text("Hi")
+							Text(dose.administrationRoute.rawValue)
+							Spacer()
 							dose.viewBuilderImage
+								.imageScale(.large)
 						}
-
 					}
 
+					VStack {
+						HStack(alignment: .top) {
+							Text("Prior Dose: ")
+							Spacer()
+							Text(navigationBarFormatter.string(from: dose.timestamp))
+								.truncationMode(.head)
+						}
+					}
 				}
 				}.foregroundColor(Color.white)
 			Spacer()
 			}
-		.navigationBarTitle(Text(navigationBarFormatter.string(from: dose.timestamp)))
-    }
+			.navigationBarTitle(Text(navigationBarFormatter.string(from: dose.timestamp)))
+	}
 }
 
 #if DEBUG
+
 struct DoseDetail_Previews : PreviewProvider {
     static var previews: some View {
-		DoseDetail(dose: DoseStore.defaultDose)
+		DoseDetail(dose: DoseStore.defaultDose).environmentObject(testData2["doses"] as! DoseStore)
     }
 }
 #endif

@@ -26,6 +26,8 @@ class DoseStore: Equatable, Hashable, Codable, BindableObject {
 		}
 	}
 
+	static let defaultDose: Dose = Dose(product: Product.defaultProduct, mass: 0.0, administrationRoute: .inhalation, doseTimestamp: Date())
+
 	init(doses: [Dose]) {
 		self.doses = doses
 	}

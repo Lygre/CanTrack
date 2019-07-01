@@ -12,6 +12,16 @@ struct DoseDetail : View {
 
 	@State var dose: Dose
 
+	let navigationBarFormatter: DateFormatter = {
+		var formatter = DateFormatter()
+		formatter.timeZone = .current
+		formatter.locale = .current
+		formatter.calendar = .current
+		formatter.timeStyle = .short
+		formatter.dateStyle = .short
+		return formatter
+	}()
+
     var body: some View {
 		VStack {
 			Group {
@@ -20,14 +30,14 @@ struct DoseDetail : View {
 				}
 			}
 		}
-		.navigationBarTitle(Text())
+		.navigationBarTitle(Text(navigationBarFormatter.string(from: dose.timestamp)))
     }
 }
 
 #if DEBUG
 struct DoseDetail_Previews : PreviewProvider {
     static var previews: some View {
-		DoseDetail(dose: <#Dose#>)
+		DoseDetail(dose: DoseStore.defaultDose)
     }
 }
 #endif

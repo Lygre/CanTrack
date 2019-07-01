@@ -1,18 +1,15 @@
 import UIKit
 import Foundation
 
-var str = "Hello, playground"
-var array = [Int]()
+let navigationBarFormatter: DateFormatter = {
+	var formatter = DateFormatter()
+	formatter.timeZone = .current
+	formatter.locale = .current
+	formatter.calendar = .current
+	formatter.timeStyle = .short
+	formatter.dateStyle = .none
+	formatter.dateFormat = "MMM d"
+	return formatter
+}()
 
-for int in 1...5 {
-	array.append(int)
-}
-print(array)
-
-func getIndex(of int: Int) -> Int? {
-	guard let indexOfInt = array.firstIndex(of: int) else { return nil }
-	print(indexOfInt)
-	return indexOfInt
-}
-
-getIndex(of: 3)
+print(navigationBarFormatter.string(from: Date()))

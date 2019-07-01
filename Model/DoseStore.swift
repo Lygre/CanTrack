@@ -48,7 +48,7 @@ class DoseStore: Equatable, Hashable, Codable, BindableObject {
 
 
 	func getDosePrior(to dose: Dose) -> Dose? {
-		guard let indexOfReferenceDose = doses.firstIndex(of: dose) else { return nil }
+		guard let indexOfReferenceDose = doses.lastIndex(of: dose) else { return nil }
 		if indexOfReferenceDose != 0 {
 			return doses[indexOfReferenceDose.advanced(by: -1)]
 		}

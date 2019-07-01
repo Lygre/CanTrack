@@ -23,7 +23,7 @@ struct DoseDetail : View {
 		formatter.calendar = .current
 		formatter.timeStyle = .short
 		formatter.dateStyle = .none
-		formatter.dateFormat = "MMM d"
+		formatter.dateFormat = "MMM d,  h:mm"
 		return formatter
 	}()
 
@@ -65,8 +65,8 @@ struct DoseDetail : View {
 
 							priorDoseIsToday ?
 								Text(priorDoseTimeFormatter.string(from: (doseStore.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp)) :
-							nil
-//								.truncationMode(.head)
+							Text(priorDoseTimeFormatter.string(from: (doseStore.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp))
+////								.truncationMode(.head)
 						}
 					}
 				}
@@ -82,10 +82,14 @@ struct DoseDetail : View {
 }
 
 #if DEBUG
+let testDoseing: Dose = {
+	Dose(product: ProductStore.defaultProduct, mass: 0.0, administrationRoute: .inhalation, doseTimestamp: (Date().currentCalendar + 1.day).date)
+}()
+var testingStore = DoseStore(doses: [DoseStore.defaultDose, testDoseing])
 
-//struct DoseDetail_Previews : PreviewProvider {
-//    static var previews: some View {
-//		DoseDetail(dose: DoseStore.defaultDose).environmentObject(testData2["doses"] as! DoseStore)
-//    }
-//}
+struct DoseDetail_Previews : PreviewProvider {
+    static var previews: some View {
+		DoseDetail(dose: testingStore.doses[0]).environmentObject(testingStore)
+    }
+}
 #endif

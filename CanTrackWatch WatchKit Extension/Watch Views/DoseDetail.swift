@@ -94,13 +94,13 @@ struct DoseDetail : View {
 
 #if DEBUG
 let testDoseing: Dose = {
-	Dose(product: ProductStore.defaultProduct, mass: 0.0, administrationRoute: .inhalation, doseTimestamp: (Date().currentCalendar + 1.day).date)
+	Dose(product: ProductStore.defaultProduct, mass: 1.0, administrationRoute: .inhalation, doseTimestamp: (Date().currentCalendar + 1.day).date)
 }()
 var testingStore = DoseStore(doses: [DoseStore.defaultDose, testDoseing])
 
 struct DoseDetail_Previews : PreviewProvider {
     static var previews: some View {
-		DoseDetail(dose: testingStore.doses[0]).environmentObject(testingStore)
+		DoseDetail(dose: testingStore.doses[1]).environmentObject(testingStore)
     }
 }
 #endif

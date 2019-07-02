@@ -11,21 +11,40 @@ import SwiftUI
 
 struct DoseActionsRow : View {
 
+	@EnvironmentObject var doseStore: DoseStore
+
 	var dose: Dose
 
 	var buttons = DoseAction.allCases.compactMap { ($0.name, $0, $0.sfSymbol, $0.associatedColor) }
+
+	var doseIndex: Int {
+		doseStore.doses.firstIndex(where: {
+			$0.id == dose.id
+		})!
+	}
 
     var body: some View {
 		HStack(alignment: .bottom, spacing: 2) {
 			ForEach(buttons.identified(by: \.0)) { value in
 				Button(action: {
-
+					switch value.1 {
+					case .delete:
+						self.doseStore.doses.remove(at: self.doseIndex)
+					case .edit:
+						print("not implemented")
+					case .redose:
+						self.doseStore.doses.insert(Dose(product: self.dose.product, mass: 0.5, administrationRoute: self.dose.administrationRoute, doseTimestamp: Date()), at: 0)
+					}
 				}) {
 					DoseActionButton(doseAction: value.1)
 				}
 			}
 		}
     }
+
+
+
+
 }
 
 struct DoseActionButton: View {

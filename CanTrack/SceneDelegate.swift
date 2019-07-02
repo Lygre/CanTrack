@@ -12,8 +12,7 @@ import SwiftUI
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
-//	var userData: UserData = UserData()
-	var productStore: ProductStore = ProductStore(products: testData)
+	var userData: UserData = UserData()
 	var strainStore: StrainStore = StrainStore(strains: testData.compactMap({ return $0.strain }))
 	var calendarStore: CalendarStore = CalendarStore()
 
@@ -30,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		#endif
 
-		window.rootViewController = UIHostingController(rootView: HomeView().environmentObject(productStore).environmentObject(strainStore).environmentObject(calendarStore))
+		window.rootViewController = UIHostingController(rootView: HomeView().environmentObject(userData).environmentObject(strainStore).environmentObject(calendarStore))
 		self.window = window
 		window.makeKeyAndVisible()
 	}

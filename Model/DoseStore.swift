@@ -9,9 +9,19 @@
 import SwiftUI
 import Combine
 import Foundation
+import Datez
+
+let testDoseing: Dose = {
+	Dose(product: ProductStore.defaultProduct, mass: 1.0, administrationRoute: .inhalation, doseTimestamp: (Date().currentCalendar + 1.day).date)
+}()
+
+//var testingStore = DoseStore(doses: [testDoseing])
 
 
-class DoseStore: Equatable, Hashable, Codable, BindableObject {
+class DoseStore: Equatable, Hashable, BindableObject {
+
+
+	static let shared = DoseStore()
 
 	/// CodingKeys enum
 	enum CodingKeys: String, CodingKey {
@@ -20,18 +30,26 @@ class DoseStore: Equatable, Hashable, Codable, BindableObject {
 
 	let didChange = PassthroughSubject<Void, Never>()
 
-	var doses: [Dose] {
-		didSet {
-			didChange.send()
-		}
-	}
+	var doses: [Dose] = [
+		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: testDate),
+		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: (testDate.gregorian.date)),
+		Dose(product: defaultProducts.products[1], mass: 0.7, administrationRoute: .oral)
+	]
 
 	static let defaultDose: Dose = Dose(product: Product.defaultProduct, mass: 0.0, administrationRoute: .inhalation, doseTimestamp: Date())
 
-	init(doses: [Dose]) {
-		self.doses = doses
+	private init() { load() }
+
+	func save() {
+		UserDefaults.standard.set(try? PropertyListEncoder().encode(doses), forKey: "doseStore")
+		debugPrint("save called")
 	}
 
+	func load() {
+		if let data = UserDefaults.standard.object(forKey: "doseStore") as? Data {
+			self.doses = try! PropertyListDecoder().decode([Dose].self, from: data)
+		}
+	}
 
 	/// Establishes conformance to Equatable protocol
 	/// - Parameter lhs: Comparable item 1

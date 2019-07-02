@@ -18,7 +18,7 @@ struct WatchDailyDoseLog : View {
 		case backward
 	}
 
-	@EnvironmentObject var doseStore: DoseStore
+	@EnvironmentObject var userData: UserData
 
 	@State private var doseLogsRetrievedDate: Date = Date()
 
@@ -74,12 +74,12 @@ struct WatchDailyDoseLog : View {
 
 			List {
 				Section {
-					ForEach(doseStore.doses.filter({
+					ForEach(userData.doses.filter({
 						(($0.timestamp.currentCalendar.components.year == doseLogsRetrievedDate.currentCalendar.components.year) &&
 							($0.timestamp.currentCalendar.components.month == doseLogsRetrievedDate.currentCalendar.components.month) &&
 							($0.timestamp.currentCalendar.components.day == doseLogsRetrievedDate.currentCalendar.components.day))
 					}).identified(by: \.id)) { dose in
-						NavigationButton(destination: DoseDetail(dose: dose).environmentObject(self.doseStore)) {
+						NavigationButton(destination: DoseDetail(dose: dose).environmentObject(self.userData)) {
 							Text(self.daysDosesDateFormatter.string(from: dose.timestamp))
 						}
 					}
@@ -107,7 +107,7 @@ struct WatchDailyDoseLog : View {
 #if DEBUG
 struct WatchDailyDoseLog_Previews : PreviewProvider {
     static var previews: some View {
-        WatchDailyDoseLog().environmentObject(testDoseStore)
+        WatchDailyDoseLog().environmentObject(UserData())
     }
 }
 #endif

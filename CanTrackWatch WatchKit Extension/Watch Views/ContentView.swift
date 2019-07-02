@@ -22,17 +22,16 @@ let testDate: Date = {
 
 
 
-let testDoseStore: DoseStore = DoseStore(doses:
-	[
-		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: testDate),
-		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: (testDate.gregorian.date)),
-		Dose(product: defaultProducts.products[1], mass: 0.7, administrationRoute: .oral)
-	])
+//let testDoseStore: DoseStore = DoseStore(doses:
+//	[
+//		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: testDate),
+//		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: (testDate.gregorian.date)),
+//		Dose(product: defaultProducts.products[1], mass: 0.7, administrationRoute: .oral)
+//	])
 
 let testData2: [String: AnyObject] = [
 	"strains": StrainStore(strains: [StrainStore.defaultStrain]),
-	"products": defaultProducts,
-	"doses": testDoseStore
+	"products": defaultProducts
 ]
 
 
@@ -41,7 +40,6 @@ struct ContentView : View {
 
 	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
-	@State private var doseStore: DoseStore = testData2["doses"] as! DoseStore
 
 	@State private var modalPresented: Bool = false
 
@@ -79,7 +77,7 @@ struct ContentView : View {
 						WatchProductsListView()
 							.environmentObject(self.productStore)
 							.environmentObject(self.strainStore)
-							.environmentObject(self.doseStore)
+//							.environmentObject(self.doseStore)
 					) {
 						Image(systemName: "plus.circle")
 							.imageScale(.large)
@@ -98,7 +96,7 @@ struct ContentView : View {
 						WatchDailyDoseLog()
 							.environmentObject(self.productStore)
 							.environmentObject(self.strainStore)
-							.environmentObject(self.doseStore)
+//							.environmentObject(self.doseStore)
 					) {
 						Image(systemName: "calendar")
 							.imageScale(.large)
@@ -124,7 +122,10 @@ struct ContentView : View {
 
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-		ContentView().environmentObject(productStore).environmentObject(strainStore).environmentObject(testDoseStore)
+		ContentView()
+			.environmentObject(productStore)
+			.environmentObject(strainStore)
+			.environmentObject(UserData())
     }
 }
 #endif

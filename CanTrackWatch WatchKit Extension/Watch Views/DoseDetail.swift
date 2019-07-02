@@ -10,7 +10,7 @@ import SwiftUI
 import Datez
 
 struct DoseDetail : View {
-	@EnvironmentObject var doseStore: DoseStore
+	@EnvironmentObject var userData: UserData
 
 	@State var dose: Dose
 
@@ -76,8 +76,8 @@ struct DoseDetail : View {
 							Spacer()
 
 							priorDoseIsToday ?
-								Text(priorDoseTimeFormatter.string(from: (doseStore.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp)) :
-							Text(priorDoseTimeFormatter.string(from: (doseStore.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp))
+								Text(priorDoseTimeFormatter.string(from: (DoseStore.shared.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp)) :
+							Text(priorDoseTimeFormatter.string(from: (DoseStore.shared.getDosePrior(to: dose) ?? DoseStore.defaultDose).timestamp))
 ////								.truncationMode(.head)
 						}
 					}
@@ -94,14 +94,10 @@ struct DoseDetail : View {
 }
 
 #if DEBUG
-let testDoseing: Dose = {
-	Dose(product: ProductStore.defaultProduct, mass: 1.0, administrationRoute: .inhalation, doseTimestamp: (Date().currentCalendar + 1.day).date)
-}()
-var testingStore = DoseStore(doses: [DoseStore.defaultDose, testDoseing])
 
 struct DoseDetail_Previews : PreviewProvider {
     static var previews: some View {
-		DoseDetail(dose: testingStore.doses[1]).environmentObject(testingStore)
+		DoseDetail(dose: DoseStore.shared.doses[0]).environmentObject(UserData())
     }
 }
 #endif

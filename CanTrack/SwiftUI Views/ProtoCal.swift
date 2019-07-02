@@ -94,9 +94,6 @@ struct ProtoYearView: View {
 					}
 				}
 			}
-			.frame(height: 400, alignment: .center)
-
-			Spacer()
 		}
 
 	}
@@ -143,8 +140,6 @@ struct MonthsRowView: View {
 				MonthCellView(month: monthInt)
 			}
 		}
-//			.frame(width: 350, height: 350, alignment: .leading)
-//		.scaledToFill()
 	}
 }
 

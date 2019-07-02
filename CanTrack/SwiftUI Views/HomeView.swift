@@ -42,7 +42,7 @@ struct HomeView : View {
 		TabbedView(selection: $selectedTab) {
 			InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
 			StrainsView().tabItemLabel(Text("Strains")).tag(Tab.strains)
-			ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
+			ProtoCal().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
 			}
 			.environmentObject(store)
 			.environmentObject(strainStore)

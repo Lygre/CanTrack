@@ -7,8 +7,9 @@
 //
 
 import SwiftUI
-import Combine
 import Foundation
+import Datez
+
 
 
 class DoseStore {
@@ -18,11 +19,27 @@ class DoseStore {
 		case doses
 	}
 
-	var doses: [Dose] = []
+
+	var doses: [Dose] = [
+		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: testDate),
+		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: (testDate.gregorian.date)),
+		Dose(product: defaultProducts.products[1], mass: 0.7, administrationRoute: .oral)
+	]
 
 
 	// MARK: - Instance variables
 	static let shared = DoseStore()
+
+	static let testDate: Date = {
+		var cmp = DateComponents()
+		cmp.calendar = .current
+		cmp.calendar?.locale = .current
+		cmp.timeZone = .current
+		cmp.year = 2019
+		cmp.month = 6
+		cmp.day = 29
+		return cmp.isValidDate ? cmp.date! : Date()
+	}()
 
 	static let defaultDose: Dose = Dose(product: Product.defaultProduct, mass: 0.0, administrationRoute: .inhalation, doseTimestamp: Date())
 

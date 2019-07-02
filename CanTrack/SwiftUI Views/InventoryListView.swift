@@ -13,7 +13,7 @@ let testData = defaultProducts.products
 
 
 struct InventoryListView : View {
-	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var userData: UserData
 
 	@State private var isModal: Bool = false
 
@@ -26,7 +26,7 @@ struct InventoryListView : View {
 	private var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
-		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(productStore).environmentObject(strainStore), onDismiss: {
+		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(userData).environmentObject(strainStore), onDismiss: {
 			self.isModal.toggle()
 		})
 	}
@@ -90,13 +90,13 @@ struct InventoryListView : View {
 				}
 				Section {
 					!isFiltered ?
-						ForEach(productStore.products.identified(by: \.identifiedValue)) { product in
+						ForEach(userData.products.identified(by: \.identifiedValue)) { product in
 							NavigationButton(destination: ProductDetailView(product: product)) {
 								ProductRow(product: product)
 							}
 						}
 						:
-						ForEach(productStore.products.compactMap({ (someProduct) -> Product? in
+						ForEach(userData.products.compactMap({ (someProduct) -> Product? in
 							return (someProduct.productType == activeFilterType!) ? someProduct : nil
 						}).identified(by: \.identifiedValue)) { product in
 							NavigationButton(destination: ProductDetailView(product: product)) {
@@ -148,7 +148,7 @@ struct InventoryListView : View {
 					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {
 						HStack(alignment: .center) {
 
-							ForEach(productStore.productTypes.identified(by: \.hashValue)) { type in
+							ForEach(ProductStore.shared.productTypes.identified(by: \.hashValue)) { type in
 								Button(action: {
 									self.activeFilterType = type
 									self.isFiltered = true
@@ -170,13 +170,13 @@ struct InventoryListView : View {
 				}
 				Section {
 					!isFiltered ?
-						ForEach(productStore.products.identified(by: \.identifiedValue)) { product in
+						ForEach(userData.products.identified(by: \.identifiedValue)) { product in
 							NavigationButton(destination: ProductDetailView(product: product)) {
 								ProductRow(product: product)
 							}
 						}
 						:
-						ForEach(productStore.products.compactMap({ (someProduct) -> Product? in
+						ForEach(userData.products.compactMap({ (someProduct) -> Product? in
 							return (someProduct.productType == activeFilterType!) ? someProduct : nil
 						}).identified(by: \.identifiedValue)) { product in
 							NavigationButton(destination: ProductDetailView(product: product)) {
@@ -196,11 +196,11 @@ struct InventoryListView : View {
 
 	func deleteProduct(at offsets: IndexSet) {
 
-		productStore.products.remove(at: offsets.count)
+		userData.products.remove(at: offsets.count)
 	}
 
 	func createProduct() {
-		productStore.products.append($testProd.value)
+		userData.products.append($testProd.value)
 	}
 
 
@@ -211,11 +211,11 @@ struct InventoryListView : View {
 
 #if DEBUG
 
-let store = ProductStore(products: testData)
+//let store = ProductStore(products: testData)
 
 struct InventoryListView_Previews : PreviewProvider {
 	static var previews: some View {
-		InventoryListView().environmentObject(store)
+		InventoryListView().environmentObject(UserData())
 	}
 }
 #endif

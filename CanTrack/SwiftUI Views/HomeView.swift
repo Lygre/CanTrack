@@ -11,7 +11,8 @@ import Combine
 //let productStore = ProductStore()
 
 struct HomeView : View {
-	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var userData: UserData
+
 	@EnvironmentObject var strainStore: StrainStore
 	@EnvironmentObject var calendarStore: CalendarStore
 
@@ -44,7 +45,7 @@ struct HomeView : View {
 			StrainsView().tabItemLabel(Text("Strains")).tag(Tab.strains)
 			ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
 			}
-			.environmentObject(store)
+			.environmentObject(userData)
 			.environmentObject(strainStore)
 			.environmentObject(calendarStore)
 
@@ -79,7 +80,7 @@ let strainStore = StrainStore(strains: defaultStrains)
 
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View {
-			HomeView().environmentObject(store).environmentObject(strainStore).environmentObject(calendarStore)
+			HomeView().environmentObject(UserData()).environmentObject(strainStore).environmentObject(calendarStore)
     }
 }
 #endif

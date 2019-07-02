@@ -11,8 +11,8 @@ import SwiftUI
 
 
 struct StrainsView : View {
-//	@EnvironmentObject var userData: UserData
-	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var userData: UserData
+//	@EnvironmentObject var productStore: ProductStore
 	@EnvironmentObject var strainStore: StrainStore
 
 	#if !os(tvOS)
@@ -106,7 +106,7 @@ struct StrainCardView : View {
 
 struct StrainsView_Previews : PreviewProvider {
     static var previews: some View {
-        StrainsView().environmentObject(store).environmentObject(strainStore)
+        StrainsView().environmentObject(UserData()).environmentObject(strainStore)
     }
 }
 #endif

@@ -9,21 +9,21 @@
 import SwiftUI
 
 struct WatchProductsListView : View {
-	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var strainStore: StrainStore
 
-
+	@State private var favoritesFilterOn: Bool = false
 
 	var body: some View {
 		List {
-			Toggle(isOn: $productStore.showFavoriteProductsOnly) {
+			Toggle(isOn: $favoritesFilterOn) {
 				Text("Favorites Only")
 			}
-			ForEach(productStore.products.identified(by: \.id)) { product in
-				if !self.productStore.showFavoriteProductsOnly || product.isFavorite {
+			ForEach(userData.products.identified(by: \.id)) { product in
+				if !self.favoritesFilterOn || product.isFavorite {
 					NavigationButton(destination:
 						WatchProductDetail(product: product)
-							.environmentObject(self.productStore)
+							.environmentObject(self.userData)
 							.environmentObject(self.strainStore)
 					) {
 						VStack(alignment: .leading) {
@@ -42,7 +42,7 @@ struct WatchProductsListView : View {
 #if DEBUG
 struct WatchProductsListView_Previews : PreviewProvider {
     static var previews: some View {
-        WatchProductsListView().environmentObject(defaultProducts).environmentObject(strainStore)
+        WatchProductsListView().environmentObject(UserData()).environmentObject(strainStore)
     }
 }
 #endif

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct WatchProductDetail : View {
-	@EnvironmentObject var productStore: ProductStore
+	@EnvironmentObject var userData: UserData
 	@EnvironmentObject var strainStore: StrainStore
 
 	@State private var isOpened: Bool = true
@@ -17,7 +17,7 @@ struct WatchProductDetail : View {
 	var product: Product
 
 	var productIndex: Int {
-		productStore.products.firstIndex(where: { $0.id == product.id })!
+		userData.products.firstIndex(where: { $0.id == product.id })!
 	}
 
 	private let dateFormatter: DateFormatter = {
@@ -40,10 +40,10 @@ struct WatchProductDetail : View {
 					Spacer()
 					Button(action: {
 						withAnimation {
-							self.productStore.products[self.productIndex].isFavorite.toggle()
+							self.userData.products[self.productIndex].isFavorite.toggle()
 						}
 					}) {
-						if self.productStore.products[self.productIndex].isFavorite {
+						if self.userData.products[self.productIndex].isFavorite {
 							Image(systemName: "star.fill")
 								.foregroundColor(Color.yellow)
 						} else {
@@ -74,7 +74,7 @@ struct WatchProductDetail : View {
 #if DEBUG
 struct WatchProductDetail_Previews : PreviewProvider {
     static var previews: some View {
-		WatchProductDetail(product: defaultProducts.products[0]).environmentObject(productStore).environmentObject(strainStore)
+		WatchProductDetail(product: UserData().products[0]).environmentObject(UserData()).environmentObject(strainStore)
     }
 }
 #endif

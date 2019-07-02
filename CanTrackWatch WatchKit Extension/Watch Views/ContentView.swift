@@ -40,7 +40,6 @@ struct ContentView : View {
 
 	var userData: UserData = UserData()
 
-	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
 
 	@State private var modalPresented: Bool = false
@@ -64,7 +63,7 @@ struct ContentView : View {
 
 		return ScrollView {
 			VStack(alignment: .launchScreenArrowAlignment, spacing: 10) {
-				ProductImageViewCircular(product: productStore.products[1])
+				ProductImageViewCircular(product: userData.products[1])
 					.gesture(longPress)
 					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.trailing] / 2}
 
@@ -77,7 +76,6 @@ struct ContentView : View {
 					Spacer()
 					NavigationButton(destination:
 						WatchProductsListView()
-							.environmentObject(self.productStore)
 							.environmentObject(self.strainStore)
 							.environmentObject(self.userData)
 					) {
@@ -96,7 +94,6 @@ struct ContentView : View {
 					Spacer()
 					NavigationButton(destination:
 						WatchDailyDoseLog()
-							.environmentObject(self.productStore)
 							.environmentObject(self.strainStore)
 							.environmentObject(self.userData)
 					) {
@@ -107,10 +104,7 @@ struct ContentView : View {
 					}
 				Spacer()
 			}
-			.highPriorityGesture(longPress)
-			}
-
-			.background(Color("InventoryBackgroundColor"))
+			}.background(Color("InventoryBackgroundColor"))
 			.navigationBarTitle(Text("CanTrack"))
 
 			.presentation(modalPresented ? modal : nil)
@@ -125,9 +119,7 @@ struct ContentView : View {
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
 		ContentView()
-			.environmentObject(productStore)
 			.environmentObject(strainStore)
-			.environmentObject(UserData())
     }
 }
 #endif

@@ -12,6 +12,11 @@ import Combine
 final class UserData: BindableObject {
 	let didChange = PassthroughSubject<UserData, Never>()
 
-	var doses: [Dose] = []
+	var doses: [Dose] = DoseStore.shared.doses {
+		didSet {
+			didChange.send(self)
+			DoseStore.shared.doses = doses
+		}
+	}
 
 }

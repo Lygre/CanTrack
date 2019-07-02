@@ -11,7 +11,7 @@ import Foundation
 import SwiftUI
 
 let testData: [String: AnyObject] =
-	["strains": StrainStore(strains: [StrainStore.defaultStrain]),
+	["strains": StrainStore.shared,
 	 "products": defaultProducts
 ]
 

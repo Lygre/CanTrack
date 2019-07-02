@@ -14,6 +14,8 @@ let defaultProducts = ProductStore(products: [
 	Product(strain: Strain(name: "Sour Diesel", race: .sativa, description: nil), productType: .truFlower)
 	])
 
+let defaultProductJustTheProductsArray = defaultProducts.products
+
 
 
 class ProductStore: Equatable, Hashable, Codable, BindableObject {

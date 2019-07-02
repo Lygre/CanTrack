@@ -10,19 +10,9 @@ import WatchKit
 import Foundation
 import SwiftUI
 
-let testData: [String: AnyObject] =
-	["strains": StrainStore.shared,
-	 "products": defaultProducts
-]
 
-var strainStore: StrainStore = testData["strains"] as! StrainStore
-var productStore: ProductStore = testData["products"] as! ProductStore
-
-class HostingController : WKHostingController<ContentView> {
-
-
-	
-    override var body: ContentView {
-		return ContentView()
+class HostingController : WKHostingController<AnyView> {
+    override var body: AnyView {
+		return AnyView(ContentView().environmentObject(UserData()))
     }
 }

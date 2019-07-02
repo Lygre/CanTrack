@@ -30,7 +30,7 @@ let testData2: [String: AnyObject] = [
 
 struct ContentView : View {
 
-	var userData: UserData = UserData()
+	@EnvironmentObject var userData: UserData
 
 	@State private var modalPresented: Bool = false
 
@@ -106,7 +106,7 @@ struct ContentView : View {
 
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
-		ContentView()
+		ContentView().environmentObject(UserData())
     }
 }
 #endif

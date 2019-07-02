@@ -59,6 +59,9 @@
 		9F38135422BEC748000A6D00 /* CalendarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38135322BEC748000A6D00 /* CalendarStore.swift */; };
 		9F3A640022C9BDEC0095C47E /* DoseActionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A63FF22C9BDEC0095C47E /* DoseActionsRow.swift */; };
 		9F6B97A322C6B94000F360DA /* WatchProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */; };
+		9F710A4222CB46C700EED197 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F710A4122CB46C700EED197 /* UserData.swift */; };
+		9F710A4322CB46C700EED197 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F710A4122CB46C700EED197 /* UserData.swift */; };
+		9F710A4422CB46C700EED197 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F710A4122CB46C700EED197 /* UserData.swift */; };
 		9F8689A622C72B5F0017454C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8689A522C72B5F0017454C /* Data.swift */; };
 		9F8689A722C72B5F0017454C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8689A522C72B5F0017454C /* Data.swift */; };
 		9F8689A822C72B5F0017454C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F8689A522C72B5F0017454C /* Data.swift */; };
@@ -302,6 +305,7 @@
 		9F3A63F722C9B9A80095C47E /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9F3A63FF22C9BDEC0095C47E /* DoseActionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseActionsRow.swift; sourceTree = "<group>"; };
 		9F6B97A222C6B94000F360DA /* WatchProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductsListView.swift; sourceTree = "<group>"; };
+		9F710A4122CB46C700EED197 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		9F8689A522C72B5F0017454C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		9F8D4EDC22C3D96A0031CEB7 /* CanTrackTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrackTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4EDE22C3D96A0031CEB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -607,6 +611,7 @@
 				9FD2967F22ADE3D500C73496 /* ProductStore.swift */,
 				9F38134E22BEBAD1000A6D00 /* Dose.swift */,
 				9F093DD422C7A0E200F26083 /* DoseStore.swift */,
+				9F710A4122CB46C700EED197 /* UserData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1043,6 +1048,7 @@
 				9F8689A822C72B5F0017454C /* Data.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
 				9F093DDA22C7F07800F26083 /* WatchDailyDoseLog.swift in Sources */,
+				9F710A4422CB46C700EED197 /* UserData.swift in Sources */,
 				9FBAD47E22C71848008C8FEF /* WatchProductDetail.swift in Sources */,
 				9F1CC30E22C5458000CC0B88 /* ComplicationController.swift in Sources */,
 				9F1CC32122C546EB00CC0B88 /* Product.swift in Sources */,
@@ -1080,6 +1086,7 @@
 				9F8D4F0E22C3DAFD0031CEB7 /* NetworkRouter.swift in Sources */,
 				9F8D4F0222C3DA900031CEB7 /* ProductImageViewCircular.swift in Sources */,
 				9F8D4F0322C3DA930031CEB7 /* ProductDetailView.swift in Sources */,
+				9F710A4322CB46C700EED197 /* UserData.swift in Sources */,
 				9F8D4F0722C3DAB20031CEB7 /* ProtoCal.swift in Sources */,
 				9F8D4F1122C3DAFD0031CEB7 /* HTTPMethod.swift in Sources */,
 				9F8D4F0922C3DAC80031CEB7 /* SwiftUIColorExtensions.swift in Sources */,
@@ -1130,6 +1137,7 @@
 				9F38134022BE43A8000A6D00 /* HTTPMethod.swift in Sources */,
 				9FD2968022ADE3D500C73496 /* ProductStore.swift in Sources */,
 				9F38133E22BE4393000A6D00 /* EndPointType.swift in Sources */,
+				9F710A4222CB46C700EED197 /* UserData.swift in Sources */,
 				9FE4CD0422C65BDE006B91F2 /* AlignmentExtensions.swift in Sources */,
 				9F38133A22BE4369000A6D00 /* NetworkRouter.swift in Sources */,
 				9F8689A622C72B5F0017454C /* Data.swift in Sources */,

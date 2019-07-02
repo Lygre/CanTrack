@@ -11,41 +11,36 @@ import Combine
 import Foundation
 
 
-class DoseStore: Equatable, Hashable, Codable, BindableObject {
+class DoseStore {
 
 	/// CodingKeys enum
 	enum CodingKeys: String, CodingKey {
 		case doses
 	}
 
-	let didChange = PassthroughSubject<Void, Never>()
+	var doses: [Dose] = []
 
-	var doses: [Dose] {
-		didSet {
-			didChange.send()
-		}
-	}
+
+	// MARK: - Instance variables
+	static let shared = DoseStore()
 
 	static let defaultDose: Dose = Dose(product: Product.defaultProduct, mass: 0.0, administrationRoute: .inhalation, doseTimestamp: Date())
 
-	init(doses: [Dose]) {
-		self.doses = doses
+
+	// MARK: - Initializers
+	private init() { load() }
+
+
+	// MARK: - Methods
+	func save() {
+		UserDefaults.standard.set(try? PropertyListEncoder().encode(doses), forKey: "doses")
 	}
 
-
-	/// Establishes conformance to Equatable protocol
-	/// - Parameter lhs: Comparable item 1
-	/// - Parameter rhs: Comparable item 2
-	static func == (lhs: DoseStore, rhs: DoseStore) -> Bool {
-		return lhs.doses == rhs.doses
+	func load() {
+		if let data = UserDefaults.standard.object(forKey: "doses") as? Data {
+			self.doses = try! PropertyListDecoder().decode([Dose].self, from: data)
+		}
 	}
-
-	/// Establishes conformance to Hashable
-	/// - Parameter hasher: hasher to provide hashValue
-	func hash(into hasher: inout Hasher) {
-		hasher.combine(doses)
-	}
-
 
 	func getDosePrior(to dose: Dose) -> Dose? {
 		guard let indexOfReferenceDose = doses.lastIndex(of: dose) else { return nil }

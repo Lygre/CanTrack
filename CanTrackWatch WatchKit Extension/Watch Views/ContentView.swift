@@ -21,14 +21,6 @@ let testDate: Date = {
 }()
 
 
-
-//let testDoseStore: DoseStore = DoseStore(doses:
-//	[
-//		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: testDate),
-//		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: (testDate.gregorian.date)),
-//		Dose(product: defaultProducts.products[1], mass: 0.7, administrationRoute: .oral)
-//	])
-
 let testData2: [String: AnyObject] = [
 	"strains": StrainStore(strains: [StrainStore.defaultStrain]),
 	"products": defaultProducts

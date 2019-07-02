@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 
 
-class UserData: BindableObject {
+final class UserData: BindableObject {
 
 	let didChange = PassthroughSubject<UserData, Never>()
 

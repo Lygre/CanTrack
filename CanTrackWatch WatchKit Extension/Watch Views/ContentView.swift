@@ -33,10 +33,11 @@ let testData2: [String: AnyObject] = [
 
 
 struct ContentView : View {
+	@EnvironmentObject var userData: UserData
 
 	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
-	@State private var doseStore: DoseStore = testData2["doses"] as! DoseStore
+
 
 	@State private var modalPresented: Bool = false
 
@@ -74,7 +75,7 @@ struct ContentView : View {
 						WatchProductsListView()
 							.environmentObject(self.productStore)
 							.environmentObject(self.strainStore)
-							.environmentObject(self.doseStore)
+							.environmentObject(userData)
 					) {
 						Image(systemName: "plus.circle")
 							.imageScale(.large)
@@ -93,7 +94,7 @@ struct ContentView : View {
 						WatchDailyDoseLog()
 							.environmentObject(self.productStore)
 							.environmentObject(self.strainStore)
-							.environmentObject(self.doseStore)
+							.environmentObject(userData)
 					) {
 						Image(systemName: "calendar")
 							.imageScale(.large)

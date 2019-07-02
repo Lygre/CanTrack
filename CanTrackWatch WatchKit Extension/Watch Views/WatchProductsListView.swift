@@ -31,9 +31,8 @@ struct WatchProductsListView : View {
 				}
 				}
 				.navigationBarTitle(Text("Inventory"))
-				.listStyle(.carousel)
-
-		}
+			}
+			.listStyle(.carousel)
 	}
 }
 

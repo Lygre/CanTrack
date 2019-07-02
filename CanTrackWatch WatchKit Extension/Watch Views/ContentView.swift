@@ -63,7 +63,7 @@ struct ContentView : View {
 
 
 		return ScrollView {
-			VStack {
+			VStack(alignment: .center) {
 				ProductImageViewCircular(product: productStore.products[1])
 					.gesture(longPress)
 
@@ -109,6 +109,7 @@ struct ContentView : View {
 
 				Spacer()
 			}
+			.highPriorityGesture(longPress)
 			}
 
 			.background(Color("InventoryBackgroundColor"))

@@ -9,10 +9,7 @@
 import SwiftUI
 import Combine
 
-let defaultProducts = ProductStore(products: [
-	Product(strain: Strain(name: "Strawberry Switchblade", race: .hybrid, description: nil), productType: .truShatter),
-	Product(strain: Strain(name: "Sour Diesel", race: .sativa, description: nil), productType: .truFlower)
-	])
+let defaultProducts = ProductStore.shared
 
 let defaultProductJustTheProductsArray = defaultProducts.products
 
@@ -39,9 +36,10 @@ class ProductStore {
 	}
 
 
-	var showFavoriteProductsOnly = false {
+	var showFavoriteProductsOnly: Bool = false {
 		didSet {
-			didChange.send()
+			// TODO: - Add this property onto UserData class and then read and write it from disk here
+
 		}
 	}
 

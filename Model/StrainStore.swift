@@ -10,49 +10,22 @@ import Foundation
 import Combine
 import SwiftUI
 
-class StrainStore: Equatable, Hashable, Codable, BindableObject {
+let defaultStrains: [Strain] = [
+	Strain(name: "Strawberry Switchblade", race: .hybrid, description: "Very awesome energizing hybrid"),
+	Strain(name: "Sour Diesel", race: .sativa, description: "Nice tasting Sativa")
+]
 
-	static func == (lhs: StrainStore, rhs: StrainStore) -> Bool {
-		return lhs.strains == rhs.strains
-	}
+class StrainStore {
 
-	func hash(into hasher: inout Hasher) {
-		hasher.combine(strains)
-	}
-
-	enum CodingKeys: String, CodingKey {
-		case strains
-	}
+	static let shared = StrainStore()
 
 	static let defaultStrain: Strain = Strain.default
 
-	let didChange = PassthroughSubject<Void, Never>()
-
-	func encode(to encoder: Encoder) throws {
-		var container = encoder.container(keyedBy: CodingKeys.self)
-		try container.encode(strains, forKey: .strains)
+	private init() {
+		load()
 	}
 
-	required init(from aDecoder: Decoder) {
-		do {
-			let values = try aDecoder.container(keyedBy: CodingKeys.self)
-			strains = try values.decode([Strain].self, forKey: .strains)
-		} catch {
-			strains = []
-			print(error)
-		}
-	}
-
-	init(strains: [Strain]) {
-		self.strains = strains
-		self.loadStrains()
-	}
-
-	var strains: [Strain] {
-		didSet {
-			didChange.send()
-		}
-	}
+	var strains: [Strain] = defaultStrains
 
 	let networkManager = NetworkController()
 
@@ -63,6 +36,17 @@ class StrainStore: Equatable, Hashable, Codable, BindableObject {
 				strainToAppend.flavors = strainInformation.flavors
 				strains.append(strainToAppend)
 			}
+		}
+	}
+
+	func save() {
+		UserDefaults.standard.set(try? PropertyListEncoder().encode(strains), forKey: "strainStore")
+		debugPrint("strainStore save called")
+	}
+
+	func load() {
+		if let data = UserDefaults.standard.object(forKey: "strainStore") as? Data {
+			self.strains = try! PropertyListDecoder().decode([Strain].self, from: data)
 		}
 	}
 

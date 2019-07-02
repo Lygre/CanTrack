@@ -26,4 +26,25 @@ final class UserData: BindableObject {
 		}
 	}
 
+	var productTypes: [Product.ProductType] = ProductStore.shared.productTypes {
+		didSet {
+			didChange.send(self)
+			ProductStore.shared.productTypes = productTypes
+		}
+	}
+
+	var showFavoriteProductsOnly: Bool = ProductStore.shared.showFavoriteProductsOnly {
+		didSet {
+			didChange.send(self)
+			ProductStore.shared.showFavoriteProductsOnly = showFavoriteProductsOnly
+		}
+	}
+
+	var strains: [Strain] = StrainStore.shared.strains {
+		didSet {
+			didChange.send(self)
+			StrainStore.shared.strains = strains
+		}
+	}
+
 }

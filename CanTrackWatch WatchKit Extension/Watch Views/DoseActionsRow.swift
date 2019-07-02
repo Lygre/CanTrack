@@ -29,11 +29,15 @@ struct DoseActionsRow : View {
 				Button(action: {
 					switch value.1 {
 					case .delete:
-						self.doseStore.doses.remove(at: self.doseIndex)
+						DispatchQueue.main.async {
+							self.doseStore.doses.remove(at: self.doseIndex)
+						}
 					case .edit:
 						print("not implemented")
 					case .redose:
-						self.doseStore.doses.insert(Dose(product: self.dose.product, mass: 0.5, administrationRoute: self.dose.administrationRoute, doseTimestamp: Date()), at: 0)
+						DispatchQueue.main.async {
+							self.doseStore.doses.insert(Dose(product: self.dose.product, mass: 0.5, administrationRoute: self.dose.administrationRoute, doseTimestamp: Date()), at: 0)
+						}
 					}
 				}) {
 					DoseActionButton(doseAction: value.1)

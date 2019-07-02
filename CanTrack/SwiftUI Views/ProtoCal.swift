@@ -46,20 +46,41 @@ struct ProtoCal : View {
 	var body: some View {
 
 		NavigationView {
-			ProtoYearView()
-				.navigationBarItems(trailing:
-					HStack(spacing: 9) {
-						Image(systemName: "list.bullet.below.rectangle")
-						Spacer()
-						Image(systemName: "magnifyingglass.circle")
-						Spacer()
-						Image(systemName: "plus")
-						}
-						.imageScale(.large)
-				)
-				.navigationBarTitle(Text(calendarStore.activeMonth.description+"  "+CalendarStore.currentDate.year.description),
-									displayMode: .automatic)
+			VStack(alignment: .leading, spacing: 0) {
+				
+				Section {
+					ProtoYearView()
+						.navigationBarItems(trailing:
+							HStack(spacing: 9) {
+								Image(systemName: "list.bullet.below.rectangle")
+								Spacer()
+								Image(systemName: "magnifyingglass.circle")
+								Spacer()
+								Image(systemName: "plus")
+								}
+								.imageScale(.large)
+						)
+						.navigationBarTitle(Text(calendarStore.activeMonth.description+"  "+CalendarStore.currentDate.year.description),
+											displayMode: .automatic)
+				}
 
+
+				Section(header: HStack(alignment: .top) {
+					Text("Doses for Day")
+						.font(.title)
+				}) {
+					VStack {
+						List {
+							ForEach((1...8).identified(by: \.identifiedValue)) { int in
+								Text("Dose "+int.description)
+							}
+						}
+					}
+				}
+
+
+
+			}
 			}
 			.background(Color.init(strainVariety: .indica))
 	}
@@ -73,39 +94,12 @@ struct ProtoCal : View {
 struct ProtoYearView: View {
 
 	var body: some View {
-		NavigationView {
 			VStack(spacing: 0) {
 				ScrollView(isScrollEnabled: true, showsVerticalIndicator: false) {
 						YearCellView(year: 2019)
 					}
-					.navigationBarItems(leading:
-						Image(systemName: "magnifyingglass.circle")
-							.imageScale(.large),
-										 trailing:
-						HStack(spacing: 9) {
-							Image(systemName: "list.bullet.below.rectangle")
-							Spacer()
-							Image(systemName: "plus")
-							}
-							.imageScale(.large))
-					.navigationBarTitle(Text("Dose Calendar"))
-
-				Section(header: HStack(alignment: .top) {
-					Text("Doses for Day")
-						.font(.title)
-					Spacer()
-				}) {
-					VStack {
-						List {
-							ForEach((1...8).identified(by: \.identifiedValue)) { int in
-								Text("Dose "+int.description)
-							}
-						}
-					}
-				}
-
 			}
-		}
+
 	}
 }
 
@@ -122,7 +116,7 @@ struct YearCellView : View {
 
 	var body: some View {
 		VStack(alignment: .leading) {
-			HStack(alignment: .top) {
+			HStack(alignment: .bottom) {
 				Text(year.description)
 					.font(.title)
 					.fontWeight(.heavy)
@@ -204,7 +198,6 @@ struct WeekRowView: View {
 
 			}
 			.background(Color.init(strainVariety: .indica))
-			.scaledToFill()
 	}
 
 	func isWeekStartWeek() -> Bool {
@@ -258,18 +251,19 @@ struct DayCellView: View {
 
 let calendarStore = CalendarStore()
 
-//struct ProtoCal_Previews : PreviewProvider {
-//    static var previews: some View {
-//        ProtoCal().environmentObject(calendarStore)
-//    }
-//}
-
-
-struct ProtoYearView_Previews : PreviewProvider {
-	static var previews: some View {
-		ProtoYearView().environmentObject(calendarStore)
-	}
+struct ProtoCal_Previews : PreviewProvider {
+    static var previews: some View {
+        ProtoCal().environmentObject(calendarStore)
+    }
 }
+
+
+//struct ProtoYearView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		ProtoYearView().environmentObject(calendarStore)
+//		.previewDevice(.init(rawValue: "iPad7,1"))
+//	}
+//}
 //
 //struct YearCellView_Previews : PreviewProvider {
 //	static var previews: some View {

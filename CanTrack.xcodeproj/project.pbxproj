@@ -631,7 +631,6 @@
 		9FE4CD0722C66F94006B91F2 /* Watch Views */ = {
 			isa = PBXGroup;
 			children = (
-				9FEDE86222C7424C00792F74 /* Supporting Views */,
 				9F1CC30322C5458000CC0B88 /* ContentView.swift */,
 				9FE4CD0822C66FE7006B91F2 /* WatchProductRow.swift */,
 				9FEA45FB22C9AB290031DCCF /* DoseDetail.swift */,
@@ -670,13 +669,6 @@
 				9FEDE84F22C73DD100792F74 /* icon_product_edible.jpg */,
 			);
 			path = "Shared Resources";
-			sourceTree = "<group>";
-		};
-		9FEDE86222C7424C00792F74 /* Supporting Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Supporting Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

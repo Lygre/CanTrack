@@ -10,7 +10,6 @@ import SwiftUI
 
 struct WatchProductDetail : View {
 	@EnvironmentObject var userData: UserData
-	@EnvironmentObject var strainStore: StrainStore
 
 	@State private var isOpened: Bool = true
 
@@ -74,7 +73,7 @@ struct WatchProductDetail : View {
 #if DEBUG
 struct WatchProductDetail_Previews : PreviewProvider {
     static var previews: some View {
-		WatchProductDetail(product: UserData().products[0]).environmentObject(UserData()).environmentObject(strainStore)
+		WatchProductDetail(product: UserData().products[0]).environmentObject(UserData())
     }
 }
 #endif

@@ -12,14 +12,12 @@ import SwiftUI
 
 struct StrainsView : View {
 	@EnvironmentObject var userData: UserData
-//	@EnvironmentObject var productStore: ProductStore
-	@EnvironmentObject var strainStore: StrainStore
 
 	#if !os(tvOS)
     var body: some View {
 		NavigationView {
 			List {
-				ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
+				ForEach(userData.strains.identified(by: \.identifiedValue)) { strain in
 					Text(strain.name)
 						.background(Color.blue)
 
@@ -37,7 +35,7 @@ struct StrainsView : View {
 		NavigationView {
 			ScrollView {
 				HStack {
-					ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
+					ForEach(userData.strains.identified(by: \.identifiedValue)) { strain in
 						StrainCardView(strain: strain)
 						.focusable(true)
 					}
@@ -59,6 +57,7 @@ struct StrainsView : View {
 struct StrainCardView : View {
 
 	var strain: Strain
+
 	#if os(tvOS)
 	var body: some View {
 		return VStack {

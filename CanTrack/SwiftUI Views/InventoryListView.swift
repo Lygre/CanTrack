@@ -26,7 +26,7 @@ struct InventoryListView : View {
 	private var draftNewProd: Product = ProductStore.defaultProduct
 
 	var modal: Modal {
-		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(userData).environmentObject(strainStore), onDismiss: {
+		Modal(NewProductView(draftProduct: $testProd, isPresented: $isModal).environmentObject(userData), onDismiss: {
 			self.isModal.toggle()
 		})
 	}
@@ -68,7 +68,7 @@ struct InventoryListView : View {
 					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {
 						HStack(alignment: .center) {
 
-							ForEach(productStore.productTypes.identified(by: \.hashValue)) { type in
+							ForEach(ProductStore.productTypes.identified(by: \.hashValue)) { type in
 								Button(action: {
 									self.activeFilterType = type
 									self.isFiltered = true

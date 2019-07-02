@@ -22,7 +22,7 @@ let testDate: Date = {
 
 
 let testData2: [String: AnyObject] = [
-	"strains": StrainStore(strains: [StrainStore.defaultStrain]),
+	"strains": StrainStore.shared,
 	"products": defaultProducts
 ]
 
@@ -31,8 +31,6 @@ let testData2: [String: AnyObject] = [
 struct ContentView : View {
 
 	var userData: UserData = UserData()
-
-	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
 
 	@State private var modalPresented: Bool = false
 
@@ -68,7 +66,6 @@ struct ContentView : View {
 					Spacer()
 					NavigationButton(destination:
 						WatchProductsListView()
-							.environmentObject(self.strainStore)
 							.environmentObject(self.userData)
 					) {
 						Image(systemName: "plus.circle")
@@ -86,7 +83,6 @@ struct ContentView : View {
 					Spacer()
 					NavigationButton(destination:
 						WatchDailyDoseLog()
-							.environmentObject(self.strainStore)
 							.environmentObject(self.userData)
 					) {
 						Image(systemName: "calendar")
@@ -111,7 +107,6 @@ struct ContentView : View {
 struct ContentView_Previews : PreviewProvider {
     static var previews: some View {
 		ContentView()
-			.environmentObject(strainStore)
     }
 }
 #endif

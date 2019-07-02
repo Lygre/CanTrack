@@ -12,8 +12,7 @@ import Combine
 #if os(tvOS)
 
 struct NewProductView : View {
-	@EnvironmentObject var productStore: ProductStore
-	@EnvironmentObject var strainStore: StrainStore
+	@EnvironmentObject var userData: UserData
 
 	@State var testProd: Product = ProductStore.defaultProduct
 
@@ -39,7 +38,7 @@ struct NewProductView : View {
 						//Strain Picker cannot be fully implemented right now
 						HStack {
 							Picker(selection: $draftProduct.strain, label: Text("Product Strain")) {
-								ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
+								ForEach(userData.strains.identified(by: \.identifiedValue)) { strain in
 									Text(strain.name).tag(strain)
 								}
 
@@ -55,10 +54,6 @@ struct NewProductView : View {
 								}, onCommit: {
 
 								})
-									//								#if TARGET_OS_TV
-//									.textFieldStyle(.roundedBorder)
-								//								#endif
-
 							}
 						}
 
@@ -92,19 +87,14 @@ struct NewProductView : View {
 	}
 
 	func createProduct() {
-		//		draftProduct = $testProd.value
-		productStore.products.append($draftProduct.value)
-		//		defaultProducts.products.insert(self.$testProd.value, at: 0)
-		//		ProductStore().products.insert(self.$testProd.value, at: 0)
-
+		userData.products.append($draftProduct.value)
 	}
 
 }
 
 #elseif !os(tvOS)
 struct NewProductView : View {
-	@EnvironmentObject var productStore: ProductStore
-	@EnvironmentObject var strainStore: StrainStore
+	@EnvironmentObject var userData: UserData
 
 	@State var testProd: Product = ProductStore.defaultProduct
 
@@ -130,7 +120,7 @@ struct NewProductView : View {
 						//Strain Picker cannot be fully implemented right now
 						HStack {
 							Picker(selection: $draftProduct.strain, label: Text("Product Strain")) {
-								ForEach(strainStore.strains.identified(by: \.identifiedValue)) { strain in
+								ForEach(userData.strains.identified(by: \.identifiedValue)) { strain in
 									Text(strain.name).tag(strain)
 								}
 
@@ -146,9 +136,7 @@ struct NewProductView : View {
 								}, onCommit: {
 
 								})
-									//								#if TARGET_OS_TV
 									.textFieldStyle(.roundedBorder)
-								//								#endif
 
 							}
 						}
@@ -183,10 +171,7 @@ struct NewProductView : View {
 	}
 
 	func createProduct() {
-		//		draftProduct = $testProd.value
-		productStore.products.append($draftProduct.value)
-		//		defaultProducts.products.insert(self.$testProd.value, at: 0)
-		//		ProductStore().products.insert(self.$testProd.value, at: 0)
+		userData.products.append($draftProduct.value)
 
 	}
 
@@ -198,7 +183,8 @@ struct NewProductView : View {
 #if DEBUG
 struct NewProductView_Previews : PreviewProvider {
     static var previews: some View {
-		NewProductView(draftProduct: .constant(.defaultProduct), isPresented: .constant(true)).environmentObject(ProductStore(products: defaultProducts.products))
+		NewProductView(draftProduct: .constant(.defaultProduct), isPresented: .constant(true))
+			.environmentObject(UserData())
     }
 }
 #endif

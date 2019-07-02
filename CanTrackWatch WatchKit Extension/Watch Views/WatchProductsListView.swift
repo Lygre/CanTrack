@@ -10,7 +10,6 @@ import SwiftUI
 
 struct WatchProductsListView : View {
 	@EnvironmentObject var userData: UserData
-	@EnvironmentObject var strainStore: StrainStore
 
 	@State private var favoritesFilterOn: Bool = false
 
@@ -24,7 +23,6 @@ struct WatchProductsListView : View {
 					NavigationButton(destination:
 						WatchProductDetail(product: product)
 							.environmentObject(self.userData)
-							.environmentObject(self.strainStore)
 					) {
 						VStack(alignment: .leading) {
 							WatchProductRow(product: product)
@@ -42,7 +40,7 @@ struct WatchProductsListView : View {
 #if DEBUG
 struct WatchProductsListView_Previews : PreviewProvider {
     static var previews: some View {
-        WatchProductsListView().environmentObject(UserData()).environmentObject(strainStore)
+        WatchProductsListView().environmentObject(UserData())
     }
 }
 #endif

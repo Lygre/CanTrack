@@ -13,8 +13,8 @@ import SwiftUI
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-//	var userData: UserData = UserData()
-	var strainStore: StrainStore = StrainStore(strains: testData.compactMap({ return $0.strain }))
+	var userData: UserData = UserData()
+
 	var calendarStore: CalendarStore = CalendarStore()
 
 	var window: UIWindow?
@@ -25,8 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Use a UIHostingController as window root view controller
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		window.rootViewController = UIHostingController(rootView:
-//			ContentView()
-			HomeView().environmentObject(productStore).environmentObject(strainStore).environmentObject(calendarStore)
+			HomeView()
+				.environmentObject(calendarStore)
 		)
 		self.window = window
 		window.makeKeyAndVisible()

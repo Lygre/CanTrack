@@ -63,16 +63,17 @@ struct ContentView : View {
 
 
 		return ScrollView {
-			VStack(alignment: .center) {
+			VStack(alignment: .launchScreenArrowAlignment, spacing: 10) {
 				ProductImageViewCircular(product: productStore.products[1])
 					.gesture(longPress)
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.trailing] / 2}
 
-				HStack(alignment: .center) {
+				HStack(alignment: .center, spacing: 5) {
 					Spacer()
 					Text("Dose")
 					Spacer()
 					Text("→")
-						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.bottom] }
+						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.trailing] / 2}
 					Spacer()
 					NavigationButton(destination:
 						WatchProductsListView()
@@ -83,16 +84,15 @@ struct ContentView : View {
 						Image(systemName: "plus.circle")
 							.imageScale(.large)
 							.foregroundColor(Color.green)
-						
 					}
 					}
 
-				HStack {
+				HStack(alignment: .center, spacing: 5) {
 					Spacer()
 					Text("Logs")
 					Spacer()
 					Text("→")
-						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.bottom] / 2 }
+					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.trailing] / 2}
 					Spacer()
 					NavigationButton(destination:
 						WatchDailyDoseLog()
@@ -105,8 +105,6 @@ struct ContentView : View {
 							.foregroundColor(Color("PerfectPurpleHaze"))
 					}
 					}
-					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.bottom] / 2 }
-
 				Spacer()
 			}
 			.highPriorityGesture(longPress)

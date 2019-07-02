@@ -38,6 +38,8 @@ let testData2: [String: AnyObject] = [
 
 struct ContentView : View {
 
+	var userData: UserData = UserData()
+
 	@State private var productStore: ProductStore = testData2["products"] as! ProductStore
 	@State private var strainStore: StrainStore = testData2["strains"] as! StrainStore
 
@@ -77,7 +79,7 @@ struct ContentView : View {
 						WatchProductsListView()
 							.environmentObject(self.productStore)
 							.environmentObject(self.strainStore)
-//							.environmentObject(self.doseStore)
+							.environmentObject(self.userData)
 					) {
 						Image(systemName: "plus.circle")
 							.imageScale(.large)
@@ -96,7 +98,7 @@ struct ContentView : View {
 						WatchDailyDoseLog()
 							.environmentObject(self.productStore)
 							.environmentObject(self.strainStore)
-//							.environmentObject(self.doseStore)
+							.environmentObject(self.userData)
 					) {
 						Image(systemName: "calendar")
 							.imageScale(.large)

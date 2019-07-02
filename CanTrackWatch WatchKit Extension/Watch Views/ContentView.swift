@@ -56,17 +56,16 @@ struct ContentView : View {
 
 	var body: some View {
 
-		let longPress = LongPressGesture(minimumDuration: 1.5, maximumDistance: 8)
+		let longPress = LongPressGesture(minimumDuration: 1.0)
 			.onEnded { _ in
-
+				self.modalPresented.toggle()
 		}
 
 
 		return ScrollView {
 			VStack {
-
 				ProductImageViewCircular(product: productStore.products[1])
-
+					.gesture(longPress)
 
 				HStack(alignment: .center) {
 					Spacer()
@@ -86,9 +85,7 @@ struct ContentView : View {
 							.foregroundColor(Color.green)
 						
 					}
-
 					}
-
 
 				HStack {
 					Spacer()
@@ -111,10 +108,9 @@ struct ContentView : View {
 					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.bottom] / 2 }
 
 				Spacer()
+			}
+			}
 
-			}
-			}
-			.gesture(longPress)
 			.background(Color("InventoryBackgroundColor"))
 			.navigationBarTitle(Text("CanTrack"))
 

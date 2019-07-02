@@ -13,7 +13,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 	var window: UIWindow?
 	var userData: UserData = UserData()
-	var strainStore: StrainStore = StrainStore(strains: testData.compactMap({ return $0.strain }))
 	var calendarStore: CalendarStore = CalendarStore()
 
 	func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -29,7 +28,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		let window = UIWindow(frame: UIScreen.main.bounds)
 		#endif
 
-		window.rootViewController = UIHostingController(rootView: HomeView().environmentObject(userData).environmentObject(strainStore).environmentObject(calendarStore))
+		window.rootViewController = UIHostingController(rootView:
+			HomeView()
+				.environmentObject(userData)
+				.environmentObject(calendarStore)
+		)
 		self.window = window
 		window.makeKeyAndVisible()
 	}

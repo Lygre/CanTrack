@@ -76,15 +76,9 @@ struct ProtoYearView: View {
 		NavigationView {
 			VStack(spacing: 0) {
 				ScrollView(isScrollEnabled: true, showsVerticalIndicator: false) {
-					VStack {
-	//					ForEach(2018...2019) { year in
-	//						YearCellView(year: year)
-	//					}
 						YearCellView(year: 2019)
-
-						}.aspectRatio(contentMode: .fit)
-
-					}.navigationBarItems(leading:
+					}
+					.navigationBarItems(leading:
 						Image(systemName: "magnifyingglass.circle")
 							.imageScale(.large),
 										 trailing:
@@ -95,11 +89,21 @@ struct ProtoYearView: View {
 							}
 							.imageScale(.large))
 					.navigationBarTitle(Text("Dose Calendar"))
-				List {
-					ForEach((1...5).identified(by: \.identifiedValue)) { int in
-						Text("Dose "+int.description)
+
+Section(header: HStack(alignment: .bottom) {
+    Text("Doses for Day")
+	.font(.title)
+	Spacer()
+}) {
+					VStack {
+						List {
+							ForEach((1...8).identified(by: \.identifiedValue)) { int in
+								Text("Dose "+int.description)
+							}
+						}
 					}
 				}
+
 			}
 		}
 	}
@@ -115,8 +119,8 @@ struct YearCellView : View {
 	var year: Int
 
 	var body: some View {
-		VStack(alignment: .center) {
-			HStack {
+		VStack(alignment: .leading) {
+			HStack(alignment: .top) {
 				Text(year.description)
 					.font(.title)
 					.fontWeight(.heavy)
@@ -126,7 +130,6 @@ struct YearCellView : View {
 				}
 			}
 			}
-			.aspectRatio(contentMode: .fit)
 	}
 }
 
@@ -165,7 +168,7 @@ struct MonthCellView: View {
 			}.background(Color(strainVariety: .indica))
 		}
 
-			.scaledToFill()
+			.scaledToFit()
 		.padding([.leading, .trailing], 5)
 	}
 }
@@ -255,11 +258,11 @@ let calendarStore = CalendarStore()
 //}
 
 
-//struct ProtoYearView_Previews : PreviewProvider {
-//	static var previews: some View {
-//		ProtoYearView().environmentObject(calendarStore)
-//	}
-//}
+struct ProtoYearView_Previews : PreviewProvider {
+	static var previews: some View {
+		ProtoYearView().environmentObject(calendarStore)
+	}
+}
 //
 //struct YearCellView_Previews : PreviewProvider {
 //	static var previews: some View {
@@ -276,11 +279,11 @@ let calendarStore = CalendarStore()
 
 //-----------------------------------------
 
-struct MonthCellView_Previews : PreviewProvider {
-	static var previews: some View {
-		MonthCellView(month: Month(rawValue: 5)!).environmentObject(calendarStore)
-	}
-}
+//struct MonthCellView_Previews : PreviewProvider {
+//	static var previews: some View {
+//		MonthCellView(month: Month(rawValue: 5)!).environmentObject(calendarStore)
+//	}
+//}
 
 //struct WeekRowView_Previews : PreviewProvider {
 //	static var previews: some View {

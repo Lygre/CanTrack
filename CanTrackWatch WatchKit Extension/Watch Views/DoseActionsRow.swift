@@ -29,8 +29,9 @@ struct DoseActionsRow : View {
 				Button(action: {
 					switch value.1 {
 					case .delete:
+						// TODO: Figure out how to make this not crash the app.
 						DispatchQueue.main.async {
-							self.doseStore.doses.remove(at: self.doseIndex)
+//							self.doseStore.doses.remove(at: self.doseIndex)
 						}
 					case .edit:
 						print("not implemented")

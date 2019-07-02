@@ -18,7 +18,7 @@ let testDoseing: Dose = {
 //var testingStore = DoseStore(doses: [testDoseing])
 
 
-class DoseStore: Equatable, Hashable, BindableObject {
+class DoseStore: Equatable, Hashable {
 
 
 	static let shared = DoseStore()
@@ -28,7 +28,6 @@ class DoseStore: Equatable, Hashable, BindableObject {
 		case doses
 	}
 
-	let didChange = PassthroughSubject<Void, Never>()
 
 	var doses: [Dose] = [
 		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: testDate),

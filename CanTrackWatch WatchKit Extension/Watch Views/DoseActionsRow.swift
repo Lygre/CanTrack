@@ -11,14 +11,14 @@ import SwiftUI
 
 struct DoseActionsRow : View {
 
-	@EnvironmentObject var doseStore: DoseStore
+	@EnvironmentObject var userData: UserData
 
 	var dose: Dose
 
 	var buttons = DoseAction.allCases.compactMap { ($0.name, $0, $0.sfSymbol, $0.associatedColor) }
 
 	var doseIndex: Int {
-		doseStore.doses.firstIndex(where: {
+		userData.doses.firstIndex(where: {
 			$0.id == dose.id
 		})!
 	}
@@ -37,7 +37,7 @@ struct DoseActionsRow : View {
 						print("not implemented")
 					case .redose:
 						DispatchQueue.main.async {
-							self.doseStore.doses.insert(Dose(product: self.dose.product, mass: 0.5, administrationRoute: self.dose.administrationRoute, doseTimestamp: Date()), at: 0)
+							self.userData.doses.insert(Dose(product: self.dose.product, mass: 0.5, administrationRoute: self.dose.administrationRoute, doseTimestamp: Date()), at: 0)
 						}
 					}
 				}) {
@@ -70,7 +70,7 @@ struct DoseActionButton: View {
 #if DEBUG
 struct DoseActionsRow_Previews : PreviewProvider {
 	static var previews: some View {
-		DoseActionsRow(dose: DoseStore.defaultDose)
+		DoseActionsRow(dose: DoseStore.defaultDose).environmentObject(UserData())
 	}
 }
 struct DoseActionButton_Previews : PreviewProvider {

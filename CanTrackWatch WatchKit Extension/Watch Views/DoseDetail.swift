@@ -44,6 +44,7 @@ struct DoseDetail : View {
 					VStack {
 						HStack(alignment: .firstTextBaseline) {
 							Text(dose.product.strain.name)
+								.lineLimit(nil)
 							Spacer()
 							Text(dose.product.productType.rawValue)
 							}

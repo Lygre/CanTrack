@@ -46,40 +46,24 @@ struct ProtoCal : View {
 	var body: some View {
 
 		NavigationView {
-			VStack(alignment: .leading, spacing: 0) {
-				
-				Section {
-					ProtoYearView()
-						.navigationBarItems(trailing:
-							HStack(spacing: 9) {
-								Image(systemName: "list.bullet.below.rectangle")
-								Spacer()
-								Image(systemName: "magnifyingglass.circle")
-								Spacer()
-								Image(systemName: "plus")
-								}
-								.imageScale(.large)
-						)
-						.navigationBarTitle(Text(calendarStore.activeMonth.description+"  "+CalendarStore.currentDate.year.description),
-											displayMode: .automatic)
+			HStack(alignment: .top) {
+				VStack(alignment: .leading, spacing: 0) {
+
+						ProtoYearView()
+							.navigationBarItems(trailing:
+								HStack(spacing: 9) {
+									Image(systemName: "list.bullet.below.rectangle")
+									Spacer()
+									Image(systemName: "magnifyingglass.circle")
+									Spacer()
+									Image(systemName: "plus")
+									}
+									.imageScale(.large)
+							)
+							.navigationBarTitle(Text(calendarStore.activeMonth.description+"  "+CalendarStore.currentDate.year.description),
+												displayMode: .automatic)
+
 				}
-
-
-				Section(header: HStack(alignment: .top) {
-					Text("Doses for Day")
-						.font(.title)
-				}) {
-					VStack {
-						List {
-							ForEach((1...8).identified(by: \.identifiedValue)) { int in
-								Text("Dose "+int.description)
-							}
-						}
-					}
-				}
-
-
-
 			}
 			}
 			.background(Color.init(strainVariety: .indica))
@@ -94,11 +78,26 @@ struct ProtoCal : View {
 struct ProtoYearView: View {
 
 	var body: some View {
-			VStack(spacing: 0) {
-				ScrollView(isScrollEnabled: true, showsVerticalIndicator: false) {
-						YearCellView(year: 2019)
-					}
+		Group {
+			Section {
+			ScrollView(isScrollEnabled: true, showsVerticalIndicator: false) {
+				YearCellView(year: 2019)
+				}
 			}
+			Section(header: HStack {
+				Text("Doses for Day")
+					.font(.title)
+			}) {
+				List {
+					ForEach((1...18).identified(by: \.identifiedValue)) { int in
+						Text("Dose "+int.description)
+					}
+				}
+			}
+			.frame(height: 400, alignment: .center)
+
+			Spacer()
+		}
 
 	}
 }
@@ -116,7 +115,7 @@ struct YearCellView : View {
 
 	var body: some View {
 		VStack(alignment: .leading) {
-			HStack(alignment: .bottom) {
+			HStack(alignment: .top) {
 				Text(year.description)
 					.font(.title)
 					.fontWeight(.heavy)

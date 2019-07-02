@@ -67,7 +67,7 @@ struct DoseDetail : View {
 							}
 						}
 
-					}
+					}.padding(.top)
 
 					VStack {
 						HStack(alignment: .firstTextBaseline) {

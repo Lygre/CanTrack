@@ -96,6 +96,9 @@
 		9F8D4F1622C3DD3F0031CEB7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
 		9F8D4F1722C3EA930031CEB7 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD2967B22ADD5C000C73496 /* CalendarView.swift */; };
 		9F8D4F1822C3EC330031CEB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE5FBC22AD967300B82C22 /* Assets.xcassets */; };
+		9FB6279022CB7A9100B586C4 /* UserDataEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6278F22CB7A9100B586C4 /* UserDataEnvironment.swift */; };
+		9FB6279122CB7A9100B586C4 /* UserDataEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6278F22CB7A9100B586C4 /* UserDataEnvironment.swift */; };
+		9FB6279222CB7A9100B586C4 /* UserDataEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6278F22CB7A9100B586C4 /* UserDataEnvironment.swift */; };
 		9FBAD47E22C71848008C8FEF /* WatchProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */; };
 		9FBE5FB722AD967100B82C22 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB622AD967100B82C22 /* AppDelegate.swift */; };
 		9FBE5FB922AD967100B82C22 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE5FB822AD967100B82C22 /* SceneDelegate.swift */; };
@@ -312,6 +315,7 @@
 		9F8D4EEC22C3D96E0031CEB7 /* CanTrackTVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanTrackTVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8D4EF022C3D96E0031CEB7 /* CanTrackTVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanTrackTVUITests.swift; sourceTree = "<group>"; };
 		9F8D4EF222C3D96E0031CEB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FB6278F22CB7A9100B586C4 /* UserDataEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataEnvironment.swift; sourceTree = "<group>"; };
 		9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductDetail.swift; sourceTree = "<group>"; };
 		9FBE5FB322AD967100B82C22 /* CanTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CanTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FBE5FB622AD967100B82C22 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -607,6 +611,7 @@
 				9FD2967F22ADE3D500C73496 /* ProductStore.swift */,
 				9F38134E22BEBAD1000A6D00 /* Dose.swift */,
 				9F093DD422C7A0E200F26083 /* DoseStore.swift */,
+				9FB6278F22CB7A9100B586C4 /* UserDataEnvironment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1039,6 +1044,7 @@
 				9FE4CD0622C65BE8006B91F2 /* AlignmentExtensions.swift in Sources */,
 				9FE4CD0922C66FE7006B91F2 /* WatchProductRow.swift in Sources */,
 				9F1CC32D22C5471D00CC0B88 /* HTTPMethod.swift in Sources */,
+				9FB6279222CB7A9100B586C4 /* UserDataEnvironment.swift in Sources */,
 				9F093DD722C7A0E200F26083 /* DoseStore.swift in Sources */,
 				9F8689A822C72B5F0017454C /* Data.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
@@ -1056,6 +1062,7 @@
 				9F8D4F1222C3DAFD0031CEB7 /* HTTPTask.swift in Sources */,
 				9F8D4EFD22C3DA6A0031CEB7 /* Dose.swift in Sources */,
 				9F093DD622C7A0E200F26083 /* DoseStore.swift in Sources */,
+				9FB6279122CB7A9100B586C4 /* UserDataEnvironment.swift in Sources */,
 				9F8D4F0022C3DA890031CEB7 /* InventoryListView.swift in Sources */,
 				9F8D4F1022C3DAFD0031CEB7 /* EndPointType.swift in Sources */,
 				9F8D4F0F22C3DAFD0031CEB7 /* Router.swift in Sources */,
@@ -1126,6 +1133,7 @@
 				9F38133122BE3ED8000A6D00 /* StrainStore.swift in Sources */,
 				9F093DD522C7A0E200F26083 /* DoseStore.swift in Sources */,
 				9FBE5FE922ADA4B700B82C22 /* ProductDetailView.swift in Sources */,
+				9FB6279022CB7A9100B586C4 /* UserDataEnvironment.swift in Sources */,
 				9FC7B36722ADAF6F004278F6 /* InventoryListView.swift in Sources */,
 				9F38134022BE43A8000A6D00 /* HTTPMethod.swift in Sources */,
 				9FD2968022ADE3D500C73496 /* ProductStore.swift in Sources */,

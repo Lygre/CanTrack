@@ -13,7 +13,6 @@ import Combine
 struct HomeView : View {
 	@EnvironmentObject var userData: UserData
 
-	@EnvironmentObject var strainStore: StrainStore
 	@EnvironmentObject var calendarStore: CalendarStore
 
 	@State private var selectedTab = Tab.inventory
@@ -46,7 +45,6 @@ struct HomeView : View {
 			ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
 			}
 			.environmentObject(userData)
-			.environmentObject(strainStore)
 			.environmentObject(calendarStore)
 
 		//			.edgesIgnoringSafeArea(.top)
@@ -61,9 +59,7 @@ struct HomeView : View {
 				ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
 			}
 			}
-//			.environmentObject(store)
-//			.environmentObject(strainStore)
-//			.environmentObject(calendarStore)
+//		.environmentObject(userData)
 	}
 	#endif
 
@@ -71,16 +67,13 @@ struct HomeView : View {
 }
 
 #if DEBUG
-let defaultStrains: [Strain] = [
-	Strain(name: "Strawberry Switchblade", race: .hybrid, description: "Very awesome energizing hybrid"),
-	Strain(name: "Sour Diesel", race: .sativa, description: "Nice tasting Sativa")
-]
 
-let strainStore = StrainStore(strains: defaultStrains)
 
 struct HomeView_Previews : PreviewProvider {
     static var previews: some View {
-			HomeView().environmentObject(UserData()).environmentObject(strainStore).environmentObject(calendarStore)
+			HomeView()
+				.environmentObject(UserData())
+				.environmentObject(calendarStore)
     }
 }
 #endif

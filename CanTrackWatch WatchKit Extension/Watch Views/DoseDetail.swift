@@ -48,6 +48,7 @@ struct DoseDetail : View {
 							Text(dose.product.productType.rawValue)
 							}
 							.foregroundColor(Color(strainVariety: dose.product.strain.race))
+
 						HStack(alignment: .firstTextBaseline) {
 							Text("Route: ")
 							Spacer()
@@ -56,10 +57,20 @@ struct DoseDetail : View {
 								.imageScale(.large)
 								.foregroundColor(Color(strainVariety: dose.product.strain.race))
 						}
+						// TODO: Add conditional modifier here
+						HStack(alignment: .firstTextBaseline) {
+							Text("Mass: ")
+							Spacer()
+							HStack(spacing: 1) {
+								Text(dose.mass.description)
+								Text(" g")
+							}
+						}
+
 					}
 
 					VStack {
-						HStack(alignment: .top) {
+						HStack(alignment: .firstTextBaseline) {
 							Text("Prior Dose: ")
 							Spacer()
 

@@ -90,11 +90,11 @@ struct ProtoYearView: View {
 							.imageScale(.large))
 					.navigationBarTitle(Text("Dose Calendar"))
 
-Section(header: HStack(alignment: .bottom) {
-    Text("Doses for Day")
-	.font(.title)
-	Spacer()
-}) {
+				Section(header: HStack(alignment: .top) {
+					Text("Doses for Day")
+						.font(.title)
+					Spacer()
+				}) {
 					VStack {
 						List {
 							ForEach((1...8).identified(by: \.identifiedValue)) { int in
@@ -116,6 +116,8 @@ Section(header: HStack(alignment: .bottom) {
 ///
 struct YearCellView : View {
 
+	@State private var selectedMonth: Int = Date().month
+
 	var year: Int
 
 	var body: some View {
@@ -124,9 +126,10 @@ struct YearCellView : View {
 				Text(year.description)
 					.font(.title)
 					.fontWeight(.heavy)
-				Divider()
 				ForEach((0...11).identified(by: \.identifiedValue)) { monthInt in
-					MonthCellView(month: Month(rawValue: monthInt)!)
+					NavigationButton(destination: MonthCellView(month: Month(rawValue: monthInt)!)) {
+						MonthCellView(month: Month(rawValue: monthInt)!)
+					}
 				}
 			}
 			}
@@ -165,10 +168,10 @@ struct MonthCellView: View {
 			Divider()
 			ForEach(0...4) { weekInt in
 				WeekRowView(weekInt: weekInt)
-			}.background(Color(strainVariety: .indica))
+			}
+				.background(Color(strainVariety: .indica))
 		}
-
-			.scaledToFit()
+		.scaledToFill()
 		.padding([.leading, .trailing], 5)
 	}
 }
@@ -226,6 +229,7 @@ struct DayCellView: View {
 	var date: Date
 	var dosesForDate: [Dose] = []
 
+	@State private var isSelectedDate: Bool = false
 	@State private var hasDoses: Bool = false
 
 	var body: some View {
@@ -236,8 +240,11 @@ struct DayCellView: View {
 				Image(systemName: "smoke")
 					.padding(.bottom)
 			}
+			.tapAction {
+				self.isSelectedDate.toggle()
+			}
 			.padding([.leading, .trailing, .top, .bottom], 6)
-			.background(Color.init(strainVariety: .indica).opacity(0.7))
+			.background(isSelectedDate ? Color.blue : Color.init(strainVariety: .indica).opacity(0.7))
 //		.clipShape(Circle())
 	}
 

@@ -19,4 +19,11 @@ final class UserData: BindableObject {
 		}
 	}
 
+	var products: [Product] = ProductStore.shared.products {
+		didSet {
+			didChange.send(self)
+			ProductStore.shared.products = products
+		}
+	}
+
 }

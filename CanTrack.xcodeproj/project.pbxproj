@@ -149,6 +149,9 @@
 		9FEDE86022C73E0E00792F74 /* icon_product_concentrate.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84E22C73DD100792F74 /* icon_product_concentrate.jpg */; };
 		9FEDE86122C73E0E00792F74 /* icon_product_edible.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDE84F22C73DD100792F74 /* icon_product_edible.jpg */; };
 		9FEDE86422C7673400792F74 /* WatchProductActionsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDE86322C7673400792F74 /* WatchProductActionsRow.swift */; };
+		9FEE959B22CBE28A005CEA50 /* WatchNewProductForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FEE959A22CBE28A005CEA50 /* WatchNewProductForm.swift */; };
+		9FEE95A322CBE33B005CEA50 /* Datez.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEA45EB22C9721E0031DCCF /* Datez.framework */; };
+		9FEE95A422CBE33B005CEA50 /* Datez.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9FEA45EB22C9721E0031DCCF /* Datez.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -265,6 +268,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FEE95A522CBE33C005CEA50 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9FEE95A422CBE33B005CEA50 /* Datez.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -352,6 +366,7 @@
 		9FEDE84E22C73DD100792F74 /* icon_product_concentrate.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_product_concentrate.jpg; sourceTree = "<group>"; };
 		9FEDE84F22C73DD100792F74 /* icon_product_edible.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_product_edible.jpg; sourceTree = "<group>"; };
 		9FEDE86322C7673400792F74 /* WatchProductActionsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchProductActionsRow.swift; sourceTree = "<group>"; };
+		9FEE959A22CBE28A005CEA50 /* WatchNewProductForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchNewProductForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +398,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F38134D22BEB989000A6D00 /* SwiftDate in Frameworks */,
+				9FEE95A322CBE33B005CEA50 /* Datez.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,6 +660,7 @@
 				9FBAD47D22C71848008C8FEF /* WatchProductDetail.swift */,
 				9FEDE86322C7673400792F74 /* WatchProductActionsRow.swift */,
 				9F093DD922C7F07800F26083 /* WatchDailyDoseLog.swift */,
+				9FEE959A22CBE28A005CEA50 /* WatchNewProductForm.swift */,
 			);
 			path = "Watch Views";
 			sourceTree = "<group>";
@@ -776,6 +793,7 @@
 				9FBE5FAF22AD967100B82C22 /* Sources */,
 				9FBE5FB022AD967100B82C22 /* Frameworks */,
 				9FBE5FB122AD967100B82C22 /* Resources */,
+				9FEE95A522CBE33C005CEA50 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1046,6 +1064,7 @@
 				9F1CC32D22C5471D00CC0B88 /* HTTPMethod.swift in Sources */,
 				9FB6279222CB7A9100B586C4 /* UserDataEnvironment.swift in Sources */,
 				9F093DD722C7A0E200F26083 /* DoseStore.swift in Sources */,
+				9FEE959B22CBE28A005CEA50 /* WatchNewProductForm.swift in Sources */,
 				9F8689A822C72B5F0017454C /* Data.swift in Sources */,
 				9F1CC30C22C5458000CC0B88 /* NotificationView.swift in Sources */,
 				9F093DDA22C7F07800F26083 /* WatchDailyDoseLog.swift in Sources */,

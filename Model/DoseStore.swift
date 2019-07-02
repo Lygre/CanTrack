@@ -15,19 +15,22 @@ let testDoseing: Dose = {
 	Dose(product: ProductStore.defaultProduct, mass: 1.0, administrationRoute: .inhalation, doseTimestamp: (Date().currentCalendar + 1.day).date)
 }()
 
+let testDate: Date = {
+	var cmp = DateComponents()
+	cmp.calendar = .current
+	cmp.calendar?.locale = .current
+	cmp.timeZone = .current
+	cmp.year = 2019
+	cmp.month = 6
+	cmp.day = 29
+	return cmp.isValidDate ? cmp.date! : Date()
+}()
 //var testingStore = DoseStore(doses: [testDoseing])
 
 
-class DoseStore: Equatable, Hashable {
-
+class DoseStore {
 
 	static let shared = DoseStore()
-
-	/// CodingKeys enum
-	enum CodingKeys: String, CodingKey {
-		case doses
-	}
-
 
 	var doses: [Dose] = [
 		Dose(product: defaultProducts.products[0], mass: 0.3, administrationRoute: .inhalation, doseTimestamp: testDate),
@@ -48,19 +51,6 @@ class DoseStore: Equatable, Hashable {
 		if let data = UserDefaults.standard.object(forKey: "doseStore") as? Data {
 			self.doses = try! PropertyListDecoder().decode([Dose].self, from: data)
 		}
-	}
-
-	/// Establishes conformance to Equatable protocol
-	/// - Parameter lhs: Comparable item 1
-	/// - Parameter rhs: Comparable item 2
-	static func == (lhs: DoseStore, rhs: DoseStore) -> Bool {
-		return lhs.doses == rhs.doses
-	}
-
-	/// Establishes conformance to Hashable
-	/// - Parameter hasher: hasher to provide hashValue
-	func hash(into hasher: inout Hasher) {
-		hasher.combine(doses)
 	}
 
 

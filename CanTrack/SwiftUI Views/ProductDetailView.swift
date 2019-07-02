@@ -39,7 +39,7 @@ struct ProductDetailView : View {
 #if DEBUG
 struct ProductDetailView_Previews : PreviewProvider {
     static var previews: some View {
-        ProductDetailView(product: ProductStore(products: defaultProducts.products).products[0])
+        ProductDetailView(product: ProductStore.shared.products[0])
     }
 }
 #endif

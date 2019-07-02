@@ -9,16 +9,7 @@
 import SwiftUI
 import Datez
 
-let testDate: Date = {
-	var cmp = DateComponents()
-	cmp.calendar = .current
-	cmp.calendar?.locale = .current
-	cmp.timeZone = .current
-	cmp.year = 2019
-	cmp.month = 6
-	cmp.day = 29
-	return cmp.isValidDate ? cmp.date! : Date()
-}()
+
 
 
 let testData2: [String: AnyObject] = [

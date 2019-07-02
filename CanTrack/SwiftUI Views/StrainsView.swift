@@ -105,7 +105,7 @@ struct StrainCardView : View {
 
 struct StrainsView_Previews : PreviewProvider {
     static var previews: some View {
-        StrainsView().environmentObject(UserData()).environmentObject(strainStore)
+        StrainsView().environmentObject(UserData())
     }
 }
 #endif

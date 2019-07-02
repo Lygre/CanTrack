@@ -68,7 +68,7 @@ struct InventoryListView : View {
 					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {
 						HStack(alignment: .center) {
 
-							ForEach(ProductStore.productTypes.identified(by: \.hashValue)) { type in
+							ForEach(userData.productTypes.identified(by: \.identifiedValue)) { type in
 								Button(action: {
 									self.activeFilterType = type
 									self.isFiltered = true

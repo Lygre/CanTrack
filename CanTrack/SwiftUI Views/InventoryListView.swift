@@ -54,7 +54,6 @@ struct InventoryListView : View {
 						self.isFiltered = false
 						self.activeFilterType = nil
 					}) {
-
 							$activeFilterType.value == nil ?
 								nil :
 								HStack {

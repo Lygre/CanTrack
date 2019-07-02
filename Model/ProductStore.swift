@@ -18,13 +18,15 @@ let defaultProductJustTheProductsArray = defaultProducts.products
 
 
 
-class ProductStore: Equatable, Hashable, Codable, BindableObject {
+class ProductStore {
 
-	let didChange = PassthroughSubject<Void, Never>()
+	static let shared = ProductStore()
 
-	var products: [Product] {
+	var products: [Product] = [
+		Product(strain: Strain(name: "Strawberry Switchblade", race: .hybrid, description: nil), productType: .truShatter),
+		Product(strain: Strain(name: "Sour Diesel", race: .sativa, description: nil), productType: .truFlower)
+		] {
 		didSet {
-			didChange.send()
 			self.productTypes = {
 				let inventory = self.products
 				var categories: Set<Product.ProductType> = []
@@ -36,62 +38,29 @@ class ProductStore: Equatable, Hashable, Codable, BindableObject {
 		}
 	}
 
+
 	var showFavoriteProductsOnly = false {
 		didSet {
 			didChange.send()
 		}
 	}
 
-	var productTypes: [Product.ProductType] = [] {
-		didSet {
-			didChange.send()
-		}
-	}
+	var productTypes: [Product.ProductType] = []
 
 	static let defaultProduct = Product(strain: Strain.default, productType: .rosin)
 
-	enum CodingKeys: String, CodingKey {
-		case products
+	private init() { load() }
+
+	func save() {
+		UserDefaults.standard.set(try? PropertyListEncoder().encode(products), forKey: "productStore")
+		debugPrint("productStore save called")
 	}
 
-	init(products: [Product]) {
-		self.products = products
-		self.productTypes = {
-			let inventory = products
-			var categories: Set<Product.ProductType> = []
-			for product in inventory {
-				categories.insert(product.productType)
-			}
-			return Array(categories).sorted(by: { $0.rawValue < $1.rawValue })
-		}()
-	}
-
-
-	func encode(to encoder: Encoder) throws {
-		var container = encoder.container(keyedBy: CodingKeys.self)
-		try container.encode(products, forKey: .products)
-	}
-
-	required init(from aDecoder: Decoder) {
-		do {
-		let values = try aDecoder.container(keyedBy: CodingKeys.self)
-		products = try values.decode([Product].self, forKey: .products)
-		} catch {
-			products = []
-			print(error)
+	func load() {
+		if let data = UserDefaults.standard.object(forKey: "productStore") as? Data {
+			self.products = try! PropertyListDecoder().decode([Product].self, from: data)
 		}
 	}
-
-	static func == (lhs: ProductStore, rhs: ProductStore) -> Bool {
-		return lhs.products == rhs.products
-	}
-
-	func hash(into hasher: inout Hasher) {
-		hasher.combine(products)
-
-	}
-
-
 
 
 }

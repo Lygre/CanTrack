@@ -15,9 +15,9 @@ struct HomeView : View {
 
 	@EnvironmentObject var calendarStore: CalendarStore
 
-	@State private var selectedTab = Tab.inventory
+	@State private var selectedTab = Tab.inventory.rawValue
 
-	enum Tab: Int {
+	enum Tab: Int, Hashable {
 		case inventory, strains, calendar
 	}
 
@@ -40,9 +40,7 @@ struct HomeView : View {
 	#if !os(tvOS)
 	var body: some View {
 		TabbedView(selection: $selectedTab) {
-			InventoryListView().tabItemLabel(Text("Inventory")).tag(Tab.inventory)
-			StrainsView().tabItemLabel(Text("Strains")).tag(Tab.strains)
-			ProtoYearView().tabItemLabel(Text("Calendar")).tag(Tab.calendar)
+			InventoryListView()
 			}
 			.environmentObject(userData)
 			.environmentObject(calendarStore)

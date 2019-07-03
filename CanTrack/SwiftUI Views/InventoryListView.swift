@@ -65,7 +65,7 @@ struct InventoryListView : View {
 						}
 					}
 				) {
-					ScrollView(alwaysBounceHorizontal: true, alwaysBounceVertical: false,  showsHorizontalIndicator: false) {
+					ScrollView {
 						HStack(alignment: .center) {
 
 							ForEach(userData.productTypes.identified(by: \.identifiedValue)) { type in
@@ -91,7 +91,7 @@ struct InventoryListView : View {
 				Section {
 					!isFiltered ?
 						ForEach(userData.products.identified(by: \.identifiedValue)) { product in
-							NavigationButton(destination: ProductDetailView(product: product)) {
+							NavigationLink(destination: ProductDetailView(product: product)) {
 								ProductRow(product: product)
 							}
 						}
@@ -99,7 +99,7 @@ struct InventoryListView : View {
 						ForEach(userData.products.compactMap({ (someProduct) -> Product? in
 							return (someProduct.productType == activeFilterType!) ? someProduct : nil
 						}).identified(by: \.identifiedValue)) { product in
-							NavigationButton(destination: ProductDetailView(product: product)) {
+							NavigationLink(destination: ProductDetailView(product: product)) {
 								ProductRow(product: product)
 							}
 						}

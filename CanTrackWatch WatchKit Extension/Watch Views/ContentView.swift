@@ -55,7 +55,7 @@ struct ContentView : View {
 					Text("→")
 						.alignmentGuide(.launchScreenArrowAlignment) { d in d[.trailing] / 2}
 					Spacer()
-					NavigationButton(destination:
+					NavigationLink(destination:
 						WatchProductsListView()
 							.environmentObject(self.userData)
 					) {
@@ -72,7 +72,7 @@ struct ContentView : View {
 					Text("→")
 					.alignmentGuide(.launchScreenArrowAlignment) { d in d[.trailing] / 2}
 					Spacer()
-					NavigationButton(destination:
+					NavigationLink(destination:
 						WatchDailyDoseLog()
 							.environmentObject(self.userData)
 					) {

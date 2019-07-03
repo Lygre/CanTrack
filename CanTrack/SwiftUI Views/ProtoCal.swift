@@ -80,7 +80,7 @@ struct ProtoYearView: View {
 	var body: some View {
 		Group {
 			Section {
-			ScrollView(isScrollEnabled: true, showsVerticalIndicator: false) {
+			ScrollView {
 				YearCellView(year: 2019)
 				}
 			}
@@ -120,7 +120,7 @@ struct YearCellView : View {
 					.font(.title)
 					.fontWeight(.heavy)
 				ForEach((0...11).identified(by: \.identifiedValue)) { monthInt in
-					NavigationButton(destination: MonthCellView(month: Month(rawValue: monthInt)!)) {
+					NavigationLink(destination: MonthCellView(month: Month(rawValue: monthInt)!)) {
 						MonthCellView(month: Month(rawValue: monthInt)!)
 					}
 				}

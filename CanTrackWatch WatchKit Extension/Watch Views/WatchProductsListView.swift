@@ -20,7 +20,7 @@ struct WatchProductsListView : View {
 			}
 			ForEach(userData.products.identified(by: \.id)) { product in
 				if !self.favoritesFilterOn || product.isFavorite {
-					NavigationButton(destination:
+					NavigationLink(destination:
 						WatchProductDetail(product: product)
 							.environmentObject(self.userData)
 					) {
